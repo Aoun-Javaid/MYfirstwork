@@ -8,6 +8,7 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MarketsComponent } from './pages/dashboard/markets/markets.component';
+import { CasinoComponent } from './pages/dashboard/casino/casino.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MarketsComponent } from './pages/dashboard/markets/markets.component';
     FooterComponent,
     BottomNavComponent,
     DashboardComponent,
-    MarketsComponent
+    MarketsComponent,
+    CasinoComponent
   ],
   imports: [
     CommonModule,
