@@ -1,0 +1,9 @@
+@media screen and (max-width: 767px){
+  .img-fluid-poster {
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    border-radius: 15px;
+  }
+}
