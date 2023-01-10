@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
   --header-color: linear-gradient(180deg,#360a43,#5c2681 42%,#360a43);
+  --app-bgColor:linear-gradient(180deg,#360a43,#5c2681 42%,#360a43);
   --event-bgcolor: linear-gradient(180deg,#662d91,#8800f2);
   --theme-color: #ff0;
+  --selected-btn-bg:#ff0;
   --theme-color1: #461863;
   --unselected-tabbg: #623a75;
   --text-color-white: #fff;
+  --white:#fff;
   --dekstop-header-buttons: linear-gradient(180deg,#fff,#c2bb2f);
   --login-page-bg: linear-gradient(180deg,#360a43,#300953 42%,#360a43);
   --sport-section-bg: linear-gradient(-180deg,#2e4b5e,#243a48 82%);
@@ -15,5 +18,7 @@
 /*variables k name b dakh lijiye ga bhaya*/
 body {
   overflow-x: hidden;
-  background: var(--theme-bg);
+  background: var(--app-bgColor);
+  color: var(--white);
+  font-family: Gotham,sans-serif;
 }
