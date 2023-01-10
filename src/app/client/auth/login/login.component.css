@@ -636,7 +636,7 @@ a, a:hover {
   }
 }
 
-.form-control[_ngcontent-hpo-c74] {
+.form-control {
   border: 2px solid #ffc800;
   border-right: none;
   border-top-left-radius: 5px;
@@ -651,7 +651,7 @@ a, a:hover {
   font-weight: 900;
 }
 
-.submit-button[_ngcontent-hpo-c74] {
+.submit-button {
   color: #000;
   font-weight: 600;
   border: none;
@@ -663,7 +663,7 @@ a, a:hover {
   background: var(--theme-color);
 }
 
-.login-page-label[_ngcontent-hpo-c74] {
+.login-page-label {
   color: #fff;
   text-transform: capitalize;
 }
