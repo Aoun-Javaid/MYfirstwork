@@ -38,12 +38,7 @@
   height: 3vw;
   margin: 15px 0;
 }
-@media screen and (max-width: 767px) {
-  /*.footer-image-container{*/
-  /*  max-width: 80%;*/
-  /*  margin-right: auto;*/
-  /*  margin-left: auto;*/
-  /*}*/
+@media screen and (max-width: 690px){
   .footer-image-container img {
     padding: 2vw;
     width: 25vw;

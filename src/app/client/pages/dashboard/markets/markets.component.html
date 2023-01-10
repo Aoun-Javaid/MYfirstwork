@@ -1,1 +1,12 @@
-<p>markets works!</p>
+
+<div class="category-navigation">
+  <ul class="category-navigation-container" >
+    <li class="category-navigation-item" *ngFor="let cat of catTabs">
+      <a class="category-navigation-item-link" >
+        <span class="category-navigation-item-icon"><img class="bottomNav-Icon" [src]="cat.cat_icon"></span>
+        <span
+          class="category-navigation-item-label">{{cat.cat_name}}</span>
+      </a>
+    </li>
+  </ul>
+</div>
