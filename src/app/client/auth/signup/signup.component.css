@@ -960,6 +960,7 @@ a, a:hover {
   font-weight: 900;
 }
 
+
 .submit-button {
   color: #000;
   font-weight: 600;
@@ -969,6 +970,7 @@ a, a:hover {
   font-size: 20px;
   margin: 0;
   width: 50%;
+  background: var(--theme-color);
 }
 
 .login-page-label {
@@ -1018,4 +1020,9 @@ a, a:hover {
   font-size: 20px;
   margin: 0;
   width: 50%;
+}
+
+
+.login-pages-header {
+  background: var(--unselected-tabbg);
 }

@@ -660,6 +660,7 @@ a, a:hover {
   font-size: 20px;
   margin: 0;
   width: 50%;
+  background: var(--theme-color);
 }
 
 .login-page-label[_ngcontent-hpo-c74] {

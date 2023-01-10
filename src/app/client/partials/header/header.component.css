@@ -51,8 +51,6 @@ button {
 }
 
 
-
-
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -203,6 +201,7 @@ div, input {
 .myexch-desktop-header .menu-button2 {
   font-size: 25px;
   margin: 5px;
+  margin-top: 10px;
   color: var(--text-color-white);
 }
 
@@ -313,5 +312,24 @@ button:focus, div:focus {
   ::-webkit-scrollbar {
     height: 2px;
     border-radius: 0;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .myexch-logo {
+    width: 115px;
+    height: 45px;
+    margin-left: -6px;
+  }
+
+  .myexch-login2 {
+    margin-left: 1vw;
+  }
+
+  .myexch-login-buttons {
+    right: 1vh;
+    padding-left: -5px;
+
   }
 }
