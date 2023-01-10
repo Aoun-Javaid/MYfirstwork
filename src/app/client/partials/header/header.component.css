@@ -1,0 +1,317 @@
+.myexch-login, .myexch-login2 {
+  height: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 3vw;
+  width: 23vw;
+  font-weight: 700;
+  margin-top: .2rem;
+  box-shadow: 1.95px 1.95px 2.6px #000;
+}
+
+.myexch-desktop-header {
+  display: flex;
+  padding: 1vw;
+  background: var(--header-color);
+}
+
+.myexch-login {
+  background: var(--text-color-white);
+  margin-left: 0;
+}
+
+/*! CSS Used from: http://myexch.com/assets/css/bootstrap-dark.min.css */
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+button {
+  border-radius: 0;
+}
+
+
+button, input {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button {
+  text-transform: none;
+}
+
+
+
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #94a0ad;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .45rem .9rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .15rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, theme-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.btn:hover {
+  color: #94a0ad;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .15rem rgba(102, 88, 221, .25);
+}
+
+.btn:disabled {
+  opacity: .65;
+}
+
+button:focus {
+  outline: 0;
+}
+
+/*! CSS Used from: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css */
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
+img {
+  border-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+button {
+  border-radius: 0;
+}
+
+
+button, input {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button {
+  text-transform: none;
+}
+
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+.btn:disabled {
+  opacity: .65;
+}
+
+.mdi:before {
+  display: inline-block;
+  font: normal normal normal 24px/1 Material Design Icons;
+  font-size: inherit;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mdi-menu:before {
+  content: "\F035C";
+}
+
+div, input {
+  font-family: Gotham, sans-serif;
+}
+
+.theme-06 ::-webkit-scrollbar {
+  background: transparent;
+  display: none;
+}
+
+.myexch-logo {
+  width: 155px;
+  height: 65px;
+  margin: 0;
+}
+
+.myexch-desktop-header {
+  display: flex;
+  padding: 1vw;
+  background: var(--header-color);
+}
+
+.myexch-desktop-header .menu-button2 {
+  font-size: 25px;
+  margin: 5px;
+  color: var(--text-color-white);
+}
+
+.myexch-login-buttons {
+  position: absolute;
+  right: 5vw;
+  top: 2vw;
+  display: flex;
+}
+
+.myexch-login {
+  background: var(--text-color-white);
+}
+
+.myexch-login, .myexch-login2 {
+  height: 35px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1vw;
+  width: 7vw;
+  font-weight: 700;
+  margin-left: .5vw;
+  margin-top: 0;
+  box-shadow: 1.95px 1.95px 2.6px #000;
+}
+
+.myexch-login2 {
+  background: var(--theme-color);
+}
+
+.myexch-serch-header input {
+  padding: 0 1vw;
+  height: 34.5px;
+  background: var(--text-color-white);
+  border: none;
+}
+
+.myexch-serch-header button {
+  height: 35px;
+  background: var(--text-color-white);
+  border: none;
+}
+
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+}
+
+button:focus, div:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn:focus, button:focus {
+  box-shadow: none;
+  outline-color: rgb(235 93 100/25%);
+}
+
+@media (max-width: 767.98px) {
+  .myexch-login {
+    background: var(--text-color-white);
+    margin-left: 0;
+  }
+
+  .myexch-login, .myexch-login2 {
+    height: 30px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 3vw;
+    width: 23vw;
+    font-weight: 700;
+    margin-top: .2rem;
+    box-shadow: 1.95px 1.95px 2.6px #000;
+  }
+
+  .myexch-login2 {
+    background: var(--theme-color);
+    margin-left: 3vw;
+  }
+
+  .myexch-logo {
+    width: 135px;
+    height: 45px;
+    margin: 0;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  ::-webkit-scrollbar {
+    height: 2px;
+    border-radius: 0;
+  }
+}
