@@ -3,21 +3,18 @@
   <div  class="text-center my-3">
     <button type="button" class="btn payment-button"> PAYMENT METHODS </button>
     <div  class="footer-image-container">
-      <img  src="assets/footer/GPay.png" alt="" >
-      <img  src="assets/footer/BankTranfer.png" alt="" >
-      <img  src="assets/footer/PhonePe.png" alt="" >
-      <img  src="assets/footer/UPI.png" alt="" >
-      <img  src="assets/footer/Paytm.png" alt="" >
-      <img  src="assets/footer/Astropay.png" alt="" >
+        <img *ngFor="let item of paymentMethods"
+             [src]="item.imglink"
+             [alt]="item.alternate"
+        >
     </div>
   </div>
   <div  class="text-center my-3 followus-daat">
     <p  class="follow-text"> Follow us on</p>
     <div  class="socialmedia-imgs-container">
-      <img  src="assets/footer/facebook.png" alt="">
-      <img  src="assets/footer/instagram.png" alt="">
-      <img  src="assets/footer/twitter.png" alt="">
-      <img  src="assets/footer/telegram.png" alt="">
+      <a *ngFor="let item of socialmedia">
+        <img  [src]="item.imglink" [alt]="item.alternate">
+      </a>
     </div>
   </div>
 </div>

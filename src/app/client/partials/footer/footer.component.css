@@ -33,9 +33,10 @@
   margin: 15px 0;
 }
 .socialmedia-imgs-container img{
-  width: 10vw;
-  height: 8vw;
   padding: 0 1vw;
+  width: auto;
+  height: 3vw;
+  margin: 15px 0;
 }
 @media screen and (max-width: 767px) {
   /*.footer-image-container{*/
@@ -56,5 +57,10 @@
     border-radius: 8px;
     font-size: 3.4vw;
 
+  }
+  .socialmedia-imgs-container a >img{
+    width: 10vw;
+    height: 8vw;
+    padding: 0 1vw;
   }
 }
