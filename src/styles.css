@@ -22,3 +22,7 @@ body {
   color: var(--white);
   font-family: Gotham,sans-serif;
 }
+.wrapper {
+  margin: 0;
+  background: var(--login-page-bg);
+}
