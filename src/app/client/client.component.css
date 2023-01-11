@@ -1,0 +1,9 @@
+.main-content{
+  margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 767px){
+  .main-content{
+    margin-bottom: 120px;
+  }
+}
