@@ -8,6 +8,7 @@ import {MarketDetailsComponent} from "./pages/market-details/market-details.comp
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
 import { StatementComponent } from './pages/statement/statement.component';
+import {InplayComponent} from "./pages/inplay/inplay.component";
 
 const routes: Routes = [
   {
@@ -28,6 +29,9 @@ const routes: Routes = [
       },
       {
         path: 'statement',component:StatementComponent
+      },
+      {
+        path: 'inplay',component:InplayComponent
       }
     ]
   },

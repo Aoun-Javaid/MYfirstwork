@@ -18,6 +18,7 @@ import { RightNavComponent } from './partials/right-nav/right-nav.component';
 import {LoginComponent} from "./auth/login/login.component";
 import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
 import { StatementComponent } from './pages/statement/statement.component';
+import { InplayComponent } from './pages/inplay/inplay.component';
 
 
 
@@ -38,7 +39,8 @@ import { StatementComponent } from './pages/statement/statement.component';
       ProfileComponent,
       RightNavComponent,
       EditPasswordComponent,
-      StatementComponent
+      StatementComponent,
+      InplayComponent
   ],
   imports: [
     CommonModule,

@@ -104,7 +104,88 @@
 
 
 </div>
+  <!--  Market Scroller start -->
+  <div class="category-navigation">
+    <div class="full-color">
+      <ul class="category-navigation-container" >
+        <li class="category-navigation-item" *ngFor="let cat of catTabs">
+          <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" >
+        <span class="category-navigation-item-icon">
 
+          {{cat.cat_name}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--  Market Scroller end -->
+
+  <!--  Marketdetails portion -->
+  <div class="market-section">
+    <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
+      <div class="clip1 col-md-5 col-7">
+        <p class="market-title">
+          <i class="fa-solid fa-chart-column me-2"></i>Bookmakers
+        </p>
+      </div>
+      <div class="col-md-7 col-5 px-lg-0 text-end pe-3 px-lg-0">
+        <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal" data-bs-target="#infoModal"></i>
+      </div>
+    </div>
+    <div class="market-rates">
+      <div class="row mt-1">
+        <div class="col-md-5 col-7">
+          <p class="min-max mb-0"><span>min: <b>100</b></span>  <span class="max-value">max:  <b>10000</b> </span></p>
+        </div>
+        <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
+          <p class="market-back mb-0"><span class="back2">YES</span> <span class="lay2">No</span></p>
+        </div>
+
+      </div>
+      <div class="row align-items-center text-capitalize text-dark bg-theme market-data-row">
+        <div class="col-md-5 col-7">
+          <p class="market-name">
+            <i class="fa-solid fa-chart-column me-2"></i>india <span>
+        <b class="' + bcolor + '">0</b>
+        <i class="fa-solid fa-arrow-right ms-2 me-2 text-dark"></i>
+        <b class="' + color + '">0</b>
+      </span>
+          </p>
+        </div>
+        <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center">
+          <!--          for mobilr -->
+          <div  class="bl-buttons desktop-hide">
+            <button  type="button" class="bl-btn back waves-effect waves-light bet-sec'">1.53 <span >200</span>
+            </button>
+            <button  type="button" class="bl-btn lay waves-effect waves-light bet-sec'">1.53 <span >200</span>
+            </button>
+          </div>
+          <!--          for desktop -->
+          <div class="bl-buttons mobile-hide">
+            <button class="bl-btn eon1 bet-sec ">1.53 <span>200</span>
+            </button>
+            <button class="bl-btn eon2 bet-sec ">1.53 <span>200</span>
+            </button>
+            <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample" class="bl-btn back waves-effect waves-light bet-sec ">
+              <span class=" size1">1.53</span>
+              <span class=" size2">200</span>
+            </button>
+            <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample" class="bl-btn lay waves-effect waves-light bet-sec ">
+              <span class=" size1">1.53</span>
+              <span class=" size2">200</span>
+            </button>
+            <button class="bl-btn eon3 bet-sec ">1.53 <span>200</span>
+            </button>
+            <button class="bl-btn eon4 bet-sec ">1.53 <span>200</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
 
 
 <!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->

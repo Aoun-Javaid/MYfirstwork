@@ -71,6 +71,7 @@
 .nav{
   flex-wrap: nowrap;
   overflow: scroll;
+  position: relative;
 }
 .nav .nav-item .nav-link.active{
 

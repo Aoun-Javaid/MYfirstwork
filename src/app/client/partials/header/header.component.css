@@ -74,7 +74,7 @@
     height: 50px;
   }
 }
-@media screen and (min-width: 350px) and (max-width: 450px) {
+@media screen and (min-width: 350px) and (max-width: 767px) {
   .btn.myexch-signup, .btn.myexch-login{
     font-size: 14px;
     width: 80px;
@@ -88,5 +88,6 @@
 @media screen and (min-width: 767px) and (max-width: 992px) {
   .btn{
     width: 12vw;
+    font-size: 17px;
   }
 }

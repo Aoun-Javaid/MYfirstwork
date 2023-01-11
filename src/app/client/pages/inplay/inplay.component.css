@@ -1,0 +1,88 @@
+.tabs{
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--theme-color);
+  margin-top: 15px
+}
+.tabs div{
+  width: 33%;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #000!important;
+  border-radius: 0!important;
+  font-weight: 600;
+}
+.tabs div.active{
+  color: var(--text-color-white) !important;
+  background: var(--header-color) !important;
+}
+.marketName{
+  background: var(--header-color);
+}
+.clip {
+  background: var(--theme-color);
+  color: var(--event-title-bg);
+  -webkit-clip-path: polygon(0 0,67% 0,100% 100%,0 100%);
+  clip-path: polygon(0 0,67% 0,100% 100%,0 100%);
+}
+.bg-theme {
+  background-color: var(--market-bg);
+}
+aside {
+  margin: auto;
+  width: 50px;
+}
+.loading {
+  background: linear-gradient(90deg,#18da22,#037903);
+  font-size: 10px;
+  padding: 3px;
+  background-size: 130%;
+  -webkit-filter: hue-rotate("@hueRotate");
+  height: 30px;
+  line-height: 26px;
+  color: #fff;
+  font-weight: 800;
+  border-radius: .25rem;
+  text-align: center;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.4);
+  position: relative;
+  text-shadow: 0 2px 2px rgba(0,0,0,.5);
+}
+.border, .text {
+  z-index: 0;
+  border-radius: 5px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  bottom: 4px;
+  right: 4px;
+  display: block;
+}
+.text {
+  top: 2px;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 2s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 767px){
+  .clip{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+  }
+}
