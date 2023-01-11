@@ -233,9 +233,100 @@ p{
   .bl-buttons .bl-btn {
     width: 60px !important;
   }
+  .market-back   span{
+    width: 55px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .market-back   span{
+    width: 63px;
+  }
 }
 @media screen and (min-width: 768px) {
   .desktop-hide{
     display: none;
   }
 }
+
+
+/*Tab slider css starts*/
+
+
+.category-navigation {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  background: var(--sport-section-bg);
+  background-image: none;
+  height: 50px
+}
+/*.full-color{*/
+/*  background: var(--sport-section-bg) !important;*/
+/*}*/
+.category-navigation-container {
+  display: table;
+  position: relative;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+.category-navigation .category-navigation-item {
+  display: table-cell;
+  /*height: 59px;*/
+  min-width: 70px;
+  width: 10%;
+  position: relative;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+.category-navigation .category-navigation-item-link {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  background: var(--unselected-tabbg);
+  color: var(--text-color-white);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: inline-block;
+  transition: color .25s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 1px solid #9d0af1;
+}
+.category-navigation .category-navigation-item-link.active{
+  color: #000 !important;
+  background: var(--theme-color) !important;
+  border: 1px solid var(--theme-color) !important;
+}
+.category-navigation .category-navigation-item-icon {
+  margin: 0 auto;
+  min-height: 20px;
+  min-width: 20px;
+  color: var(--sport-section-bg);
+}
+
+.category-navigation .category-navigation-item-label {
+  color: var(--white);
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 500;
+  margin: 0 10px;
+}
+/*tab slides css end */

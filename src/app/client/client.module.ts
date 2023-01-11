@@ -15,6 +15,7 @@ import { MarketDetailsComponent } from './pages/market-details/market-details.co
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RightNavComponent } from './partials/right-nav/right-nav.component';
+import {LoginComponent} from "./auth/login/login.component";
 
 
 
@@ -28,7 +29,7 @@ import { RightNavComponent } from './partials/right-nav/right-nav.component';
     MarketsComponent,
     CasinoComponent,
     DashboardComponent,
-
+    LoginComponent,
     SignupComponent,
       MarketDetailsComponent,
       SidenavComponent,
