@@ -41,6 +41,14 @@
   width: 148px;
   height: 65px;
 }
+.myexch-bal-button {
+  color: var(--text-color-white);
+  padding: 0;
+  font-size: 16px;
+  margin-top: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
 @media screen and (max-width: 767px) {
   .myexch-logo{
     width: 100px;
@@ -58,8 +66,14 @@
   }
   .myexch-signup{
     background: var(--theme-color);
-    margin-left: 3vw;
+    margin-left: 2vw;
     margin-right: 0.25rem;
+  }
+  .btn.myexch-signup, .btn.myexch-login{
+   height: 22px;
+  }
+  .myexch-bal-button {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 350px) {
@@ -73,11 +87,29 @@
     width: 87px;
     height: 50px;
   }
+  .btn.deposit-btn, .btn.withdraw-btn{
+    font-size: 10px;
+    width: 76px;
+    padding: 0rem;
+    height: 22px;
+  }
+  .myexch-signup{
+    margin-left: 1vw;
+  }
+  .myexch-bal-button {
+    margin-top: 4px;
+  }
 }
 @media screen and (min-width: 350px) and (max-width: 767px) {
   .btn.myexch-signup, .btn.myexch-login{
     font-size: 14px;
     width: 80px;
+  }
+  .btn.withdraw-btn{
+    width: 96px;
+  }
+  .myexch-bal-button {
+    margin-top: 2px;
   }
 }
 @media screen and (min-width: 768px){

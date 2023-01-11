@@ -7,6 +7,7 @@ import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from 
 })
 export class HeaderComponent implements OnInit {
   isSideBarOpen = false;
+  isLogin=true;
   @Output() clickOutside = new EventEmitter<void>();
 
   constructor(private elementRef: ElementRef) {

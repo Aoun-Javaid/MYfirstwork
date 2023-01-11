@@ -149,4 +149,7 @@ p{
     width: 16%;
     height: 36px;
   }
+  .tabs div{
+    font-size: 13px;
+  }
 }
