@@ -1,0 +1,44 @@
+
+.nav-justified .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+.nav-tabs-casino{
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+}
+.nav .nav-item{
+    border-radius: 0;
+    border: 1px solid var(--theme-color);
+}
+.nav .nav-item .nav-link{
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--theme-color);
+    font-size: 16px;
+}
+.tab-pane{
+    padding: 10px;
+}
+.casino-img{
+    border-radius: 8px;
+    width: 180px;
+    height: 180px;
+    flex-wrap: wrap;
+}
+/* .nav-tabs {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.nav-tabs li[class*="span"] {
+    display: inline-block;
+    float: none;
+} */
+.nav .nav-item .nav-link.active{
+
+    color: #000;
+    background: var(--theme-color);
+}
