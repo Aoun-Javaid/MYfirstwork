@@ -12,6 +12,7 @@ import { CasinoComponent } from './pages/dashboard/casino/casino.component';
 
 import {SignupComponent} from './auth/signup/signup.component';
 import { MarketDetailsComponent } from './pages/market-details/market-details.component';
+import { SidenavComponent } from './partials/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MarketDetailsComponent } from './pages/market-details/market-details.co
     DashboardComponent,
 
     SignupComponent,
-      MarketDetailsComponent
+      MarketDetailsComponent,
+      SidenavComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,8 @@
+<app-sidenav *ngIf="isSideBarOpen" (clickOutside)="onClickedOutside($event)"></app-sidenav>
+
+
 <div class="myexch-desktop-header">
-  <i class="fa fa-bars menu-button2 mobile" aria-hidden="true"></i>
+  <i class="fa fa-bars menu-button2 mobile" (click)="sidenavOpen()" aria-hidden="true"></i>
   <img routerLink="/client" alt="" class="myexch-logo" src="assets/logo/NewLogo1.png">
   <div class="myexch-login-buttons">
     <div class="myexch-serch-header desktop"><input type="text"
