@@ -1,0 +1,236 @@
+.market-details{
+  margin: 0px 2px;
+}
+.event-title {
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 8px 0 2px;
+  border-radius: 3px;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: left;
+  background: var(--event-title-bg);
+}
+.fa-tv{
+  font-size: 24px;
+}
+.tv-icon-div{
+  width: 20%;
+}
+.btn-match-unmatch{
+  text-transform: uppercase;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid #000;
+}
+.mymarket{
+  background: var(--header-color);
+  color: var(--text-color-white);
+}
+.mybet{
+  background: var(--theme-color);
+  color: var(--event-title-bg);
+}
+.marktet-tabs{
+  margin-bottom: 24px;
+}
+.marktet-tabs div{
+  width: 50%;
+}
+.modal-header{
+  background: var(--header-color);
+  padding: .25rem .4rem;
+}
+.close-btn{
+  background: transparent;
+  border: 0px;
+  color: white;
+}
+.modal-body{
+  background: var(--header-color);
+  padding: .6rem;
+}
+.info-modal-body p{
+  font-size: 12px;
+  margin-bottom: .7rem;
+}
+.market-section {
+  margin-top: 15px;
+  background: var(--theme-color);
+}
+.market-title-row .clip1{
+  background: var(--header-color);
+  width: 64%;
+}
+.market-title{
+  padding: 0;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 900;
+  display: inline;
+  color: var(--text-color-white);
+  margin-bottom: 0px;
+}
+.clip1 {
+  -webkit-clip-path: polygon(0 0,80% 0,100% 100%,0 100%);
+  clip-path: polygon(0 0,80% 0,100% 100%,0 100%);
+}
+.market-rates{
+  background: var(--header-color);
+}
+.min-max {
+  line-height: 2;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  display: block;
+}
+.max-value {
+  margin-left: 13px;
+}
+.market-back span {
+  width: 68px;
+  display: inline-block;
+  margin: 0 -1px;
+  font-weight: 800;
+  color: var(--text-color-white);
+  border-style: none;
+  outline: none;
+}
+p.market-back {
+  font-size: 13px;
+}
+.market-back .back2 {
+  background: var(--back-color);
+}
+.market-back .lay2 {
+  background: var(--lay-color);
+}
+.bg-theme {
+  background: var(--market-bg);
+}
+.market-data-row .market-name {
+  white-space: nowrap;
+  overflow: hidden!important;
+  text-overflow: ellipsis;
+}
+p{
+  margin-bottom: 0px;
+}
+
+.market-data-row .market-name, .market-data-row .market-name1 {
+  font-size: 13px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #fff!important;
+  margin-left: 7px;
+}
+.market-data-row .market-name1 span, .market-data-row .market-name span {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+}
+.market-data-row .market-name span {
+  color: #686161;
+}
+.bl-buttons {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+}
+.bl-buttons .bl-btn {
+  font-size: 15px;
+  border-radius: 0;
+  border: none;
+  width: 55px;
+  height: 40px;
+  line-height: 1;
+  padding: 0;
+  font-weight: 700;
+  margin: 0 1px;
+  color: #000;
+}
+.bl-buttons .bl-btn span {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+}
+.lay {
+  pointer-events: auto;
+  background: var(--lay-color);
+}
+.back{
+  background: var(--back-color);
+}
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media only screen and (max-width: 767px){
+  .event-title {
+    text-align: left;
+    font-size: 12px;
+  }
+  .m-event-timer{
+    border-radius: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 9px;
+    padding: 0;
+  }
+  .fa-tv{
+    font-size: 20px;
+  }
+  .btn-match-unmatch {
+    font-size: 13px!important;
+    font-weight: 900;
+    padding: 2px 0;
+  }
+  .market-section {
+    margin-bottom: .5em;
+    margin-top: 0;
+    /*box-shadow: 0 0 0 1px #e1e1e1;*/
+  }
+  .market-section div{
+    padding: 1px 0 0;
+    margin: 0;
+  }
+  .market-title {
+    font-size: 3vw;
+    line-height: 1;
+  }
+  .min-max {
+    padding: 0;
+    font-size: 10px;
+  }
+  .market-back .back2, .market-back .lay2 {
+    margin: 0 1px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1.5;
+  }
+  .bl-buttons .bl-btn {
+    width: 70px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 900;
+  }
+  .mobile-hide{
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .desktop-hide{
+    display: none;
+  }
+}

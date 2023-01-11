@@ -199,6 +199,9 @@ a {
   padding: 10px 0;
   display: block;
 }
+.markets a:last-child .sport-list{
+  margin-bottom: .5rem;
+}
 @media screen and (max-width: 767px){
   .category-navigation-container {
     width: 100%;
