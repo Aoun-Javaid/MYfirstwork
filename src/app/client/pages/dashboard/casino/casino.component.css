@@ -22,12 +22,12 @@
 .tab-pane{
     padding: 10px;
 }
-.casino-img{
+/* .casino-img{
     border-radius: 8px;
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     flex-wrap: wrap;
-}
+} */
 /* .nav-tabs {
     white-space: nowrap;
     overflow-x: auto;
@@ -42,3 +42,104 @@
     color: #000;
     background: var(--theme-color);
 }
+.casino-img-link{
+    width: 25%;
+    padding: 8px;
+}
+@media screen and (min-width: 750px) {
+    .casino-img-link{
+        width: 20%;
+        
+    }
+    .casino-img{
+        width: 220px;
+    }
+}
+@media screen and (min-width: 280px) and (max-width: 1000px) {
+    .casino-img-link{
+        padding: 1px;
+    }
+}
+
+/* @media screen and (max-width: 1000px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 5px;
+    }
+
+    .casino-img{
+        border-radius: 8px;
+        width: 180px;
+        height: 180px;
+        flex-wrap: wrap;
+        transition:  0.8s;
+    }
+  }
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 5px;
+    }
+
+    .casino-img{
+        border-radius: 8px;
+        width: 150px;
+        height: 150px;
+        flex-wrap: wrap;
+        transition:  0.8s;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+    }
+    .casino-img{
+        border-radius: 8px;
+        width: 120px;
+        height: 120px;
+        flex-wrap: wrap;
+        transition:  0.8s;
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+    }
+    .casino-img{
+        border-radius: 8px;
+        width: 100px;
+        height: 100px;
+        flex-wrap: wrap;
+    }
+  }
+  @media screen and (min-width:300px )and (max-width: 530px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+    }
+    .casino-img{
+        border-radius: 8px;
+        width: 80px;
+        height: 80px;
+        flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (max-width: 312px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+    }
+    .casino-img{
+        border-radius: 8px;
+        width: 60px;
+        height: 60px;
+        flex-wrap: wrap;
+    }
+  } */

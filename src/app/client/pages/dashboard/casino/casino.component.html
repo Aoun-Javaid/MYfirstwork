@@ -7,13 +7,12 @@
         </li>
     </ul>
 </div>
-<div class="">
-    <div class="pt-0">
-        <div class="tab-content p-0">
+
+        <!-- <div class="tab-content p-0">
             <div id="all" class="tab-pane active">
                 <div class="container-fluid px-0">
                     <div class="row">
-                        <div class="col-3 col-md-2 col-sm-6" *ngFor="let item of casinoCards">
+                        <div class="col-2 col-lg-2 col-md-2 col-sm-3 column" *ngFor="let item of casinoCards">
                             <a href="#">
                                 <img class="casino-img" [src]="item.imglink" [alt]="item.alternate">
                             </a>
@@ -21,6 +20,19 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+        <div class="tab-content p-0">
+            <div id="all" class="tab-pane active">
+               
+                    <div class="tab-img">
+                        <div class=" d-flex flex-wrap" >
+                            <a href="#" class="casino-img-link" *ngFor="let item of casinoCards">
+                                <img class="img-fluid casino-img" [src]="item.imglink" [alt]="item.alternate">
+                            </a>
+                        </div>
+                  
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
