@@ -23,11 +23,11 @@
 .tab-pane{
     padding: 10px;
 }
-/* 
+/*
 .nav-tabs-casino{
    background:var( --theme-color1) ;
-   
-} 
+
+}
 .e-toolbar-items{
     display: flex;
     justify-content: center;
@@ -68,6 +68,10 @@
     display: inline-block;
     float: none;
 } */
+.nav{
+  flex-wrap: nowrap;
+  overflow: scroll;
+}
 .nav .nav-item .nav-link.active{
 
     color: #000;
@@ -80,7 +84,7 @@
 @media screen and (min-width: 750px) {
     .casino-img-link{
         width: 20%;
-        
+
     }
     .casino-img{
         width: 220px;

@@ -1,5 +1,5 @@
 <div class="nav-tabs-casino container ">
-    <ul class="nav nav-tabs nav-justified mb-3 tabs-sec">
+    <ul class="nav  nav-justified mb-2 tabs-sec">
         <li class="nav-item" *ngFor="let item of listCasino">
             <a class="nav-link active" [ngClass]="{'active' : step === item.index}" (click) = "cliclTab(item.index)">
                 {{item.name}}
@@ -8,30 +8,6 @@
     </ul>
 </div>
 
-
-<!-- <ejs-toolbar class="nav-tabs-casino mt-3">
-    <e-items>
-        <e-item text={{item.name}} class="nav-item-tabs" *ngFor="let item of listCasino">
-            <a class="nav-link active" [ngClass]="{'active' : step === item.index}" (click)="cliclTab(item.index)">
-                {{item.name}}
-            </a>
-        </e-item>
-    </e-items>
-</ejs-toolbar> -->
-
-<!-- <div class="tab-content p-0">
-            <div id="all" class="tab-pane active">
-                <div class="container-fluid px-0">
-                    <div class="row">
-                        <div class="col-2 col-lg-2 col-md-2 col-sm-3 column" *ngFor="let item of casinoCards">
-                            <a href="#">
-                                <img class="casino-img" [src]="item.imglink" [alt]="item.alternate">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
 <div class="tab-content container p-0 ">
     <div id="all" class="tab-pane active">
