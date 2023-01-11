@@ -15,6 +15,7 @@ import { MarketDetailsComponent } from './pages/market-details/market-details.co
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
 
 
+
 @NgModule({
   declarations: [
     ClientComponent,
@@ -32,7 +33,7 @@ import { SidenavComponent } from './partials/sidenav/sidenav.component';
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
   ]
 })
 export class ClientModule {
