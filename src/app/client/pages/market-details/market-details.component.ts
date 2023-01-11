@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./market-details.component.css']
 })
 export class MarketDetailsComponent implements OnInit {
+  islay:boolean=false;
   catTabs=[
     {id:1,cat_name:'All',},
     {id:2,cat_name:'football',},

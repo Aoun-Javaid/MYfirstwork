@@ -21,6 +21,7 @@ import { StatementComponent } from './pages/statement/statement.component';
 import { InplayComponent } from './pages/inplay/inplay.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
+import { BetslipComponent } from './partials/betslip/betslip.component';
 
 
 
@@ -44,7 +45,8 @@ import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
       StatementComponent,
       InplayComponent,
       DetailsComponent,
-      ProfitlossComponent
+      ProfitlossComponent,
+      BetslipComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,45 @@
+<div  id="lay1" class=" collapse show" style="width: -webkit-fill-available;" [ngClass]="islay?'red-section':'blue-section'">
+  <div  class="row">
+    <div  class="col-md-5 col-0"></div>
+    <div  class="col-md-7 col-12 text-center bet-table">
+      <div  class="row mx-0 text-white">
+        <div  class="col-6 px-2">
+          <div  class="form-group">
+            <div  class="input-group">
+              <span  class="input-group-btn input-group-prepend">
+                <button  type="button" class="minus waves-effect waves-light">-</button>
+              </span>
+              <input  type="email" id="odd1price" aria-describedby="emailHelp" placeholder="odds" class="form-control ng-untouched ng-pristine ng-valid">
+              <span  class="input-group-btn input-group-append">
+                <button  type="button" class="plus waves-effect waves-light">+</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-6 px-2">
+          <input  type="number" placeholder="stake" id="odd2size" name="odd2size" pattern="/^[0-9]$/" class="form-control ng-untouched ng-pristine ng-invalid">
+        </div>
+      </div>
+      <div  class="row my-1">
+        <div  class="col-12">
+          <div  class="btn-group flex-wrap justify-content-center">
+            <button  type="button">4000</button>
+            <button  type="button">43454</button>
+            <button  type="button">50000</button>
+            <button  type="button">5465467</button>
+            <!---->
+            <button  type="button">100000</button>
+          </div>
+        </div>
+      </div>
+      <div  class="d-flex  pb-co">
+        <div  >
+          <button  class="btn-co">cancel bet</button>
+        </div>
+        <div  >
+          <button  class="btn-po">place bet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
