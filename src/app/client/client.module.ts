@@ -13,6 +13,7 @@ import { CasinoComponent } from './pages/dashboard/casino/casino.component';
 import {SignupComponent} from './auth/signup/signup.component';
 import { MarketDetailsComponent } from './pages/market-details/market-details.component';
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -29,7 +30,8 @@ import { SidenavComponent } from './partials/sidenav/sidenav.component';
 
     SignupComponent,
       MarketDetailsComponent,
-      SidenavComponent
+      SidenavComponent,
+      ProfileComponent
   ],
   imports: [
     CommonModule,
