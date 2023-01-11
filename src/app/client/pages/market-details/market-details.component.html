@@ -23,7 +23,19 @@
   </div>
 
 <!--  Market Scroller start -->
+  <div class="category-navigation">
+    <div class="full-color">
+      <ul class="category-navigation-container" >
+        <li class="category-navigation-item" *ngFor="let cat of catTabs">
+          <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" >
+        <span class="category-navigation-item-icon">
 
+          {{cat.cat_name}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
   <!--  Market Scroller end -->
 
   <!--  Marketdetails portion -->
