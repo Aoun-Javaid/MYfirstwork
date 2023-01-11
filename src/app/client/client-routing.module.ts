@@ -11,6 +11,9 @@ import { StatementComponent } from './pages/statement/statement.component';
 import {InplayComponent} from "./pages/inplay/inplay.component";
 import { DetailsComponent } from './pages/details/details.component';
 import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
+import { BetHistoryComponent } from './pages/bet-history/bet-history.component';
+import { ResultComponent } from './pages/result/result.component';
+import { RequestStatusComponent } from './pages/request-status/request-status.component';
 
 const routes: Routes = [
   {
@@ -40,6 +43,15 @@ const routes: Routes = [
       },
       {
         path: 'profitloss',component:ProfitlossComponent
+      },
+      {
+        path: 'bet-history',component:BetHistoryComponent
+      },
+      {
+        path: 'result',component:ResultComponent
+      },
+      {
+        path: 'RequestStatus',component:RequestStatusComponent
       }
     ]
   },
