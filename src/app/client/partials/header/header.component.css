@@ -18,6 +18,7 @@
 .myexch-signup{
   background: var(--theme-color);
   margin-left: 1vw;
+  margin-right: 0.25rem;
 }
 .myexch-login{
   background: var(--text-color-white);

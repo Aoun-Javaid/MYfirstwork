@@ -600,12 +600,26 @@ div, h3, input {
   text-transform: uppercase;
 }
 
-.login-page-content-header i {
+.login-page-content-header a {
   position: absolute;
   right: 15px;
   color: #fff200;
 }
-
+.login-eye i{
+  color: var(--text-dark);
+}
+.login-eye {
+  border: 2px solid #ffc800;
+  border-left: none;
+  background: var(--text-color-white);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 2px 15px;
+  color: #360a43;
+  height: 40px;
+}
 @media (max-width: 767.98px) {
   .login-pages-content {
     padding: 10% 5%;
