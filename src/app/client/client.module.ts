@@ -14,6 +14,7 @@ import {SignupComponent} from './auth/signup/signup.component';
 import { MarketDetailsComponent } from './pages/market-details/market-details.component';
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import {LoginComponent} from "./auth/login/login.component";
 
 
 
@@ -27,7 +28,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MarketsComponent,
     CasinoComponent,
     DashboardComponent,
-
+    LoginComponent,
     SignupComponent,
       MarketDetailsComponent,
       SidenavComponent,

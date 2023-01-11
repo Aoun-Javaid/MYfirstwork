@@ -12,7 +12,9 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
+.loginlink{
+  color: var(--theme-color) !important;
+}
 a {
   color: #6658dd;
   text-decoration: none;
@@ -20,6 +22,7 @@ a {
 }
 .login-eye i{
   color: var(--text-dark);
+  font-size: 20px;
 }
 a:hover {
   color: var(--text-color-white);
