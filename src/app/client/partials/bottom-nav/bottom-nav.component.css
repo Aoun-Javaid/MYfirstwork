@@ -1,19 +1,19 @@
 .bottom-tabs{
     display: none;
   }
-    
-    
+
+
     @media (max-width: 992px) {
-  
+
       .bottom-tabs{
         display: block;
       }
-        
+
       .bottom-tabs ul li.big .menu-item {
         left: 71%  ;
       }
     }
-  
+
     @media (min-width: 320px) and (max-width: 359px) {
       .bottom-tabs ul li.all-items .bottom-circle {
         left: -100px  ;
@@ -66,15 +66,15 @@
       }
     }
     @media (min-width: 768px) and (max-width: 992px) {
-     
-     
+
+
     }
     @media (max-width: 992px) {
-  
-    
+
+
       .bet-start .header {
         font-weight: 600;
-  
+
         color: #000;
       }
       .bottom-tabs {
@@ -132,6 +132,7 @@
         flex-direction: column;
         font-weight: 600;
         letter-spacing: 0.3px;
+        text-decoration: none;
       }
       .bottom-tabs ul li a img {
         width: 25px;
@@ -215,7 +216,7 @@
         top: 75%;
         margin: -50px 0 0 -50px;
         border-radius: 50%;
-      
+
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
         -webkit-transition: -webkit-transform 0.5s;
@@ -293,7 +294,7 @@
       }
       .bottom-tabs ul li.all-items .bottom-circle .circle-nav .circle-nav-open {
         opacity: 1;
-       
+
         border-radius: 50%;
         -webkit-transform: translate(-50%, -52.5%);
         transform: translate(-50%, -52.5%);
@@ -366,7 +367,7 @@
         font-size: 14px;
         font-weight: 600;
         line-height: 2.2;
-  
+
         -webkit-box-orient: initial;
         -webkit-box-direction: initial;
         -ms-flex-direction: initial;
@@ -383,7 +384,7 @@
         font-size: 14px;
         font-weight: 600;
         line-height: 2.2;
-  
+
         -webkit-box-orient: initial;
         -webkit-box-direction: initial;
         -ms-flex-direction: initial;
@@ -436,8 +437,8 @@
       .bottom-tabs ul.dropdown-menu li a.close-btn.active .fa-times,
       .bottom-tabs ul.dropdown-menu li a.close-btn:focus .fa-times,
       .bottom-tabs ul.dropdown-menu li a.close-btn:hover .fa-times {
-     
-      
+
+
         -webkit-transition: all ease-in 0.3s;
         transition: all ease-in 0.3s;
       }
@@ -445,11 +446,11 @@
       .bottom-tabs ul.dropdown-menu li:hover {
         background-color: transparent;
       }
-     
+
     }
-   
+
     @media (min-width: 993px) and (max-width: 1199px) {
-      
+
       .account-pages .footer {
         margin: 0 20px 20px 220px;
       }
@@ -473,8 +474,7 @@
         width: 60%;
       }
     }
-  
-   
 
-  
-  
+
+
+
