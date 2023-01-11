@@ -12,6 +12,7 @@ import { CasinoComponent } from './pages/dashboard/casino/casino.component';
 
 import {SignupComponent} from './auth/signup/signup.component';
 import { MarketDetailsComponent } from './pages/market-details/market-details.component';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { MarketDetailsComponent } from './pages/market-details/market-details.co
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+
+    ToolbarModule
   ]
 })
 export class ClientModule {

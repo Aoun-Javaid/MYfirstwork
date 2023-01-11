@@ -5,6 +5,7 @@
     text-align: center;
 }
 .nav-tabs-casino{
+    padding-top:10px ;
     overflow-x: auto;
     white-space: nowrap;
     overflow-y: hidden;
@@ -22,6 +23,36 @@
 .tab-pane{
     padding: 10px;
 }
+/* 
+.nav-tabs-casino{
+   background:var( --theme-color1) ;
+   
+} 
+.e-toolbar-items{
+    display: flex;
+    justify-content: center;
+    border-radius: 0;
+    background:var( --theme-color1) ;
+    color: var(--theme-color);
+}
+.e-toolbar-item{
+    min-width: 122px !important;
+    justify-content: center;
+    border-radius: 0;
+    border: 1px solid var(--theme-color);
+    background:var( --theme-color1) ;
+    color: var(--theme-color);
+}
+.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn.e-btn {
+    background:var( --theme-color1) ;
+    color: var(--theme-color);
+}
+.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn-text{
+    color: var(--theme-color);
+} */
+
+
+
 /* .casino-img{
     border-radius: 8px;
     width: 150px;

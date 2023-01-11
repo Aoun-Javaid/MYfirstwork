@@ -25,7 +25,7 @@ export class CasinoComponent implements OnInit {
     { name:"Baccarat",index:6},
     { name:"Dargon Tiger",index:7},
     { name:"Andar bahar",index:8},
-    { name:"Baccarat",index:9}
+    { name:"Baccarat",index:9}  
   ]
 
   isActive : boolean =true;
