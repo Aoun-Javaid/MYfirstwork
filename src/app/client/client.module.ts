@@ -14,6 +14,7 @@ import {SignupComponent} from './auth/signup/signup.component';
 import { MarketDetailsComponent } from './pages/market-details/market-details.component';
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RightNavComponent } from './partials/right-nav/right-nav.component';
 
 
 
@@ -31,7 +32,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     SignupComponent,
       MarketDetailsComponent,
       SidenavComponent,
-      ProfileComponent
+      ProfileComponent,
+      RightNavComponent
   ],
   imports: [
     CommonModule,

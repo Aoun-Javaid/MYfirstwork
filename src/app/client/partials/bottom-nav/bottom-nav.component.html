@@ -1,60 +1,60 @@
-
 <div class="bottom-tabs">
-    <ul>
-        <li class="truncate">
-            <a routerLink="/inplay" routerLinkActive="active-menu" >
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
-                  <path
-                      d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18v-12l10 6-10 6z">
-                  </path>
-              </svg>
-                In-play
-            </a>
-  
-        </li>
-        <li class="truncate">
-            <a routerLink="/rules" routerLinkActive="active-menu" >
-              <img src="assets\bottomIcon\percentage.png" alt="" srcset="">
-          
-                Promotion
-            </a>
-        </li>
+  <ul>
+    <li class="truncate">
+      <a routerLink="/inplay" routerLinkActive="active-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+          <path
+            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18v-12l10 6-10 6z">
+          </path>
+        </svg>
+        In-play
+      </a>
 
-        <li class="truncate">
-            <a href="#">
-            </a>
-  
-        </li>
-  
-        <li class="big" >
-            <a routerLink="/main" routerLinkActive="active-menu">
-                <i class="fa-solid fa-house fa-2x"></i>
-            </a>
-  
-           
-  
-        </li>
-  
-        <li class="truncate">
-            <a href="https://wa.me/9876543210" >
-              <img src="assets\bottomIcon\WhatsApp.png" alt="" srcset="">
-                Whatsapp
-            </a>
-  
-        </li>
-  
-        <li class="truncate" >
-            <a class="waves-effect waves-light right-bar-toggle waves-effect waves-light">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
-                  <path id="ic_person_24px"
-                      d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z"
-                      transform="translate(-4 -4)"></path>
-              </svg>
-                Account
-            </a>
-  
-        </li>
-     
-    </ul>
-  
-  </div>
+    </li>
+    <li class="truncate">
+      <a routerLink="/rules" routerLinkActive="active-menu">
+        <img src="assets\bottomIcon\percentage.png" alt="" srcset="">
+
+        Promotion
+      </a>
+    </li>
+
+    <li class="truncate">
+      <a href="#">
+      </a>
+
+    </li>
+
+    <li class="big">
+      <a routerLink="/main" routerLinkActive="active-menu">
+        <i class="fa-solid fa-house fa-2x"></i>
+      </a>
+
+
+    </li>
+
+    <li class="truncate">
+      <a href="https://wa.me/9876543210">
+        <img src="assets\bottomIcon\WhatsApp.png" alt="" srcset="">
+        Whatsapp
+      </a>
+
+    </li>
+
+    <li class="truncate">
+      <a class="waves-effect waves-light right-bar-toggle waves-effect waves-light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
+          <path id="ic_person_24px"
+                d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z"
+                transform="translate(-4 -4)" (click)="showRightNav()"></path>
+        </svg>
+        Account
+      </a>
+
+    </li>
+
+  </ul>
+
+</div>
+
+<app-right-nav *ngIf="isRightBarOpen"></app-right-nav>
