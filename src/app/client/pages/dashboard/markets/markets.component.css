@@ -3,11 +3,13 @@
   overflow-y: hidden;
   position: relative;
   -webkit-overflow-scrolling: touch;
-  background-color: var(--sport-section-bg);
+  background: var(--sport-section-bg);
   background-image: none;
   height: 50px
 }
-
+.full-color{
+  background: var(--sport-section-bg) !important;
+}
 .category-navigation-container {
   display: table;
   position: relative;
@@ -19,7 +21,7 @@
 
 .category-navigation .category-navigation-item {
   display: table-cell;
-  height: 59px;
+  /*height: 59px;*/
   min-width: 70px;
   width: 10%;
   position: relative;
@@ -182,7 +184,7 @@ a {
   position: relative;
   overflow: hidden;
   height: 36px;
-  top: -5px;
+  top: -6px;
   text-align: center;
 }
 .scroller>marquee {
@@ -220,6 +222,9 @@ a {
   .back, .blue-area {
     margin-right: .63%!important;
     margin-left: .63%!important;
+  }
+  .rates-area button:first-child{
+    margin-left: 0px !important;
   }
 }
 /*category navingation ending*/
