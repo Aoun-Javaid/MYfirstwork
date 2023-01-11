@@ -1,0 +1,45 @@
+.account-ui{
+    background-color: var(--theme-color);
+    padding: 12px;
+    border-radius: 5px;
+}
+.account-pro{
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+.option-row .form-control{
+
+    background-color: #a380b2;
+    color: #000;
+    font-weight: 600;
+    height: 40px;
+}
+@media (max-width: 767.98px){
+    .account-ui .btn-get, .account-ui input {
+        text-transform: uppercase;
+        height: 40px;
+        padding: 0;
+        font-size: 12px;
+    }
+}
+.waves-effect {
+    background: var(--theme-color);
+    border-radius: 8px;
+    font-size: 1vw;
+    font-weight: 700;
+    overflow: hidden;
+    color: #000;
+    padding: 10px;
+    width:200px;
+}
+.btn-download{
+    background: none;
+    font-size: 20px;
+    border: none;
+    transition: .9s;
+    color: var(--theme-color) !important;
+
+}
+

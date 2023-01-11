@@ -6,6 +6,8 @@ import {LoginComponent} from "./auth/login/login.component";
 import {SignupComponent} from "./auth/signup/signup.component";
 import {MarketDetailsComponent} from "./pages/market-details/market-details.component";
 import { ProfileComponent } from './pages/profile/profile.component';
+import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
+import { StatementComponent } from './pages/statement/statement.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,12 @@ const routes: Routes = [
       },
       {
         path: 'profile',component:ProfileComponent
+      },
+      {
+        path: 'edit-password',component:EditPasswordComponent
+      },
+      {
+        path: 'statement',component:StatementComponent
       }
     ]
   },

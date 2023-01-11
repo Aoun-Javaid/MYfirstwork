@@ -16,6 +16,8 @@ import { SidenavComponent } from './partials/sidenav/sidenav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RightNavComponent } from './partials/right-nav/right-nav.component';
 import {LoginComponent} from "./auth/login/login.component";
+import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
+import { StatementComponent } from './pages/statement/statement.component';
 
 
 
@@ -35,6 +37,9 @@ import {LoginComponent} from "./auth/login/login.component";
       SidenavComponent,
       ProfileComponent,
       RightNavComponent
+      ProfileComponent,
+      EditPasswordComponent,
+      StatementComponent
   ],
   imports: [
     CommonModule,
