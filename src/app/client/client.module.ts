@@ -19,6 +19,8 @@ import {LoginComponent} from "./auth/login/login.component";
 import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
 import { StatementComponent } from './pages/statement/statement.component';
 import { InplayComponent } from './pages/inplay/inplay.component';
+import { DetailsComponent } from './pages/details/details.component';
+import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
 
 
 
@@ -40,7 +42,9 @@ import { InplayComponent } from './pages/inplay/inplay.component';
       RightNavComponent,
       EditPasswordComponent,
       StatementComponent,
-      InplayComponent
+      InplayComponent,
+      DetailsComponent,
+      ProfitlossComponent
   ],
   imports: [
     CommonModule,
