@@ -72,13 +72,6 @@
     border: 2px solid var(--theme-color1);
     font-family: Gotham,sans-serif;
   }
-  .credit{
-    color: #19fc19;
-
-  }
-  .debit {
-    color: red;
-}
 .table-dark{
     --bs-table-bg: #292929 !important;
     --bs-table-striped-bg: #3d3d3d !important;
