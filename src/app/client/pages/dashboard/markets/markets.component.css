@@ -217,6 +217,10 @@ a {
     height: 36px;
 
   }
+  .back, .blue-area {
+    margin-right: .63%!important;
+    margin-left: .63%!important;
+  }
 }
 /*category navingation ending*/
 
