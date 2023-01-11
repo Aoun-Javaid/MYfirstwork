@@ -36,8 +36,7 @@ import { StatementComponent } from './pages/statement/statement.component';
       MarketDetailsComponent,
       SidenavComponent,
       ProfileComponent,
-      RightNavComponent
-      ProfileComponent,
+      RightNavComponent,
       EditPasswordComponent,
       StatementComponent
   ],
