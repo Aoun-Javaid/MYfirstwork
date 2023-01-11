@@ -1,0 +1,52 @@
+
+
+<div class="container-fluid">
+    <div class="row my-3  p-2">
+        <div class="col-md-12">
+            <div class="account-ui">
+                    <span class="m-0 account-pro">My Profile
+                        
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-0">
+      <div class="col-12 text-center ">
+        <!-- profile-data-row1 -->
+        <img class="pf-icon" src="assets/icons/Profile.svg" alt="">
+      </div>
+
+    <table class="table text-white">
+    
+      <tbody>
+        <tr>
+       
+          <td>name :  <span class="profile-right">
+            {{profileData.name}}
+          </span></td>
+          <td>username :  <span class="profile-right">
+            {{profileData?.username}}
+          </span></td>
+        </tr>
+        <tr>
+       
+          <td>joining date : <span class="profile-right">
+            {{profileData?.joining_date}}
+          </span></td>
+          <td>Available balance : <span class="profile-right">
+            {{profileData?.balance}}
+          </span></td>
+        </tr>
+        <tr>
+       
+          <td>Exposure : <span class="profile-right">
+            {{profileData?.expose}}
+          </span></td>
+          <td>Available in wallet : <span class="profile-right">
+            {{profileData?.mywallet}}
+          </span></td>
+        </tr>
+      
+      </tbody>
+    </table>
+</div>
