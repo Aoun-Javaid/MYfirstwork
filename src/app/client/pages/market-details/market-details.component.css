@@ -60,7 +60,7 @@
 }
 .market-title-row .clip1{
   background: var(--header-color);
-  width: 64%;
+  width: 58%;
 }
 .market-title{
   padding: 0;
@@ -227,6 +227,11 @@ p{
   }
   .mobile-hide{
     display: none;
+  }
+}
+@media only screen and (max-width: 320px){
+  .bl-buttons .bl-btn {
+    width: 60px !important;
   }
 }
 @media screen and (min-width: 768px) {

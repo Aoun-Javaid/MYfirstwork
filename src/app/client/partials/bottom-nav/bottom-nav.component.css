@@ -185,7 +185,8 @@
       .bottom-tabs ul li.big a {
         position: relative;
         color: #000;
-        top: -10px;
+        top: -13px;
+
       }
       .bottom-tabs ul li.big a svg {
         margin-bottom: 0;
