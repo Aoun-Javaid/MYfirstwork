@@ -1,21 +1,25 @@
 <app-sidenav *ngIf="isSideBarOpen" (clickOutside)="onClickedOutside($event)"></app-sidenav>
 
 
-<div class="myexch-desktop-header">
-  <i class="fa fa-bars menu-button2 mobile" (click)="sidenavOpen()" aria-hidden="true"></i>
-  <img routerLink="/client" alt="" class="myexch-logo" src="assets/logo/NewLogo1.png">
-  <div class="myexch-login-buttons">
-    <div class="myexch-serch-header desktop"><input type="text"
-                                                    placeholder="Search.." name="search"
-                                                    class="serch-input">
-      <button type="submit" class="serch-button"><i
+<div class="myexch-desktop-header d-flex justify-content-between">
+  <div class="d-flex align-items-center">
+    <i class="fa fa-bars menu-button2 showInmobile mx-2" (click)="sidenavOpen()" aria-hidden="true"></i>
+    <img routerLink="/client" alt="" class="myexch-logo img-fluid" src="assets/logo/NewLogo1.png">
+  </div>
+
+  <div class="myexch-login-buttons d-flex align-items-center">
+    <div class="myexch-serch-header hideInMobile d-flex align-items-center">
+      <input type="text"  placeholder="Search.."
+             name="search" class="serch-input">
+      <button type="submit" class="btn serch-button"><i
         class="fa fa-search"></i></button>
     </div>
     <button type="button" routerLink="/client/login" class="btn myexch-login" tabindex="0">log
       in
     </button>
-    <button type="button" routerLink="/client/signup" class="btn myexch-login2" tabindex="0">sign
+    <button type="button" routerLink="/client/signup" class="btn myexch-signup" tabindex="0">sign
       up
     </button>
   </div>
 </div>
+
