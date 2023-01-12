@@ -12,9 +12,7 @@ export class SignupComponent implements OnInit {
   SearchCountryField = SearchCountryField;
   CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
-  phoneForm = new FormGroup({
-    phone: new FormControl(undefined, [Validators.required])
-  });
+
 
 
   constructor() {
@@ -23,4 +21,13 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  signUpForm = new FormGroup({
+    phoneNumber: new FormControl(''),
+    password: new FormControl(''),
+    refral: new FormControl(''),
+  });
+
+  submitForm(){
+   console.log(this.signUpForm.value);
+  }
 }
