@@ -9,12 +9,12 @@ export class CasinoComponent implements OnInit {
 
 
   casinoCards =[
-    { imglink:"assets/casino/1.jpeg",alternate:""},
-    { imglink:"assets/casino/2.jpeg",alternate:""},
-    { imglink:"assets/casino/1.jpeg",alternate:""},
-    { imglink:"assets/casino/2.jpeg",alternate:""},
-    { imglink:"assets/casino/1.jpeg",alternate:""},
-    { imglink:"assets/casino/2.jpeg",alternate:""},
+    { imglink:"assets/casino/1.webp",alternate:""},
+    { imglink:"assets/casino/2.webp",alternate:""},
+    { imglink:"assets/casino/1.webp",alternate:""},
+    { imglink:"assets/casino/2.webp",alternate:""},
+    { imglink:"assets/casino/1.webp",alternate:""},
+    { imglink:"assets/casino/2.webp",alternate:""},
   ]
   listCasino=[
     { name:"Popular",index:1},
