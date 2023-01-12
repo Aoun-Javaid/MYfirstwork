@@ -19,4 +19,12 @@ export class AppService {
   getSlider(): Observable<any> {
     return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
   }
+
+  getAllEventsList(): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/allEventsList`, {})
+  }
+
+  // getCasinoInfo(): Observable<any> {
+  //   return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
+  // }
 }

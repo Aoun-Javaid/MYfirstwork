@@ -7,6 +7,7 @@ import {AppService} from "../../../../services/app.service";
   styleUrls: ['./markets.component.css']
 })
 export class MarketsComponent implements OnInit {
+  events: any;
 
   constructor(private appService: AppService) {
   }
@@ -41,7 +42,10 @@ export class MarketsComponent implements OnInit {
     this.appService.getSportsList().subscribe(data => {
       console.log(data)
       this.catTabs = data.data;
-
+    })
+    this.appService.getAllEventsList().subscribe(data => {
+      console.log("events:", data)
+      this.events = data.data;
     })
   }
 
