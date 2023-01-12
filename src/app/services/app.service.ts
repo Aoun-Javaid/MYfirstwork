@@ -13,6 +13,6 @@ export class AppService {
 
 
   getSportsList(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/exchange/sports/sportsList` )
+    return this.http.post(`${environment.apiUrl}/exchange/sports/sportsList`, {})
   }
 }

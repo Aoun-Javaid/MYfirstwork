@@ -5,9 +5,9 @@
       <li class="category-navigation-item" *ngFor="let cat of catTabs">
         <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" >
         <span class="category-navigation-item-icon">
-          <img class="catIcon" [src]="cat.cat_icon"></span>
+          <img class="catIcon" [src]="cat.iconUrl"></span>
           <span
-            class="category-navigation-item-label">{{cat.cat_name}}</span>
+            class="category-navigation-item-label">{{cat.sportName}}</span>
         </a>
       </li>
     </ul>
