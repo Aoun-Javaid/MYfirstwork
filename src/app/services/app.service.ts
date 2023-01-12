@@ -17,6 +17,6 @@ export class AppService {
   }
 
   getslider(): Observable<any> {
-    return this.http.post(`https://unityexch.com/v1/front/slider/getAllSlider` , )
+    return this.http.post(`https://unityexch.com/v1/front/slider/getAllSlider`,{})
   }
 }
