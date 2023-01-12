@@ -4,16 +4,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     NgxIntlTelInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

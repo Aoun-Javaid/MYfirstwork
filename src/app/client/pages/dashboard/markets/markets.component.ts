@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from "../../../../services/app.service";
 
 @Component({
   selector: 'app-markets',
@@ -7,39 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketsComponent implements OnInit {
 
-  constructor() { }
-  catTabs=[
-    {id:1,cat_name:'cricket',cat_icon:'assets/icons/casino.webp'},
-    {id:2,cat_name:'football',cat_icon:'assets/icons/football.webp'},
-    {id:3,cat_name:'tennis',cat_icon:'assets/icons/casino.webp'},
-    {id:4,cat_name:'casino',cat_icon:'assets/icons/casino.webp'},
-    {id:5,cat_name:'election',cat_icon:'assets/icons/casino.webp'},
-  ];
-  markets=[
+  constructor(private appService: AppService) {
+  }
+
+  catTabs: any[] = [];
+  markets = [
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
     {
-      m_name:'Brisbane Heat v Perth Scorchers',m_subtitle:"Twenty20 Big Bash"
+      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
     },
 
   ]
+
   ngOnInit(): void {
+    this.appService.getSportsList().subscribe(data => {
+      console.log(data)
+      this.catTabs = data.data;
+
+    })
   }
 
 }
