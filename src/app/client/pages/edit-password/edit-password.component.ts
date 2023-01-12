@@ -1,4 +1,5 @@
-import {Component, OnInit, Injector, ViewChild, ElementRef, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-password',
@@ -12,7 +13,11 @@ export class EditPasswordComponent implements OnInit {
   public npasswordType: string="password";
   public cpasswordType: string="password";
 
-  
+  myForm = new FormGroup({
+    oldpassword: new FormControl(),
+    cpassword: new FormControl(),
+    password: new FormControl()
+  });
   constructor() { }
 
   ngOnInit(): void {

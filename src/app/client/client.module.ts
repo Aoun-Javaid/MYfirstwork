@@ -29,6 +29,7 @@ import {BetHistoryComponent} from './pages/bet-history/bet-history.component';
 import {ResultComponent} from './pages/result/result.component';
 import {RequestStatusComponent} from './pages/request-status/request-status.component';
 import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -65,6 +66,8 @@ import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
     CommonModule,
     ClientRoutingModule,
     NgxIntlTelInputModule,
+    FormsModule ,
+    ReactiveFormsModule ,  
   ]
 })
 export class ClientModule {
