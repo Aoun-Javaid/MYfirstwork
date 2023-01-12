@@ -1,1 +1,54 @@
-<p>withdraw works!</p>
+<div class="box">
+    <form novalidate="" action="" class="ng-untouched ng-pristine ng-invalid">
+        <div class="payment-options">
+            <ul class="list-unstyled">
+                <li><a id="defaultOpen" class="tablinks text-center">
+                        <img src="https://api.fancyfair247.com/payment-gateway/imps.png"></a>
+                    <a id="defaultOpen" class="tablinks text-center"><img
+                            src="https://api.fancyfair247.com/payment-gateway/GPay.png"></a>
+                    <a id="defaultOpen" class="tablinks text-center"><img
+                            src="https://api.fancyfair247.com/payment-gateway/PayTM.png"></a>
+                    <a id="defaultOpen" class="tablinks text-center"><img
+                            src="https://api.fancyfair247.com/payment-gateway/phonepay.png"></a>
+                </li>
+            </ul>
+            <p class="text-success font-weight-bold text-capitalize text-center"> select the
+                option from Above</p>
+        </div>
+        <div id="firstTab" class="tabcontent">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Account name</label>
+                <input type="text" name="accName" formcontrolname="accName" id="formGroupExampleInput"
+                    placeholder="Account Holder Name" class="form-control ng-untouched ng-pristine ng-invalid">
+            </div>
+
+            <div class="form-group"><label for="formGroupExampleInput">Phone no/ UPI ID</label><input type="text"
+                    name="mobNo" formcontrolname="mobNo" id="formGroupExampleInput" placeholder="Phone no/ UPI ID"
+                    class="form-control ng-untouched ng-pristine ng-invalid"></div>
+            <p>Request Method</p>
+            <div class="form-check form-check-inline">
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" class="form-check-input mt-3"><label
+                    for="flexRadioDefault1" class="form-check-label"> Normal </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked=""
+                    class="form-check-input mt-3"><label for="flexRadioDefault2" class="form-check-label"> Fast
+                </label>
+            </div>
+            <div class="form-group">
+                <label ßfor="formGroupExampleInput">Amount</label>
+                <input type="number" name="amount" formcontrolname="amount" id="formGroupExampleInput"
+                    placeholder="Amount" class="form-control ng-untouched ng-pristine ng-invalid">
+            </div>
+            <div class="check2">
+                <button type="submit" class="btn btn-primary mt-3"> Withdraw</button>
+            </div>
+            <div class="mt-2">
+                <p class="font-weight-bold text-uppercase"> min:100 max:100000 </p>
+                <p class="text-capitalize "> After 20 min check your request status. <a routerlink="/RequestStatus"
+                        href="/RequestStatus"> click</a></p>
+            </div>
+        </div>
+    </form>
+</div>
