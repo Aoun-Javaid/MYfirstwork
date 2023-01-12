@@ -1,0 +1,113 @@
+.account-ui{
+    background-color: var(--theme-color);
+    padding: 12px;
+    border-radius: 5px;
+}
+.account-pro{
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+.option-row .form-control{
+
+    background-color: #a380b2;
+    color: #000;
+    font-weight: 600;
+    height: 40px;
+}
+@media (max-width: 767.98px){
+    .account-ui .btn-get, .account-ui input {
+        text-transform: uppercase;
+        height: 40px;
+        padding: 0;
+        font-size: 12px;
+    }
+}
+.waves-effect {
+    background: var(--theme-color);
+    border-radius: 8px;
+    font-size: 1vw;
+    font-weight: 700;
+    overflow: hidden;
+    color: #000;
+    padding: 10px;
+    width:200px;
+}
+.btn-download{
+    background: none;
+    font-size: 20px;
+    border: none;
+    transition: .9s;
+    color: var(--theme-color) !important;
+
+}
+
+@media screen and (min-width: 750px) and (max-width:1288px) {
+    .waves-effect {
+        
+        padding: 10px;
+        width:100px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .waves-effect {
+        margin-top: 5px;
+        padding: 10px;
+        width:100%;
+        font-size: 14px;
+    }
+    .dropdownfilter{
+margin-top: 3px;
+    }
+}
+
+.table-responsive{
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+}
+
+
+  .tableData{
+    font-size: 13px;
+    border: 2px solid var(--theme-color1);
+    font-family: Gotham,sans-serif;
+  }
+  .credit{
+    color: #19fc19;
+
+  }
+  .debit {
+    color: red;
+}
+.table-dark{
+    --bs-table-bg: #292929 !important;
+    --bs-table-striped-bg: #3d3d3d !important;
+    
+}
+@media screen and (max-width: 750px)  {
+    .table-dark {
+       width: 750px;
+    }
+}
+
+
+.modal-header{
+    background: var(--header-color);
+    padding: .25rem .4rem;
+  }
+  .close-btn{
+    background: transparent;
+    border: 0px;
+    color: white;
+  }
+  .modal-body{
+    background: var(--header-color);
+    padding: .6rem;
+  }
+  .info-modal-body p{
+    font-size: 12px;
+    margin-bottom: .7rem;
+  }

@@ -1,0 +1,111 @@
+<div class="container-fluid ">
+    <div class="row mt-3">
+        <div class="col-lg-12">
+            <div class="account-ui">
+                <span class="account-pro"> Request
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="filter">
+        <div class="row justify-content-between option-row p-4">
+            <div class="col-md-12">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-2 col-12 mb-sm-1">
+                        <input type="date" placeholder="From" class="form-control ng-valid ng-dirty ng-touched">
+                    </div>
+                    <div class="col-md-2 col-12 mb-sm-1">
+                        <input type="date" placeholder="To" class="form-control ng-untouched ng-pristine ng-valid">
+                    </div>
+                    <div class="col-md-2 col-12 mb-sm-1">
+                        <button class="btn-get waves-effect waves-light">Submit</button>
+                    </div>
+
+                    <!--DropDown Filter-->
+
+                    <div class="col-md-2 col-9 mb-sm-1  dropdownfilter">
+                        <div class="input-group">
+                            <select class="form-control">
+                                <option value="" disabled="" selected="" hidden=""> Select</option>
+                                <option value="today">today</option>
+                                <option value="yesterday">yesterday</option>
+                                <option value="7_day">last 7 days</option>
+                                <option value="30_day">last 30 days</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-bordered tableData">
+            <thead>
+                <tr>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Request Type</th>
+                    <th class="text-center">Request Method</th>
+                    <th class="text-center">Utr No</th>
+                    <th class="text-center">Amount </th>
+                    <th class="text-center">Status </th>
+                    <th class="text-center">Remark </th>
+                    <th class="text-center">Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr _ngcontent-pdb-c108="">
+                    <td class="text-center liner">2022-12-07 12:23:26</td>
+                    <td class="text-center liner">"GPAY" -&gt; Deposit</td>
+                    <td class="text-center">deposit</td>
+                    <td class="text-center"></td>
+                    <td class="text-center">undefined</td>
+                    <td class="text-center">2000</td>
+                    <td class="text-center">Accepted</td>
+                    <td class="text-center">test</td>
+                    <td class="text-center">
+                        <i type="button" data-bs-toggle="modal" data-bs-target="#infoModal"
+                            class="fa-regular fa-eye"></i>
+                            <!-- <i class="fa-regular fa-eye"></i> -->
+                    </td>
+                </tr>
+            </tbody>
+            <!-- <tbody>
+                        <tr>
+                            <td colspan="8">Data not available</td>
+                        </tr>
+                    </tbody> -->
+        </table>
+    </div>
+</div>
+
+<!-- Info Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Info</h5>
+          <button type="button" data-bs-dismiss="modal" aria-label="Close" class="close-btn"> <i class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <div class="modal-body ">
+          <div class="info-modal-body">
+            <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
+            <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
+            <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
+            <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
+            <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
+            <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
+            <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
+            <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
+            <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
+            <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
+            <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
+            <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
