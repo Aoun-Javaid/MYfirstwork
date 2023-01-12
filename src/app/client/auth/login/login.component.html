@@ -3,36 +3,41 @@
     <div class="col-12 login-pages-content">
       <div class="login-page-content-header">
         <h3>login</h3>
-        <a routerLink="/client/" >
+        <a routerLink="/client/">
           <i class="fa-regular fa-circle-xmark" ></i>
         </a>
-
-
       </div>
       <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
         <label for="username" class="login-page-label">username</label>
         <div class="input-group mb-3">
-          <input tabindex="-1" type="text" name="username" formcontrolname="username" placeholder="Username" required="" class="form-control ng-untouched ng-pristine ng-invalid">
+          <input tabindex="-1" type="text" name="username" formcontrolname="username" placeholder="Username" required=""
+                 class="form-control ng-untouched ng-pristine ng-invalid">
           <a class="login-eye d-flex align-items-center">
             <i class="fa-solid fa-user"></i>
           </a>
         </div>
-        <!---->
+
         <label for="password" class="login-page-label">password</label>
         <div class="input-group mb-3">
-          <input tabindex="-1" formcontrolname="password" name="password" required="" placeholder="Password" class="form-control ng-untouched ng-pristine ng-invalid" type="password">
+          <input tabindex="-1" formcontrolname="password" name="password" required="" placeholder="Password"
+                 class="form-control ng-untouched ng-pristine ng-invalid" type="password">
           <a class="login-eye d-flex align-items-center">
             <i class="fa-solid fa-eye-slash"></i>
           </a>
         </div>
-        <!---->
-        <!---->
+
+
         <div class="input-group justify-content-end">
           <a type="button" class="forgo"> Forgot Password ?</a>
         </div>
         <div class="text-center my-3">
           <button type="submit" class="login-btn1 btn submit-button btn-disable">
-            <!---->Login
+            Login
+          </button>
+        </div>
+        <div class="text-center my-3">
+          <button type="submit" class="login-btn1 btn submit-button-id btn-disable">
+            Login With Demo ID
           </button>
         </div>
       </form>
