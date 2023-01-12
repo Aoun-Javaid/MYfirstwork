@@ -52,4 +52,8 @@ export class MarketsComponent implements OnInit {
     })
   }
 
+  categoryType(categoryObj:any){
+      console.log(categoryObj); 
+  }
+
 }

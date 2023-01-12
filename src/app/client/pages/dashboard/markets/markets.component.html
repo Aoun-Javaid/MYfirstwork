@@ -3,7 +3,7 @@
   <div class="full-color">
     <ul class="category-navigation-container" >
       <li class="category-navigation-item" *ngFor="let cat of catTabs">
-        <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" >
+        <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" (click)="categoryType(cat)">
         <span class="category-navigation-item-icon">
           <img class="catIcon" [src]="cat.iconUrl"></span>
           <span
@@ -56,7 +56,7 @@
       <button class="blue-area">0</button>
       <button class="red-area">0</button>
       <button class="live-area scroller">
-        <marquee direction="down">
+        <marquee direction="down" scrollamount="3">
           <b class="live2">live</b>
           <b class="time1"> 11:00 PM</b>
         </marquee>
