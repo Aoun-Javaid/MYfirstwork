@@ -13,7 +13,7 @@ export class EditPasswordComponent implements OnInit {
   public npasswordType: string="password";
   public cpasswordType: string="password";
 
-  myForm = new FormGroup({
+  editForm = new FormGroup({
     oldpassword: new FormControl(),
     cpassword: new FormControl(),
     password: new FormControl()
@@ -22,6 +22,8 @@ export class EditPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+  submitForm(){
+    console.log(this.editForm.value);
+  }
 
 }
