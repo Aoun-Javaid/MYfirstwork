@@ -9,8 +9,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
 import { StatementComponent } from './pages/statement/statement.component';
 import {InplayComponent} from "./pages/inplay/inplay.component";
-import { DetailsComponent } from './pages/details/details.component';
+import { DetailsComponent } from './pages/statement-details/details.component';
 import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
+import {SettingsComponent} from "./pages/settings/settings.component";
+import {WithdrawComponent} from "./pages/withdraw/withdraw.component";
+import {DepositComponent} from "./pages/deposit/deposit.component";
 import { BetHistoryComponent } from './pages/bet-history/bet-history.component';
 import { ResultComponent } from './pages/result/result.component';
 import { RequestStatusComponent } from './pages/request-status/request-status.component';
@@ -24,7 +27,7 @@ const routes: Routes = [
         path: 'signup', component: SignupComponent
       },
       {
-        path: 'market-details',component:MarketDetailsComponent
+        path: 'market-statement-details',component:MarketDetailsComponent
       },
       {
         path: 'profile',component:ProfileComponent
@@ -43,6 +46,15 @@ const routes: Routes = [
       },
       {
         path: 'profitloss',component:ProfitlossComponent
+      },
+      {
+        path: 'settings',component:SettingsComponent
+      },
+      {
+        path: 'withdraw',component:WithdrawComponent
+      },
+      {
+        path: 'deposit',component:DepositComponent
       },
       {
         path: 'bet-history',component:BetHistoryComponent

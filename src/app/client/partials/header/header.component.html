@@ -7,7 +7,7 @@
     <img routerLink="/client" alt="" class="myexch-logo img-fluid" src="assets/logo/NewLogo1.png">
   </div>
 
-  <div class="myexch-login-buttons d-flex align-items-center">
+  <div class="myexch-login-buttons d-flex align-items-center" *ngIf="!isLogin">
     <div class="myexch-serch-header hideInMobile d-flex align-items-center">
       <input type="text"  placeholder="Search.."
              name="search" class="serch-input">
@@ -20,6 +20,23 @@
     <button type="button" routerLink="/client/signup" class="btn myexch-signup" tabindex="0">sign
       up
     </button>
+  </div>
+  <div class="myexch-login-buttons d-flex align-items-center" *ngIf="isLogin">
+    <div class="d-flex flex-column " >
+      <button type="button" routerLink="/client/deposit" class="btn myexch-login deposit-btn" tabindex="0">Deposit
+      </button>
+      <a class="myexch-bal-button">
+        BAL : 1138
+      </a>
+    </div>
+<div class="d-flex flex-column ">
+  <button type="button" routerLink="/client/withdraw" class="btn myexch-signup withdraw-btn" tabindex="0">withdraw
+  </button>
+  <a class="myexch-bal-button">
+    EXP : 1138
+  </a>
+</div>
+
   </div>
 </div>
 

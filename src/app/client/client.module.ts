@@ -19,8 +19,12 @@ import {LoginComponent} from "./auth/login/login.component";
 import { EditPasswordComponent } from './pages/edit-password/edit-password.component';
 import { StatementComponent } from './pages/statement/statement.component';
 import { InplayComponent } from './pages/inplay/inplay.component';
-import { DetailsComponent } from './pages/details/details.component';
+import { DetailsComponent } from './pages/statement-details/details.component';
 import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
+import { BetslipComponent } from './partials/betslip/betslip.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { DepositComponent } from './pages/deposit/deposit.component';
+import { WithdrawComponent } from './pages/withdraw/withdraw.component';
 import { BetHistoryComponent } from './pages/bet-history/bet-history.component';
 import { ResultComponent } from './pages/result/result.component';
 import { RequestStatusComponent } from './pages/request-status/request-status.component';
@@ -48,6 +52,10 @@ import { RequestStatusComponent } from './pages/request-status/request-status.co
       InplayComponent,
       DetailsComponent,
       ProfitlossComponent,
+      BetslipComponent,
+      SettingsComponent,
+      DepositComponent,
+      WithdrawComponent,
       BetHistoryComponent,
       ResultComponent,
       RequestStatusComponent

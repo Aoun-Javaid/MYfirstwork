@@ -38,52 +38,119 @@ aside {
   margin: auto;
   width: 50px;
 }
+@hueRotate: 10deg;
+
+.play1{
+  padding: 0px ;
+}
 .loading {
-  background: linear-gradient(90deg,#18da22,#037903);
+  background:  linear-gradient(90deg,#18da22,#037903);
+
   font-size: 10px;
   padding: 3px;
   background-size: 130%;
   -webkit-filter: hue-rotate("@hueRotate");
   height: 30px;
   line-height: 26px;
-  color: #fff;
+  color: white;
   font-weight: 800;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   text-align: center;
-  box-shadow: inset 0 3px 6px rgba(0,0,0,.4);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4) inset;
   position: relative;
-  text-shadow: 0 2px 2px rgba(0,0,0,.5);
+  text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+
+
+
 }
-.border, .text {
-  z-index: 0;
-  border-radius: 5px;
-  position: absolute;
-  left: 4px;
-  top: 4px;
-  bottom: 4px;
-  right: 4px;
-  display: block;
-}
-.text {
-  top: 2px;
-  animation: blink-animation 1s steps(5, start) infinite;
+
+.text,
+.border  {
+  z-index: 0; border-radius: 5px;
+  display: block; position: absolute;
+  left: 4px; top: 4px; bottom: 4px; right: 4px; display: block; }
+
+.text { top: 2px;
+  animation: blink-animation 2s steps(5, start) infinite;
   -webkit-animation: blink-animation 2s steps(5, start) infinite;
 }
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
+.border {
+
+  border: 2px solid rgba(255,255,255,1);
+
+
+  animation: maskBorder 1s infinite;
+
 }
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
+
+@keyframes maskBorder {
+
+  0% { clip: rect(0,50px,10px,0); }
+  20% { clip: rect(0,200px,10px,0); }
+  35% { clip: rect(0,200px,10px,190px); }
+  50% { clip: rect(10px,200px, 50px, 190px); }
+  60% { clip: rect(40px,200px, 50px, 190px); }
+  70% { clip: rect(40px,200px, 50px, 0px); }
+  85% { clip: rect(40px,10px, 50px, 0px); }
+  90% { clip: rect(0,10px, 50px, 0px); }
+  100% { clip: rect(0,10px, 10px, 0px); }
+}
+.fancy, .name {
+  font-weight: 700;
+  color: var(--text-color-white);
+}
+p{
+  margin-bottom: 0px;
+}
+.blue-area1, .red-area1 , red-area {
+  border: none;
+  font-size: 16px;
+  color: #000;
+  padding: 6px 1px;
+  width: 18%;
+  font-weight: 700;
+
+  border-radius: 4px;
+}
+.red-area{
+  background: var(--lay-color);
+  border: none;
+  color: #000;
+  width: 15%;
+  padding: 6px 1px;
+  font-weight: 700;
+  border-radius: 0;
+}
+.blue-area {
+  background: var(--back-color);
+  border: none;
+  color: #000;
+  padding: 6px 1px;
+  width: 15%;
+  font-weight: 700;
+  border-radius: 0;
+}
+.blue-area1 {
+  background: var(--back-color);
+}
+.red-area, .red-area1 {
+  background: var(--lay-color);
 }
 @media only screen and (max-width: 767px){
   .clip{
     font-size: 14px;
     font-weight: 600;
     line-height: 2;
+  }
+  .team-name p {
+    font-size: 13px;
+  }
+  .blue-area, .red-area {
+    width: 16%;
+    height: 36px;
+  }
+  .tabs div{
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 767px){
