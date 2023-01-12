@@ -887,6 +887,13 @@ div, h3, input, p, span {
   color: #fff200;
 }
 
+.login-page-content-header a {
+  position: absolute;
+  right: 15px;
+  color: #fff200;
+  font-size: 25px;
+}
+
 @media (max-width: 767.98px) {
   .login-pages-content {
     padding: 10% 5%;
@@ -1040,6 +1047,6 @@ a, a:hover {
   margin-bottom: 20px;
 }
 
-::ng-deep ngx-intl-tel-input{
+::ng-deep ngx-intl-tel-input {
   height: 40px !important;
 }
