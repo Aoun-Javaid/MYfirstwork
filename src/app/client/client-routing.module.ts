@@ -27,7 +27,7 @@ const routes: Routes = [
         path: 'signup', component: SignupComponent
       },
       {
-        path: 'market-statement-details',component:MarketDetailsComponent
+        path: 'market-details',component:MarketDetailsComponent
       },
       {
         path: 'profile',component:ProfileComponent
