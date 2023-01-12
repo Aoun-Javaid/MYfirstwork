@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from "../../../services/app.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  slidersImages: any;
 
-  constructor() { }
+  constructor(private appService: AppService) {
+  }
 
   ngOnInit(): void {
+    this.appService.getSlider().subscribe(data => {
+      console.log(data.slider)
+      this.slidersImages = data;
+    })
   }
 
 }

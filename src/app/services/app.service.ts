@@ -16,7 +16,7 @@ export class AppService {
     return this.http.post(`${environment.apiUrl}/exchange/sports/sportsList`, {})
   }
 
-  getslider(): Observable<any> {
-    return this.http.post(`https://unityexch.com/v1/front/slider/getAllSlider`,{})
+  getSlider(): Observable<any> {
+    return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
   }
 }
