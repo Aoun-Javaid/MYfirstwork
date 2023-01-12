@@ -1,0 +1,66 @@
+.pg-header{
+  background: var(--deposit-card-bg);
+  width: 100%;
+  border-radius: 10px;
+  padding: 1vw;
+  border: 0;
+  margin-bottom: 5px;
+}
+.pg-header img{
+  width: 40vw;
+}
+.pg-container{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.accordion-item{
+  background: var(--header-color);
+}
+.accordion-body{
+  background: var(--deposit-card-bg);
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 0.25rem;
+  margin-bottom: 5px;
+}
+.bank-detail label{
+  color: var(--event-title-bg);;
+  font-weight: 600;
+}
+.detail-data, .detail-name {
+  text-align: left;
+  color: var(--event-title-bg);
+}
+.detail-name{
+  font-weight: 700;
+}
+.image-upload-extion {
+  background-color: #0e0c0c;
+  border-radius: 10px;
+  width: 50vw;
+  padding: 8% 0;
+}
+.image-upload-extion   p {
+  margin: 10px 0;
+  font-size: 10px;
+}
+.deposit-submit {
+  background: var(--header-color);
+  color: var(--text-color-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  padding: .55rem 1.75rem;
+}
+@media screen and (max-width: 767px) {
+  .image-upload-extion {
+    background-color: var(--event-title-bg);
+    border-radius: 10px;
+    width: 70vw;
+    padding: 15% 0;
+  }
+  .detail-data, .detail-name {
+    font-size: 12px ;
+  }
+}
