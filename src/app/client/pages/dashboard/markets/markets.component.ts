@@ -7,7 +7,9 @@ import {AppService} from "../../../../services/app.service";
   styleUrls: ['./markets.component.css']
 })
 export class MarketsComponent implements OnInit {
-  events: any;
+  events: any[] = [];
+  selectedSportId: any;
+  filterdEvents: any;
 
   constructor(private appService: AppService) {
   }
@@ -52,8 +54,13 @@ export class MarketsComponent implements OnInit {
     })
   }
 
-  categoryType(categoryObj:any){
-      console.log(categoryObj); 
+  categoryType(categoryObj: any) {
+    // console.log(categoryObj.sportId)
+    // this.selectedSportId = categoryObj.sportId;
+    // this.filterdEvents = this.events.filter(data => {
+    //   return data.sportId == this.selectedSportId
+    // })
+    // console.log(this.filterdEvents, "filtered data");
   }
 
 }
