@@ -23,6 +23,8 @@ import { DetailsComponent } from './pages/statement-details/details.component';
 import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
 import { BetslipComponent } from './partials/betslip/betslip.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { DepositComponent } from './pages/deposit/deposit.component';
+import { WithdrawComponent } from './pages/withdraw/withdraw.component';
 
 
 
@@ -48,7 +50,9 @@ import { SettingsComponent } from './pages/settings/settings.component';
       DetailsComponent,
       ProfitlossComponent,
       BetslipComponent,
-      SettingsComponent
+      SettingsComponent,
+      DepositComponent,
+      WithdrawComponent
   ],
   imports: [
     CommonModule,

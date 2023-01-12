@@ -12,6 +12,8 @@ import {InplayComponent} from "./pages/inplay/inplay.component";
 import { DetailsComponent } from './pages/statement-details/details.component';
 import { ProfitlossComponent } from './pages/profitloss/profitloss.component';
 import {SettingsComponent} from "./pages/settings/settings.component";
+import {WithdrawComponent} from "./pages/withdraw/withdraw.component";
+import {DepositComponent} from "./pages/deposit/deposit.component";
 
 const routes: Routes = [
   {
@@ -44,6 +46,12 @@ const routes: Routes = [
       },
       {
         path: 'settings',component:SettingsComponent
+      },
+      {
+        path: 'withdraw',component:WithdrawComponent
+      },
+      {
+        path: 'deposit',component:DepositComponent
       }
     ]
   },
