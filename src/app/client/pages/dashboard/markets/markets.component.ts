@@ -46,6 +46,9 @@ export class MarketsComponent implements OnInit {
     this.appService.getAllEventsList().subscribe(data => {
       console.log("events:", data)
       this.events = data.data;
+      // this.events.filter(data=>{
+      //
+      // })
     })
   }
 
