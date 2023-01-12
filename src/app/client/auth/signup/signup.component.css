@@ -12,18 +12,22 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.loginlink{
+
+.loginlink {
   color: var(--theme-color) !important;
 }
+
 a {
   color: #6658dd;
   text-decoration: none;
   background-color: transparent;
 }
-.login-eye i{
+
+.login-eye i {
   color: var(--text-dark);
   font-size: 20px;
 }
+
 a:hover {
   color: var(--text-color-white);
   text-decoration: none;
@@ -1030,4 +1034,12 @@ a, a:hover {
 
 .login-pages-header {
   background: var(--unselected-tabbg);
+}
+
+.wrapper {
+  margin-bottom: 20px;
+}
+
+::ng-deep ngx-intl-tel-input{
+  height: 40px !important;
 }

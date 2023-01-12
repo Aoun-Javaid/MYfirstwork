@@ -8,7 +8,27 @@
         </a>
       </div>
       <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
+
         <label for="password" class="login-page-label">Enetr mobile number</label>
+          <ngx-intl-tel-input
+            [cssClass]="'custom'"
+            [enableAutoCountrySelect]="true"
+            [enablePlaceholder]="true"
+            [searchCountryFlag]="true"
+            [searchCountryField]="[
+          SearchCountryField.Iso2,
+          SearchCountryField.Name
+        ]"
+            [selectFirstCountry]="true"
+            [selectedCountryISO]="CountryISO.India"
+            [maxLength]="15"
+            [phoneValidation]="true"
+            [separateDialCode]="separateDialCode"
+            [numberFormat]="PhoneNumberFormat.International"
+
+          >
+          </ngx-intl-tel-input>
+        <label for="password" class="login-page-label">Enetr Password</label>
         <div class="input-group mb-3">
           <input formcontrolname="password" id="password" name="password"
                  required="" placeholder="Enter Password" class="form-control" type="password"
