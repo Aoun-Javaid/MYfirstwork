@@ -32,6 +32,12 @@ export class AppService {
   getUserProfile(): Observable<any> {
     return this.http.post(CONFIG.getUserProfile,{});
   }
+  userLogin(userName:any,password:any,ip_info:any): Observable<any> {
+    return this.http.post(CONFIG.userLogin, {userName,password,ip_info})
+  }
+  getIpLocation(): Observable<any> {
+    return this.http.post(CONFIG.getIpLocation,{})
+  }
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

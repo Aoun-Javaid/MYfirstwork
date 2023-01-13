@@ -21,6 +21,6 @@ export const CONFIG = {
   getCasinoInformation: BASE_URL_API+'/api/exchange/casino/casinoInformation',
   getDaysWiseEvents:BASE_URL_API+'/api/exchange/events/getDaysWiseEvents',
   getUserProfile:BASE_URL_V1+'v1/exchange/users/profile/getUserProfile',
-  
-
+  userLogin:BASE_URL_V1+'/v1/users/userLogin',
+  getIpLocation:'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',
 };

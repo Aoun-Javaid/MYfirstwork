@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { AppService } from 'src/app/services/app.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,13 +9,13 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 export class LoginComponent implements OnInit {
 
 
-  constructor( private formBuilder: FormBuilder) { 
-    
+  constructor(private appService: AppService) {
+
   }
   ngOnInit(): void {
   }
 
-  form = new FormGroup({
+  UserForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl('')
   });
@@ -28,7 +29,15 @@ export class LoginComponent implements OnInit {
   //     systemId: ['', [Validators.required]],
   //     recaptcha: ['']
   //   });
-  submitLogin(){
-    console.log(this.form.value)
+
+  // ip-config=[{"ip":"54.179.80.60","hostname":"AS16509 Amazon.com, Inc.","city":"Singapore","region":"Central Singapore","country":"Singapore","loc":1.28009,"postal":"048582","org":"AS16509 Amazon.com, Inc."}]
+  submitLogin() {
+    console.log(this.UserForm.value);;
+    this.appService.getIpLocation().subscribe((loc:any) => {
+      console.log(loc);
+      this.appService.userLogin(this.UserForm.controls['username'].value, this.UserForm.controls['password'].value, JSON.stringify(loc)).subscribe((res: any) => {
+
+      });
+    });
   }
 }
