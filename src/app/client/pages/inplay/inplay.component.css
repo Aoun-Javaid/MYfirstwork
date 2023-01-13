@@ -1,27 +1,32 @@
-.tabs{
+
+.tabs2{
   width: 99%;
   margin-left: auto;
   margin-right: auto;
   background: var(--theme-color);
   margin-top: 15px
 }
-.tabs div{
+.tabs2 li{
   width: 33%;
   text-align: center;
   text-transform: uppercase;
   position: relative;
   text-transform: uppercase;
-  padding: 5px;
+  /* padding: 5px; */
   font-size: 16px;
   cursor: pointer;
   color: #000!important;
   border-radius: 0!important;
   font-weight: 600;
 }
-.tabs div.active{
+.tabs2 li a{
+  color: var(--event-title-bg) !important;
+}
+.tabs2 li a.active{
   color: var(--text-color-white) !important;
   background: var(--header-color) !important;
 }
+
 .marketName{
   background: var(--header-color);
 }
@@ -149,12 +154,13 @@ p{
     width: 16%;
     height: 36px;
   }
-  .tabs div{
+  .tabs2 li a{
     font-size: 13px;
   }
 }
 @media only screen and (max-width: 767px){
-  .tabs div{
+ 
+  .tabs2 li a{
     font-size: 13px;
   }
 }
