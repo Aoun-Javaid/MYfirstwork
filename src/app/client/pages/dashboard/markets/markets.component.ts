@@ -11,12 +11,11 @@ export class MarketsComponent implements OnInit {
   selectedSportId: any;
   filteredEvents: any;
   eventsArr: any[] = [];
+  catTabs: any[] = [];
+  markets: any
 
   constructor(private appService: AppService) {
   }
-
-  catTabs: any[] = [];
-  markets: any
 
 
   ngOnInit(): void {
@@ -38,12 +37,11 @@ export class MarketsComponent implements OnInit {
   }
 
   categoryType(categoryObj: any) {
-    console.log(categoryObj.sportId)
     this.selectedSportId = categoryObj.sportId;
     this.filteredEvents = this.eventsArr.filter((x: any) => x[1][0]?.sportId == this.selectedSportId)
     this.markets = this.filteredEvents[0][1]
     // assigning filtered events
-    console.log(this.filteredEvents, "filtered data");
+    console.log(this.markets, "filtered data");
   }
 
 
