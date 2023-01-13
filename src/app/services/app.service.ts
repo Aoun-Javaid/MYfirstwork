@@ -26,6 +26,9 @@ export class AppService {
   getCasinoInformation(): Observable<any> {
     return this.http.post(CONFIG.getCasinoInformation,{});
   }
+  getDaysWiseEvents(): Observable<any> {
+    return this.http.post(CONFIG.getDaysWiseEvents,{});
+  }
   // getCasinoInfo(): Observable<any> {
   //   return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
   // }

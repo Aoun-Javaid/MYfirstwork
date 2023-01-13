@@ -7,44 +7,35 @@ import {AppService} from "../../../../services/app.service";
   styleUrls: ['./casino.component.css']
 })
 export class CasinoComponent implements OnInit {
-
-
-  // casinoCards =[
-  //   { imglink:"assets/casino/1.webp",alternate:""},
-  //   { imglink:"assets/casino/2.webp",alternate:""},
-  //   { imglink:"assets/casino/1.webp",alternate:""},
-  //   { imglink:"assets/casino/2.webp",alternate:""},
-  //   { imglink:"assets/casino/1.webp",alternate:""},
-  //   { imglink:"assets/casino/2.webp",alternate:""},
-  // ]
-  // listCasino=[
-  //   { name:"Popular",index:1},
-  //   { name:"Teen patti",index:2},
-  //   { name:"lucky7",index:3},
-  //   { name:"Dargon Tiger",index:4},
-  //   { name:"Andar bahar",index:5},
-  //   { name:"Baccarat",index:6},
-  //   { name:"Dargon Tiger",index:7},
-  //   { name:"Andar bahar",index:8},
-  //   { name:"Baccarat",index:9}
-  // ]
   casinoCards:any=[];
-listCasino:any =[];
+  listCasino:any =[];
   isActive : boolean =true;
-  step:number=1;
-  cliclTab(stepValue:number){
-    this.step = stepValue;
-    // localStorage.setItem('step', JSON.stringify(this.step));
-  }
+  step:any;
+  casinoEventsBackup:any;
   constructor(private appService:AppService) { }
 
   ngOnInit(): void {
     this.getCasinoInfo();
   }
+
   getCasinoInfo(){
+    this.step="ALL";
     this.appService.getCasinoInformation().subscribe((res:any) =>{
       this.listCasino=res?.data?.casinoTab;
       this.casinoCards=res?.data?.casinoEvents;
+      this.casinoEventsBackup=this.casinoCards;
     });
+  }
+  cliclTab(stepValue:any){
+    this.step = stepValue;
+    this.casinoCards=this.casinoEventsBackup.filter((data:any) =>{
+        if(data.tab==this.step){
+          return data;
+        }
+        else{
+          return null;
+        }
+    });
+    // localStorage.setItem('step', JSON.stringify(this.step));
   }
 }
