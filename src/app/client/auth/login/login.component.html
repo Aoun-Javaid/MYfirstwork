@@ -7,7 +7,7 @@
           <i class="fa-regular fa-circle-xmark" ></i>
         </a>
       </div>
-      <form novalidate="" class="ng-untouched ng-pristine ng-invalid" [formGroup]="form" (ngSubmit)="submitLogin()">
+      <form novalidate="" class="ng-untouched ng-pristine ng-invalid" [formGroup]="UserForm" (ngSubmit)="submitLogin()">
         <label for="username" class="login-page-label">username</label>
         <div class="input-group mb-3">
           <input tabindex="-1" type="text" name="username" formControlName="username" placeholder="Username" required="" class="form-control ng-untouched ng-pristine ng-invalid">
@@ -18,9 +18,11 @@
 
         <label for="password" class="login-page-label">password</label>
         <div class="input-group mb-3">
-          <input tabindex="-1" formControlName="password" name="password" required="" placeholder="Password" class="form-control ng-untouched ng-pristine ng-invalid" type="password">
+          <input tabindex="-1" formControlName="password" name="password" required="" placeholder="Password" class="form-control ng-untouched ng-pristine ng-invalid" type={{npasswordType}}>
           <a class="login-eye d-flex align-items-center">
-            <i class="fa-solid fa-eye-slash"></i>
+            <i (click)="npasswordType = npasswordType === 'text' ? 'password' : 'text';"
+               class="fa-regular fa-eye-slash "
+               [ngClass]="{'fa-eye': npasswordType === 'text', 'fa-eye-slash': npasswordType !== 'text'}"></i>
           </a>
         </div>
 
@@ -33,12 +35,12 @@
             Login
           </button>
         </div>
-        <div class="text-center my-3">
-          <button type="submit" class="login-btn1 btn submit-button-id btn-disable">
-            Login With Demo ID
-          </button>
-        </div>
       </form>
+      <div class="text-center my-3">
+        <button (click)="demoLogin()" class="login-btn1 btn submit-button-id btn-disable">
+          Login With Demo ID
+        </button>
+      </div>
     </div>
   </div>
 </div>

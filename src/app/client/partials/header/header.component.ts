@@ -1,4 +1,5 @@
 import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,16 @@ import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from 
 })
 export class HeaderComponent implements OnInit {
   isSideBarOpen = false;
-  isLogin=true;
+  isRightBarOpen = false;
+  isLogin=false;
   @Output() clickOutside = new EventEmitter<void>();
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef,private appService:AppService) {
   }
   ngOnInit(): void {
+    this.appService.getLoggedIn().subscribe((res:any)=>{
+        this.isLogin=res;
+    })
   }
   @HostListener('document:click', ['$event.target'])
   public onClick(target: any) {
@@ -22,6 +27,12 @@ export class HeaderComponent implements OnInit {
       this.isSideBarOpen = false
       this.clickOutside.emit();
     }
+
+    if(target.className=="waves-effect waves-light sideNavCheck")
+    {
+      this.isSideBarOpen = false
+    }
+
   }
 
   sidenavOpen() {

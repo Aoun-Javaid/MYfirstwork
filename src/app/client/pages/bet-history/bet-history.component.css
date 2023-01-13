@@ -45,7 +45,7 @@
 
 @media screen and (min-width: 750px) and (max-width:1288px) {
     .waves-effect {
-        
+
         padding: 10px;
         width:120px;
         white-space: nowrap;
@@ -66,6 +66,13 @@
     overflow-x: auto;
     overflow-y: hidden;
     position: relative;
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.table-responsive::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 
@@ -84,7 +91,7 @@
 .table-dark{
     --bs-table-bg: #292929 !important;
     --bs-table-striped-bg: #3d3d3d !important;
-    
+
 }
 @media screen and (max-width: 750px)  {
     .table-dark {
