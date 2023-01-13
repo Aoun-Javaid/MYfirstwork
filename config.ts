@@ -24,6 +24,6 @@ export const CONFIG = {
   userLogin:BASE_URL_V1+'/v1/users/userLogin',
   getIpLocation:'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',
   getUserBalance:BASE_URL_V1+'v1/exchange/users/balance/getUserBalance',
-
+  changeUserPassword:BASE_URL_V1+'/v1/exchange/users/changeUserPassword',
   
 };

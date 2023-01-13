@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppService } from 'src/app/services/app.service';
+import { ConfirmedValidator } from 'src/app/Validators/confirmed.validator';
 
 @Component({
   selector: 'app-edit-password',
@@ -12,18 +14,38 @@ export class EditPasswordComponent implements OnInit {
   public opasswordType: string="password";
   public npasswordType: string="password";
   public cpasswordType: string="password";
-
-  editForm = new FormGroup({
-    oldpassword: new FormControl(),
-    cpassword: new FormControl(),
-    password: new FormControl()
-  });
-  constructor() { }
+  editForm: FormGroup = new FormGroup({});
+  
+  constructor(private fb: FormBuilder,private appService:AppService) {
+  
+    this.editForm = fb.group({
+      oldpassword: ['',[Validators.required]],
+      password: ['', [Validators.required]],
+      cpassword: ['', [Validators.required,ConfirmedValidator]]
+    }, { 
+      validator: ConfirmedValidator('password', 'cpassword')
+    })
+  }
+    
+  get f(){
+    return this.editForm.controls;
+  }
+  // editForm = new FormGroup({
+  //   oldpassword: new FormControl('',[Validators.required]),
+  //   cpassword: new FormControl('',[Validators.required]),
+  //   password: new FormControl('',[Validators.required,Validators.pattern('^(?=.?[A-Z])(?=(.[a-z]){1,})(?=(.[\d]){1,})(?=(.[\W]){1,})(?!.*\s).{8,}$')])
+  // });
 
   ngOnInit(): void {
   }
   submitForm(){
-    console.log(this.editForm.value);
+    if(this.editForm.valid){
+      this.appService.changeUserPassword(this.editForm.value.password,this.editForm.value.oldpassword).subscribe((res:any)=>{
+        
+      });
+    }
+
+   
   }
 
 }

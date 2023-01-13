@@ -53,6 +53,9 @@ export class AppService {
     
     return this.http.post(CONFIG.userLogin, {})
   }
+  changeUserPassword(newPassword:any,oldPassword:any,): Observable<any> {
+    return this.http.post(CONFIG.userLogin, {newPassword,oldPassword})
+  }
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

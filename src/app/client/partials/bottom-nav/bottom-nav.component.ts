@@ -8,7 +8,7 @@ import {AppService} from "../../../services/app.service";
 })
 export class BottomNavComponent implements OnInit {
   isRightBarOpen = false;
-  customerSuport: any;
+  customerSuport: any = [];
   @Output() clickOutside = new EventEmitter<void>();
 
   constructor(private elementRef: ElementRef, private appService: AppService) {
