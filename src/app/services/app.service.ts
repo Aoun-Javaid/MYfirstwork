@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {CONFIG} from "config"
@@ -7,10 +7,16 @@ import {CONFIG} from "config"
   providedIn: 'root'
 })
 export class AppService {
-
+  private isLoggedIn= new Subject<boolean>();
   constructor(private http: HttpClient) {
   }
+  public getLoggedIn(): Observable<boolean> {
+    return this.isLoggedIn.asObservable();
+  }
 
+  public setLoggedIn(message: any): void {
+    this.isLoggedIn.next(message);
+  }
 
   getSportsList(): Observable<any> {
     return this.http.post(CONFIG.getSportsList, {})
