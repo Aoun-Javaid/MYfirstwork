@@ -9,14 +9,14 @@ import {AppService} from "../../../../services/app.service";
 export class CasinoComponent implements OnInit {
 
 
-  casinoCards =[
-    { imglink:"assets/casino/1.webp",alternate:""},
-    { imglink:"assets/casino/2.webp",alternate:""},
-    { imglink:"assets/casino/1.webp",alternate:""},
-    { imglink:"assets/casino/2.webp",alternate:""},
-    { imglink:"assets/casino/1.webp",alternate:""},
-    { imglink:"assets/casino/2.webp",alternate:""},
-  ]
+  // casinoCards =[
+  //   { imglink:"assets/casino/1.webp",alternate:""},
+  //   { imglink:"assets/casino/2.webp",alternate:""},
+  //   { imglink:"assets/casino/1.webp",alternate:""},
+  //   { imglink:"assets/casino/2.webp",alternate:""},
+  //   { imglink:"assets/casino/1.webp",alternate:""},
+  //   { imglink:"assets/casino/2.webp",alternate:""},
+  // ]
   // listCasino=[
   //   { name:"Popular",index:1},
   //   { name:"Teen patti",index:2},
@@ -28,6 +28,7 @@ export class CasinoComponent implements OnInit {
   //   { name:"Andar bahar",index:8},
   //   { name:"Baccarat",index:9}
   // ]
+  casinoCards:any=[];
 listCasino:any =[];
   isActive : boolean =true;
   step:number=1;
@@ -41,9 +42,9 @@ listCasino:any =[];
     this.getCasinoInfo();
   }
   getCasinoInfo(){
-    this.appService.getCasinoInformation().subscribe((data:any) =>{
-
-console.log(data)
+    this.appService.getCasinoInformation().subscribe((res:any) =>{
+      this.listCasino=res?.data?.casinoTab;
+      this.casinoCards=res?.data?.casinoEvents;
     });
   }
 }

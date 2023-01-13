@@ -18,6 +18,6 @@ export const CONFIG = {
   getSlider: BASE_URL_V1 + '/v1/front/slider/getAllSlider',
   getAllEventsList: BASE_URL_API + '/api/exchange/market/matchodds/allEventsList',
   getCustomerSupport: BASE_URL_V1 + '/v1/exchange/support/getCustomerSupport',
-
+  getCasinoInformation: BASE_URL_API+'/api/exchange/casino/casinoInformation',
 
 };

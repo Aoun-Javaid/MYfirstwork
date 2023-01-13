@@ -24,7 +24,7 @@ export class AppService {
     return this.http.post(CONFIG.getAllEventsList, {})
   }
   getCasinoInformation(): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})
+    return this.http.post(CONFIG.getCasinoInformation,{});
   }
   // getCasinoInfo(): Observable<any> {
   //   return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
