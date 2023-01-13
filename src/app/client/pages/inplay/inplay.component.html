@@ -2,17 +2,17 @@
 <div class="d-flex ">
   <ul class="nav  nav-justified mb-2 tabs2">
       <li class="nav-item" >
-        <a class="nav-link active" [ngClass]="{'active' : step === 1}" (click) = "cliclTab(1)">
+        <a class="nav-link active" [ngClass]="{'active' : step === 'inplay'}" (click) = "cliclTab('inplay')">
           In-Play
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [ngClass]="{'active' : step === 2}" (click) = "cliclTab(2)">
+        <a class="nav-link" [ngClass]="{'active' : step === 'today'}" (click) = "cliclTab('today')">
           TODAY
         </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [ngClass]="{'active' : step === 3}" (click) = "cliclTab(3)">
+      <a class="nav-link" [ngClass]="{'active' : step === 'tomorrow'}" (click) = "cliclTab('tomorrow')">
         TOMORROW
       </a>
   </li>
@@ -22,17 +22,17 @@
 
 
 <!--Inplay Markets Starts -->
-<div>
+<div *ngFor="let market of Records">
 
 
   <div class="text-uppercase marketName mt-3">
-    <div class="col-md-8 clip col-8 text-start ps-2"> Cricket </div>
+    <div class="col-md-8 clip col-8 text-start ps-2"> {{market.sportName}}</div>
     <div class="col-4 col-xs-none"></div>
   </div>
 
-  <div class="row bg-theme mx-0 text-capitalize py-1 sport-list bm1">
+  <div class="row bg-theme mx-0 text-capitalize py-1 sport-list bm1" *ngFor="let odds of market.oddsData">
     <div class="col-md-1 col-3 px-0 align-self-center text-center">
-      <button type="button" class="btn update play1">
+      <button type="button" class="btn update play1" *ngIf="step=='inplay'">
         <span>
           <aside class="loading">
             <span class="text">Inplay</span>
@@ -40,24 +40,60 @@
           </aside>
         </span>
       </button>
+      <button type="button" class="btn update play2" *ngIf="!(step=='inplay')">
+        <span>
+          
+            <span class="textPlay2" *ngIf="step=='today'">Today
+
+              <br />
+
+          {{odds.eventTime | date :'shortTime'}}
+            </span>
+            <span class="textPlay2" *ngIf="!(step=='today')">{{odds.eventTime | date :'MMM d'}}
+
+              <br />
+
+              {{odds.eventTime | date :'shortTime'}}
+            </span>
+        </span>
+      </button>
     </div>
     <div class="col-md-5 col-9 px-0 align-self-center">
       <div class="team-name">
         <p>
-          <span class="name"> Twenty20 Big Bash </span>
-          <span>
-            <img src="assets/icons/TV%20(1).png" style="width: 17px; height: 15px; margin: 0px 5px;">
+          <span class="name"> {{odds.eventName}} </span>
+          <span style="float:right;margin-right: 10px;">
+            <img *ngIf="odds.isStreaming==true" src="assets/icons/TV%20(1).png" style="width: 17px; height: 15px; margin: 0px 5px;">
+            <img *ngIf="odds.isFancy == true" src="assets/icons/ficon.webp"
+            style="width: 17px; height: 15px; margin:0px 5px;">
+            <img *ngIf="odds.isBookmakers == true" src="assets/icons/B.webp"
+            style="width: 17px; height: 15px; margin:0px 5px;">
           </span>
         </p>
       </div>
     </div>
     <div class="col-md-6 col-12 text-center align-self-center mx-0 px-lg-0 mt-2">
-      <button class="blue-area1">-</button>
-      <button class="red-area">-</button>
-      <button class="blue-area">-</button>
-      <button class="red-area">-</button>
-      <button class="blue-area">-</button>
-      <button class="red-area1">-</button>
+      <!-- runner A -->
+      <button class="blue-area1">
+        {{(odds?.oddsData?.runners[0]?.price?.back[0]?.price)?(odds?.oddsData?.runners[0]?.price?.back[0]?.price):'-'}}
+      </button>
+      <button class="red-area">
+        {{(odds?.oddsData?.runners[0]?.price?.lay[0]?.price)?(odds?.oddsData?.runners[0]?.price?.lay[0]?.price):'-'}}
+      </button>
+      <!-- draw -->
+      <button class="blue-area">
+        {{(odds?.oddsData?.runners[2]?.price?.back[0]?.price)?(odds?.oddsData?.runners[2]?.price?.back[0]?.price):'-'}}
+      </button>
+      <button class="red-area">
+        {{(odds?.oddsData?.runners[2]?.price?.lay[0]?.price)?(odds?.oddsData?.runners[2]?.price?.lay[0]?.price):'-'}}
+      </button>
+      <!-- runner B -->
+      <button class="blue-area">
+        {{(odds?.oddsData?.runners[1]?.price?.back[0]?.price)?(odds?.oddsData?.runners[1]?.price?.back[0]?.price):'-'}}
+      </button>
+      <button class="red-area1">
+        {{(odds?.oddsData?.runners[1]?.price?.lay[0]?.price)?(odds?.oddsData?.runners[1]?.price?.lay[0]?.price):'-'}}
+      </button>
     </div>
   </div>
 
@@ -67,50 +103,5 @@
 <!--Inplay Markets end-->
 
 <!--Today Markets end-->
-
-
-<div>
-  <div class="text-uppercase marketName mt-3">
-    <div class="col-md-8 clip col-8 text-start ps-2"> Cricket </div>
-    <div class="col-4 col-xs-none"></div>
-  </div>
-
-  <div class="row bg-theme mx-0 text-capitalize py-1 sport-list bm1">
-    <div class="col-md-1 col-3 px-0 align-self-center text-center">
-      <button type="button" class="btn update play2">
-        <span>
-          
-            <span class="textPlay2">Today
-
-              <br />
-
-              11:20
-            </span>
-       
-        </span>
-      </button>
-    </div>
-    <div class="col-md-5 col-9 px-0 align-self-center">
-      <div class="team-name">
-        <p>
-          <span class="name"> Twenty20 Big Bash </span>
-          <span>
-            <img src="assets/icons/TV%20(1).png" style="width: 17px; height: 15px; margin: 0px 5px;">
-          </span>
-        </p>
-      </div>
-    </div>
-    <div class="col-md-6 col-12 text-center align-self-center mx-0 px-lg-0 mt-2">
-      <button class="blue-area1">-</button>
-      <button class="red-area">-</button>
-      <button class="blue-area">-</button>
-      <button class="red-area">-</button>
-      <button class="blue-area">-</button>
-      <button class="red-area1">-</button>
-    </div>
-  </div>
-</div>
-
-
 
 <!--Today Markets Starts -->

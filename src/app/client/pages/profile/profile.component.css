@@ -37,7 +37,7 @@ opacity: 1;
   text-align: left;
   color: #294354;
   font: normal normal normal 14px/60px Poppins;
-  
+
 padding: 6px 20px;
 }
 
@@ -66,7 +66,7 @@ padding: 6px 20px;
     border-radius: 50%;
     padding: 0 10px;
   }
-  
+
 }
 
 
@@ -103,19 +103,26 @@ td{
 
 }
 tr{
-  background: var(--theme-color);
+  /*background: var(--theme-color);*/
 }
 table{
   border-collapse:separate;
-  border-spacing:0 15px;
+  border-spacing:9px;
+}
+table tr td{
+  border: 1px solid var(--event-bgcolor);
+  border-radius: 9px;
+  background: var(--theme-color);
+
+  vertical-align: middle
 }
 .profile-right{
   font-size: 2vw;
   color: #000;
   font-weight: 900;
    text-align: center;
-  
-    
+
+
   }
 @media (max-width: 767.98px){
   .profile-right{
@@ -123,25 +130,32 @@ table{
     color: #000;
     font-weight: 900;
      text-align: center;
-    
-      
+
+
     }
   td{
     font-size: 3vw;
     padding: 5px;
     color: #000;
-    
-    border: none;
-  
+    background: var(--theme-color);
+
   }
+  table tr td {
+    border: 1px solid var(--event-bgcolor);
+    border-collapse: collapse;
+    border-radius:10px;
+
+    vertical-align: middle
+  }
+
   tr{
-    background: var(--theme-color)
+    /*background: var(--theme-color)*/
   }
   table{
     border-collapse:separate;
-    border-spacing:0 15px;
+    border-spacing:9px;
   }
- 
+
   .profile-left{
     width: 50vw;
     text-align: end;
@@ -149,12 +163,12 @@ table{
     /* margin-top: -1rem; */
     font-size: 3.4vw;
     font-weight: bold;
-  
+
   }
   .profile-data{
     font-size: 3.4vw;
-   
+
     color: #000;
-    
+
   }
 }

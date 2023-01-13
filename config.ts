@@ -19,5 +19,8 @@ export const CONFIG = {
   getAllEventsList: BASE_URL_API + '/api/exchange/market/matchodds/allEventsList',
   getCustomerSupport: BASE_URL_V1 + '/v1/exchange/support/getCustomerSupport',
   getCasinoInformation: BASE_URL_API+'/api/exchange/casino/casinoInformation',
+  getDaysWiseEvents:BASE_URL_API+'/api/exchange/events/getDaysWiseEvents',
+  getUserProfile:BASE_URL_V1+'v1/exchange/users/profile/getUserProfile',
+  
 
 };

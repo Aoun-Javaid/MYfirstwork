@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 import {CONFIG} from "config"
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,7 +26,17 @@ export class AppService {
   getCasinoInformation(): Observable<any> {
     return this.http.post(CONFIG.getCasinoInformation,{});
   }
+  getDaysWiseEvents(): Observable<any> {
+    return this.http.post(CONFIG.getDaysWiseEvents,{});
+  }
+  getUserProfile(): Observable<any> {
+    return this.http.post(CONFIG.getUserProfile,{});
+  }
   // getCasinoInfo(): Observable<any> {
+  // getCasinoInformation(): Observable<any> {
+  //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})
+  // }
+  // /getCasinoInfo(): Observable<any> {
   //   return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
   // }
   getCustomerSupport(): Observable<any> {
