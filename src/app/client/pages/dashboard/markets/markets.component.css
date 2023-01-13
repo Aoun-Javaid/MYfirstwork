@@ -7,9 +7,11 @@
   background-image: none;
   height: 50px
 }
-.full-color{
+
+.full-color {
   background: var(--sport-section-bg) !important;
 }
+
 .category-navigation-container {
   display: table;
   position: relative;
@@ -63,18 +65,21 @@ a {
   font-weight: 500;
   margin: 0 10px;
 }
-.catIcon{
+
+.catIcon {
   width: 20px;
 
   height: 20px;
 
 }
-.active{
+
+.active {
   background: var(--header-color) !important;
   box-shadow: inset 0 1px 3px 0 rgb(52 9 9/50%) !important;
   color: var(--text-color-white) !important;
   border-radius: 0 !important;
 }
+
 /*.category-navigation-item-link:hover .catIcon{*/
 /*  width: 20px;*/
 /*  height: 20px;*/
@@ -83,21 +88,25 @@ a {
 
 
 /*events css starts*/
-.market-events{
+.market-events {
   padding: 0 5%;
   max-height: 150px;
   overflow-y: scroll;
 }
+
 .sport-list {
   padding: 0;
   margin-top: 5px;
 }
+
 .name-sport {
   background: var(--event-bgcolor);
 }
+
 .sport-list span img {
   width: 20px;
 }
+
 .team-name {
   display: inline-flex;
   align-items: center;
@@ -105,14 +114,17 @@ a {
   width: -webkit-fill-available;
   line-height: 1;
 }
+
 .team-name .tn-icons {
   display: none;
   float: left;
   margin-right: 8px;
 }
+
 .team-name .tn-icons i {
   font-size: 25px;
 }
+
 .fancy, .name {
   font-weight: 700;
   color: var(--text-color-white);
@@ -130,14 +142,17 @@ a {
   width: -webkit-fill-available;
   color: var(--text-color-white);
 }
+
 .sport-event-list-icon {
   float: right;
 }
+
 .name1 {
   font-weight: 400;
   font-size: 10px;
   color: var(--text-color-white);
 }
+
 .blue-area {
   background: var(--back-color);
   border: none;
@@ -146,6 +161,7 @@ a {
   font-weight: 700;
   border-radius: 0;
 }
+
 .red-area {
   border: none;
   font-size: 16px;
@@ -155,20 +171,25 @@ a {
   font-weight: 700;
   border-radius: 0;
 }
+
 .blue-area, .live-area {
   font-size: 16px;
   padding: 6px 1px;
 }
+
 .back, .blue-area {
-  margin-right: .5%!important;
-  margin-left: .5%!important;
+  margin-right: .5% !important;
+  margin-left: .5% !important;
 }
+
 .red-area, .red-area1 {
   background: var(--lay-color);
 }
+
 .lay, .red-area {
-  margin-left: 0!important;
+  margin-left: 0 !important;
 }
+
 .live-area {
   background: var(--header-color);
   border: 1px solid var(--text-color-white);
@@ -180,14 +201,16 @@ a {
   text-transform: uppercase;
   border-radius: 5px;
 }
+
 .scroller {
   position: relative;
   overflow: hidden;
   height: 36px;
-  top: -6px;
+  /*top: 10px;*/
   text-align: center;
 }
-.scroller>marquee {
+
+.scroller > marquee {
   position: absolute;
   top: 0;
   left: 0;
@@ -195,91 +218,104 @@ a {
   height: 36px;
   width: -webkit-fill-available;
 }
+
 .scroller .live2 {
-  padding: 10px 0;
+  /*padding: 10px 0;*/
   display: block;
+  color: #81ff00;
 }
-.markets a:last-child .sport-list{
+
+.livebox {
+  background-color: #81ff00;;
+}
+
+.markets a:last-child .sport-list {
   margin-bottom: .5rem;
 }
-@media screen and (max-width: 767px){
+
+@media screen and (max-width: 767px) {
   .category-navigation-container {
     width: 100%;
   }
+
   .cc-ui .brp .btn-book, .cc-ui .brp .btn-placebet, .team-name p {
     font-size: 13px;
   }
+
   .team-name p {
     font-weight: 400;
   }
-  .market-events{
+
+  .market-events {
     max-height: 300px;
     padding: 0;
     margin: 0 2%;
   }
+
   .blue-area, .red-area {
     width: 16%;
     height: 36px;
 
   }
+
   .back, .blue-area {
-    margin-right: .63%!important;
-    margin-left: .63%!important;
+    margin-right: .63% !important;
+    margin-left: .63% !important;
   }
-  .rates-area button:first-child{
+
+  .rates-area button:first-child {
     margin-left: 0px !important;
   }
 }
+
 /*category navingation ending*/
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .pl-lg-0, .px-lg-0 {
-    padding-left: 0!important;
+    padding-left: 0 !important;
   }
+
   .pr-lg-0, .px-lg-0 {
-    padding-right: 0!important;
+    padding-right: 0 !important;
   }
 }
 
 /* Heart beat animation */
 
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: scale( .75 );
+@keyframes heartbeat {
+  0% {
+    transform: scale(.75);
   }
-  20%
-  {
-    transform: scale( 1 );
+  20% {
+    transform: scale(1);
   }
-  40%
-  {
-    transform: scale( 1.3 );
+  40% {
+    transform: scale(1.3);
   }
-  60%
-  {
-    transform: scale( 1.2);
+  60% {
+    transform: scale(1.2);
   }
-  80%
-  {
-    transform: scale( 1);
+  80% {
+    transform: scale(1);
   }
-  100%
-  {
-    transform: scale( 1 );
+  100% {
+    transform: scale(1);
   }
 }
 
-.scroller .time1
-{
+.scroller .time1 {
   width: -webkit-fill-available;
   height: max-content;
   animation: heartbeat 3s infinite;
   text-align: center;
-  padding: 10px 0;
+  /*padding: 10px 0;*/
   display: block;
 }
+
+.time1 {
+  padding: 0px
+}
+
 /* .scroller .live2 {
   padding: 10px 0;
   display: block;

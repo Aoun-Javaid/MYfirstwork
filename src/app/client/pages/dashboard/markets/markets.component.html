@@ -57,10 +57,17 @@
           <button class="blue-area">{{market.oddsData.runners[0].price.back[0].price}}</button>
           <button class="red-area">{{market.oddsData.runners[0].price.lay[0].price}}</button>
           <button class="live-area scroller">
-            <marquee direction="down" scrollamount="3">
-              <b class="live2">live</b>
-              <b class="time1"> 11:00 PM</b>
-            </marquee>
+            <!--            <marquee direction="down" scrollamount="1">-->
+            <div *ngIf="market.oddsData.inPlay==true" style="padding: 0px">
+              <b class="time1 live2">live</b>
+            </div>
+
+            <!--            </marquee>-->
+            <!--            <marquee direction="down" scrollamount="3">-->
+            <div *ngIf="market.oddsData.inPlay==false">
+              <b class="time1" style=" animation: heartbeat 1s infinite;"> {{market.eventTime | date:'shortTime'}}</b>
+            </div>
+            <!--            </marquee>-->
           </button>
           <button class="blue-area">{{market.oddsData.runners[1].price.back[0].price}}</button>
           <button class="red-area">{{market.oddsData.runners[1].price.lay[0].price}}</button>
