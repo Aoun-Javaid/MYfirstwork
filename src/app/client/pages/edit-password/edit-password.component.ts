@@ -20,7 +20,7 @@ export class EditPasswordComponent implements OnInit {
   
     this.editForm = fb.group({
       oldpassword: ['',[Validators.required]],
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required,Validators.pattern('^(?=.?[A-Z])(?=(.[a-z]){1,})(?=(.[\d]){1,})(?=(.[\W]){1,})(?!.*\s).{8,}$')]],
       cpassword: ['', [Validators.required,ConfirmedValidator]]
     }, { 
       validator: ConfirmedValidator('password', 'cpassword')
