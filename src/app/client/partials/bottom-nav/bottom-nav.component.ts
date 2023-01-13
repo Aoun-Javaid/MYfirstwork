@@ -20,17 +20,35 @@ export class BottomNavComponent implements OnInit {
 
   @HostListener('document:click', ['$event.target'])
   public onClick(target: any) {
+ debugger
     document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
     const clickedInside = this.elementRef.nativeElement.contains(target);
     if (!clickedInside) {
       this.isRightBarOpen = false
       this.clickOutside.emit();
     }
+    if(target.className=="waves-effect waves-light sideNavCheck")
+    {
+      this.isRightBarOpen = false
+
+    }
+
   }
 
 
-  showRightNav() {
-    this.isRightBarOpen = true;
+  // showRightNav() {
+  //   this.isRightBarOpen = true;
+  // }
+
+  sidenavOpen() {
+    debugger
+    if (!this.isRightBarOpen) {
+      document.body.className += ' left-bar-enabled';
+      this.isRightBarOpen = true;
+    } else {
+      document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
+      this.isRightBarOpen = false;
+    }
   }
 
   getCustomerSupport() {

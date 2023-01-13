@@ -7,6 +7,7 @@ import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from 
 })
 export class HeaderComponent implements OnInit {
   isSideBarOpen = false;
+  isRightBarOpen = false;
   isLogin=true;
   @Output() clickOutside = new EventEmitter<void>();
 
@@ -22,6 +23,12 @@ export class HeaderComponent implements OnInit {
       this.isSideBarOpen = false
       this.clickOutside.emit();
     }
+
+    if(target.className=="waves-effect waves-light sideNavCheck")
+    {
+      this.isSideBarOpen = false
+    }
+
   }
 
   sidenavOpen() {
