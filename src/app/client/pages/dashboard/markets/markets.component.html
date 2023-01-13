@@ -1,7 +1,6 @@
-
 <div class="category-navigation">
   <div class="full-color">
-    <ul class="category-navigation-container" >
+    <ul class="category-navigation-container">
       <li class="category-navigation-item" *ngFor="let cat of catTabs">
         <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" (click)="categoryType(cat)">
         <span class="category-navigation-item-icon">
@@ -16,55 +15,57 @@
 <!-- Content Area -->
 <div class="market-events">
 
-<div class="markets" *ngFor="let market of markets">
+  <div class="markets" *ngFor="let market of markets">
 
-<a routerLink="/client/market-details">
-  <div class="row mx-0 text-capitalize sport-list fgl-1 myexch-lan-rate-card">
-    <div class="col-md-7 col-12  d-flex name-sport px-0">
-      <div class="col-md-1 col-2 px-0 align-self-center text-center">
-        <button type="button" class="btn update">
+    <a routerLink="/client/market-details">
+      <div class="row mx-0 text-capitalize sport-list fgl-1 myexch-lan-rate-card">
+        <div class="col-md-7 col-12  d-flex name-sport px-0">
+          <div class="col-md-1 col-2 px-0 align-self-center text-center">
+            <button type="button" class="btn update">
         <span class="">
           <img src='assets/icons/football.webp' class="starImg">
         </span>
-        </button>
-      </div>
-      <div class="col-md-10 col-10 px-0 align-self-center">
-        <div class="team-name">
+            </button>
+          </div>
+          <div class="col-md-10 col-10 px-0 align-self-center">
+            <div class="team-name">
         <span class="tn-icons">
           <i class="mdi mdi-timer-outline"></i>
         </span>
-          <p>
-            <span class="name">  {{market.m_name}}  </span>
-            <span class=" mr-1" *ngIf="'IN_PLAY' === 'IN_PLAY'"></span>
-            <span class="sport-event-list-icon">
-            <span *ngIf="1 === 1">
+              <p>
+                <span class="name">  {{market?.eventName}}  </span>
+                <span class=" mr-1" *ngIf="'IN_PLAY' === 'IN_PLAY'"></span>
+                <span class="sport-event-list-icon">
+            <span *ngIf="market.isStreaming == true">
               <img src="assets/icons/TV.webp" style="width: 17px; height: 15px; margin:0px 5px;">
             </span>
-            <span *ngIf="1 === 1">
-              <img src="assets/icons/ficon.webp" style="width: 17px; height: 15px; margin:0px 5px;">
-              <img src="assets/icons/B.webp" style="width: 17px; height: 15px; margin:0px 5px;">
+            <span>
+              <img *ngIf="market.isFancy == true" src="assets/icons/ficon.webp"
+                   style="width: 17px; height: 15px; margin:0px 5px;">
+              <img *ngIf="market.isBookmakers == true" src="assets/icons/B.webp"
+                   style="width: 17px; height: 15px; margin:0px 5px;">
             </span>
           </span>
-            <br>
-            <span class="name1">
+                <br>
+                <span class="name1">
              {{market.m_subtitle}} </span>
-          </p>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-12 mt-md-0 mt-2 px-lg-0 px-0 text-center align-self-center mx-0 rates-area">
+          <button class="blue-area">0</button>
+          <button class="red-area">0</button>
+          <button class="live-area scroller">
+            <marquee direction="down" scrollamount="3">
+              <b class="live2">live</b>
+              <b class="time1"> 11:00 PM</b>
+            </marquee>
+          </button>
+          <button class="blue-area">0</button>
+          <button class="red-area">0</button>
         </div>
       </div>
-    </div>
-    <div class="col-md-5 col-12 mt-md-0 mt-2 px-lg-0 px-0 text-center align-self-center mx-0 rates-area">
-      <button class="blue-area">0</button>
-      <button class="red-area">0</button>
-      <button class="live-area scroller">
-        <marquee direction="down" scrollamount="3">
-          <b class="live2">live</b>
-          <b class="time1"> 11:00 PM</b>
-        </marquee>
-      </button>
-      <button class="blue-area">0</button>
-      <button class="red-area">0</button>
-    </div>
+    </a>
   </div>
-</a>
-</div>
 </div>

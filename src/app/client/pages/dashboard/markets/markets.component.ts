@@ -9,58 +9,42 @@ import {AppService} from "../../../../services/app.service";
 export class MarketsComponent implements OnInit {
   events: any[] = [];
   selectedSportId: any;
-  filterdEvents: any;
+  filteredEvents: any;
+  eventsArr: any[] = [];
 
   constructor(private appService: AppService) {
   }
 
   catTabs: any[] = [];
-  markets = [
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
-    {
-      m_name: 'Brisbane Heat v Perth Scorchers', m_subtitle: "Twenty20 Big Bash"
-    },
+  markets: any
 
-  ]
 
   ngOnInit(): void {
+    this.getSportsList()
+    this.getEventesList()
+  }
+
+  getSportsList() {
     this.appService.getSportsList().subscribe(data => {
-      console.log(data)
       this.catTabs = data.data;
     })
+  }
+
+  getEventesList() {
     this.appService.getAllEventsList().subscribe(data => {
-      console.log("events:", data)
-      this.events = data.data;
-      // this.events.filter(data=>{
-      //
-      // })
+      this.events = data.data
+      this.eventsArr = Object.entries(this.events)
     })
   }
 
   categoryType(categoryObj: any) {
-    // console.log(categoryObj.sportId)
-    // this.selectedSportId = categoryObj.sportId;
-    // this.filterdEvents = this.events.filter(data => {
-    //   return data.sportId == this.selectedSportId
-    // })
-    // console.log(this.filterdEvents, "filtered data");
+    console.log(categoryObj.sportId)
+    this.selectedSportId = categoryObj.sportId;
+    this.filteredEvents = this.eventsArr.filter((x: any) => x[1][0]?.sportId == this.selectedSportId)
+    this.markets = this.filteredEvents[0][1]
+    // assigning filtered events
+    console.log(this.filteredEvents, "filtered data");
   }
+
 
 }
