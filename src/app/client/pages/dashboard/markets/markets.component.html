@@ -2,7 +2,7 @@
   <div class="full-color">
     <ul class="category-navigation-container">
       <li class="category-navigation-item" *ngFor="let cat of catTabs">
-        <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" (click)="categoryType(cat)">
+        <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" (click)="categoryType(cat.sportId)">
         <span class="category-navigation-item-icon">
           <img class="catIcon" [src]="cat.iconUrl"></span>
           <span

@@ -33,11 +33,12 @@ export class MarketsComponent implements OnInit {
     this.appService.getAllEventsList().subscribe(data => {
       this.events = data.data
       this.eventsArr = Object.entries(this.events)
+      this.categoryType(4)
     })
   }
 
-  categoryType(categoryObj: any) {
-    this.selectedSportId = categoryObj.sportId;
+  categoryType(sportId: any) {
+    this.selectedSportId = sportId;
     this.filteredEvents = this.eventsArr.filter((x: any) => x[1][0]?.sportId == this.selectedSportId)
     this.markets = this.filteredEvents[0][1]
     // assigning filtered events
