@@ -1,17 +1,20 @@
-.account-ui{
+.account-ui {
   background-color: var(--theme-color);
   padding: 12px;
   border-radius: 5px;
 }
-.account-pro{
+
+.account-pro {
   color: black;
   font-size: 15px;
   padding: 10px;
   font-weight: bold;
 }
+
 .card-body, .navbar-custom {
-  padding: 0!important;
+  padding: 0 !important;
 }
+
 .betslip-setting {
   padding: 50px 0;
   background: #000;
@@ -19,6 +22,7 @@
   width: 100%;
   box-shadow: inset 0 0 8px 0 #ddd;
 }
+
 h2.profile-page-title {
   text-transform: uppercase;
   font-size: 18px;
@@ -38,9 +42,11 @@ h2.profile-page-title:after {
   top: 5px;
   background: var(--header-color);
 }
-.betslip-setting .stakes-label{
+
+.betslip-setting .stakes-label {
   color: var(--text-color-white);
 }
+
 .input-group {
   position: relative;
   display: flex;
@@ -48,10 +54,12 @@ h2.profile-page-title:after {
   align-items: stretch;
   width: 100%;
 }
+
 .betslip-setting .form-group input, .theme-06 .betslip-setting .form-group input:focus {
   color: var(--text-color-white);
   box-shadow: inset 0 0 0 1px #d9dbdc;
 }
+
 .betslip-setting .form-group input, .betslip-setting .form-group input:focus {
   background: none;
   text-align: center;
@@ -59,16 +67,20 @@ h2.profile-page-title:after {
   font-size: 16px;
   border: none;
 }
+
 .input-group-append {
   margin-left: -1px;
 }
-.betslip-setting .btn-add{
-  background: var(--header-color );
+
+.betslip-setting .btn-add {
+  background: var(--header-color);
   color: var(--text-color-white);
 }
+
 .form-group {
   margin-bottom: 1rem;
 }
+
 .betslip-setting .btn-stake {
   border: 1px solid #000;
   text-align: left;
@@ -77,13 +89,199 @@ h2.profile-page-title:after {
   margin: 0 1% 15px;
   color: var(--text-color-white);
 }
-.fa-circle-xmark{
+
+.btn-stake {
+  margin: 2%;
+  color: white
+}
+
+.col-md-11 {
+  color: white !important;
+}
+
+.fa-circle-xmark {
   float: right;
   margin-top: 4px;
 }
-@media screen and (max-width: 767px){
+
+@media screen and (max-width: 767px) {
   .betslip-setting .btn-stake {
     margin: 5px;
     width: 46%;
   }
+}
+
+.setting-block input {
+  font-size: 4vw;
+  font-family: Helvetica, Tahoma, sans-serif;
+  padding: 1.86667vw;
+  margin-bottom: 1.86667vw;
+  -webkit-appearance: none;
+}
+
+.stake-setting input {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+input {
+  transition: border-width .3s linear;
+}
+
+.setting-block {
+  font-size: 4vw;
+  color: #243a48;
+  border-bottom: 1px solid #e0e6e6;
+  padding: 1.86667vw 0 0 1.86667vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.setting-block {
+  font-size: 4vw;
+  color: #243a48;
+  border-bottom: 1px solid #e0e6e6;
+  padding: 1.86667vw 0 0 1.86667vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.mobileTrans select .goog-te-combo {
+  border: 1px solid #e1e6ea;
+  height: 40px;
+  font-size: 12px;
+  width: 97%;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  color: #303030;
+  border-radius: 0;
+}
+
+.goog-te-combo {
+  height: 40px;
+}
+
+.theme-options .circle1 .round.bg5 {
+  background: linear-gradient(180deg, var(--th5-primary), var(--th5-primary) 49%, #fff 0, #fff 51%, var(--th5-bg) 0);
+}
+
+.default {
+  float: right;
+}
+
+select {
+  width: 98%;
+}
+
+.theme-options {
+  border-radius: 30px;
+  padding: 5px;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 15px;
+}
+
+.theme-options .circle1 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50px;
+  background: #0b071f;
+  border: 1px solid rgba(255, 255, 255, .4) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7px;
+  cursor: pointer;
+}
+
+/*! CSS Used from: https://unityexch.com/styles.5acafe33b66b2ff94c54.css */
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+@media print {
+  *, ::after, ::before {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/*! CSS Used from: Embedded */
+.theme-options {
+  border-radius: 30px;
+  padding: 5px;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns:repeat(5, 1fr);
+  margin-bottom: 15px;
+}
+
+.theme-options .circle1 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50px;
+  background: #0b071f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.theme-options .circle1 .round {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+
+/*! CSS Used from: https://unityexch.com/styles.5acafe33b66b2ff94c54.css */
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+@media print {
+  *, ::after, ::before {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/*! CSS Used from: Embedded */
+.theme-options .circle1 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50px;
+  background: #0b071f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.theme-options .circle1 .round {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.fa-regular {
+  padding-left: 2px;
+}
+.btn-top{
+  margin-top: 4px;
 }

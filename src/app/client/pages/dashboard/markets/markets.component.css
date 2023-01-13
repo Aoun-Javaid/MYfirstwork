@@ -300,7 +300,7 @@ a {
     transform: scale(1);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.2);
   }
 }
 
@@ -308,6 +308,7 @@ a {
   width: -webkit-fill-available;
   height: max-content;
   animation: heartbeat 3s infinite;
+
   text-align: center;
   /*padding: 10px 0;*/
   display: block;
