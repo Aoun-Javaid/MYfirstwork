@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-statement',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatementComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit(): void {
   }
 
+  dtOptions: DataTables.Settings = {};
+
+  ngOnInit(): void {
+
+  }
 }
