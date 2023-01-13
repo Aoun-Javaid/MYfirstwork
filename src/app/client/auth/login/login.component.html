@@ -18,9 +18,11 @@
 
         <label for="password" class="login-page-label">password</label>
         <div class="input-group mb-3">
-          <input tabindex="-1" formControlName="password" name="password" required="" placeholder="Password" class="form-control ng-untouched ng-pristine ng-invalid" type="password">
+          <input tabindex="-1" formControlName="password" name="password" required="" placeholder="Password" class="form-control ng-untouched ng-pristine ng-invalid" type={{npasswordType}}>
           <a class="login-eye d-flex align-items-center">
-            <i class="fa-solid fa-eye-slash"></i>
+            <i (click)="npasswordType = npasswordType === 'text' ? 'password' : 'text';"
+               class="fa-regular fa-eye-slash "
+               [ngClass]="{'fa-eye': npasswordType === 'text', 'fa-eye-slash': npasswordType !== 'text'}"></i>
           </a>
         </div>
 

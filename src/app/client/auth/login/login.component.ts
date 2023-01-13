@@ -8,6 +8,7 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class LoginComponent implements OnInit {
 
+  public npasswordType: string="password";
 
   constructor(private appService: AppService) {
 
