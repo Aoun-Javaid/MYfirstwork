@@ -23,7 +23,9 @@ export class AppService {
   getAllEventsList(): Observable<any> {
     return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/allEventsList`, {})
   }
-
+  getCasinoInformation(): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})
+  }
   // getCasinoInfo(): Observable<any> {
   //   return this.http.post(`${environment.apiV1}/front/slider/getAllSlider`, {})
   // }
