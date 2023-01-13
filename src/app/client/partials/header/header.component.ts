@@ -17,7 +17,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.appService.getLoggedIn().subscribe((res:any)=>{
         this.isLogin=res;
-    })
+    });
+    if(localStorage.getItem('accessToken')){
+      this.appService.setLoggedIn(true);
+    }
+    else{
+      this.appService.setLoggedIn(false);
+    }
   }
   @HostListener('document:click', ['$event.target'])
   public onClick(target: any) {
@@ -43,6 +49,11 @@ export class HeaderComponent implements OnInit {
       document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
       this.isSideBarOpen = false;
     }
+  }
+  getBalance(){
+    this.appService.getUserBalance().subscribe((res:any)=>{
+      console.log(res);
+    })
   }
 
 }

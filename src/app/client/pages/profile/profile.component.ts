@@ -15,7 +15,9 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserProfile(){
-    this.appSevice.getUserProfile().subscribe((res:any) => {
+    console.log('res profile')
+    this.appSevice.getUserProfile().subscribe((res:any)=>{
+      
       this.profileData=res.data;
     })
   }

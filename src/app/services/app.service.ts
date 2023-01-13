@@ -8,7 +8,9 @@ import {CONFIG} from "config"
 })
 export class AppService {
   private isLoggedIn= new Subject<boolean>();
+  
   constructor(private http: HttpClient) {
+    
   }
   public getLoggedIn(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
@@ -43,6 +45,13 @@ export class AppService {
   }
   getIpLocation(): Observable<any> {
     return this.http.post(CONFIG.getIpLocation,{})
+  }
+  getUserBalance(): Observable<any> {
+    var headers = new Headers();
+    const Authorization = "Bearer " + localStorage.getItem('accessToken') || "";
+    headers.append('Authorization', Authorization);
+    
+    return this.http.post(CONFIG.userLogin, {})
   }
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {

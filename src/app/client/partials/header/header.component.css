@@ -47,7 +47,7 @@
   font-size: 16px;
   margin-top: 0px;
   text-align: center;
-  text-decoration: underline;
+  text-decoration: auto;
 }
 .withdraw-btn{
   background: var(--text-color-white) !important;
@@ -72,14 +72,17 @@
   }
   .myexch-signup{
     background: var(--theme-color);
-    margin-left: 2vw;
+    margin-left: 3vw;
     margin-right: 0.25rem;
   }
   .btn.myexch-signup, .btn.myexch-login{
    height: 27px;
   }
   .myexch-bal-button {
-    font-size: 10px;
+    font-size: 14px;
+  }
+  .balance-withdraw{
+    margin-top: 5px;
   }
 }
 @media screen and (max-width: 350px) {
