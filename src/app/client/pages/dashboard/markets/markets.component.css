@@ -226,7 +226,8 @@ a {
 }
 
 .livebox {
-  background-color: #81ff00;;
+  background-color: #81ff00;
+  border: 1px dashed #81ff00;
 }
 
 .markets a:last-child .sport-list {
