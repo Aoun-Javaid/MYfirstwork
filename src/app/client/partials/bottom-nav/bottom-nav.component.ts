@@ -1,4 +1,5 @@
 import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
+import {AppService} from "../../../services/app.service";
 
 @Component({
   selector: 'app-bottom-nav',
@@ -7,12 +8,14 @@ import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from 
 })
 export class BottomNavComponent implements OnInit {
   isRightBarOpen = false;
+  customerSuport: any;
   @Output() clickOutside = new EventEmitter<void>();
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private appService: AppService) {
   }
 
   ngOnInit(): void {
+    this.getCustomerSupport()
   }
 
   @HostListener('document:click', ['$event.target'])
@@ -28,5 +31,12 @@ export class BottomNavComponent implements OnInit {
 
   showRightNav() {
     this.isRightBarOpen = true;
+  }
+
+  getCustomerSupport() {
+    this.appService.getCustomerSupport().subscribe(data => {
+      this.customerSuport = data.data;
+      console.log(this.customerSuport)
+    })
   }
 }

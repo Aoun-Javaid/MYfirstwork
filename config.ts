@@ -17,6 +17,7 @@ export const CONFIG = {
   getSportsList: BASE_URL_API + '/api/exchange/sports/sportsList',
   getSlider: BASE_URL_V1 + '/v1/front/slider/getAllSlider',
   getAllEventsList: BASE_URL_API + '/api/exchange/market/matchodds/allEventsList',
+  getCustomerSupport: BASE_URL_V1 + '/v1/exchange/support/getCustomerSupport',
 
 
 };
