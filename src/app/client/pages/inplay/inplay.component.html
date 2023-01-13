@@ -62,8 +62,12 @@
       <div class="team-name">
         <p>
           <span class="name"> {{odds.eventName}} </span>
-          <span>
-            <img src="assets/icons/TV%20(1).png" style="width: 17px; height: 15px; margin: 0px 5px;">
+          <span style="float:right;margin-right: 10px;">
+            <img *ngIf="odds.isStreaming==true" src="assets/icons/TV%20(1).png" style="width: 17px; height: 15px; margin: 0px 5px;">
+            <img *ngIf="odds.isFancy == true" src="assets/icons/ficon.webp"
+            style="width: 17px; height: 15px; margin:0px 5px;">
+            <img *ngIf="odds.isBookmakers == true" src="assets/icons/B.webp"
+            style="width: 17px; height: 15px; margin:0px 5px;">
           </span>
         </p>
       </div>

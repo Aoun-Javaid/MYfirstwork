@@ -29,6 +29,9 @@ export class AppService {
   getDaysWiseEvents(): Observable<any> {
     return this.http.post(CONFIG.getDaysWiseEvents,{});
   }
+  getUserProfile(): Observable<any> {
+    return this.http.post(CONFIG.getUserProfile,{});
+  }
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

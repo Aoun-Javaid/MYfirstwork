@@ -1,5 +1,6 @@
 .market-details{
   margin: 0px 2px;
+  overflow-x: hidden;
 }
 .event-title {
   text-transform: capitalize;
