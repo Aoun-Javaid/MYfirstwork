@@ -59,12 +59,12 @@ const routes: Routes = [
       {
         path: 'bet-history',component:BetHistoryComponent
       },
-      {
-        path: 'result',component:ResultComponent
-      },
-      {
-        path: 'RequestStatus',component:RequestStatusComponent
-      }
+      // {
+      //   path: 'result',component:ResultComponent
+      // },
+      // {
+      //   path: 'RequestStatus',component:RequestStatusComponent
+      // }
     ]
   },
 
