@@ -17,6 +17,7 @@ import {DepositComponent} from "./pages/deposit/deposit.component";
 import { BetHistoryComponent } from './pages/bet-history/bet-history.component';
 import { ResultComponent } from './pages/result/result.component';
 import { RequestStatusComponent } from './pages/request-status/request-status.component';
+import { AddPaymentMethodComponent } from './pages/add-payment-method/add-payment-method.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,9 @@ const routes: Routes = [
       },
       {
         path: 'bet-history',component:BetHistoryComponent
+      },
+      {
+        path: 'add-paymentMethod',component:AddPaymentMethodComponent
       },
       // {
       //   path: 'result',component:ResultComponent

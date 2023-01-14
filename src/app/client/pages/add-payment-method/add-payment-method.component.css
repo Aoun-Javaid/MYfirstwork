@@ -1,0 +1,144 @@
+.pg-header{
+    background: var(--deposit-card-bg-grad);
+    width: 223px;
+    height: 140px;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 1vw;
+    border: 0;
+    margin-bottom: 5px;
+  
+    
+  }
+   .bankButton{
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: black;
+        flex-direction: row;
+
+  }
+  .pg-header img{
+    width: 10vw;
+  }
+  .pg-container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px;
+  }
+  .accordion {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
+  .accordion-item{
+    background:transparent;
+    border: 0px solid rgba(0,0,0,.125);
+  }
+  .accordion-body{
+    background: var(--deposit-card-bg);
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 0.25rem;
+    margin-bottom: 5px;
+    margin: 0px 20px;
+  }
+  .bank-detail label{
+    color: var(--event-title-bg);;
+    font-weight: 600;
+  }
+  .detail-data, .detail-name {
+    text-align: left;
+    color: var(--event-title-bg);
+  }
+  .detail-name{
+    font-weight: 700;
+  }
+  .image-upload-extion {
+    background-color: #0e0c0c;
+    border-radius: 10px;
+    width: 50vw;
+    padding: 8% 0;
+  }
+  .image-upload-extion   p {
+    margin: 10px 0;
+    font-size: 10px;
+  }
+  .deposit-submit {
+    background: var(--header-color);
+    color: var(--text-color-white);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    padding: .55rem 1.75rem;
+  }
+  @media screen and (max-width: 320px) {
+    .pg-header {
+      width: 230px !important;
+  }
+  }
+  @media screen and (max-width: 370px) {
+    .pg-header {
+      width: 280px;
+  }
+  }
+  @media screen and (max-width: 767px) {
+    .image-upload-extion {
+      background-color: var(--event-title-bg);
+      border-radius: 10px;
+      width: 70vw;
+      padding: 15% 0;
+    }
+    .detail-data, .detail-name {
+      font-size: 12px ;
+    }
+    .bankfont{
+      font-size: 25px;
+    }
+    .bankButton{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;  
+      flex-direction: row;
+      padding: 10px;
+    }
+  }
+  .submitAcount{
+    background: var(--theme-color);
+    border-radius: 8px;
+    font-weight: 700;
+    overflow: hidden;
+    color: #000;
+  }
+  .recordList{
+    display: flex;
+    padding: 10px;
+  }
+  .recordList .btn{
+  background-color:(var--theme-color);
+}
+  
+  @media screen and (max-width: 900px){
+    .accordion {
+      flex-direction: column;
+    }
+    .pg-header{
+      width: 331px;
+      height: 116px;
+    }
+    .pg-header img {
+      width: 45vw;
+    }
+    .bankButton{
+      /* display: block; */
+    }
+    .pg-container{
+      padding: 0%;
+      width: fit-content;
+    }
+  
+  }
+  
+  

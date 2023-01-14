@@ -31,6 +31,7 @@ import {RequestStatusComponent} from './pages/request-status/request-status.comp
 import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DataTablesModule} from "angular-datatables";
+import { AddPaymentMethodComponent } from './pages/add-payment-method/add-payment-method.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import {DataTablesModule} from "angular-datatables";
     BetHistoryComponent,
     ResultComponent,
     RequestStatusComponent,
+    AddPaymentMethodComponent,
 
   ],
     imports: [
