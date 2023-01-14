@@ -14,16 +14,16 @@ export const CONFIG = {
   sendOTPTransferRequest: BASE_URL_V1 + '/exchange/transfer/amount_request',
   nameFromMobileURL: BASE_URL_V1 + '/exchange/get/user_mobileno',
   registerUserSpeedURL: BASE_URL_V1 + '/front/signup/cbtfspeed',
-  getSportsList: BASE_URL_API + '/api/exchange/sports/sportsList',
-  getSlider: BASE_URL_V1 + '/v1/front/slider/getAllSlider',
-  getAllEventsList: BASE_URL_API + '/api/exchange/market/matchodds/allEventsList',
-  getCustomerSupport: BASE_URL_V1 + '/v1/exchange/support/getCustomerSupport',
-  getCasinoInformation: BASE_URL_API+'/api/exchange/casino/casinoInformation',
-  getDaysWiseEvents:BASE_URL_API+'/api/exchange/events/getDaysWiseEvents',
+  getSportsList: BASE_URL_API + '/api/exchange/sports/sportsList',//
+  getSlider: BASE_URL_V1 + '/v1/front/slider/getAllSlider',//
+  getAllEventsList: BASE_URL_API + '/api/exchange/market/matchodds/allEventsList',//
+  getCustomerSupport: BASE_URL_V1 + '/v1/exchange/support/getCustomerSupport',//
+  getCasinoInformation: BASE_URL_API+'/api/exchange/casino/casinoInformation',//
+  getDaysWiseEvents:BASE_URL_API+'/api/exchange/events/getDaysWiseEvents',//
   getUserProfile:BASE_URL_V1+'/v1/exchange/users/profile/getUserProfile',
-  userLogin:BASE_URL_V1+'/v1/users/userLogin',
-  getIpLocation:'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',
-  getUserBalance:BASE_URL_V1+'v1/exchange/users/balance/getUserBalance',
+  userLogin:BASE_URL_V1+'/v1/users/userLogin',//
+  getIpLocation:'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',//
+  getUserBalance:BASE_URL_V1+'/v1/exchange/users/balance/getUserBalance',
   changeUserPassword:BASE_URL_V1+'/v1/exchange/users/changeUserPassword',
   getUserBetStake:BASE_URL_V1+'/v1/exchange/users/getUserBetStake',
   updateUserBetStake:BASE_URL_V1+'/v1/exchange/users/updateUserBetStake',

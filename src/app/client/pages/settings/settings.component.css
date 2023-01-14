@@ -134,18 +134,8 @@ input {
   font-size: 4vw;
   color: #243a48;
   border-bottom: 1px solid #e0e6e6;
-  padding: 1.86667vw 0 0 1.86667vw;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.setting-block {
-  font-size: 4vw;
-  color: #243a48;
-  border-bottom: 1px solid #e0e6e6;
-  padding: 1.86667vw 0 0 1.86667vw;
-  display: flex;
+  /* padding: 1.86667vw 0 0 1.86667vw; */
+  /* display: flex; */
   flex-wrap: wrap;
   width: 100%;
 }
@@ -176,7 +166,7 @@ input {
 }
 
 select {
-  width: 98%;
+  width: 100%;
 }
 
 .theme-options {

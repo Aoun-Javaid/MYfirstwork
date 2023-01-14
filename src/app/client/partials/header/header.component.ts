@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
     else{
       this.appService.setLoggedIn(false);
     }
+    if(this.isLogin){
+      console.log('sadasdasdas')
+      this.getBalance();
+    }
   }
   @HostListener('document:click', ['$event.target'])
   public onClick(target: any) {
@@ -52,6 +56,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   getBalance(){
+    console.log('hdsahdhas');
     this.appService.getUserBalance().subscribe((res:any)=>{
       console.log(res);
       this.userbalance=res.data;
