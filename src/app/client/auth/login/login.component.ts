@@ -47,23 +47,32 @@ export class LoginComponent implements OnInit {
     let username = userName ? userName : this.UserForm.controls['username'].value;
     let password = passWord ? passWord : this.UserForm.controls['password'].value;
     this.appService.getIpLocation().subscribe((locRes: any) => {
-      if(!locRes){
-        locRes=this.staticIpRes;
-      }
-      this.appService.userLogin(username, password, JSON.stringify(locRes)).subscribe((res: any) => {
-        if (res.meta.status_code == 200) {
-          localStorage.setItem('accessToken', res.data.accessToken);
-          this.appService.setLoggedIn(true)
-          this.router.navigate(['/client/']);
-          // location.reload();
-        }
-        else {
-          this.appService.setLoggedIn(false);
-        }
-      });
-    });
+      this.Postlogin(username,password,locRes);
+
+    },
+        (error) => {                              //Error callback
+          this.Postlogin(username,password,this.staticIpRes)
+         
+    
+          //throw error;   //You can also throw the error to a global error handler
+        });
+
+    
   }
   demoLogin() {
     this.submitLogin('exchange', "Abcd1234");
+  }
+  Postlogin(username:any,password:any,locRes:any){
+    this.appService.userLogin(username, password, JSON.stringify(locRes)).subscribe((res: any) => {
+      if (res.meta.status_code == 200) {
+        localStorage.setItem('accessToken', res.data.accessToken);
+        this.appService.setLoggedIn(true)
+        this.router.navigate(['/client/']);
+        // location.reload();
+      }
+      else {
+        this.appService.setLoggedIn(false);
+      }
+    });
   }
 }
