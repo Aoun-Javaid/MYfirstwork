@@ -7,7 +7,6 @@ import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { JwtinterceptorService } from './services/JwtInterceptor.service';
 import { AppService } from './services/app.service';
-import {HttpClientModule} from "@angular/common/http";
 import { DataTablesModule } from "angular-datatables";
 
 @NgModule({

@@ -1,21 +1,37 @@
 .pg-header{
-  background: var(--deposit-card-bg);
-  width: 100%;
+  background: var(--deposit-card-bg-grad);
+  width: 223px;
+  height: 140px;
+  margin: 20px;
   border-radius: 10px;
   padding: 1vw;
   border: 0;
   margin-bottom: 5px;
 }
+ .bankButton{
+  display: inline-flex;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 .pg-header img{
-  width: 40vw;
+  width: 10vw;
 }
 .pg-container{
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding: 100px;
+}
+.accordion {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
 .accordion-item{
-  background: var(--header-color);
+  background:transparent;
+  border: 0px solid rgba(0,0,0,.125);
 }
 .accordion-body{
   background: var(--deposit-card-bg);
@@ -63,4 +79,26 @@
   .detail-data, .detail-name {
     font-size: 12px ;
   }
+}
+
+
+@media screen and (max-width: 900px){
+  .accordion {
+    flex-direction: column;
+  }
+  .pg-header{
+    width: 331px;
+    height: 116px;
+  }
+  .pg-header img {
+    width: 22vw;
+  }
+  .bankButton{
+    display: block;
+  }
+  .pg-container{
+    padding: 0%;
+    width: fit-content;
+  }
+
 }
