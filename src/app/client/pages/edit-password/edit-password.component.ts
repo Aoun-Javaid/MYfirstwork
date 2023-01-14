@@ -44,6 +44,9 @@ export class EditPasswordComponent implements OnInit {
         
       });
     }
+    else{
+      // show error
+    }
 
    
   }

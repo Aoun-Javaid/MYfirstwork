@@ -13,7 +13,7 @@ export class BottomNavComponent implements OnInit {
 
   constructor(private elementRef: ElementRef, private appService: AppService) {
   }
-  
+
   ngOnInit(): void {
     this.getCustomerSupport();
 
@@ -41,7 +41,6 @@ export class BottomNavComponent implements OnInit {
   // }
 
   sidenavOpen() {
-    debugger
     if (!this.isRightBarOpen) {
       document.body.className += ' left-bar-enabled';
       this.isRightBarOpen = true;
