@@ -27,7 +27,7 @@ export class BottomNavComponent implements OnInit {
       this.isRightBarOpen = false
       this.clickOutside.emit();
     }
-    if(target.className=="waves-effect waves-light sideNavCheck")
+    if(target.className=="waves-effect waves-light sideNavCheck" || target.className=="right-side-menu__depositButtons-dep" ||  target.className=="right-side-menu__depositButtons-with" || target.className=="logout")
     {
       this.isRightBarOpen = false
 
