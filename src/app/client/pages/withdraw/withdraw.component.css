@@ -1,4 +1,4 @@
-.box{
+/* .box{
     display: grid;
     background-color: #eee9e3;
     height: 100vh;
@@ -61,4 +61,59 @@ p{
 }
 button, input {
     overflow: visible;
+} */
+
+
+/* New Css For New Wihtdraw Styles */
+.card{
+     background: var(--deposit-card-bg); 
+    color: var(--event-title-bg);;
+}
+.account-detail-head {
+    font-weight: 700;
+    font-size: 14px;
+    background: var(--newsColor);
+    padding: 6px;
+    color: var(--event-title-bg);
+    display: flex;
+    justify-content: space-between;
+}
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.btn-outline-secondary {
+    color: var(--event-title-bg);
+    border-color: #c8ced3;
+    background: var(--theme-color);
+}
+.btn-group-sm>.btn, .btn-sm {
+    padding: .25rem .5rem;
+    font-size: .765625rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+.instant{
+    background: var(--theme-color);
+    color: var(--event-title-bg);
+    border-color: var(--event-title-bg);
+}
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.badge-danger {
+    color: #fff;
+    background-color: #f86c6b;
+}
+.badge-success{
+    color: #fff;
+    background-color: rgb(12, 116, 16);
 }

@@ -39,6 +39,7 @@
   border-radius: 10px;
   padding: 0.25rem;
   margin-bottom: 5px;
+  margin: 0px 20px;
 }
 .bank-detail label{
   color: var(--event-title-bg);;
@@ -69,6 +70,16 @@
   margin-bottom: 25px;
   padding: .55rem 1.75rem;
 }
+@media screen and (max-width: 320px) {
+  .pg-header {
+    width: 230px !important;
+}
+}
+@media screen and (max-width: 370px) {
+  .pg-header {
+    width: 280px;
+}
+}
 @media screen and (max-width: 767px) {
   .image-upload-extion {
     background-color: var(--event-title-bg);
@@ -78,6 +89,14 @@
   }
   .detail-data, .detail-name {
     font-size: 12px ;
+  }
+  .bankfont{
+    font-size: 34px;
+  }
+  .bankButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -91,7 +110,7 @@
     height: 116px;
   }
   .pg-header img {
-    width: 22vw;
+    width: 45vw;
   }
   .bankButton{
     display: block;
