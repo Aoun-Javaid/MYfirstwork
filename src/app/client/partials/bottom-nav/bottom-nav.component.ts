@@ -15,12 +15,12 @@ export class BottomNavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCustomerSupport()
+    this.getCustomerSupport();
+
   }
 
   @HostListener('document:click', ['$event.target'])
   public onClick(target: any) {
- debugger
     document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
     const clickedInside = this.elementRef.nativeElement.contains(target);
     if (!clickedInside) {
@@ -41,7 +41,6 @@ export class BottomNavComponent implements OnInit {
   // }
 
   sidenavOpen() {
-    debugger
     if (!this.isRightBarOpen) {
       document.body.className += ' left-bar-enabled';
       this.isRightBarOpen = true;

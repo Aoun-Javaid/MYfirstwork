@@ -20,8 +20,8 @@ export class EditPasswordComponent implements OnInit {
   
     this.editForm = fb.group({
       oldpassword: ['',[Validators.required]],
-      password: ['', [Validators.required]],
-      cpassword: ['', [Validators.required,ConfirmedValidator]]
+      password: ['', [Validators.required,Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]],
+      cpassword: ['', [Validators.required, ConfirmedValidator]]
     }, { 
       validator: ConfirmedValidator('password', 'cpassword')
     })
@@ -43,6 +43,9 @@ export class EditPasswordComponent implements OnInit {
       this.appService.changeUserPassword(this.editForm.value.password,this.editForm.value.oldpassword).subscribe((res:any)=>{
         
       });
+    }
+    else{
+      // show error
     }
 
    

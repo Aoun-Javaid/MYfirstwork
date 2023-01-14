@@ -102,14 +102,11 @@
 
         <div class="col-md-11 text-center">
           <div class="btn-top">
-            <button class="btn btn-stake border">4000 <i class="fa-regular fa-circle-xmark"></i>
+            <button *ngFor="let stake of stakes"
+            class="btn btn-stake border">{{stake.stakeAmount}}
+              <i class="fa-regular fa-circle-xmark"></i>
             </button>
-            <button class="btn btn-stake border">43454 <i class="fa-regular fa-circle-xmark"></i>
-            </button>
-            <button class="btn btn-stake border">50000 <i class="fa-regular fa-circle-xmark"></i>
-            </button>
-            <button class="btn btn-stake border">5465467 <i class="fa-regular fa-circle-xmark"></i>
-            </button>
+
           </div>
         </div>
 

@@ -9,10 +9,8 @@
 
   <div class="myexch-login-buttons d-flex align-items-center" *ngIf="!isLogin">
     <div class="myexch-serch-header hideInMobile d-flex align-items-center">
-      <input type="text"  placeholder="Search.."
-             name="search" class="serch-input">
-      <button type="submit" class="btn serch-button"><i
-        class="fa fa-search"></i></button>
+      <input type="text" placeholder="Search.." name="search" class="serch-input">
+      <button type="submit" class="btn serch-button"><i class="fa fa-search"></i></button>
     </div>
     <button type="button" routerLink="/client/login" class="btn myexch-login" tabindex="0">log
       in
@@ -22,21 +20,52 @@
     </button>
   </div>
   <div class="myexch-login-buttons balance-withdraw d-flex align-items-center" *ngIf="isLogin">
-    <div class="d-flex flex-column " >
+    <div class="d-flex flex-column ">
       <button type="button" routerLink="/client/deposit" class="btn myexch-login deposit-btn" tabindex="0">Deposit
       </button>
       <a class="myexch-bal-button">
-        BAL : 1138
+        BAL : {{userbalance?.bankBalance?userbalance?.bankBalance:'0'}}
       </a>
     </div>
-<div class="d-flex flex-column ">
-  <button type="button" routerLink="/client/withdraw" class="btn myexch-signup withdraw-btn" tabindex="0">withdraw
-  </button>
-  <a class="myexch-bal-button">
-    EXP : 1138
-  </a>
-</div>
+    <div class="d-flex flex-column ">
+      <button type="button" routerLink="/client/withdraw" class="btn myexch-signup withdraw-btn" tabindex="0">withdraw
+      </button>
+      <a class="myexch-bal-button" data-bs-toggle="modal" data-bs-target="#ExpoModal">
+        EXP : {{userbalance?.exposure?userbalance?.exposure:'0'}}
+      </a>
+    </div>
 
   </div>
 </div>
 
+<div class="modal fade" id="ExpoModal" tabindex="-1" aria-labelledby="ExpoModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Exposure Detail</h5>
+        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="close-btn"> <i
+            class="fa-solid fa-xmark"></i> </button>
+      </div>
+      <div class="modal-body ">
+        <div  class="col-md-12 book-popup">
+          <table  class="book-tbl">
+            <thead  class="bg-default">
+              <th >Sport Name</th>
+              <th >Event Name</th>
+              <th >Market Name</th>
+              <th >Trade</th>
+            </thead>
+            <tbody ><!---->
+              <tr >
+                <td >Cricket</td>
+                <td ><a  class="exposure-evn">BIG BASH CUP </a></td>
+                <td >Winner 2022/23</td>
+                <td ><span>101</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@ import {CONFIG} from "config"
 })
 export class AppService {
   private isLoggedIn= new Subject<boolean>();
-  
+  private balance = new Subject<any>();
   constructor(private http: HttpClient) {
     
   }
@@ -19,7 +19,13 @@ export class AppService {
   public setLoggedIn(message: any): void {
     this.isLoggedIn.next(message);
   }
+  public getbalance(): Observable<any> {
+    return this.isLoggedIn.asObservable();
+  }
 
+  public setbalance(message: any): void {
+    this.isLoggedIn.next(message);
+  }
   getSportsList(): Observable<any> {
     return this.http.post(CONFIG.getSportsList, {})
   }
@@ -47,15 +53,18 @@ export class AppService {
     return this.http.post(CONFIG.getIpLocation,{})
   }
   getUserBalance(): Observable<any> {
-    var headers = new Headers();
-    const Authorization = "Bearer " + localStorage.getItem('accessToken') || "";
-    headers.append('Authorization', Authorization);
-    
-    return this.http.post(CONFIG.userLogin, {})
+    return this.http.post(CONFIG.getUserBalance, {})
   }
   changeUserPassword(newPassword:any,oldPassword:any,): Observable<any> {
-    return this.http.post(CONFIG.userLogin, {newPassword,oldPassword})
+    return this.http.post(CONFIG.changeUserPassword, {newPassword,oldPassword})
   }
+  getUserBetStake(): Observable<any> {
+    return this.http.post(CONFIG.getUserBetStake, {})
+  }
+  updateUserBetStake(stakes:any,): Observable<any> {
+    return this.http.post(CONFIG.updateUserBetStake, {stakes})
+  }
+  
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

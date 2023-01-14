@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   isSideBarOpen = false;
   isRightBarOpen = false;
   isLogin=false;
+  userbalance:any;
   @Output() clickOutside = new EventEmitter<void>();
 
   constructor(private elementRef: ElementRef,private appService:AppService) {
@@ -53,6 +54,8 @@ export class HeaderComponent implements OnInit {
   getBalance(){
     this.appService.getUserBalance().subscribe((res:any)=>{
       console.log(res);
+      this.userbalance=res.data;
+      this.appService.setbalance(this.userbalance);
     })
   }
 

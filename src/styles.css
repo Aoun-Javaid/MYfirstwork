@@ -68,6 +68,23 @@ h3 {
   width: 244px;
   max-height: 170px;
 }
+.modal-header{
+  background: var(--header-color);
+  padding: .25rem .4rem;
+}
+.close-btn{
+  background: transparent;
+  border: 0px;
+  color: white;
+}
+.modal-body{
+  background: var(--header-color);
+  padding: .6rem;
+}
+.modal-content {
+  background-color: #521f71;
+  border: 1px solid rgb(80 29 109);
+}
 
 .iti__flag-container.open + input {
   border-bottom-left-radius: 0px;
