@@ -10,7 +10,7 @@ export class AppService {
   private isLoggedIn= new Subject<boolean>();
   private balance = new Subject<any>();
   constructor(private http: HttpClient) {
-    
+
   }
   public getLoggedIn(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
@@ -64,7 +64,10 @@ export class AppService {
   updateUserBetStake(stakes:any,): Observable<any> {
     return this.http.post(CONFIG.updateUserBetStake, {stakes})
   }
-  
+
+  getExchangeNews(): Observable<any> {
+    return this.http.post(CONFIG.getExchangeNews, {})
+  }
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

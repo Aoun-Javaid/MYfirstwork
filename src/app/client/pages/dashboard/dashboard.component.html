@@ -1,8 +1,10 @@
 <div class="wrapper">
-  <div class="myexch-header-promotion-row dashboard-tabs">
-    <marquee onmouseover="this.stop();" onmouseout="this.start();" class="marquee-text1">
+  <div class="myexch-header-promotion-row dashboard-tabs" *ngIf="exchangeNews!=='' ">
+    <marquee onmouseover="this.stop();" onmouseout="this.start();" class="marquee-text1" >
       <img src="assets/icons/Speaker1.svg" alt="" class="bhopu">
-      welcom to myexch
+<!--      welcom to myexch-->
+      {{this.exchangeNews}}
+
       <img src="assets/icons/Speaker2.svg" alt="" class="bhopu">
     </marquee>
   </div>

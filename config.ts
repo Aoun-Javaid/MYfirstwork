@@ -27,9 +27,9 @@ export const CONFIG = {
   changeUserPassword:BASE_URL_V1+'/v1/exchange/users/changeUserPassword',
   getUserBetStake:BASE_URL_V1+'/v1/exchange/users/getUserBetStake',
   updateUserBetStake:BASE_URL_V1+'/v1/exchange/users/updateUserBetStake',
-  
-  
-  
-  
-  
+  getExchangeNews:BASE_URL_API+'/api/exchange/news/getExchangeNews',
+
+
+
+
 };
