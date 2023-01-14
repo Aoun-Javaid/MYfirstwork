@@ -30,4 +30,9 @@ export class WithdrawComponent implements OnInit {
         
     })
   )}
+  SubmitwithdrawRequest(){
+      this.appService.withdrawalRequest(this.WithdrawForm.value.amount).subscribe((res=>{
+            
+      }));
+  }
 }
