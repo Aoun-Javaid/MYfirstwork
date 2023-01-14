@@ -25,5 +25,11 @@ export const CONFIG = {
   getIpLocation:'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',
   getUserBalance:BASE_URL_V1+'v1/exchange/users/balance/getUserBalance',
   changeUserPassword:BASE_URL_V1+'/v1/exchange/users/changeUserPassword',
+  getUserBetStake:BASE_URL_V1+'/v1/exchange/users/getUserBetStake',
+  updateUserBetStake:BASE_URL_V1+'/v1/exchange/users/updateUserBetStake',
+  
+  
+  
+  
   
 };

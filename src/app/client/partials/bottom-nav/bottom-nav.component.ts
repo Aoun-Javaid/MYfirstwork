@@ -13,14 +13,14 @@ export class BottomNavComponent implements OnInit {
 
   constructor(private elementRef: ElementRef, private appService: AppService) {
   }
-
+  
   ngOnInit(): void {
-    this.getCustomerSupport()
+    this.getCustomerSupport();
+
   }
 
   @HostListener('document:click', ['$event.target'])
   public onClick(target: any) {
- debugger
     document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
     const clickedInside = this.elementRef.nativeElement.contains(target);
     if (!clickedInside) {

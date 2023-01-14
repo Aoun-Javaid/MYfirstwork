@@ -13,14 +13,14 @@
       <div class="right-side-menu__account__info">
         <div class="right-side-menu__account__info__item">
           <span class="right-side-menu__account__info__item__label">Available Credit:</span>
-          <span class="right-side-menu__account__info__item__value  bold">0</span>
+          <span class="right-side-menu__account__info__item__value  bold">{{userbalance?.bankBalance?userbalance?.bankBalance:'0'}}</span>
         </div>
 
       </div>
       <div class="right-side-menu__account__info">
         <div class="right-side-menu__account__info__item">
           <span class="right-side-menu__account__info__item__label">Net Exposure:</span>
-          <span class="right-side-menu__account__info__item__value  bold">0</span>
+          <span class="right-side-menu__account__info__item__value  bold">{{userbalance?.exposure?userbalance?.exposure:'0'}}</span>
         </div>
 
       </div>
@@ -72,7 +72,7 @@
 
 
           </ul>
-          <button class="logout"><i class="fa fa-power-off power-off"></i> logout</button>
+          <button class="logout" (click)="logout()"><i class="fa fa-power-off power-off"></i> logout</button>
         </div>
 
       </div>

@@ -55,6 +55,27 @@
 .deposit-btn{
   background: var(--theme-color) !important;
 }
+.book-popup {
+  padding: 5px;
+}
+/* .book-popup table {
+  border: 2px solid #333;
+} */
+.bg-default {
+  background: var(--theme-color);
+  color: #000;
+}
+.book-tbl td, .book-tbl th, .book-tbl thead {
+  border: 1px solid var(--theme-color);
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    
+}
+.exposure-evn {
+  color: #2789ce!important;
+  font-weight: 700;
+}
 @media screen and (max-width: 767px) {
   .myexch-logo{
     width: 100px;
