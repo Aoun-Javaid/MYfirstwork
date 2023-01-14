@@ -32,4 +32,9 @@ export const CONFIG = {
 
 
 
+  calculateWithdrawalAmount:BASE_URL_V1+'/v1/exchange/users/calculateWithdrawalAmount',
+  
+  
+  
+  
 };
