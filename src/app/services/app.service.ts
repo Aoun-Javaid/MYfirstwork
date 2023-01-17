@@ -82,6 +82,12 @@ export class AppService {
   userAccountStatement(draw: any,): Observable<any> {
     return this.http.post(CONFIG.userAccountStatement, draw)
   }
+  userSettledBetList(betlistPayload: any,): Observable<any> {
+    return this.http.post(CONFIG.userSettledBetList, betlistPayload)
+  }
+  userSportsProfitloss(profitLossPayLoad: any,): Observable<any> {
+    return this.http.post(CONFIG.userSportsProfitloss, profitLossPayLoad)
+  }
   
 
   // getCasinoInfo(): Observable<any> {

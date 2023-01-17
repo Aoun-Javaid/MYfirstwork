@@ -4,6 +4,7 @@
   --header-color: linear-gradient(180deg, #360a43, #5c2681 42%, #360a43);
   --app-bgColor: linear-gradient(180deg, #360a43, #5c2681 42%, #360a43);
   --event-bgcolor: linear-gradient(180deg, #662d91, #8800f2);
+  --event-bgcolor-SideNav: linear-gradient(180deg, rgba(54,10,67,1) 0%, rgba(92,38,129,1) 35%, rgba(54,10,67,0.5984987745098039) 100%);
   --theme-color: #ff0;
   --selected-btn-bg: #ff0;
   --theme-color1: #461863;
