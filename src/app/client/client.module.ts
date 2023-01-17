@@ -33,7 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from "angular-datatables";
 import { AddPaymentMethodComponent } from './pages/add-payment-method/add-payment-method.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { PasswordHistoryComponent } from './pages/password-history/password-history.component';
+// import { PasswordHistoryComponent } from './pages/password-history/password-history.component';
+import { ProfitlossEventComponent } from './pages/profitloss-event/profitloss-event.component';
+import { ProfitlossMarketComponent } from './pages/profitloss-market/profitloss-market.component';
+import { DProfitHistoryComponent } from './pages/d-profit-history/d-profit-history.component';
 
 
 @NgModule({
@@ -65,7 +68,9 @@ import { PasswordHistoryComponent } from './pages/password-history/password-hist
     ResultComponent,
     RequestStatusComponent,
     AddPaymentMethodComponent,
-    PasswordHistoryComponent,
+    ProfitlossEventComponent,
+    ProfitlossMarketComponent,
+    DProfitHistoryComponent,
 
   ],
   imports: [

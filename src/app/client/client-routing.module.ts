@@ -64,6 +64,17 @@ const routes: Routes = [
       }, {
         path: 'passwordHistory', component: PasswordHistoryComponent
       },
+      {
+        path: 'profitloss-event', component: ProfitlossEventComponent
+      },
+
+      {
+        path: 'profitloss-market', component: ProfitlossMarketComponent
+      },
+
+      {
+        path: 'd-profit-history', component: DProfitHistoryComponent
+      },
       // {
       //   path: 'result',component:ResultComponent
       // },
