@@ -3,19 +3,81 @@
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
-        <div class="pg-header bankButton" aria-expanded="false"
-          aria-controls="collapseOne">
+        <div class="pg-header bankButton" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+             aria-controls="collapseOne">
           <div>
             <img style="width: 60px;" src="assets/banks/bank.png">
             <span class="bankfont">BANK</span>
           </div>
-          <a class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#ExpoModal2">
+          <a class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#ExpoModal2" *ngIf="bankDetails.length==0">
             ADD NEW
           </a>
+          <i class="fa-solid fa-arrow-right" *ngIf="bankDetails.length>0"></i>
         </div>
 
       </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body text-center">
+        <div class="bank-detail">
 
+          <div class="mb-3">
+            <div class="recordList">
+              <div class="accordion" id="accordionExample2">
+                <div class="accordion-item" *ngFor="let bank of bankDetails">
+                  <h2 class="accordion-header" [id]="bank.id">
+                    <div class="pg-header bankButton" data-bs-toggle="collapse" [attr.data-bs-target]="['#'+bank.]" aria-expanded="false"
+                         aria-controls="collapseOne">
+                      <div>
+
+                      </div>
+                      <i class="fa-solid fa-arrow-right" *ngIf="bankDetails.length>0"></i>
+                    </div>
+
+                  </h2>
+                  <div id="collapseOneChildone" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                       data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-center">
+                      <div class="bank-detail">
+
+                        <div class="mb-3">
+                          <div class="recordList">
+                            <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
+                            <button class="btn" style="background-color:yellow;">
+                              Delete
+                            </button>
+                          </div>
+
+                        </div>
+
+                        <div>
+                          <button type="button" class="btn deposit-submit"  data-bs-toggle="modal" data-bs-target="#ExpoModalPaytm">Add New</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+                </div>
+              </div>
+              <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
+              <button class="btn" style="background-color:yellow;">
+                Delete
+              </button>
+            </div>
+
+          </div>
+
+          <div>
+            <button type="button" class="btn deposit-submit"  data-bs-toggle="modal" data-bs-target="#ExpoModalPaytm">Add New</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--      modal for add new -->
       <div class="modal fade" id="ExpoModal2" tabindex="-1" aria-labelledby="ExpoModal2" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -26,7 +88,7 @@
             </div>
             <div class="modal-body ">
               <div  class="col-md-12 book-popup">
-                
+
                 <form>
                   <div class="mb-3">
                     <label for="bankName" class="form-label">Bank Name<span class="text-danger">*</span></label>
@@ -44,7 +106,7 @@
                     <label for="bankName" class="form-label">Holder Name<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
                   </div>
-                
+
                   <button type="submit" class="btn submitAcount">Submit</button>
                 </form>
 
@@ -64,7 +126,7 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingTwo">
         <div class="pg-header bankButton" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-          aria-controls="collapseOne">
+          aria-controls="collapsetwo">
           <div class="p-2">
 
             <img style="width: 90px;" src="assets/banks/paytm.png">
@@ -77,15 +139,15 @@
         data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
-            
+
             <div class="mb-3">
               <div class="recordList">
                 <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
                 <button class="btn" style="background-color:yellow;">
                   Delete
-                </button> 
+                </button>
               </div>
-           
+
             </div>
 
             <div>
@@ -105,7 +167,7 @@
             </div>
             <div class="modal-body ">
               <div  class="col-md-12 book-popup">
-                
+
                 <form>
                   <div class="mb-3">
                     <label for="bankName" class="form-label"> Name <span class="text-danger">*</span></label>
@@ -115,7 +177,7 @@
                     <label for="bankName" class="form-label">Paytm Number<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
                   </div>
-                
+
                   <button type="submit" class="btn submitAcount">Submit</button>
                 </form>
 
@@ -134,7 +196,7 @@
       <h2 class="accordion-header" id="headingFour">
 
         <div class="pg-header bankButton" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-          aria-controls="collapseOne">
+          aria-controls="collapseOneddfd">
 
           <img style="width: 80px;" src="assets/banks/googlepay.png">
 
@@ -154,7 +216,7 @@
             </div>
             <div class="modal-body ">
               <div  class="col-md-12 book-popup">
-                
+
                 <form>
                   <div class="mb-3">
                     <label for="bankName" class="form-label"> Name <span class="text-danger">*</span></label>
@@ -164,7 +226,7 @@
                     <label for="bankName" class="form-label">Google Pay Number<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
                   </div>
-                
+
                   <button type="submit" class="btn submitAcount">Submit</button>
                 </form>
 
@@ -193,15 +255,15 @@
         data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
-            
+
             <div class="mb-3">
               <div class="recordList">
                 <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
                 <button class="btn" style="background-color:yellow;">
                   Delete
-                </button> 
+                </button>
               </div>
-           
+
             </div>
 
             <div>
@@ -221,7 +283,7 @@
             </div>
             <div class="modal-body ">
               <div  class="col-md-12 book-popup">
-                
+
                 <form>
                   <div class="mb-3">
                     <label for="bankName" class="form-label"> Name <span class="text-danger">*</span></label>
@@ -231,7 +293,7 @@
                     <label for="bankName" class="form-label">PhonePe Number<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="bankName" aria-describedby="bankName">
                   </div>
-                
+
                   <button type="submit" class="btn submitAcount">Submit</button>
                 </form>
 

@@ -33,9 +33,10 @@ export const CONFIG = {
   userRegisterOtpSent:BASE_URL_V1+'/v1/exchange/user/userRegisterOtpSent',
   userRegisterVerify:BASE_URL_V1+'/v1/exchange/user/userRegisterVerify',
   getWithdrawalList:BASE_URL_V1+'/v1/exchange/users/getWithdrawalList',
-
-
+  deleteWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/deleteWithdrawalBankDetails',
+  getWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/getWithdrawalBankDetails',
   
+
   getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',
   getManualPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getBookmakersPl',
   getSportbookPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getSportsbookPl',
