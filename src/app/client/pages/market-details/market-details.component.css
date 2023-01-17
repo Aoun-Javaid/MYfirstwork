@@ -322,7 +322,12 @@ p{
   -webkit-overflow-scrolling: touch;
   background: var(--sport-section-bg);
   background-image: none;
-  height: 50px
+  height: 50px;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.category-navigation ::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 /*.full-color{*/
 /*  background: var(--sport-section-bg) !important;*/
