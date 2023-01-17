@@ -1,21 +1,22 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { AppService } from 'src/app/services/app.service';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {AppService} from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-statement',
   templateUrl: './statement.component.html',
   styleUrls: ['./statement.component.css']
 })
-export class StatementComponent implements OnInit  {
+export class StatementComponent implements OnInit {
 
-  
+
   statementForm = new FormGroup({
     startDate: new FormControl(''),
     endDate: new FormControl('')
   });
-  constructor(private appService:AppService) {
+
+  constructor(private appService: AppService) {
 
   }
 
@@ -100,19 +101,18 @@ export class StatementComponent implements OnInit  {
     },
 
   }
-  
 
 
   dtOptions: DataTables.Settings = {};
 
   dtTrigger: Subject<any> = new Subject<any>()
-  accountStatement :any=[];
+  accountStatement: any = [];
 
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength:1,
-      tabIndex:2,
+      pageLength: 1,
+      tabIndex: 2,
       // serverSide: true,
       // processing: true,
       // ajax: (dataTablesParameters: any, callback) => {
@@ -127,6 +127,7 @@ export class StatementComponent implements OnInit  {
       //             });
       //         });
       // },
+      data: this.accountStatement,
       columns: [{
         title: 'Date/Time',
         data: 'createdAt'
@@ -139,34 +140,33 @@ export class StatementComponent implements OnInit  {
           data: 'withdraw'
         },
         {
-        title: 'Balance',
-        data: 'balance'
-      }, {
-        title: 'remark',
-        data: 'remark'
-      }, {
-        title: 'From/To',
-        data: 'From/To'
-      }] 
+          title: 'Balance',
+          data: 'balance'
+        }, {
+          title: 'remark',
+          data: 'remark'
+        }, {
+          title: 'From/To',
+          data: 'From/To'
+        }]
 
     };
 
   }
+
 // ngOnDestroy(): void {
 //    this.dtTrigger.unsubscribe();
 // }
 
-  
 
-  SubmitdataTable(){
-    debugger
-    console.log(this.statementForm.value);
-    this.draw.startDate=this.statementForm.value.startDate;
-    this.draw.endDate=this.statementForm.value.endDate;
-    this.appService.userAccountStatement(this.draw).subscribe((res=>{
-          this.accountStatement=res.data.original.data;
-          this.dtOptions.data=this.accountStatement;
-        
+  SubmitdataTable() {
+    this.draw.startDate = this.statementForm.value.startDate;
+    this.draw.endDate = this.statementForm.value.endDate;
+    this.appService.userAccountStatement(this.draw).subscribe((res => {
+      debugger
+      this.accountStatement = res.data.original.data;
+      this.dtOptions.data = this.accountStatement;
+      console.log('options', this.dtOptions)
     }));
 
   }
@@ -174,5 +174,5 @@ export class StatementComponent implements OnInit  {
 }
 
 
- 
+
 
