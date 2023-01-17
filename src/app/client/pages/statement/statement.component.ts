@@ -109,10 +109,9 @@ export class StatementComponent implements OnInit {
   accountStatement: any = [];
 
   ngOnInit(): void {
+
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 1,
-      tabIndex: 2,
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
@@ -125,6 +124,7 @@ export class StatementComponent implements OnInit {
                   });
               });
       },
+
       data: this.accountStatement,
       columns: [{
         title: 'Date/Time',
@@ -139,13 +139,10 @@ export class StatementComponent implements OnInit {
         },
         {
           title: 'Balance',
-          data: 'balance'
+          data: 'bankBalance'
         }, {
           title: 'remark',
           data: 'remark'
-        }, {
-          title: 'From/To',
-          data: 'From/To'
         }]
 
     };

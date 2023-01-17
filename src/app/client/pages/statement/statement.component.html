@@ -67,9 +67,9 @@
       <tbody>
       <tr *ngFor="let account of accountStatement">
         <td class="text-center">{{account?.createdAt }}</td>
-        <td class="text-center">{{account?.deposit }}</td>
-        <td class="text-center"><span class="credit">{{account?.withdraw || 0}}</span></td>
-        <td class="text-center"><span class="debit">{{account?.bankBalance || 0}}</span></td>
+        <td class="text-center">{{account?.deposit || null}}</td>
+        <td class="text-center"><span class="credit">{{account?.withdraw || null}}</span></td>
+        <td class="text-center"><span class="debit">{{account?.bankBalance || null}}</span></td>
         <td class="text-center">{{account?.remark }}</td>
         <td class="text-center liner">
 <!--          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aura v Kandy-->
