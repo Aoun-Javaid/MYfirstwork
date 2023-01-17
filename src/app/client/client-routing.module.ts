@@ -16,7 +16,10 @@ import {WithdrawComponent} from "./pages/withdraw/withdraw.component";
 import {DepositComponent} from "./pages/deposit/deposit.component";
 import {BetHistoryComponent} from './pages/bet-history/bet-history.component';
 import {AddPaymentMethodComponent} from './pages/add-payment-method/add-payment-method.component';
-import {PasswordHistoryComponent} from "./pages/password-history/password-history.component";
+// import {PasswordHistoryComponent} from "./pages/password-history/password-history.component";
+import { ProfitlossEventComponent } from './pages/profitloss-event/profitloss-event.component';
+import { ProfitlossMarketComponent } from './pages/profitloss-market/profitloss-market.component';
+import { DProfitHistoryComponent } from './pages/d-profit-history/d-profit-history.component';
 
 const routes: Routes = [
   {
@@ -61,8 +64,20 @@ const routes: Routes = [
       },
       {
         path: 'add-paymentMethod', component: AddPaymentMethodComponent
-      }, {
-        path: 'passwordHistory', component: PasswordHistoryComponent
+      },
+      //  {
+      //   path: 'passwordHistory', component: PasswordHistoryComponent
+      // },
+      {
+        path: 'profitloss-event', component: ProfitlossEventComponent
+      },
+
+      {
+        path: 'profitloss-market', component: ProfitlossMarketComponent
+      },
+
+      {
+        path: 'd-profit-history', component: DProfitHistoryComponent
       },
       // {
       //   path: 'result',component:ResultComponent
