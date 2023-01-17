@@ -165,7 +165,8 @@ export class StatementComponent implements OnInit {
     this.appService.userAccountStatement(this.draw).subscribe((res => {
       debugger
       this.accountStatement = res.data.original.data;
-      this.dtOptions.data = this.accountStatement;
+      // this.dtOptions.data.pu = this.accountStatement;
+      this.dtOptions.aaData.push(this.accountStatement)
       console.log('options', this.dtOptions)
     }));
 

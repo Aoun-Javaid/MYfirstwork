@@ -1,71 +1,77 @@
-.account-ui{
-    background-color: var(--theme-color);
-    padding: 12px;
-    border-radius: 5px;
+.account-ui {
+  background-color: var(--theme-color);
+  padding: 12px;
+  border-radius: 5px;
 }
-.account-pro{
-    color: black;
-    font-size: 15px;
-    padding: 10px;
-    font-weight: bold;
-}
-.option-row .form-control{
 
-    background-color: #a380b2;
-    color: #000;
-    font-weight: 600;
+.account-pro {
+  color: black;
+  font-size: 15px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.option-row .form-control {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  height: 40px;
+  border-radius: 25px;
+}
+
+@media (max-width: 767.98px) {
+  .account-ui .btn-get, .account-ui input {
+    text-transform: uppercase;
     height: 40px;
+    padding: 0;
+    font-size: 12px;
+  }
 }
-@media (max-width: 767.98px){
-    .account-ui .btn-get, .account-ui input {
-        text-transform: uppercase;
-        height: 40px;
-        padding: 0;
-        font-size: 12px;
-    }
-}
+
 .waves-effect {
-    background: var(--theme-color);
-    border-radius: 8px;
-    font-size: 1vw;
-    font-weight: 700;
-    overflow: hidden;
-    color: #000;
+  background: var(--theme-color);
+  border-radius: 8px;
+  font-size: 1vw;
+  font-weight: 700;
+  overflow: hidden;
+  color: #000;
+  padding: 10px;
+  width: 200px;
+}
+
+.btn-download {
+  background: none;
+  font-size: 20px;
+  border: none;
+  transition: .9s;
+  color: var(--theme-color) !important;
+
+}
+
+@media screen and (min-width: 750px) and (max-width: 1288px) {
+  .waves-effect {
+
     padding: 10px;
-    width:200px;
-}
-.btn-download{
-    background: none;
-    font-size: 20px;
-    border: none;
-    transition: .9s;
-    color: var(--theme-color) !important;
-
+    width: 120px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
 }
 
-@media screen and (min-width: 750px) and (max-width:1288px) {
-    .waves-effect {
-
-        padding: 10px;
-        width:120px;
-        white-space: nowrap;
-        font-size: 14px;
-    }
-}
 @media screen and (max-width: 767px) {
-    .waves-effect {
-        margin-top: 5px;
-        padding: 10px;
-        width:100%;
-        white-space: nowrap;
-        font-size: 14px;
-    }
+  .waves-effect {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 14px;
+  }
 }
 
-.table-responsive{
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
 
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
@@ -76,58 +82,65 @@
 }
 
 
-  .tableData{
+.tableData {
+  font-size: 13px;
+  border: 2px solid var(--theme-color1);
+  font-family: Gotham, sans-serif;
+}
+
+.credit {
+  color: #19fc19;
+
+}
+
+.debit {
+  color: red;
+}
+
+.table-dark {
+  --bs-table-bg: #292929 !important;
+  --bs-table-striped-bg: #3d3d3d !important;
+
+}
+
+@media screen and (max-width: 750px) {
+  .table-dark {
+    width: 750px;
+  }
+}
+
+.tabs {
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--theme-color);
+  margin-top: 15px
+}
+
+.tabs div {
+  width: 33%;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #000 !important;
+  border-radius: 0 !important;
+  font-weight: 600;
+}
+
+.tabs div.active {
+  color: var(--text-color-white) !important;
+  background: var(--header-color) !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .tabs div {
     font-size: 13px;
-    border: 2px solid var(--theme-color1);
-    font-family: Gotham,sans-serif;
   }
-  .credit{
-    color: #19fc19;
-
-  }
-  .debit {
-    color: red;
 }
-.table-dark{
-    --bs-table-bg: #292929 !important;
-    --bs-table-striped-bg: #3d3d3d !important;
-
-}
-@media screen and (max-width: 750px)  {
-    .table-dark {
-       width: 750px;
-    }
-}
-
-.tabs{
-    width: 99%;
-    margin-left: auto;
-    margin-right: auto;
-    background: var(--theme-color);
-    margin-top: 15px
-  }
-  .tabs div{
-    width: 33%;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    text-transform: uppercase;
-    padding: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #000!important;
-    border-radius: 0!important;
-    font-weight: 600;
-  }
-  .tabs div.active{
-    color: var(--text-color-white) !important;
-    background: var(--header-color) !important;
-  }
-  @media only screen and (max-width: 767px){
-    .tabs div{
-      font-size: 13px;
-    }
-  }
 
 :host ::ng-deep .dataTables_wrapper .dataTables_length select {
   border: 1px solid #aaa;
@@ -137,24 +150,27 @@
   padding: 4px;
   color: var(--white) !important;
 }
+
 :host ::ng-deep .dataTables_wrapper .dataTables_filter {
   float: right;
   text-align: right;
   margin-bottom: 10px;
 }
-@media screen and (max-width: 640px){
-  :host ::ng-deep  .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+
+@media screen and (max-width: 640px) {
+  :host ::ng-deep .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
     float: none;
     text-align: left;
-    margin-bottom:10px ;
+    margin-bottom: 10px;
   }
 }
-@media screen and (max-width: 640px){
-  :host ::ng-deep  .dataTables_wrapper .dataTables_filter {
+
+@media screen and (max-width: 640px) {
+  :host ::ng-deep .dataTables_wrapper .dataTables_filter {
     margin-top: 0.5em;
     display: contents;
     justify-content: center;
-    margin-bottom:10px ;
+    margin-bottom: 10px;
   }
 }
 

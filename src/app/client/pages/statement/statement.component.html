@@ -32,65 +32,65 @@
   <div class="table-responsive">
     <table datatable [dtOptions]="dtOptions" class="table table-dark table-striped table-bordered tableData">
 
-<!--      <thead>-->
-<!--      <tr style="background-color: #424e5a !important;">-->
-<!--        <th class="text-center">Date/Time</th>-->
-<!--        <th class="text-center">Deposit</th>-->
+      <thead>
+      <tr style="background-color: #424e5a !important;">
+        <th class="text-center">Date/Time</th>
+        <th class="text-center">Deposit</th>
 
-<!--        <th class="text-center">Withdraw</th>-->
+        <th class="text-center">Withdraw</th>
 
-<!--        <th class="text-center">Balance</th>-->
-<!--        <th class="text-center">Remark</th>-->
-<!--        <th class="text-center">From/To-->
-<!--        </th>-->
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      <tbody>-->
-<!--      <tr *ngFor="let account of accountStatement">-->
-<!--        <td class="text-center">{{account.createdAt }}</td>-->
-<!--        <td class="text-center">{{account.deposit }}</td>-->
-<!--        <td class="text-center"><span class="credit">{{account.withdraw }}</span></td>-->
-<!--        <td class="text-center"><span class="debit">{{account.bankBalance }}</span></td>-->
-<!--        <td class="text-center">{{account.remark }}</td>-->
-<!--        <td class="text-center liner">-->
-<!--          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aura v Kandy-->
-<!--            Falcons &gt; Match Odds </a></div>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      &lt;!&ndash; <tr>-->
-<!--        <td class="text-center">2022-12-13 18:23:02</td>-->
-<!--        <td class="text-center">2</td>-->
-<!--        <td class="text-center"><span class="credit">210</span></td>-->
-<!--        <td class="text-center"><span class="debit">0.00</span></td>-->
-<!--        <td class="text-center">1118</td>-->
-<!--        <td class="text-center liner">-->
-<!--          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aurara v Kandy-->
-<!--            Falcons &gt; Match Odds </a><</div>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td class="text-center">2022-12-13 18:23:02</td>-->
-<!--        <td class="text-center">3</td>-->
-<!--        <td class="text-center"><span class="credit">210</span></td>-->
-<!--        <td class="text-center"><span class="debit">0.00</span></td>-->
-<!--        <td class="text-center">1118</td>-->
-<!--        <td class="text-center liner">-->
-<!--          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aurara v Kandy-->
-<!--            Falcons &gt; Match Odds </a><</div>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td class="text-center">2022-12-13 18:23:02</td>-->
-<!--        <td class="text-center">4</td>-->
-<!--        <td class="text-center"><span class="credit">210</span></td>-->
-<!--        <td class="text-center"><span class="debit">0.00</span></td>-->
-<!--        <td class="text-center">1118</td>-->
-<!--        <td class="text-center liner">-->
-<!--          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aurara v Kandy-->
-<!--            Falcons &gt; Match Odds </a><</div>-->
-<!--        </td>-->
-<!--      </tr> &ndash;&gt;-->
-<!--      </tbody>-->
+        <th class="text-center">Balance</th>
+        <th class="text-center">Remark</th>
+        <th class="text-center">From/To
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let account of accountStatement">
+        <td class="text-center">{{account.createdAt }}</td>
+        <td class="text-center">{{account.deposit }}</td>
+        <td class="text-center"><span class="credit">{{account.withdraw }}</span></td>
+        <td class="text-center"><span class="debit">{{account.bankBalance }}</span></td>
+        <td class="text-center">{{account.remark }}</td>
+        <td class="text-center liner">
+          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aura v Kandy
+            Falcons &gt; Match Odds </a></div>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td class="text-center">2022-12-13 18:23:02</td>
+        <td class="text-center">2</td>
+        <td class="text-center"><span class="credit">210</span></td>
+        <td class="text-center"><span class="debit">0.00</span></td>
+        <td class="text-center">1118</td>
+        <td class="text-center liner">
+          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aurara v Kandy
+            Falcons &gt; Match Odds </a><</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-center">2022-12-13 18:23:02</td>
+        <td class="text-center">3</td>
+        <td class="text-center"><span class="credit">210</span></td>
+        <td class="text-center"><span class="debit">0.00</span></td>
+        <td class="text-center">1118</td>
+        <td class="text-center liner">
+          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aurara v Kandy
+            Falcons &gt; Match Odds </a><</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-center">2022-12-13 18:23:02</td>
+        <td class="text-center">4</td>
+        <td class="text-center"><span class="credit">210</span></td>
+        <td class="text-center"><span class="debit">0.00</span></td>
+        <td class="text-center">1118</td>
+        <td class="text-center liner">
+          <div><a href="/statement/detail/1.207492396?round=83">Cricket &gt; Dambulla Aurara v Kandy
+            Falcons &gt; Match Odds </a><</div>
+        </td>
+      </tr> -->
+      </tbody>
 
       <!-- <tbody>
                   <tr>
