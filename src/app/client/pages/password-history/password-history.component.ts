@@ -113,13 +113,12 @@ export class PasswordHistoryComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 1,
       tabIndex: 2,
-      // serverSide: true,
-      // processing: true,
+      serverSide: true,
+      processing: true,
       ajax: (dataTablesParameters: any, callback) => {
         this.appService.userAccountStatement(this.draw)
           .subscribe(resp => {
             this.accountStatement = resp.data.original.data;
-            ;
             callback({
               recordsTotal: this.accountStatement.length,
               data: resp.data.original.data,
