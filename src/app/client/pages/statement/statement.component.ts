@@ -117,7 +117,7 @@ export class StatementComponent implements OnInit {
       ajax: (dataTablesParameters: any, callback) => {
         this.appService.userAccountStatement(this.draw)
               .subscribe(resp => {
-                this.accountStatement=resp.data.original.data;;
+                this.accountStatement=resp.data.original.data;
                   callback({
                       recordsTotal: this.accountStatement.length,
                       data: resp.data.original.data,
@@ -125,7 +125,7 @@ export class StatementComponent implements OnInit {
               });
       },
 
-      data: this.accountStatement,
+      // data: this.accountStatement,
       columns: [{
         title: 'Date/Time',
         data: 'createdAt'
@@ -149,12 +149,13 @@ export class StatementComponent implements OnInit {
 
   }
 
-// ngOnDestroy(): void {
-//    this.dtTrigger.unsubscribe();
-// }
+ngOnDestroy(): void {
+   this.dtTrigger.unsubscribe();
+}
 
 
   SubmitdataTable() {
+    this.accountStatement=[]
     this.draw.startDate = this.statementForm.value.startDate;
     this.draw.endDate = this.statementForm.value.endDate;
     this.appService.userAccountStatement(this.draw).subscribe((res => {
