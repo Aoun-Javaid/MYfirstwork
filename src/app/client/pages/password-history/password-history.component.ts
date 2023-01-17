@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {Subject} from 'rxjs';
-import {AppService} from 'src/app/services/app.service';
+import {FormControl, FormGroup} from "@angular/forms";
+import {AppService} from "../../../services/app.service";
+import {Subject} from "rxjs";
 
 @Component({
-  selector: 'app-statement',
-  templateUrl: './statement.component.html',
-  styleUrls: ['./statement.component.css']
+  selector: 'app-password-history',
+  templateUrl: './password-history.component.html',
+  styleUrls: ['./password-history.component.css']
 })
-export class StatementComponent implements OnInit {
+export class PasswordHistoryComponent implements OnInit {
 
 
   statementForm = new FormGroup({
@@ -21,9 +21,6 @@ export class StatementComponent implements OnInit {
   }
 
   draw = {
-    "startDate": "2023-01-16T12:44:46+04:00",
-    "endDate": "2023-01-17T12:44:46+04:00",
-    "dataSource": "",
     "draw": 1,
     "columns": [
       {
@@ -113,17 +110,17 @@ export class StatementComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 1,
       tabIndex: 2,
-      // serverSide: true,
-      // processing: true,
+      serverSide: true,
+      processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        this.appService.userAccountStatement(this.draw)
-              .subscribe(resp => {
-                this.accountStatement=resp.data.original.data;;
-                  callback({
-                      recordsTotal: this.accountStatement.length,
-                      data: resp.data.original.data,
-                  });
-              });
+        this.appService.getPasswordHistory(this.draw)
+          .subscribe(resp => {
+            this.accountStatement = resp.data.original.data;
+            callback({
+              recordsTotal: this.accountStatement.length,
+              data: resp.data.original.data,
+            });
+          });
       },
       data: this.accountStatement,
       columns: [{
@@ -152,23 +149,16 @@ export class StatementComponent implements OnInit {
 
   }
 
-// ngOnDestroy(): void {
-//    this.dtTrigger.unsubscribe();
-// }
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
+  }
 
 
   SubmitdataTable() {
-    this.draw.startDate = this.statementForm.value.startDate;
-    this.draw.endDate = this.statementForm.value.endDate;
     this.appService.userAccountStatement(this.draw).subscribe((res => {
       this.accountStatement = res.data.original.data;
       this.dtOptions.data = this.accountStatement;
     }));
 
   }
-
 }
-
-
-
-

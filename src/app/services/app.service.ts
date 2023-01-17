@@ -97,6 +97,11 @@ export class AppService {
   getWithdrawalBankDetails(): Observable<any> {
     return this.http.post(CONFIG.getWithdrawalBankDetails, {})
   }
+
+  getPasswordHistory(draw:any): Observable<any> {
+    return this.http.post(CONFIG.getPasswordHistory, draw)
+  }
+
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

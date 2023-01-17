@@ -35,7 +35,7 @@ export const CONFIG = {
   getWithdrawalList:BASE_URL_V1+'/v1/exchange/users/getWithdrawalList',
   deleteWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/deleteWithdrawalBankDetails',
   getWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/getWithdrawalBankDetails',
-  
+
 
   getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',
   getManualPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getBookmakersPl',
@@ -51,7 +51,7 @@ export const CONFIG = {
   userAccountStatement: BASE_URL_V1 + '/v1/exchange/users/banking/userAccountStatement',
   userSettledBetList: BASE_URL_V1 + '/v1/exchange/users/betlist/userSettledBetList',
   userSportsProfitloss: BASE_URL_V1 + '/v1/exchange/users/profitloss/userSportsProfitloss',
-  
+  getPasswordHistory: 'v1/exchange/users/getPasswordChangeHistory'
 };
 
 
