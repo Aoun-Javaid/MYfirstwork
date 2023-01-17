@@ -7,9 +7,9 @@
           <i class="fa-regular fa-circle-xmark"></i>
         </a>
       </div>
-      <form novalidate="" class="ng-untouched ng-pristine ng-invalid" [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+      <form novalidate="" class="ng-untouched ng-pristine ng-invalid" [formGroup]="signUpForm">
 
-        <label for="password" class="login-page-label">Enetr mobile number</label>
+        <label for="password" class="login-page-label">Mobile No.</label>
         <ngx-intl-tel-input
           [cssClass]="'custom'"
           [enableAutoCountrySelect]="true"
@@ -29,24 +29,26 @@
 
         >
         </ngx-intl-tel-input>
-        <label for="password" class="login-page-label">Enetr Password</label>
+        <div class="text-center">
+          <div class="text-danger err"  *ngIf="this.signUpForm.controls['phoneNumber'].hasError('required')&&this.signUpForm.controls['phoneNumber'].touched">phoneNumber is required</div>
+
+        </div>
+        <label for="username" class="login-page-label">Username</label>
         <div class="input-group mb-3">
-          <input formControlName="password" id="password" name="password"
-                 required="" placeholder="Enter Password" class="form-control" type="password"
+          <input formControlName="username" id="username" name="username"
+                 required="" placeholder="Username" class="form-control" type="text"
           >
-          <a class="login-eye d-flex align-items-center">
-            <i class="fa-solid fa-eye-slash"></i>
-          </a>
+        </div>
+        <div class="text-center">
+          <div class="text-danger err"  *ngIf="this.signUpForm.controls['username'].hasError('required')&&this.signUpForm.controls['username'].touched">username is required</div>
+
         </div>
         <!---->
-        <label for="RefralId" class="login-page-label">Enter Refral Id </label>
+        <label for="RefralId" class="login-page-label">Refral Id </label>
         <div class="input-group">
           <input formControlName="refral" id="RefralId" name="refral" required=""
-                 placeholder="Enter Refral Id" class="form-control " type="password"
+                 placeholder="promo/Refer code" class="form-control " type="text"
           >
-          <a class="login-eye d-flex align-items-center">
-            <i class="fa-solid fa-eye-slash"></i>
-          </a>
         </div>
         <div id="recaptcha-container" class="form-group"></div>
         <div class="input-group justify-content-end">
@@ -55,12 +57,50 @@
             <a routerLink="/client/login" class="loginlink"> login</a>
           </p>
         </div>
-        <div class="modal-footer justify-content-center my-3">
-          <button type="submit" class="login-btn1 btn submit-button">
-            <!----> sign up
+        <div class="modal-footer justify-content-center my-2">
+          <button type="submit" class="login-btn1 btn submit-button" (click)="otpRequest()">
+            <!----> Generate OTP
           </button>
           <!---->
         </div>
+        <div *ngIf="otpBoxShow" class="">
+          <label for="OTP" class="login-page-label">OTP</label>
+          <div class="input-group mb-3">
+            <input formControlName="OTP" id="OTP" name="OTP"
+                   required="" placeholder="OTP" class="form-control" type="text"
+            >
+          </div>
+          <div class="text-center">
+            <div class="text-danger err"  *ngIf="this.signUpForm.controls['OTP'].hasError('required')&&this.signUpForm.controls['OTP'].touched">OTP is required</div>
+
+          </div>
+          <label for="password" class="login-page-label">Password</label>
+          <div class="input-group mb-3">
+            <input formControlName="password" id="password" name="password"
+                   required="" placeholder="Enter Password" class="form-control" type="{{opasswordType}}"
+            >
+            <a class="login-eye d-flex align-items-center">
+              <i class="fa-regular fa-eye-slash"
+                 (click)="opasswordType = opasswordType === 'text' ? 'password' : 'text';"
+                 [ngClass]="{'fa-eye': opasswordType === 'text', 'fa-eye-slash': opasswordType !== 'text'}"></i>
+            </a>
+
+          </div>
+          <div class="text-center">
+            <div class="text-danger err"  *ngIf="this.signUpForm.controls['password'].hasError('required')&&this.signUpForm.controls['password'].touched">password is required</div>
+
+            <div class="text-danger err"  *ngIf="(this.signUpForm.controls['password'].hasError('pattern')) && this.signUpForm.controls['password'].touched">password should be Minimum eight characters, at least one letter and one number</div>
+
+          </div>
+
+          <div class="modal-footer justify-content-center my-3">
+            <button type="submit" class="login-btn1 btn submit-button" (click)="submitSignup()">
+              <!---->Sign Up
+            </button>
+            <!---->
+          </div>
+        </div>
+
       </form>
     </div>
   </div>

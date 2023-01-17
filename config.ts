@@ -30,7 +30,9 @@ export const CONFIG = {
   getExchangeNews:BASE_URL_API+'/api/exchange/news/getExchangeNews',
   withdrawalRequest:BASE_URL_V1+'/v1/exchange/users/withdrawalRequest',
   calculateWithdrawalAmount:BASE_URL_V1+'/v1/exchange/users/calculateWithdrawalAmount',
-  
+  userRegisterOtpSent:BASE_URL_V1+'/v1/exchange/user/userRegisterOtpSent',
+    userRegisterVerify:BASE_URL_V1+'/v1/exchange/user/userRegisterVerify',
+
 
   getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',
   getManualPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getBookmakersPl',
@@ -43,7 +45,7 @@ export const CONFIG = {
   getbookieFancyDataURL: BASE_URL_API + "/api/exchange/market/getMarketsOfEventList",
   fancyBookListByMarketURL: BASE_URL_V1 + '/v1/exchange/users/books/getFancybooks',
   userGetStackURL: BASE_URL_V1 + '/v1/exchange/users/getUserBetStake',
-  
+
 };
 
 

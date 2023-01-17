@@ -97,7 +97,12 @@ export class AppService {
         return data;
       }));
   }
-
+  userRegisterOtpSent(mobileNo:any,referralBy:any,userName:any): Observable<any> {
+    return this.http.post(CONFIG.userRegisterOtpSent, { mobileNo,referralBy,userName })
+  }
+  userRegisterVerify(mobileNo:any,referralBy:any,userName:any,password:any,code:any): Observable<any> {
+    return this.http.post(CONFIG.userRegisterVerify, { mobileNo,referralBy,userName ,password,code})
+  }
   updateRecordByPut(url, params) {
     return this.http.put<any>(url, params)
       .pipe(map(data => {
