@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
 import { AppService } from 'src/app/services/app.service';
 import { ConfirmedValidator } from 'src/app/Validators/confirmed.validator';
 
@@ -16,7 +17,7 @@ export class EditPasswordComponent implements OnInit {
   public cpasswordType: string="password";
   editForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder,private appService:AppService,) {
+  constructor(private fb: FormBuilder,private appService:AppService,public toastr: ToastrManager) {
 
     this.editForm = fb.group({
       oldpassword: ['',[Validators.required]],
@@ -41,11 +42,16 @@ export class EditPasswordComponent implements OnInit {
   submitForm(){
     if(this.editForm.valid){
       this.appService.changeUserPassword(this.editForm.value.password,this.editForm.value.oldpassword).subscribe((res:any)=>{
-
+            if(res.meta.status_code==200){
+                this.toastr.successToastr(res.meta.status);
+            }
+            else{
+              this.toastr.errorToastr(res.meta.status);
+            }
       });
     }
     else{
-      // show error
+      this.toastr.errorToastr('please fill all the required fields');
     }
 
 

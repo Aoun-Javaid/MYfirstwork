@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
 import { AppService } from 'src/app/services/app.service';
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public npasswordType: string = "password";
 
-  constructor(private appService: AppService, private router: Router) {
+  constructor(private appService: AppService, private router: Router,public toastr: ToastrManager) {
 
   }
   ngOnInit(): void {
@@ -68,10 +69,12 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('accessToken', res.data.accessToken);
         this.appService.setLoggedIn(true)
         this.router.navigate(['/client/']);
+        this.toastr.successToastr('Successfully LoggedIn !!!');
         // location.reload();
       }
       else {
         this.appService.setLoggedIn(false);
+        this.toastr.errorToastr(res.meta.status);
       }
     });
   }
