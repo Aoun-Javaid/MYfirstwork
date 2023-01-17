@@ -21,9 +21,6 @@ export class PasswordHistoryComponent implements OnInit {
   }
 
   draw = {
-    "startDate": "2023-01-16T12:44:46+04:00",
-    "endDate": "2023-01-17T12:44:46+04:00",
-    "dataSource": "",
     "draw": 1,
     "columns": [
       {
@@ -116,7 +113,7 @@ export class PasswordHistoryComponent implements OnInit {
       serverSide: true,
       processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        this.appService.userAccountStatement(this.draw)
+        this.appService.getPasswordHistory(this.draw)
           .subscribe(resp => {
             this.accountStatement = resp.data.original.data;
             callback({
@@ -152,14 +149,12 @@ export class PasswordHistoryComponent implements OnInit {
 
   }
 
-// ngOnDestroy(): void {
-//    this.dtTrigger.unsubscribe();
-// }
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
+  }
 
 
   SubmitdataTable() {
-    this.draw.startDate = this.statementForm.value.startDate;
-    this.draw.endDate = this.statementForm.value.endDate;
     this.appService.userAccountStatement(this.draw).subscribe((res => {
       this.accountStatement = res.data.original.data;
       this.dtOptions.data = this.accountStatement;

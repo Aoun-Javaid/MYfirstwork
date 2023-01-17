@@ -92,6 +92,10 @@ export class AppService {
     return this.http.post(CONFIG.getWithdrawalList, {})
   }
 
+  getPasswordHistory(draw:any): Observable<any> {
+    return this.http.post(CONFIG.getPasswordHistory, draw)
+  }
+
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})
