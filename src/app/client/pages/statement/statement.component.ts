@@ -115,18 +115,16 @@ export class StatementComponent implements OnInit {
       tabIndex: 2,
       // serverSide: true,
       // processing: true,
-      // ajax: (dataTablesParameters: any, callback) => {
-      //   this.appService.userAccountStatement(this.draw)
-      //         .subscribe(resp => {
-      //           this.accountStatement=resp.data.original.data;;
-
-      //             callback({
-      //                 recordsTotal: resp.recordsTotal,
-      //                 recordsFiltered: resp.recordsFiltered,
-      //                 data: [],
-      //             });
-      //         });
-      // },
+      ajax: (dataTablesParameters: any, callback) => {
+        this.appService.userAccountStatement(this.draw)
+              .subscribe(resp => {
+                this.accountStatement=resp.data.original.data;;
+                  callback({
+                      recordsTotal: this.accountStatement.length,
+                      data: resp.data.original.data,
+                  });
+              });
+      },
       data: this.accountStatement,
       columns: [{
         title: 'Date/Time',
@@ -163,11 +161,8 @@ export class StatementComponent implements OnInit {
     this.draw.startDate = this.statementForm.value.startDate;
     this.draw.endDate = this.statementForm.value.endDate;
     this.appService.userAccountStatement(this.draw).subscribe((res => {
-      debugger
       this.accountStatement = res.data.original.data;
-      // this.dtOptions.data.pu = this.accountStatement;
-      this.dtOptions.aaData.push(this.accountStatement)
-      console.log('options', this.dtOptions)
+      this.dtOptions.data = this.accountStatement;
     }));
 
   }
