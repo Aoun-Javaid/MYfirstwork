@@ -20,7 +20,7 @@
 
   <div class="markets" *ngFor="let market of markets">
 
-    <a routerLink="/client/market-details">
+    <a routerLink="/client/market-details/{{market.exEventId}}/{{market.sportId}}">
       <div class="row mx-0 text-capitalize sport-list fgl-1 myexch-lan-rate-card">
         <div class="col-md-7 col-12  d-flex name-sport px-0">
           <div class="col-md-1 col-2 px-0 align-self-center text-center">

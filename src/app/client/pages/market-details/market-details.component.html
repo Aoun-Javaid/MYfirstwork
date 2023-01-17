@@ -1,245 +1,897 @@
 <div class="market-details">
 
 
-<div class="event-title d-flex justify-content-between">
-  <div class="p-0 ps-1">
-    <p class="m-0">india vs pakistan <br>
-      <span class="m-event-timer"> 14-12-2022, 2:15:00 AM</span>
-    </p>
+  <div class="event-title d-flex justify-content-between">
+    <div class="p-0 ps-1">
+      <p class="m-0" *ngIf="eventName">{{eventName}} <br>
+        <!-- <span class="m-event-timer"> 14-12-2022, 2:15:00 AM</span> -->
+
+        <!-- <ng-container *ngIf="betfairData[0]; else elseTemplate">
+            <ng-container *ngIf="betfairData[0]?.oddsData.inPlay; else noinplay">
+                <span class="float-right inplay newlacunch-menu">INPLAY</span>
+            </ng-container>
+            <ng-template #noinplay>
+                <span class="m-event-timer" *ngIf="betfairData[0]">222 {{getLocalDateTime(betfairData[0]?.eventTime)}}</span>
+            </ng-template>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="manualData[0]?.oddsData.inPlay;">
+                <span class="float-right inplay newlacunch-menu">INPLAY</span>
+            </ng-container>
+        </ng-template> -->
+
+      </p>
+    </div>
+    <div class="tv-icon-div d-flex align-items-center">
+      <i class="fa-solid fa-tv"></i>
+    </div>
+
   </div>
-  <div class="tv-icon-div d-flex align-items-center">
-    <i class="fa-solid fa-tv"></i>
-  </div>
-
-</div>
-<!-- Market or mybets Tabs-->
-  <div  class="d-flex marktet-tabs">
-    <div  class="align-self-center">
-      <button  class="btn-match-unmatch mymarket"> market</button>
+  <!-- Market or mybets Tabs-->
+  <div class="d-flex marktet-tabs">
+    <div class="align-self-center">
+      <button class="btn-match-unmatch mymarket"> market</button>
     </div>
-    <div  class="align-self-center">
-      <button  class="btn-match-unmatch mybet">my bet </button>
+    <div class="align-self-center">
+      <button class="btn-match-unmatch mybet">my bet </button>
     </div>
   </div>
 
-<!--  Market Scroller start -->
-  <div class="category-navigation">
-    <div class="full-color">
-      <ul class="category-navigation-container" >
-        <li class="category-navigation-item" *ngFor="let cat of catTabs">
-          <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" >
-        <span class="category-navigation-item-icon">
-
-          {{cat.cat_name}}</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!--  Market Scroller end -->
-
-  <!--  Marketdetails portion -->
-  <div class="market-section">
-    <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
-      <div class="clip1 col-md-5 col-9">
-        <p class="market-title">
-          <i class="fa-solid fa-chart-column me-2"></i>Match odds
-        </p>
-        <a  href="#" class="cashout1">
-             <span  class="cashout">
-                    <i class="fa-solid fa-circle"></i>
-              </span>
-          cashout
-        </a>
-      </div>
-      <div class="col-md-7 col-3 px-lg-0 text-end pe-3 px-lg-0">
-        <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal" data-bs-target="#infoModal"></i>
-      </div>
-    </div>
-    <div class="market-rates">
-      <div class="row mt-1">
-        <div class="col-md-5 col-7">
-          <p class="min-max mb-0"><span>min: <b>100</b></span>  <span class="max-value">max:  <b>10000</b> </span></p>
-        </div>
-        <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
-          <p class="market-back mb-0"><span class="back2">back</span> <span class="lay2">lay</span></p>
-        </div>
-
-      </div>
-      <div class="row align-items-center text-capitalize text-dark bg-theme market-data-row">
-        <div class="col-md-5 col-7">
-          <p class="market-name">
-            <i class="fa-solid fa-chart-column me-2"></i>india <span>
-        <b class="' + bcolor + '">0</b>
-        <i class="fa-solid fa-arrow-right ms-2 me-2 text-dark"></i>
-        <b class="' + color + '">0</b>
-      </span>
-          </p>
-        </div>
-        <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center">
-<!--          for mobilr -->
-          <div  class="bl-buttons desktop-hide">
-            <button  type="button" class="bl-btn back waves-effect waves-light bet-sec'">1.53 <span >200</span>
-            </button>
-            <button  type="button" class="bl-btn lay waves-effect waves-light bet-sec'">1.53 <span >200</span>
-            </button>
-          </div>
-<!--          for desktop -->
-          <div class="bl-buttons mobile-hide">
-            <button class="bl-btn eon1 bet-sec ">1.53 <span>200</span>
-            </button>
-            <button class="bl-btn eon2 bet-sec ">1.53 <span>200</span>
-            </button>
-            <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample" class="bl-btn back waves-effect waves-light bet-sec ">
-              <span class=" size1">1.53</span>
-              <span class=" size2">200</span>
-            </button>
-            <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample" class="bl-btn lay waves-effect waves-light bet-sec ">
-              <span class=" size1">1.53</span>
-              <span class=" size2">200</span>
-            </button>
-            <button class="bl-btn eon3 bet-sec ">1.53 <span>200</span>
-            </button>
-            <button class="bl-btn eon4 bet-sec ">1.53 <span>200</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-</div>
   <!--  Market Scroller start -->
-  <div class="category-navigation">
+  <div class="category-navigation" *ngIf="betfairData?.length > 0">
     <div class="full-color">
-      <ul class="category-navigation-container" >
-        <li class="category-navigation-item" *ngFor="let cat of catTabs">
-          <a class="category-navigation-item-link" [ngClass]="cat.id==2?'active':''" >
-        <span class="category-navigation-item-icon">
+      <ul class="category-navigation-container" id="naviMarketList">
 
-          {{cat.cat_name}}</span>
+        <li class="category-navigation-item active" (click)="setMarketType('ALL',$event)">
+          <span class="category-navigation-item-icon">
+            All</span>
+        </li>
+
+        <ng-container *ngFor="let betfair of betfairData;let i = index">
+          <li class="category-navigation-item" *ngIf="betfair?.marketName && betfair.oddsData.status != 'CLOSED'"
+            (click)="setMarketType(betfair?.marketName,$event)">
+            <span class="category-navigation-item-icon">
+              {{betfair?.marketName}}</span>
+          </li>
+        </ng-container>
+
+        <ng-container *ngFor="let manual of manualData;let i = index">
+          <li class="category-navigation-item" *ngIf="manual?.marketName && manual.oddsData.status != 'CLOSED'"
+            (click)="setMarketType(manual?.marketName,$event)">
+            <span class="category-navigation-item-icon">
+              {{manual?.marketName}}</span>
+          </li>
+        </ng-container>
+
+      </ul>
+    </div>
+  </div>
+  <!--  Market Scroller end -->
+
+  <!-- Betfair Marketdetails Portion -->
+  <ng-container *ngFor="let betfair of betfairData;let i = index">
+    <div class="market-section" *ngIf="currentMarketType == 'ALL' || currentMarketType == betfair.marketName">
+      <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
+        <div class="clip1 col-md-7 col-10">
+          <p class="market-title">
+            <i class="fa-solid fa-chart-column me-2"></i>{{betfair.marketName}}
+          </p>
+          <a href="#" class="cashout1">
+            <span class="cashout">
+              <i class="fa-solid fa-circle"></i>
+            </span>
+            cashout
           </a>
+        </div>
+        <div class="col-md-5 col-2 px-lg-0 text-end pe-3 px-lg-0">
+          <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal" data-bs-target="#infoModal"
+            (click)="openGeneralRules()"></i>
+        </div>
+      </div>
+      <div class="market-rates">
+        <div class="row mt-1">
+          <div class="col-md-5 col-7">
+            <p class="min-max mb-0"><span>min: <b>{{betfair?.min}}</b></span> <span class="max-value">max:
+                <b>{{betfair?.max}}</b> </span></p>
+          </div>
+          <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
+            <p class="market-back mb-0"><span class="back2">back</span> <span class="lay2">lay</span></p>
+          </div>
+
+        </div>
+        <ng-container *ngFor="let runner of betfair.oddsData.runners">
+          <div
+            class="row align-items-center text-capitalize text-dark bg-theme market-data-row odd-row  {{betfair.exMarketId}} {{runner.selectionId}} ">
+            <div class="col-md-5 col-7">
+              <p class="market-name">
+                <i class="fa-solid fa-chart-column me-2"></i>{{betfair.runnersData[runner.selectionId]}}
+                <!-- <span>
+                <b class="' + bcolor + '">0</b>
+                <i class="fa-solid fa-arrow-right ms-2 me-2 text-dark"></i>
+                <b class="' + color + '">0</b>
+              </span> -->
+                <span *ngIf="allMarketPl[betfair.exMarketId]"
+                  [ngClass]="[allMarketPl[betfair.exMarketId][runner.selectionId] > 0  ? 'plus-book' : 'minus-book']"><i
+                    class="fa fa-arrow-right"></i>
+                  {{ allMarketPl[betfair.exMarketId][runner.selectionId] ? ( allMarketPl[betfair.exMarketId][runner.selectionId] ) : '0.00'}}</span>
+                <span *ngIf="!allMarketPl[betfair.exMarketId]"><i class="fa fa-arrow-right"></i>
+                  0.00</span>
+              </p>
+            </div>
+            <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center ">
+              <!-- For MOBILE -->
+              <div class="bl-buttons desktop-hide">
+                <button *ngIf="runner.price.back[0]" type="button"
+                  class="bl-btn back waves-effect waves-light bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[0].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">{{(runner.price.back[0].price) | number}}
+                  <span>{{(runner.price.back[0].size)}}</span>
+                </button>
+
+                <button *ngIf="!runner.price.back[0]" type="button"
+                  class="bl-btn back waves-effect waves-light bet-sec">0.0 <span>0.0</span>
+                </button>
+
+
+                <button *ngIf="runner.price.lay[0]" type="button"
+                  class="bl-btn lay waves-effect waves-light bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[0].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">{{(runner.price.lay[0].price) | number}}
+                  <span>{{(runner.price.lay[0].size)}}</span>
+                </button>
+
+                <button *ngIf="!runner.price.lay[0]" type="button"
+                  class="bl-btn lay waves-effect waves-light bet-sec">0.0 <span>0.0</span>
+                </button>
+
+              </div>
+
+              <!-- For Desktop -->
+              <div class="bl-buttons mobile-hide">
+                <button *ngIf="runner.price.back[2]" class="bl-btn eon1 bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[2].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.back[2].price) | number}}
+                  <span>{{(runner.price.back[2].size)}}</span>
+                </button>
+                <button *ngIf="!runner.price.back[2]" class="bl-btn eon1 bet-sec">0.0 <span>0.0</span>
+                </button>
+
+
+                <button *ngIf="runner.price.back[1]" class="bl-btn eon2 bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[1].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.back[1].price) | number}}
+                  <span>{{(runner.price.back[1].size)}}</span>
+                </button>
+                <button *ngIf="!runner.price.back[1]" class="bl-btn eon2 bet-sec">0.0 <span>0.0</span>
+                </button>
+
+                <button *ngIf="runner.price.back[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                  aria-expanded="false" aria-controls="collapseExample"
+                  class="bl-btn back waves-effect waves-light bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[0].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">
+                  <span class=" size1">{{(runner.price.back[0].price) | number}}</span>
+                  <span class=" size2">{{(runner.price.back[0].size)}}</span>
+                </button>
+
+                <button *ngIf="!runner.price.back[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                  aria-expanded="false" aria-controls="collapseExample"
+                  class="bl-btn back waves-effect waves-light bet-sec ">
+                  <span class=" size1">0.0</span>
+                  <span class=" size2">0.0</span>
+                </button>
+
+
+                <button *ngIf="runner.price.lay[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                  aria-expanded="false" aria-controls="collapseExample"
+                  class="bl-btn lay waves-effect waves-light bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[0].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">
+                  <span class=" size1">{{(runner.price.lay[0].price) | number}}</span>
+                  <span class=" size2">{{(runner.price.lay[0].size) }}</span>
+                </button>
+
+                <button *ngIf="!runner.price.lay[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                  aria-expanded="false" aria-controls="collapseExample"
+                  class="bl-btn lay waves-effect waves-light bet-sec ">
+                  <span class=" size1">0.0</span>
+                  <span class=" size2">0.0</span>
+                </button>
+
+                <button *ngIf="runner.price.lay[1]" class="bl-btn eon3 bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[1].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.lay[1].price) | number}}
+                  <span>{{(runner.price.lay[1].size) }}</span>
+                </button>
+                <button *ngIf="!runner.price.lay[1]" class="bl-btn eon3 bet-sec ">0.0 <span>0.0</span>
+                </button>
+
+                <button *ngIf="runner.price.lay[2]" class="bl-btn eon4 bet-sec {{runner.selectionId}}"
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[2].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.lay[2].price) | number}}
+                  <span>{{(runner.price.lay[2].size) }}</span>
+                </button>
+                <button *ngIf="!runner.price.lay[2]" class="bl-btn eon4 bet-sec ">0.0 <span>0.0</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="lay1"
+            class="fancy-quick-tr  collapse show {{backLayClsModal}} {{betfair.exMarketId}} {{runner.selectionId}}"
+            style="width: -webkit-fill-available;"
+            [ngClass]="backLayClsModal  == 'slip-lay' ? 'red-section' : 'blue-section'">
+            <div class="d-flex justify-content-between p-2">
+              <div class="marketDetail">
+                <p class="text-dark">{{betFor}}</p>
+              </div>
+              <div class="d-flex justify-content-end" style="width: 220px; color: black;">
+                <label class="switch">
+                  <input type="checkbox" (change)="onChangeMatchMe()" [(ngModel)]="matchMeSwitch">
+                  <span class="slider round"></span>
+                </label>
+                <p class="text-dark">Match Me</p>
+              </div>
+              <div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 col-0"></div>
+              <div class="col-md-7 col-12 text-center bet-table">
+                <div class="row mx-0 text-white">
+                  <div class="col-6 px-2">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-btn input-group-prepend">
+                          <button type="button" class="minus waves-effect waves-light" (click)="downValue()">-</button>
+                        </span>
+                        <input type="email" id="odd1price" aria-describedby="emailHelp" placeholder="odds"
+                          class="form-control" [(ngModel)]="oddsModal" (keypress)="numberOnly($event)"
+                          (input)="getProfitOnInputChange()">
+
+                        <span class="input-group-btn input-group-append">
+                          <button type="button" class="plus waves-effect waves-light" (click)="upValue()">+</button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 px-2">
+                    <input type="number" placeholder="stake" id="odd2size" name="odd2size" pattern="/^[0-9]$/"
+                      class="form-control" [(ngModel)]="stackModal" (keypress)="numberOnly($event)"
+                      (input)="updateStack(stackModal,betfair.exMarketId,runner.selectionId)">
+                  </div>
+                </div>
+                <div class="row my-1">
+                  <div class="col-12">
+                    <div class="btn-group flex-wrap justify-content-center">
+                      <button type="button" *ngFor="let item of stackButtonArry"
+                        (click)="updateStack(item.stakeAmount,betfair.exMarketId,runner.selectionId)">{{item.stakeAmount}}</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex  pb-co placeSec">
+                  <div>
+                    <button class="btn-co" (click)="hideBetSection()">cancel bet</button>
+                  </div>
+                  <div>
+                    <button class="btn-po1" (click)="placeBetBookieFancy()"
+                      [ngClass]="{'btn-po': !stackModal || stackModal == 0}">place bet</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+
+  <!-- Bookmaker Marketdetails Portion -->
+  <ng-container *ngFor="let manual of manualData">
+    <ng-container *ngIf="currentMarketType == 'ALL' || currentMarketType == manual?.marketName">
+      <div class="market-section" *ngIf="manual.oddsData.status != 'CLOSED'">
+        <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
+          <div class="clip1 col-md-7 col-10">
+            <p class="market-title minWidth">
+              <i class="fa-solid fa-chart-column me-2"></i>{{manual.marketName}}
+            </p>
+
+          </div>
+          <div class="col-md-5 col-2 px-lg-0 text-end pe-3 px-lg-0">
+            <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal"
+              data-bs-target="#infoModal" (click)="openGeneralRules()"></i>
+          </div>
+        </div>
+        <div class="market-rates">
+          <div class="row mt-1">
+            <div class="col-md-5 col-7">
+              <p class="min-max mb-0"><span>min: <b>{{manual?.min}}</b></span> <span class="max-value">max:
+                  <b>{{manual?.max}}</b> </span></p>
+            </div>
+            <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
+              <p class="market-back mb-0"><span class="back2">back</span> <span class="lay2">lay</span></p>
+            </div>
+
+          </div>
+          <ng-container *ngFor="let bookie of manual.oddsData.runners">
+            <div
+              class="row align-items-center text-capitalize text-dark bg-theme market-data-row odd-row  {{manual.exMarketId}} {{bookie.selectionId}} ">
+              <div class="col-md-5 col-7">
+                <p class="market-name">
+                  <i class="fa-solid fa-chart-column me-2"></i>{{manual.runnersData[bookie.selectionId]}}
+                  <!-- <span>
+                <b class="' + bcolor + '">0</b>
+                <i class="fa-solid fa-arrow-right ms-2 me-2 text-dark"></i>
+                <b class="' + color + '">0</b>
+              </span> -->
+                  <span *ngIf="manualPL[manual.exMarketId]"
+                    [ngClass]="[manualPL[manual.exMarketId][bookie.selectionId] > 0  ? 'plus-book' : 'minus-book']"><i
+                      class="fa fa-arrow-right"></i>
+                    {{manualPL[manual.exMarketId][bookie.selectionId]  ? (manualPL[manual.exMarketId][bookie.selectionId] | number)  : '0.00'}}</span>
+                  <span  *ngIf="!manualPL[manual.exMarketId]"><i class="fa fa-arrow-right"></i>
+                    0.00</span>
+                </p>
+              </div>
+              <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center ">
+                <!-- For MOBILE -->
+                <div class="bl-buttons desktop-hide">
+                  <button *ngIf="bookie.price.back[0].price != '0'" type="button"
+                    class="bl-btn back waves-effect waves-light bet-sec {{bookie.selectionId}}"
+                    (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price | number}}
+                    <span>{{bookie.price.back[0].size}}</span>
+                  </button>
+
+                  <button *ngIf="bookie.price.back[0].price == '0'" type="button"
+                    class="bl-btn back waves-effect waves-light bet-sec">0.0 <span>0.0</span>
+                  </button>
+
+                  <button *ngIf="bookie.price.lay[0].price != '0'" type="button"
+                    class="bl-btn lay waves-effect waves-light bet-sec {{bookie.selectionId}}"
+                    (click)="openModalFancyBet(manual.oddsType,'slip-lay',bookie.price.lay[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">
+                    {{bookie.price.lay[0].price | number}}
+                    <span>{{bookie.price.lay[0].size}}</span>
+                  </button>
+
+                  <button *ngIf="bookie.price.lay[0].price == '0'" type="button"
+                    class="bl-btn lay waves-effect waves-light bet-sec">0.0 <span>0.0</span>
+                  </button>
+
+                </div>
+
+                <!-- For Desktop -->
+                <!-- <div class="bl-buttons mobile-hide">
+                  <button *ngIf="runner.price.back[2]" class="bl-btn eon1 bet-sec {{runner.selectionId}}"
+                    (click)="openModalBet(betfair.oddsType,runner.price.back[2].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.back[2].price) | number}}
+                    <span>{{(runner.price.back[2].size)}}</span>
+                  </button>
+                  <button *ngIf="!runner.price.back[2]" class="bl-btn eon1 bet-sec">0.0 <span>0.0</span>
+                  </button>
+
+
+                  <button *ngIf="runner.price.back[1]" class="bl-btn eon2 bet-sec {{runner.selectionId}}"
+                    (click)="openModalBet(betfair.oddsType,runner.price.back[1].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.back[1].price) | number}}
+                    <span>{{(runner.price.back[1].size)}}</span>
+                  </button>
+                  <button *ngIf="!runner.price.back[1]" class="bl-btn eon2 bet-sec">0.0 <span>0.0</span>
+                  </button>
+
+                  <button *ngIf="runner.price.back[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                    aria-expanded="false" aria-controls="collapseExample"
+                    class="bl-btn back waves-effect waves-light bet-sec {{runner.selectionId}}"
+                    (click)="openModalBet(betfair.oddsType,runner.price.back[0].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">
+                    <span class=" size1">{{(runner.price.back[0].price) | number}}</span>
+                    <span class=" size2">{{(runner.price.back[0].size)}}</span>
+                  </button>
+
+                  <button *ngIf="!runner.price.back[0]" type="button" data-toggle="collapse"
+                    data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample"
+                    class="bl-btn back waves-effect waves-light bet-sec ">
+                    <span class=" size1">0.0</span>
+                    <span class=" size2">0.0</span>
+                  </button>
+
+
+                  <button *ngIf="runner.price.lay[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                    aria-expanded="false" aria-controls="collapseExample"
+                    class="bl-btn lay waves-effect waves-light bet-sec {{runner.selectionId}}"
+                    (click)="openModalBet(betfair.oddsType,runner.price.lay[0].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">
+                    <span class=" size1">{{(runner.price.lay[0].price) | number}}</span>
+                    <span class=" size2">{{(runner.price.lay[0].size) }}</span>
+                  </button>
+
+                  <button *ngIf="!runner.price.lay[0]" type="button" data-toggle="collapse" data-target="#myTabContent1"
+                    aria-expanded="false" aria-controls="collapseExample"
+                    class="bl-btn lay waves-effect waves-light bet-sec ">
+                    <span class=" size1">0.0</span>
+                    <span class=" size2">0.0</span>
+                  </button>
+
+                  <button *ngIf="runner.price.lay[1]" class="bl-btn eon3 bet-sec {{runner.selectionId}}"
+                    (click)="openModalBet(betfair.oddsType,runner.price.lay[1].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.lay[1].price) | number}}
+                    <span>{{(runner.price.lay[1].size) }}</span>
+                  </button>
+                  <button *ngIf="!runner.price.lay[1]" class="bl-btn eon3 bet-sec ">0.0 <span>0.0</span>
+                  </button>
+
+                  <button *ngIf="runner.price.lay[2]" class="bl-btn eon4 bet-sec {{runner.selectionId}}"
+                    (click)="openModalBet(betfair.oddsType,runner.price.lay[2].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.lay[2].price) | number}}
+                    <span>{{(runner.price.lay[2].size) }}</span>
+                  </button>
+                  <button *ngIf="!runner.price.lay[2]" class="bl-btn eon4 bet-sec ">0.0 <span>0.0</span>
+                  </button>
+                </div> -->
+
+              </div>
+            </div>
+
+            <div id="lay1"
+              class="fancy-quick-tr  collapse show {{backLayClsModal}} {{manual.exMarketId}} {{bookie.selectionId}}"
+              style="width: -webkit-fill-available;"
+              [ngClass]="backLayClsModal  == 'slip-lay' ? 'red-section' : 'blue-section'">
+              <div class="d-flex justify-content-between p-2">
+                <div class="marketDetail">
+                  <p class="text-dark">{{betFor}}</p>
+                </div>
+                <div class="d-flex justify-content-end" style="width: 220px; color: black;">
+                  <label class="switch">
+                    <input type="checkbox" (change)="onChangeMatchMe()" [(ngModel)]="matchMeSwitch">
+                    <span class="slider round"></span>
+                  </label>
+                  <p class="text-dark">Match Me</p>
+                </div>
+                <div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-5 col-0"></div>
+                <div class="col-md-7 col-12 text-center bet-table">
+                  <div class="row mx-0 text-white">
+                    <div class="col-6 px-2">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-btn input-group-prepend">
+                            <button type="button" class="minus waves-effect waves-light"
+                              (click)="downValue()">-</button>
+                          </span>
+                          <input type="text" id="odd1price" aria-describedby="emailHelp" placeholder="odds"
+                            class="form-control" [(ngModel)]="oddsModal" (keypress)="numberOnly($event)"
+                            (input)="getProfitOnInputChange()">
+
+                          <span class="input-group-btn input-group-append">
+                            <button type="button" class="plus waves-effect waves-light" (click)="upValue()">+</button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 px-2">
+                      <input type="number" placeholder="stake" id="odd2size" name="odd2size" pattern="/^[0-9]$/"
+                        class="form-control" [(ngModel)]="stackModal" (keypress)="numberOnly($event)"
+                        (input)="updateStack(stackModal,manual.exMarketId,bookie.selectionId)">
+                    </div>
+                  </div>
+                  <div class="row my-1">
+                    <div class="col-12">
+                      <div class="btn-group flex-wrap justify-content-center">
+                        <button type="button" *ngFor="let item of stackButtonArry"
+                          (click)="updateStack(item.stakeAmount,manual.exMarketId,bookie.selectionId)">{{item.stakeAmount}}</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex  pb-co placeSec">
+                    <div>
+                      <button class="btn-co" (click)="hideBetSection()">cancel bet</button>
+                    </div>
+                    <div>
+                      <button class="btn-po1" (click)="placeBetBookieFancy()"
+                        [ngClass]="{'btn-po': !stackModal || stackModal == 0}">place bet</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+
+  <!--  Market Scroller start -->
+  <div class="category-navigation" *ngIf="betfairData?.length > 0">
+    <div class="full-color">
+      <ul class="category-navigation-container" id="naviMarketType">
+        <!-- <li class="category-navigation-item" [ngClass]="{'active': isFancySportbook =='ALL'}"
+          (click)="setMarketFancySport('ALL',$event)">
+          <span class="category-navigation-item-icon">
+            All</span>
+        </li> -->
+        <li class="category-navigation-item" [ngClass]="{'active': isFancySportbook =='FANCY'}"
+          (click)="setMarketFancySport('FANCY',$event)">
+          <span class="category-navigation-item-icon">
+            Fancy</span>
+        </li>
+        <li class="category-navigation-item" [ngClass]="{'active': isFancySportbook =='SPORTBOOK'}"
+          (click)="setMarketFancySport('SPORTBOOK',$event)">
+          <span class="category-navigation-item-icon">
+            Sportsbook</span>
         </li>
       </ul>
     </div>
   </div>
   <!--  Market Scroller end -->
 
-  <!--  Marketdetails portion -->
-  <div class="market-section">
+  <!-- FANCY MarketDetails -->
+  <div class="market-section"
+    *ngIf="fancyInfo?.length > 0 && (isFancySportbook === 'ALL' || isFancySportbook === 'FANCY')">
     <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
-      <div class="clip1 col-md-5 col-7">
+      <div class="clip1 col-md-7 col-10">
         <p class="market-title">
-          <i class="fa-solid fa-chart-column me-2"></i>Bookmakers
+          <i class="fa-solid fa-chart-column me-2"></i>FANCY
         </p>
       </div>
-      <div class="col-md-7 col-5 px-lg-0 text-end pe-3 px-lg-0">
-        <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal" data-bs-target="#infoModal"></i>
+      <div class="col-md-5 col-2 px-lg-0 text-end pe-3 px-lg-0">
+        <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal" data-bs-target="#infoModal"
+          (click)="openGeneralRules()"></i>
       </div>
     </div>
     <div class="market-rates">
       <div class="row mt-1">
         <div class="col-md-5 col-7">
-          <p class="min-max mb-0"><span>min: <b>100</b></span>  <span class="max-value">max:  <b>10000</b> </span></p>
+          <!-- <p class="min-max mb-0"><span>min: <b>100</b></span> <span class="max-value">max: <b>10000</b> </span></p> -->
         </div>
         <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
-          <p class="market-back mb-0"><span class="back2">YES</span> <span class="lay2">No</span></p>
+          <p class="market-back mb-0"><span class="lay2">NO</span> <span class="back2">Yes</span></p>
         </div>
 
       </div>
-      <div class="row align-items-center text-capitalize text-dark bg-theme market-data-row">
-        <div class="col-md-5 col-7 position-relative">
-          <p class="market-name">
-            <i class="fa-solid fa-chart-column me-2"></i>india <span>
-        <b class="' + bcolor + '">0</b>
-        <i class="fa-solid fa-arrow-right ms-2 me-2 text-dark"></i>
-        <b class="' + color + '">0</b>
-      </span>
-          </p>
-          <p class="btn-group dropdown dropstart min-max-drop">
-            <a data-toggle="dropdown" aria-haspopup="true" data-bs-toggle="dropdown" aria-expanded="false">
-              <i type="button" class="fa-solid fa-circle-info float-end rules13" ></i>
+      <ng-container *ngFor="let fancy of fancyInfo">
+        <div
+          class="row align-items-center text-capitalize text-dark bg-theme market-data-row odd-row {{fancy.exMarketId}}">
+          <div class="col-md-5 col-7 position-relative">
+            <p class="market-name" data-bs-toggle="modal" data-bs-target="#fancyBookModal" (click)="openModal(fancy.exMarketId)">
+              <i class="fa-solid fa-chart-column me-2"  ></i>{{fancy.marketName}}
 
-            </a>
+              <span *ngIf="fancy_pl[fancy.exMarketId]"
+                [ngClass]="[fancy_pl[fancy.exMarketId] > 0  ? 'plus-book' : 'minus-book']"><i
+                  class="fa fa-arrow-right"></i>
+                {{fancy_pl[fancy.exMarketId] ? (fancy_pl[fancy.exMarketId]  | number) : '0.00'}}</span>
+              <span *ngIf="!fancy_pl[fancy.exMarketId]"><i class="fa fa-arrow-right"></i>
+                0.00</span>
+            </p>
+            <p class="btn-group dropdown dropstart min-max-drop">
+              <a data-toggle="dropdown" aria-haspopup="true" data-bs-toggle="dropdown" aria-expanded="false">
+                <i type="button" class="fa-solid fa-circle-info float-end rules13"></i>
+              </a>
 
+              <span class="dropdown-menu">
+                <a class="dropdown-item">min: {{fancy?.min}}</a>
+                <a class="dropdown-item">max: {{fancy?.max}}</a>
+              </span>
 
-            <span class="dropdown-menu" style="">
-    <a class="dropdown-item">min: 100</a>
-    <a class="dropdown-item">max: 10000</a>
-  </span>
+            </p>
 
-          </p>
-
-        </div>
-        <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center">
-          <!--          for mobilr -->
-          <div  class="bl-buttons desktop-hide">
-            <button  type="button" class="bl-btn back waves-effect waves-light bet-sec'">1.53 <span >200</span>
-            </button>
-            <button  type="button" class="bl-btn lay waves-effect waves-light bet-sec'">1.53 <span >200</span>
-            </button>
           </div>
-          <!--          for desktop -->
-          <div class="bl-buttons mobile-hide">
-            <button class="bl-btn eon1 bet-sec ">1.53 <span>200</span>
-            </button>
-            <button class="bl-btn eon2 bet-sec ">1.53 <span>200</span>
-            </button>
-            <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample" class="bl-btn back waves-effect waves-light bet-sec ">
-              <span class=" size1">1.53</span>
-              <span class=" size2">200</span>
-            </button>
-            <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false" aria-controls="collapseExample" class="bl-btn lay waves-effect waves-light bet-sec ">
-              <span class=" size1">1.53</span>
-              <span class=" size2">200</span>
-            </button>
-            <button class="bl-btn eon3 bet-sec ">1.53 <span>200</span>
-            </button>
-            <button class="bl-btn eon4 bet-sec ">1.53 <span>200</span>
-            </button>
+          <div id="fancy{{fancy.exMarketId}}" class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center">
+            <!--          For mobile -->
+            <div class="bl-buttons desktop-hide">
+              <button *ngIf="fancy.oddsData.runners[0].price.lay[0].price != '0'" type="button"
+                class="bl-btn lay waves-effect waves-light bet-sec'"
+                (click)="openModalFancyBet(fancy.oddsType,'slip-lay',fancy.oddsData.runners[0].price.lay[0].price,fancy.marketName,fancy.exMarketId,fancy.oddsData.runners[0].price.lay[0].size,'FANCY',0)">{{fancy.oddsData.runners[0].price.lay[0].price | number}}
+                <span>{{fancy.oddsData.runners[0].price.lay[0].size | number}}</span>
+              </button>
+              <button *ngIf="fancy.oddsData.runners[0].price.lay[0].price == '0'" type="button"
+                class="bl-btn lay waves-effect waves-light bet-sec'">{{fancy.oddsData.runners[0].price.lay[0].price | number}}
+                <span>{{fancy.oddsData.runners[0].price.lay[0].size | number}}</span>
+              </button>
+
+              <button *ngIf="fancy.oddsData.runners[0].price.back[0].price != '0'" type="button"
+                class="bl-btn back waves-effect waves-light bet-sec"
+                (click)="openModalFancyBet(fancy.oddsType,'slip-back',fancy.oddsData.runners[0].price.back[0].price,fancy.marketName,fancy.exMarketId,fancy.oddsData.runners[0].price.back[0].size,'FANCY',0)">{{fancy.oddsData.runners[0].price.back[0].price | number}}
+                <span>{{fancy.oddsData.runners[0].price.back[0].size | number}}</span>
+              </button>
+              <button type="button" class="bl-btn back waves-effect waves-light bet-sec"
+                *ngIf="fancy.oddsData.runners[0].price.back[0].price == '0'">{{fancy.oddsData.runners[0].price.back[0].price | number}}
+                <span>{{fancy.oddsData.runners[0].price.back[0].size | number}}</span>
+              </button>
+
+            </div>
+            <!--          for desktop -->
+            <!-- <div class="bl-buttons mobile-hide">
+              <button class="bl-btn eon1 bet-sec ">1.53 <span>200</span>
+              </button>
+              <button class="bl-btn eon2 bet-sec ">1.53 <span>200</span>
+              </button>
+              <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false"
+                aria-controls="collapseExample" class="bl-btn back waves-effect waves-light bet-sec ">
+                <span class=" size1">1.53</span>
+                <span class=" size2">200</span>
+              </button>
+              <button type="button" data-toggle="collapse" data-target="#myTabContent1" aria-expanded="false"
+                aria-controls="collapseExample" class="bl-btn lay waves-effect waves-light bet-sec ">
+                <span class=" size1">1.53</span>
+                <span class=" size2">200</span>
+              </button>
+              <button class="bl-btn eon3 bet-sec ">1.53 <span>200</span>
+              </button>
+              <button class="bl-btn eon4 bet-sec ">1.53 <span>200</span>
+              </button>
+            </div> -->
+          </div>
+        </div>
+
+        <div id="lay1" class="fancy-quick-tr  collapse show {{backLayClsModal}} {{fancy.exMarketId}}"
+          style="width: -webkit-fill-available;"
+          [ngClass]="backLayClsModal  == 'slip-lay' ? 'red-section' : 'blue-section'">
+          <div class="d-flex justify-content-between p-2">
+            <div class="marketDetail">
+              <p class="text-dark">{{betFor}}</p>
+            </div>
+            <div class="d-flex justify-content-end" style="width: 220px; color: black;">
+              <label class="switch">
+                <input type="checkbox" (change)="onChangeMatchMe()" [(ngModel)]="matchMeSwitch">
+                <span class="slider round"></span>
+              </label>
+              <p class="text-dark">Match Me</p>
+            </div>
+            <div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 col-0"></div>
+            <div class="col-md-7 col-12 text-center bet-table">
+              <div class="row mx-0 text-white">
+                <div class="col-6 px-2">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-btn input-group-prepend">
+                        <button type="button" class="minus waves-effect waves-light" (click)="downValue()">-</button>
+                      </span>
+                      <input type="text" id="odd1price" aria-describedby="emailHelp" placeholder="odds"
+                        class="form-control" [(ngModel)]="oddsModal" (keypress)="numberOnly($event)"
+                        (input)="getProfitOnInputChange()">
+
+                      <span class="input-group-btn input-group-append">
+                        <button type="button" class="plus waves-effect waves-light" (click)="upValue()">+</button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 px-2">
+                  <input type="number" placeholder="stake" id="odd2size" name="odd2size" pattern="/^[0-9]$/"
+                    class="form-control" [(ngModel)]="stackModal" (keypress)="numberOnly($event)">
+                </div>
+              </div>
+              <div class="row my-1">
+                <div class="col-12">
+                  <div class="btn-group flex-wrap justify-content-center">
+                    <button type="button" *ngFor="let item of stackButtonArry"
+                      (click)="updateStack(item.stakeAmount,fancy.exMarketId,fancy.selectionId)">{{item.stakeAmount}}</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex  pb-co placeSec">
+                <div>
+                  <button class="btn-co" (click)="hideBetSection()">cancel bet</button>
+                </div>
+                <div>
+                  <button class="btn-po1" (click)="placeBetBookieFancy()"
+                    [ngClass]="{'btn-po': !stackModal || stackModal == 0}">place bet</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Sportbook Marketdetails Portion -->
+  <ng-container
+    *ngIf="sportbookdataavailable?.length > 0 && (isFancySportbook === 'ALL' || isFancySportbook === 'SPORTBOOK')">
+    <ng-container *ngFor="let manual of sportbookdataavailable">
+      <!-- <ng-container *ngIf="currentMarketType == 'ALL' || currentMarketType == manual?.marketName"> -->
+      <div class="market-section" *ngIf="manual.oddsData.status != 'CLOSED'">
+        <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
+          <div class="clip1 col-md-7 col-10">
+            <p class="market-title minWidth">
+              <i class="fa-solid fa-chart-column me-2"></i>{{manual.marketName}}
+            </p>
+
+          </div>
+          <div class="col-md-5 col-2 px-lg-0 text-end pe-3 px-lg-0">
+            <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal"
+              data-bs-target="#infoModal" (click)="openGeneralRules()"></i>
+          </div>
+        </div>
+        <div class="market-rates">
+          <div class="row mt-1">
+            <div class="col-md-5 col-7">
+              <p class="min-max mb-0"><span>min: <b>{{manual?.min}}</b></span> <span class="max-value">max:
+                  <b>{{manual?.max}}</b> </span></p>
+            </div>
+            <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
+              <p class="market-back mb-0"><span class="back2">back</span> <span class="lay2">lay</span></p>
+            </div>
+
+          </div>
+          <ng-container *ngFor="let bookie of manual.oddsData.runners">
+            <div
+              class="row align-items-center text-capitalize text-dark bg-theme market-data-row odd-row  {{manual.exMarketId}} {{bookie.selectionId}} ">
+              <div class="col-md-5 col-7">
+                <p class="market-name">
+                  <i class="fa-solid fa-chart-column me-2"></i>{{manual.runnersData[bookie.selectionId]}}
+                  <!-- <span>
+                  <b class="' + bcolor + '">0</b>
+                  <i class="fa-solid fa-arrow-right ms-2 me-2 text-dark"></i>
+                  <b class="' + color + '">0</b>
+                </span> -->
+                  <span *ngIf="manualPL[manual.exMarketId]"
+                    [ngClass]="[manualPL[manual.exMarketId][bookie.selectionId] > 0  ? 'plus-book' : 'minus-book']"><i
+                      class="fa fa-arrow-right"></i>
+                    {{manualPL[manual.exMarketId][bookie.selectionId]  ? (manualPL[manual.exMarketId][bookie.selectionId] | number)  : '0.00'}}</span>
+                  <span  *ngIf="!manualPL[manual.exMarketId]"><i class="fa fa-arrow-right"></i>
+                    0.00</span>
+                </p>
+              </div>
+              <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center ">
+                <!-- For MOBILE -->
+                <div class="bl-buttons desktop-hide">
+                  <button *ngIf="bookie.price.back[0].price != '0'" type="button"
+                    class="bl-btn back waves-effect waves-light bet-sec {{bookie.selectionId}}"
+                    (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price | number}}
+                    <span>{{bookie.price.back[0].size}}</span>
+                  </button>
+
+                  <button *ngIf="bookie.price.back[0].price == '0'" type="button"
+                    class="bl-btn back waves-effect waves-light bet-sec">0.0 <span>0.0</span>
+                  </button>
+
+                  <button *ngIf="bookie.price.lay[0].price != '0'" type="button"
+                    class="bl-btn lay waves-effect waves-light bet-sec {{bookie.selectionId}}"
+                    (click)="openModalFancyBet(manual.oddsType,'slip-lay',bookie.price.lay[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">
+                    {{bookie.price.lay[0].price | number}}
+                    <span>{{bookie.price.lay[0].size}}</span>
+                  </button>
+
+                  <button *ngIf="bookie.price.lay[0].price == '0'" type="button"
+                    class="bl-btn lay waves-effect waves-light bet-sec">0.0 <span>0.0</span>
+                  </button>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div id="lay1"
+              class="fancy-quick-tr  collapse show {{backLayClsModal}} {{manual.exMarketId}} {{bookie.selectionId}}"
+              style="width: -webkit-fill-available;"
+              [ngClass]="backLayClsModal  == 'slip-lay' ? 'red-section' : 'blue-section'">
+              <div class="d-flex justify-content-between p-2">
+                <div class="marketDetail">
+                  <p class="text-dark">{{betFor}}</p>
+                </div>
+                <div class="d-flex justify-content-end" style="width: 220px; color: black;">
+                  <label class="switch">
+                    <input type="checkbox" (change)="onChangeMatchMe()" [(ngModel)]="matchMeSwitch">
+                    <span class="slider round"></span>
+                  </label>
+                  <p class="text-dark">Match Me</p>
+                </div>
+                <div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-5 col-0"></div>
+                <div class="col-md-7 col-12 text-center bet-table">
+                  <div class="row mx-0 text-white">
+                    <div class="col-6 px-2">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-btn input-group-prepend">
+                            <button type="button" class="minus waves-effect waves-light"
+                              (click)="downValue()">-</button>
+                          </span>
+                          <input type="text" id="odd1price" aria-describedby="emailHelp" placeholder="odds"
+                            class="form-control" [(ngModel)]="oddsModal" (keypress)="numberOnly($event)"
+                            (input)="getProfitOnInputChange()">
+
+                          <span class="input-group-btn input-group-append">
+                            <button type="button" class="plus waves-effect waves-light" (click)="upValue()">+</button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 px-2">
+                      <input type="number" placeholder="stake" id="odd2size" name="odd2size" pattern="/^[0-9]$/"
+                        class="form-control" [(ngModel)]="stackModal" (keypress)="numberOnly($event)"
+                        (input)="updateStack(stackModal,manual.exMarketId,bookie.selectionId)">
+                    </div>
+                  </div>
+                  <div class="row my-1">
+                    <div class="col-12">
+                      <div class="btn-group flex-wrap justify-content-center">
+                        <button type="button" *ngFor="let item of stackButtonArry"
+                          (click)="updateStack(item.stakeAmount,manual.exMarketId,bookie.selectionId)">{{item.stakeAmount}}</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex  pb-co placeSec">
+                    <div>
+                      <button class="btn-co" (click)="hideBetSection()">cancel bet</button>
+                    </div>
+                    <div>
+                      <button class="btn-po1" (click)="placeBetBookieFancy()"
+                        [ngClass]="{'btn-po': !stackModal || stackModal == 0}">place bet</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </ng-container>
+        </div>
+      </div>
+      <!-- </ng-container> -->
+    </ng-container>
+  </ng-container>
+
+  <!-- Info Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Info</h5>
+          <button type="button" data-bs-dismiss="modal" aria-label="Close" class="close-btn"> <i
+              class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <div class="modal-body ">
+          <div class="info-modal-body">
+            <div [innerHTML]="generalRules"></div>
           </div>
         </div>
       </div>
     </div>
-
-
-
   </div>
 
-  <app-betslip [islay]="islay"></app-betslip>
+  <div class="modal fade" id="fancyBookModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book</h5>
+          <button type="button" data-bs-dismiss="modal" aria-label="Close" class="close-btn"> <i
+              class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <div class="modal-body ">
+          <div class="info-modal-body">
+            <table class="table table-dark table-striped table-sm">
+              <thead class="bg-default">
+                <th>Run</th>
+                <th>Amount</th>
+              </thead>
+              <tbody *ngIf="fancyBookListData?.length > 0">
 
-  <app-betslip [islay]="true"></app-betslip>
-<!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
-<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">-->
-<!--  Launch demo modal-->
-<!--</button>-->
+                <tr class="lay-1" [ngClass]="{'back': book.amount > 0, 'lay': book.amount <= 0}"
+                  *ngFor="let book of fancyBookListData">
+                  <td>{{book.run}}</td>
+                  <td>{{book.amount | number}}</td>
+                </tr>
 
-<!-- Info Modal -->
-<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Info</h5>
-        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="close-btn"> <i class="fa-solid fa-xmark"></i> </button>
-      </div>
-      <div class="modal-body ">
-        <div class="info-modal-body">
-          <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
-          <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
-          <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
-          <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
-          <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
-          <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
-          <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
-          <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
-          <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
-          <p>1.Cricket General :- ➢ If a ball is not bowled during a competition, series or match then all bets will be void except for those on any market that has been unconditionally determined (e.g. in the 'Completed Match' market).</p>
-          <p>2.Cricket General :- If a match is shortened by weather, all bets will be settled according to the official result (including for limited overs matches, the result determined by the Duckworth Lewis method).</p>
-          <p>3.Cricket General :- In the event of a match being decided by a bowl-off or toss of the coin, all bets will be void except for those on markets that have been unconditionally determined.</p>
+              </tbody>
+              <tfoot *ngIf="fancyBookListData?.length == 0">
+                <tr>
+                  <td colspan="2" class="no-data-available">No data!</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 </div>

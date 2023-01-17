@@ -72,7 +72,7 @@
         </p>
       </div>
     </div>
-    <div class="col-md-6 col-12 text-center align-self-center mx-0 px-lg-0 mt-2" routerLink="/client/market-details">
+    <div class="col-md-6 col-12 text-center align-self-center mx-0 px-lg-0 mt-2" routerLink="/client/market-details/{{odds.exEventId}}/{{odds.sportId}}">
       <!-- runner A -->
       <button class="blue-area1">
         {{(odds?.oddsData?.runners[0]?.price?.back[0]?.price)?(odds?.oddsData?.runners[0]?.price?.back[0]?.price):'-'}}

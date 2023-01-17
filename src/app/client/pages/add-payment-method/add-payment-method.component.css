@@ -1,6 +1,6 @@
 .pg-header{
     background: var(--deposit-card-bg-grad);
-    width: 266px;
+    width: 223px;
     height: 140px;
     margin: 20px;
     border-radius: 10px;
@@ -11,12 +11,11 @@
     
   }
    .bankButton{
-        color: black;
-        font-size: 16px;
-        display: flex;
+    display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
+        color: black;
+        flex-direction: row;
 
   }
   .pg-header img{
@@ -96,7 +95,7 @@
       font-size: 12px ;
     }
     .bankfont{
-      font-size: 20px;
+      font-size: 25px;
     }
     .bankButton{
       display: flex;
@@ -106,9 +105,6 @@
       padding: 10px;
     }
   }
- 
- 
- 
   .submitAcount{
     background: var(--theme-color);
     border-radius: 8px;
@@ -124,28 +120,7 @@
   background-color:(var--theme-color);
 }
   
-@media screen and (max-width: 900px){
-    .accordion {
-      flex-direction: column;
-    }
-    .pg-header{
-      width: 331px;
-      height: 116px;
-    }
-    .pg-header img {
-      width: 45vw;
-    }
-    .bankButton{
-      /* display: block; */
-    }
-    .pg-container{
-      padding: 0%;
-      width: fit-content;
-    }
-  
-  }
-
-  @media screen and (min-width: 900px) and (max-width: 1200px){
+  @media screen and (max-width: 900px){
     .accordion {
       flex-direction: column;
     }

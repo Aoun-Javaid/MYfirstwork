@@ -1,16 +1,21 @@
-import {Injectable} from '@angular/core';
-import {Observable, Subject} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
-import {CONFIG} from "config"
+import { Injectable } from '@angular/core';
+import { Observable, Subject } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environments/environment";
+import { CONFIG } from "config"
+import { map } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
-  private isLoggedIn= new Subject<boolean>();
+  private isLoggedIn = new Subject<boolean>();
+  public loggedUserData;
   private balance = new Subject<any>();
-  constructor(private http: HttpClient) {
-
+  constructor(private http: HttpClient, private router: Router, public toastr: ToastrManager) {
+    this.loggedUserData = JSON.parse(localStorage.getItem('loggedUserData'));
   }
   public getLoggedIn(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
@@ -38,41 +43,41 @@ export class AppService {
     return this.http.post(CONFIG.getAllEventsList, {})
   }
   getCasinoInformation(): Observable<any> {
-    return this.http.post(CONFIG.getCasinoInformation,{});
+    return this.http.post(CONFIG.getCasinoInformation, {});
   }
   getDaysWiseEvents(): Observable<any> {
-    return this.http.post(CONFIG.getDaysWiseEvents,{});
+    return this.http.post(CONFIG.getDaysWiseEvents, {});
   }
   getUserProfile(): Observable<any> {
-    return this.http.post(CONFIG.getUserProfile,{});
+    return this.http.post(CONFIG.getUserProfile, {});
   }
-  userLogin(userName:any,password:any,ip_info:any): Observable<any> {
-    return this.http.post(CONFIG.userLogin, {userName,password,ip_info})
+  userLogin(userName: any, password: any, ip_info: any): Observable<any> {
+    return this.http.post(CONFIG.userLogin, { userName, password, ip_info })
   }
   getIpLocation(): Observable<any> {
-    return this.http.post(CONFIG.getIpLocation,{})
+    return this.http.post(CONFIG.getIpLocation, {})
   }
   getUserBalance(): Observable<any> {
     return this.http.post(CONFIG.getUserBalance, {})
   }
-  changeUserPassword(newPassword:any,oldPassword:any,): Observable<any> {
-    return this.http.post(CONFIG.changeUserPassword, {newPassword,oldPassword})
+  changeUserPassword(newPassword: any, oldPassword: any,): Observable<any> {
+    return this.http.post(CONFIG.changeUserPassword, { newPassword, oldPassword })
   }
   getUserBetStake(): Observable<any> {
     return this.http.post(CONFIG.getUserBetStake, {})
   }
-  updateUserBetStake(stakes:any,): Observable<any> {
-    return this.http.post(CONFIG.updateUserBetStake, {stakes})
+  updateUserBetStake(stakes: any,): Observable<any> {
+    return this.http.post(CONFIG.updateUserBetStake, { stakes })
   }
 
   getExchangeNews(): Observable<any> {
     return this.http.post(CONFIG.getExchangeNews, {})
   }
-  calculateWithdrawalAmount(amount:any,): Observable<any> {
-    return this.http.post(CONFIG.calculateWithdrawalAmount, {amount})
+  calculateWithdrawalAmount(amount: any,): Observable<any> {
+    return this.http.post(CONFIG.calculateWithdrawalAmount, { amount })
   }
-  withdrawalRequest(amount:any,): Observable<any> {
-    return this.http.post(CONFIG.withdrawalRequest, {amount})
+  withdrawalRequest(amount: any,): Observable<any> {
+    return this.http.post(CONFIG.withdrawalRequest, { amount })
   }
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
@@ -84,4 +89,155 @@ export class AppService {
   getCustomerSupport(): Observable<any> {
     return this.http.post(CONFIG.getCustomerSupport, {})
   }
+
+
+  getAllRecordsByPost(url, params) {
+    return this.http.post<any>(url, params)
+      .pipe(map(data => {
+        return data;
+      }));
+  }
+
+  updateRecordByPut(url, params) {
+    return this.http.put<any>(url, params)
+      .pipe(map(data => {
+        return data;
+      }));
+  }
+
+  getAllRecordsByGet(url, id) {
+    return this.http.get<any>(url, { params: id })
+      .pipe(map(data => {
+        return data;
+      }));
+  }
+
+
+
+  isMultiMarket(eventid) {
+
+    var a;
+    var multimarket = localStorage.getItem('multiMarket_' + this.getCurrentUserName())
+
+    if (multimarket) {
+      a = JSON.parse(multimarket);
+      if (a.includes(eventid)) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+
+  }
+
+  getCurrentUserName() {
+    if (this.loggedUserData) {
+      return this.loggedUserData.data.userDetail.username;
+    }
+  }
+
+
+  goToLiveCasinoUniverse(eventid, roomid, link) {
+
+    let loggedUserData = JSON.parse(localStorage.getItem('loggedUserData'));
+    let token = loggedUserData.data.accessToken;
+    let isLiveCasino = loggedUserData.data.userDetail.isLiveCasino;
+    if (isLiveCasino) {
+      if (link) {
+        let isTokenString = link.includes("{$token}");
+        if (isTokenString) {
+          let finalLinkWithToken = link.replace("{$token}", token);
+          this.router.navigate(['/opencasino', finalLinkWithToken]);
+          return;
+        } else {
+          this.router.navigate(['/opencasino', link]);
+          return;
+        }
+
+      } else {
+        let url = 'https://realclub.games//#/authentication/' + token + '/' + eventid + '/' + roomid;
+        this.router.navigate(['/opencasino', url]);
+        return
+      }
+
+    } else {
+      this.toastr.errorToastr("Please contact your upline!", '');
+      return
+    }
+  }
+
+  addToMultimarket(eventid) {
+
+
+    $('.' + eventid).toggleClass('pin-on');
+    $('.btn-pin.' + eventid).removeClass('pin-on');
+
+    let newarr;
+    var a;
+    var multimarket = localStorage.getItem('multiMarket_' + this.getCurrentUserName())
+
+    if (multimarket) {
+      a = JSON.parse(multimarket);
+      if (a.includes(eventid)) {
+
+        for (var i = 0; i < a.length; i++) {
+          if (a[i] === eventid) {
+            a.splice(i, 1);
+          }
+        }
+
+        var json_str = JSON.stringify(a);
+        localStorage.setItem('multiMarket_' + this.getCurrentUserName(), json_str);
+      } else {
+        a.push(eventid)
+        var json_str = JSON.stringify(a);
+        localStorage.setItem('multiMarket_' + this.getCurrentUserName(), json_str);
+      }
+    }
+    else {
+      newarr = [eventid];
+      var json_str = JSON.stringify(newarr);
+      localStorage.setItem('multiMarket_' + this.getCurrentUserName(), json_str);
+    }
+
+  }
+
+  getMultimarketEvents() {
+    return JSON.parse(localStorage.getItem('multiMarket_' + this.getCurrentUserName()))
+  }
+
+  addToMultimarketInnner(eventid) {
+
+    $('.' + eventid).toggleClass('pin-on-innner');
+    let newarr;
+    var a;
+    var multimarket = localStorage.getItem('multiMarket_' + this.getCurrentUserName())
+
+    if (multimarket) {
+      a = JSON.parse(multimarket);
+      if (a.includes(eventid)) {
+
+        for (var i = 0; i < a.length; i++) {
+          if (a[i] === eventid) {
+            a.splice(i, 1);
+          }
+        }
+
+        var json_str = JSON.stringify(a);
+        localStorage.setItem('multiMarket_' + this.getCurrentUserName(), json_str);
+      } else {
+        a.push(eventid)
+        var json_str = JSON.stringify(a);
+        localStorage.setItem('multiMarket_' + this.getCurrentUserName(), json_str);
+      }
+    }
+    else {
+      newarr = [eventid];
+      var json_str = JSON.stringify(newarr);
+      localStorage.setItem('multiMarket_' + this.getCurrentUserName(), json_str);
+    }
+  }
+
 }

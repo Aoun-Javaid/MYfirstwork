@@ -31,7 +31,53 @@ export const CONFIG = {
   withdrawalRequest:BASE_URL_V1+'/v1/exchange/users/withdrawalRequest',
   calculateWithdrawalAmount:BASE_URL_V1+'/v1/exchange/users/calculateWithdrawalAmount',
   
-  
-  
+
+  getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',
+  getManualPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getBookmakersPl',
+  getSportbookPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getSportsbookPl',
+  getBinaryPLURL: BASE_URL_V1 + '/v1/exchange/users/pl/getBinaryPl',
+  getAllMarketplURL: BASE_URL_V1 + '/v1/exchange/users/pl/getMatchOddsPl',
+  placeBetURL: BASE_URL_V1 + "/v1/exchange/users/placebet",
+  videoStreamURL: BASE_URL_V1 + '/v1/exchange/users/streaming/getEventStreaming',
+  getRulesOfMarketURL: BASE_URL_API + '/api/exchange/rules/getSportRules',
+  getbookieFancyDataURL: BASE_URL_API + "/api/exchange/market/getMarketsOfEventList",
+  fancyBookListByMarketURL: BASE_URL_V1 + '/v1/exchange/users/books/getFancybooks',
+  userGetStackURL: BASE_URL_V1 + '/v1/exchange/users/getUserBetStake',
   
 };
+
+
+export const STACK_VALUE = [
+  {
+    stakeName: '1000',
+    stakeAmount: '1000'
+  },
+  {
+    stakeName: '5000',
+    stakeAmount: '5000'
+  },
+  {
+    stakeName: '10000',
+    stakeAmount: '10000'
+  },
+  {
+    stakeName: '25000',
+    stakeAmount: '25000'
+  },
+  {
+    stakeName: '50000',
+    stakeAmount: '50000'
+  },
+  {
+    stakeName: '100000',
+    stakeAmount: '100000'
+  },
+  {
+    stakeName: '200000',
+    stakeAmount: '200000'
+  },
+  {
+    stakeName: '500000',
+    stakeAmount: '500000'
+  },
+];

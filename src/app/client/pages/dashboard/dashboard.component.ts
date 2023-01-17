@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
       this.isLogin=res;
       if(this.isLogin){
         console.log('logintru')
-        debugger
+        
 
 
       }
@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getNews(){
-    debugger
+    
     console.log('Innews');
     this.appService.getExchangeNews().subscribe((res:any)=>{
       console.log(res);
