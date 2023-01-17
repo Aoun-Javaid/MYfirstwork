@@ -120,7 +120,8 @@
 
 .right-bar {
   background-size: cover;
-  background: linear-gradient(168deg, #000000 0%, #3A3A3A 12%, #000000 27%, #0E1011 100%);
+  /* background: linear-gradient(168deg, #000000 0%, #3A3A3A 12%, #000000 27%, #0E1011 100%); */
+  background: var(--event-bgcolor-SideNav);
   /* background-image: url('/assets/image/social/Background.jpg'); */
   background-repeat: no-repeat;
   background-position: bottom;
@@ -142,13 +143,12 @@ a, a:hover {
 }
 
 
-.right-bar {
+/* .right-bar {
   background-size: cover;
   background: linear-gradient(168deg, #000000 0%, #3A3A3A 12%, #000000 27%, #0E1011 100%);
-  /* background-image: url('/assets/image/social/Background.jpg'); */
   background-repeat: no-repeat;
   background-position: bottom;
-}
+} */
 
 .popup-image {
 

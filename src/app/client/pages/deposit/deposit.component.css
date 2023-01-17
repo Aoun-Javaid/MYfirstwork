@@ -17,6 +17,13 @@
 .pg-header img{
   width: 10vw;
 }
+.whatsapp img {
+  width:50px !important;
+}
+.whatsapptext{
+  font-size: 20px;
+  font-weight: 600;
+}
 .pg-container{
   width: 90%;
   margin-left: auto;
@@ -70,6 +77,9 @@
   margin-bottom: 25px;
   padding: .55rem 1.75rem;
 }
+.bankfont{
+  font-weight: 600;
+}
 @media screen and (max-width: 320px) {
   .pg-header {
     width: 230px !important;
@@ -91,7 +101,8 @@
     font-size: 12px ;
   }
   .bankfont{
-    font-size: 34px;
+    font-size: 30px;
+    font-weight: 600;
   }
   .bankButton{
     display: flex;
@@ -107,10 +118,20 @@
   }
   .pg-header{
     width: 331px;
-    height: 116px;
+    height: 85px;
   }
   .pg-header img {
-    width: 45vw;
+    width: 30vw;
+  }
+  .phonePayImg{
+    width: 34vw !important;
+  }
+  .whatsapptext{
+    font-size: 20px;
+  }
+
+  .whatsapp img {
+    width:50px !important;
   }
   .bankButton{
     display: block;
