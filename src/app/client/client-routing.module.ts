@@ -20,6 +20,7 @@ import {AddPaymentMethodComponent} from './pages/add-payment-method/add-payment-
 import { ProfitlossEventComponent } from './pages/profitloss-event/profitloss-event.component';
 import { ProfitlossMarketComponent } from './pages/profitloss-market/profitloss-market.component';
 import { DProfitHistoryComponent } from './pages/d-profit-history/d-profit-history.component';
+import {PasswordHistoryComponent} from "./pages/password-history/password-history.component";
 
 const routes: Routes = [
   {
@@ -65,9 +66,9 @@ const routes: Routes = [
       {
         path: 'add-paymentMethod', component: AddPaymentMethodComponent
       },
-      //  {
-      //   path: 'passwordHistory', component: PasswordHistoryComponent
-      // },
+       {
+        path: 'passwordHistory', component: PasswordHistoryComponent
+      },
       {
         path: 'profitloss-event', component: ProfitlossEventComponent
       },
