@@ -45,7 +45,8 @@ export const CONFIG = {
   getbookieFancyDataURL: BASE_URL_API + "/api/exchange/market/getMarketsOfEventList",
   fancyBookListByMarketURL: BASE_URL_V1 + '/v1/exchange/users/books/getFancybooks',
   userGetStackURL: BASE_URL_V1 + '/v1/exchange/users/getUserBetStake',
-
+  userAccountStatement: BASE_URL_V1 + '/v1/exchange/users/banking/userAccountStatement',
+  
 };
 
 

@@ -11,30 +11,20 @@
   <div id="filter">
     <div class="row justify-content-between option-row p-4">
       <div class="col-md-12">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
-            <input type="date" placeholder="From" class="form-control ng-valid ng-dirty ng-touched">
+        <form [formGroup]="statementForm" (ngSubmit)="SubmitdataTable()">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
+              <input type="date" placeholder="From"  formControlName="startDate" class="form-control ng-valid ng-dirty ng-touched">
+            </div>
+            <div class="col-md-2 col-12 mb-sm-1">
+              <input type="date" placeholder="To" formControlName="endDate"  class="form-control ng-untouched ng-pristine ng-valid">
+            </div>
+            <div class="col-md-2 col-12 mb-sm-1">
+              <button class="btn-get waves-effect waves-light">Submit</button>
+            </div>
           </div>
-          <div class="col-md-2 col-12 mb-sm-1">
-            <input type="date" placeholder="To" class="form-control ng-untouched ng-pristine ng-valid">
-          </div>
-          <div class="col-md-2 col-12 mb-sm-1">
-            <button class="btn-get waves-effect waves-light">Submit</button>
-          </div><!----><!---->
-          <!--                    <div class="col-md-2 col-9 mb-sm-1">-->
-          <!--                        <div class="input-group">-->
-          <!--                            <select class="form-control">-->
-          <!--                                <option value="" disabled="" selected="" hidden=""> Select</option>-->
-          <!--                                <option value="today">today</option>-->
-          <!--                                <option value="yesterday">yesterday</option>-->
-          <!--                                <option value="7_day">last 7 days</option>-->
-          <!--                                <option value="30_day">last 30 days</option>-->
-          <!--                            </select>-->
-          <!--                            <div class="input-group-append p-0"><button class="btn-download"><i-->
-          <!--                                        class="fa fa-cloud-download" style="font-size: 35px;"></i></button></div>&lt;!&ndash;&ndash;&gt;-->
-          <!--                        </div>-->
-          <!--                    </div>-->
-        </div>
+        </form>
+      
       </div>
     </div>
   </div>

@@ -79,6 +79,11 @@ export class AppService {
   withdrawalRequest(amount: any,): Observable<any> {
     return this.http.post(CONFIG.withdrawalRequest, { amount })
   }
+  userAccountStatement(draw: any,): Observable<any> {
+    return this.http.post(CONFIG.userAccountStatement, draw)
+  }
+  
+
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})
