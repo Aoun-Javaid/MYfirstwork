@@ -10,23 +10,23 @@ import { ConfirmedValidator } from 'src/app/Validators/confirmed.validator';
 })
 export class EditPasswordComponent implements OnInit {
 
- 
+
   public opasswordType: string="password";
   public npasswordType: string="password";
   public cpasswordType: string="password";
   editForm: FormGroup = new FormGroup({});
-  
-  constructor(private fb: FormBuilder,private appService:AppService) {
-  
+
+  constructor(private fb: FormBuilder,private appService:AppService,) {
+
     this.editForm = fb.group({
       oldpassword: ['',[Validators.required]],
       password: ['', [Validators.required,Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]],
       cpassword: ['', [Validators.required, ConfirmedValidator]]
-    }, { 
+    }, {
       validator: ConfirmedValidator('password', 'cpassword')
     })
   }
-    
+
   get f(){
     return this.editForm.controls;
   }
@@ -41,14 +41,14 @@ export class EditPasswordComponent implements OnInit {
   submitForm(){
     if(this.editForm.valid){
       this.appService.changeUserPassword(this.editForm.value.password,this.editForm.value.oldpassword).subscribe((res:any)=>{
-        
+
       });
     }
     else{
       // show error
     }
 
-   
+
   }
 
 }
