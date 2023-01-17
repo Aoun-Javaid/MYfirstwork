@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
 import { AppService } from 'src/app/services/app.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class WithdrawComponent implements OnInit {
   CWAmount:any;
   error:any;
   withdrawAmount:any;
-  constructor(private fb: FormBuilder,private appService:AppService) {
+  WithdrawList:any;
+  constructor(private fb: FormBuilder,private appService:AppService,public toastr: ToastrManager) {
   
     this.WithdrawForm = fb.group({
       amount: ['',[Validators.required]],
@@ -22,6 +24,7 @@ export class WithdrawComponent implements OnInit {
 
   ngOnInit(): void {
     this.error="";
+    this.getWithdrawList();
   }
   calculateWithdrawalAmount(){
     this.appService.calculateWithdrawalAmount(this.WithdrawForm.value.amount).subscribe((res=>{
@@ -32,7 +35,17 @@ export class WithdrawComponent implements OnInit {
   )}
   SubmitwithdrawRequest(){
       this.appService.withdrawalRequest(this.WithdrawForm.value.amount).subscribe((res=>{
-            
+            if(res.meta.status_code==200){
+              this.toastr.successToastr(res.meta.status)
+            }
+            else{
+              this.toastr.errorToastr(res.meta.status)
+            }
       }));
+  }
+  getWithdrawList(){
+    this.appService.getWithdrawalList().subscribe((res:any)=>{
+          this.WithdrawList=res.data;
+    });
   }
 }

@@ -124,12 +124,12 @@
                         </thead>
                         <tbody>
                             <!---->
-                            <tr>
-                                <td>109</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
+                            <tr *ngFor="let item of WithdrawList">
+                                <td>{{item.amount}}</td>
+                                <td>{{item.withdrawalType}}</td>
+                                <td> {{item.status!='REJECT'?(item.createdAt | date :'short'):'-'}} </td>
                                 <td>
-                                    <span class="badge badge-danger">REJECT</span>
+                                    <span class="badge " [ngClass]="item.status=='REJECT'?'badge-danger':'badge-success'">{{item.status}}</span>
                                 </td>
                                 <td class="text-center">
                                     <!---->
@@ -137,84 +137,7 @@
                                     <!---->
                                 </td>
                             </tr>
-                            <tr>
-                                <td>5000</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
-                                <td>
-                                    <span class="badge badge-success">Success</span>
-                                </td>
-                                <td class="text-center">
-                                    <!---->
-                                    <span>-</span>
-                                    <!---->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2000</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
-                                <td>
-                                    <span class="badge badge-danger">REJECT</span>
-                                </td>
-                                <td class="text-center">
-                                    <!---->
-                                    <span>-</span>
-                                    <!---->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10000</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
-                                <td>
-                                    <span class="badge badge-danger">REJECT</span>
-                                </td>
-                                <td class="text-center">
-                                    <!---->
-                                    <span>-</span>
-                                    <!---->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2500</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
-                                <td>
-                                    <span class="badge badge-danger">REJECT</span>
-                                </td>
-                                <td class="text-center">
-                                    <!---->
-                                    <span>-</span>
-                                    <!---->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2800</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
-                                <td>
-                                    <span class="badge badge-danger">REJECT</span>
-                                </td>
-                                <td class="text-center">
-                                    <!---->
-                                    <span>-</span>
-                                    <!---->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>20000</td>
-                                <td>NORMAL</td>
-                                <td> - </td>
-                                <td>
-                                    <span class="badge badge-danger">REJECT</span>
-                                </td>
-                                <td class="text-center">
-                                    <!---->
-                                    <span>-</span>
-                                    <!---->
-                                </td>
-                            </tr>
+                            
                             <!---->
                         </tbody>
                     </table>
