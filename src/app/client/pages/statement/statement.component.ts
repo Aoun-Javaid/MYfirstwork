@@ -94,7 +94,7 @@ export class StatementComponent implements OnInit {
       }
     ],
     "start": 0,
-    "length": 10,
+    "length": 1000,
     "search": {
       "value": "",
       "regex": false
