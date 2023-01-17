@@ -27,15 +27,22 @@ export class CasinoComponent implements OnInit {
     });
   }
   cliclTab(stepValue:any){
+    debugger
     this.step = stepValue;
-    this.casinoCards=this.casinoEventsBackup.filter((data:any) =>{
+    if(this.step=="ALL"){
+      this.casinoCards = this.casinoEventsBackup;
+    }
+    else{
+      this.casinoCards=this.casinoEventsBackup.filter((data:any) =>{
         if(data.tab==this.step){
           return data;
         }
-        else{
-          return null;
-        }
+        // else{
+        //   return null;
+        // }
     });
+    }
+   
     // localStorage.setItem('step', JSON.stringify(this.step));
   }
 }
