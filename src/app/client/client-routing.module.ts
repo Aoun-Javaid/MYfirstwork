@@ -36,51 +36,51 @@ const routes: Routes = [
         path: 'market-details/:id/:sportid', component: MarketDetailsComponent
       },
       {
-        path: 'profile', component: ProfileComponent
+        path: 'profile', component: ProfileComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'edit-password', component: EditPasswordComponent
+        path: 'edit-password', component: EditPasswordComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'statement', component: StatementComponent
+        path: 'statement', component: StatementComponent,canActivate:[AuthGuardGuard]
       },
       {
         path: 'inplay', component: InplayComponent
       },
       {
-        path: 'detail', component: DetailsComponent
+        path: 'detail', component: DetailsComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'profitloss', component: ProfitlossComponent
+        path: 'profitloss', component: ProfitlossComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'settings', component: SettingsComponent
+        path: 'settings', component: SettingsComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'withdraw', component: WithdrawComponent
+        path: 'withdraw', component: WithdrawComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'deposit', component: DepositComponent
+        path: 'deposit', component: DepositComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'bet-history', component: BetHistoryComponent
+        path: 'bet-history', component: BetHistoryComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'add-paymentMethod', component: AddPaymentMethodComponent
+        path: 'add-paymentMethod', component: AddPaymentMethodComponent,canActivate:[AuthGuardGuard]
       },
        {
-        path: 'passwordHistory', component: PasswordHistoryComponent
+        path: 'passwordHistory', component: PasswordHistoryComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'profitloss-event', component: ProfitlossEventComponent
-      },
-
-      {
-        path: 'profitloss-market', component: ProfitlossMarketComponent
+        path: 'profitloss-event', component: ProfitlossEventComponent,canActivate:[AuthGuardGuard]
       },
 
       {
-        path: 'd-profit-history', component: DProfitHistoryComponent
+        path: 'profitloss-market', component: ProfitlossMarketComponent,canActivate:[AuthGuardGuard]
+      },
+
+      {
+        path: 'd-profit-history', component: DProfitHistoryComponent,canActivate:[AuthGuardGuard]
       },{
         path: 'bonus', component: BonusComponent
       },
