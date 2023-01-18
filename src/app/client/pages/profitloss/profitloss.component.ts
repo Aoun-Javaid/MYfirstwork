@@ -173,7 +173,6 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     };
 
   }
-
   someClickHandler(info: any): void {
     console.log(info)
     this.router.navigate(['facebook.com'])
