@@ -21,6 +21,7 @@ import { ProfitlossEventComponent } from './pages/profitloss-event/profitloss-ev
 import { ProfitlossMarketComponent } from './pages/profitloss-market/profitloss-market.component';
 import { DProfitHistoryComponent } from './pages/d-profit-history/d-profit-history.component';
 import {PasswordHistoryComponent} from "./pages/password-history/password-history.component";
+import {BonusComponent} from "./pages/bonus/bonus.component";
 
 const routes: Routes = [
   {
@@ -79,6 +80,8 @@ const routes: Routes = [
 
       {
         path: 'd-profit-history', component: DProfitHistoryComponent
+      },{
+        path: 'bonus', component: BonusComponent
       },
       // {
       //   path: 'result',component:ResultComponent
