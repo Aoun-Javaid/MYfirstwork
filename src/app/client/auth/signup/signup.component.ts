@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
       this.signUpForm.controls.username.value).subscribe((resp:any)=>{
         if(resp.meta.status_code==200){
           this.otpBoxShow=true;
-          this.toastr.infoToastr('OTP is Sent to your device')
+          this.toastr.infoToastr('OTP is Sent to your device');
         }
         else{
           this.toastr.errorToastr(resp.meta.message);
