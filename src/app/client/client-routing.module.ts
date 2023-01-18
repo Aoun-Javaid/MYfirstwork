@@ -22,6 +22,7 @@ import { ProfitlossMarketComponent } from './pages/profitloss-market/profitloss-
 import { DProfitHistoryComponent } from './pages/d-profit-history/d-profit-history.component';
 import {PasswordHistoryComponent} from "./pages/password-history/password-history.component";
 import {BonusComponent} from "./pages/bonus/bonus.component";
+import {AuthGuardGuard} from "../guard/auth-guard.guard";
 
 const routes: Routes = [
   {

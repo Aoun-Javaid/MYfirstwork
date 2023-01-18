@@ -14,6 +14,7 @@ import { ToastrModule } from 'ng6-toastr-notifications';
 import { ShortNumberPipe } from './pipes/short-number.pipe';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
+import {AuthServiceService} from "./services/auth-service.service";
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
   ],
   providers: [
     AppService,
+    AuthServiceService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     {
