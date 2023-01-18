@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { DataTableDirective } from 'angular-datatables';
-import { Subject } from 'rxjs';
-import { AppService } from 'src/app/services/app.service';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {DataTableDirective} from 'angular-datatables';
+import {Subject} from 'rxjs';
+import {AppService} from 'src/app/services/app.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profitloss',
@@ -18,15 +19,14 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     endDate: new FormControl('')
   });
 
-  profitlossStatement :any=[];
-
+  profitlossStatement: any = [];
 
 
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtTrigger: Subject<any> = new Subject();
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService, private router: Router) {
 
   }
 
@@ -114,10 +114,11 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
 
   startDate: string;
   endDate: string;
+
   ngOnInit(): void {
     this.updateDate();
-    this.draw.startDate=this.startDate;
-    this.draw.endDate=this.endDate;
+    this.draw.startDate = this.startDate;
+    this.draw.endDate = this.endDate;
     this.dtOptions = {
       pagingType: 'full_numbers',
       // pageLength: 1,
@@ -127,14 +128,15 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
       ajax: (dataTablesParameters: any, callback) => {
         debugger
         this.appService.userSportsProfitloss(this.draw)
-              .subscribe(resp => {
-                debugger
-                this.profitlossStatement=resp.data.original.data;;
-                  callback({
-                      recordsTotal: resp.data.original.recordsTotal,
-                      data: this.profitlossStatement,
-                  });
-              });
+          .subscribe(resp => {
+            debugger
+            this.profitlossStatement = resp.data.original.data;
+            ;
+            callback({
+              recordsTotal: resp.data.original.recordsTotal,
+              data: this.profitlossStatement,
+            });
+          });
       },
       data: this.profitlossStatement,
       columns: [
@@ -147,18 +149,34 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
           data: 'pl'
         },
         {
-        title: 'Commission',
-        data: 'commission'
-      }, 
+          title: 'Commission',
+          data: 'commission'
+        },
         // {
         //   title: 'Total P&L',
         //   data: ''
         // },
-       
-      ]
 
+      ],
+      rowCallback: (row: Node, data: any[] | Object, index: number) => {
+        const self = this;
+        // Unbind first in order to avoid any duplicate handler
+        // (see https://github.com/l-lin/angular-datatables/issues/87)
+        // Note: In newer jQuery v3 versions, `unbind` and `bind` are
+        // deprecated in favor of `off` and `on`
+        $('td', row).off('click');
+        $('td', row).on('click', () => {
+          self.someClickHandler(data);
+        });
+        return row;
+      }
     };
 
+  }
+
+  someClickHandler(info: any): void {
+    console.log(info)
+    this.router.navigate(['facebook.com'])
   }
 
   ngAfterViewInit(): void {
@@ -169,16 +187,20 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();
   }
+
   completeDate: Date;
   localCompleteDate: string;
+
   ngModelStartChange($event: any) {
     this.startDate = $event.target.value;
     //debugger
   }
+
   ngModelEndChange($event: any) {
     this.endDate = $event.target.value;
 
   }
+
   updateDate() {
 
     let sDate: any = new Date();
@@ -212,27 +234,25 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     //   this.startDate = this.startDate.substr(0, 16);
     //this.startDate.setDate(this.startDate.getDate() - 4);
     let min = Number(minutes);
-    if(min<9){
-      minutes= '0'+(min+1);
-    }
-    else if(min==59){
-      minutes='00';
-      hours=(Number(hours)+1).toString();
-    }
-    else{
-      minutes=(min+1).toString();
+    if (min < 9) {
+      minutes = '0' + (min + 1);
+    } else if (min == 59) {
+      minutes = '00';
+      hours = (Number(hours) + 1).toString();
+    } else {
+      minutes = (min + 1).toString();
     }
     var dates = new Date();
-    let month:any = dates.getMonth()+1;
+    let month: any = dates.getMonth() + 1;
 
-    if(Number(month)<10){
-      month='0'+month;
+    if (Number(month) < 10) {
+      month = '0' + month;
     }
 
     this.endDate = new Date().toISOString();
     this.endDate = this.endDate.substr(0, 4);
 
-    this.endDate = this.endDate+'-'+month+'-'+ date + 'T' + hours + ':' + minutes;
+    this.endDate = this.endDate + '-' + month + '-' + date + 'T' + hours + ':' + minutes;
   }
 
   SubmitdataTable() {
@@ -250,9 +270,9 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
       this.appService.userSportsProfitloss(this.draw).subscribe((res => {
         this.profitlossStatement = res.data.original.data;
         this.dtOptions.data = this.profitlossStatement;
-        this.dtOptions.columns= this.draw.columns;
-        
-      
+        this.dtOptions.columns = this.draw.columns;
+
+
       }));
     });
 
