@@ -130,7 +130,7 @@ a.pg-parent{
   }
 }
 @media screen and (min-width: 320px) and (max-width: 375px) {
-  .pg-header ,.accordion-body,.recordLi{
+  .pg-header ,.accordion-body,.recordList{
     width: 280px !important;
   }
   .recordList{
