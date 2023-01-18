@@ -18,21 +18,23 @@ export const CONFIG = {
   getSlider: BASE_URL_V1 + '/v1/front/slider/getAllSlider',//
   getAllEventsList: BASE_URL_API + '/api/exchange/market/matchodds/allEventsList',//
   getCustomerSupport: BASE_URL_V1 + '/v1/exchange/support/getCustomerSupport',//
-  getCasinoInformation: BASE_URL_API + '/api/exchange/casino/casinoInformation',//
-  getDaysWiseEvents: BASE_URL_API + '/api/exchange/events/getDaysWiseEvents',//
-  getUserProfile: BASE_URL_V1 + '/v1/exchange/users/profile/getUserProfile',
-  userLogin: BASE_URL_V1 + '/v1/users/userLogin',//
-  getIpLocation: 'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',//
-  getUserBalance: BASE_URL_V1 + '/v1/exchange/users/balance/getUserBalance',
-  changeUserPassword: BASE_URL_V1 + '/v1/exchange/users/changeUserPassword',
-  getUserBetStake: BASE_URL_V1 + '/v1/exchange/users/getUserBetStake',
-  updateUserBetStake: BASE_URL_V1 + '/v1/exchange/users/updateUserBetStake',
-  getExchangeNews: BASE_URL_API + '/api/exchange/news/getExchangeNews',
-  withdrawalRequest: BASE_URL_V1 + '/v1/exchange/users/withdrawalRequest',
-  calculateWithdrawalAmount: BASE_URL_V1 + '/v1/exchange/users/calculateWithdrawalAmount',
-  userRegisterOtpSent: BASE_URL_V1 + '/v1/exchange/user/userRegisterOtpSent',
-  userRegisterVerify: BASE_URL_V1 + '/v1/exchange/user/userRegisterVerify',
-  getWithdrawalList: BASE_URL_V1 + '/v1/exchange/users/getWithdrawalList',
+  getCasinoInformation: BASE_URL_API+'/api/exchange/casino/casinoInformation',//
+  getDaysWiseEvents:BASE_URL_API+'/api/exchange/events/getDaysWiseEvents',//
+  getUserProfile:BASE_URL_V1+'/v1/exchange/users/profile/getUserProfile',
+  userLogin:BASE_URL_V1+'/v1/users/userLogin',//
+  getIpLocation:'https://pro.ip-api.com/json/?key=qSA5ctYZHdWsx04',//
+  getUserBalance:BASE_URL_V1+'/v1/exchange/users/balance/getUserBalance',
+  changeUserPassword:BASE_URL_V1+'/v1/exchange/users/changeUserPassword',
+  getUserBetStake:BASE_URL_V1+'/v1/exchange/users/getUserBetStake',
+  updateUserBetStake:BASE_URL_V1+'/v1/exchange/users/updateUserBetStake',
+  getExchangeNews:BASE_URL_API+'/api/exchange/news/getExchangeNews',
+  withdrawalRequest:BASE_URL_V1+'/v1/exchange/users/withdrawalRequest',
+  calculateWithdrawalAmount:BASE_URL_V1+'/v1/exchange/users/calculateWithdrawalAmount',
+  userRegisterOtpSent:BASE_URL_V1+'/v1/exchange/user/userRegisterOtpSent',
+  userRegisterVerify:BASE_URL_V1+'/v1/exchange/user/userRegisterVerify',
+  getWithdrawalList:BASE_URL_V1+'/v1/exchange/users/getWithdrawalList',
+  deleteWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/deleteWithdrawalBankDetails',
+  getWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/getWithdrawalBankDetails',
 
 
   getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',

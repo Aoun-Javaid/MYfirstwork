@@ -91,6 +91,12 @@ export class AppService {
   getWithdrawalList(): Observable<any> {
     return this.http.post(CONFIG.getWithdrawalList, {})
   }
+  deleteWithdrawalBankDetails(id: any,): Observable<any> {
+    return this.http.post(CONFIG.deleteWithdrawalBankDetails, { id })
+  }
+  getWithdrawalBankDetails(): Observable<any> {
+    return this.http.post(CONFIG.getWithdrawalBankDetails, {})
+  }
 
   getPasswordHistory(draw:any): Observable<any> {
     return this.http.post(CONFIG.getPasswordHistory, draw)
