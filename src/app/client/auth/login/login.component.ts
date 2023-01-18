@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('accessToken', res.data.accessToken);
         this.appService.setLoggedIn(true)
         this.router.navigate(['/client/']);
-        this.toastr.successToastr('Successfully LoggedIn !!!');
+        // this.toastr.successToastr('Successfully LoggedIn !!!');
         // location.reload();
       }
       else {
