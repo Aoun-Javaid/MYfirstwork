@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import { DataTableDirective } from 'angular-datatables';
 import {Subject} from 'rxjs';
 import {AppService} from 'src/app/services/app.service';
 
@@ -10,6 +11,9 @@ import {AppService} from 'src/app/services/app.service';
 })
 export class StatementComponent implements OnInit {
 
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtTrigger: Subject<any> = new Subject();
 
   statementForm = new FormGroup({
     startDate: new FormControl(''),
@@ -94,7 +98,7 @@ export class StatementComponent implements OnInit {
       }
     ],
     "start": 0,
-    "length": 10,
+    "length": 1000,
     "search": {
       "value": "",
       "regex": false
@@ -105,25 +109,28 @@ export class StatementComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
 
-  dtTrigger: Subject<any> = new Subject<any>()
   accountStatement: any = [];
   startDate: string;
   endDate: string;
   ngOnInit(): void {
     this.updateDate();
+    this.draw.startDate=this.startDate;
+    this.draw.endDate=this.endDate;
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 1,
-      tabIndex: 2,
+      // pageLength: 1,
+      // tabIndex: 2,
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
+        debugger
         this.appService.userAccountStatement(this.draw)
               .subscribe(resp => {
+                debugger
                 this.accountStatement=resp.data.original.data;;
                   callback({
-                      recordsTotal: this.accountStatement.length,
-                      data: resp.data.original.data,
+                      recordsTotal: resp.data.original.recordsTotal,
+                      data: this.accountStatement,
                   });
               });
       },
@@ -141,22 +148,24 @@ export class StatementComponent implements OnInit {
         },
         {
           title: 'Balance',
-          data: 'balance'
+          data: 'bankBalance'
         }, {
           title: 'remark',
           data: 'remark'
-        }, {
-          title: 'From/To',
-          data: 'From/To'
         }]
 
     };
 
   }
 
-// ngOnDestroy(): void {
-//    this.dtTrigger.unsubscribe();
-// }
+  ngAfterViewInit(): void {
+    this.dtTrigger.next(null);
+  }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
+  }
   completeDate: Date;
   localCompleteDate: string;
   ngModelStartChange($event: any) {
@@ -222,13 +231,27 @@ export class StatementComponent implements OnInit {
 
     this.endDate = this.endDate+'-'+month+'-'+ date + 'T' + hours + ':' + minutes;
   }
+
   SubmitdataTable() {
-    this.draw.startDate = this.startDate;
-    this.draw.endDate = this.endDate;
-    this.appService.userAccountStatement(this.draw).subscribe((res => {
-      this.accountStatement = res.data.original.data;
-      this.dtOptions.data = this.accountStatement;
-    }));
+
+
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      dtInstance.clear();
+      // Destroy the table first
+      dtInstance.destroy();
+      // Call the dtTrigger to rerender again
+      this.dtTrigger.next(null);
+      debugger
+      this.draw.startDate = this.startDate;
+      this.draw.endDate = this.endDate;
+      this.appService.userAccountStatement(this.draw).subscribe((res => {
+        this.accountStatement = res.data.original.data;
+        this.dtOptions.data = this.accountStatement;
+        this.dtOptions.columns= this.draw.columns;
+        
+      
+      }));
+    });
 
   }
 
