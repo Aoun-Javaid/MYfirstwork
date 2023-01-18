@@ -15,10 +15,10 @@ export class WithdrawComponent implements OnInit {
   withdrawAmount:any;
   WithdrawList:any;
   constructor(private fb: FormBuilder,private appService:AppService,public toastr: ToastrManager) {
-  
+
     this.WithdrawForm = fb.group({
       amount: ['',[Validators.required]],
-      
+
     });
   }
 
@@ -29,17 +29,17 @@ export class WithdrawComponent implements OnInit {
   calculateWithdrawalAmount(){
     this.appService.calculateWithdrawalAmount(this.WithdrawForm.value.amount).subscribe((res=>{
             this.CWAmount=res;
-        
-        
+
+
     })
   )}
   SubmitwithdrawRequest(){
       this.appService.withdrawalRequest(this.WithdrawForm.value.amount).subscribe((res=>{
             if(res.meta.status_code==200){
-              this.toastr.successToastr(res.meta.status)
+              this.toastr.successToastr(res.meta.message)
             }
             else{
-              this.toastr.errorToastr(res.meta.status)
+              this.toastr.errorToastr(res.meta.message)
             }
       }));
   }

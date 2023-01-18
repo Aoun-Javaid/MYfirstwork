@@ -43,10 +43,10 @@ export class EditPasswordComponent implements OnInit {
     if(this.editForm.valid){
       this.appService.changeUserPassword(this.editForm.value.password,this.editForm.value.oldpassword).subscribe((res:any)=>{
             if(res.meta.status_code==200){
-                this.toastr.successToastr(res.meta.status);
+                this.toastr.successToastr(res.meta.message);
             }
             else{
-              this.toastr.errorToastr(res.meta.status);
+              this.toastr.errorToastr(res.meta.message);
             }
       });
     }
