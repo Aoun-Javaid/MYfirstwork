@@ -6,9 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./horse-racing.component.css']
 })
 export class HorseRacingComponent implements OnInit {
-
+  selectedSportId:any;
   constructor() { }
+  catTabs=[
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
+    {catName:'djfdsjf',id:'dsadasdsadasd'},
 
+  ]
   ngOnInit(): void {
   }
 
