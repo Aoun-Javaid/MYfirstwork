@@ -223,8 +223,8 @@ export class StatementComponent implements OnInit {
     this.endDate = this.endDate+'-'+month+'-'+ date + 'T' + hours + ':' + minutes;
   }
   SubmitdataTable() {
-    this.draw.startDate = this.statementForm.value.startDate;
-    this.draw.endDate = this.statementForm.value.endDate;
+    this.draw.startDate = this.startDate;
+    this.draw.endDate = this.endDate;
     this.appService.userAccountStatement(this.draw).subscribe((res => {
       this.accountStatement = res.data.original.data;
       this.dtOptions.data = this.accountStatement;
