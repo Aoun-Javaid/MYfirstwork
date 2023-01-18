@@ -11,19 +11,23 @@
   <div id="filter">
     <div class="row justify-content-between option-row p-4">
       <div class="col-md-12">
-        <form [formGroup]="statementForm" (ngSubmit)="SubmitdataTable()">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
-              <input type="date" placeholder="From"  formControlName="startDate" class="form-control ng-valid ng-dirty ng-touched">
+              <input id="startDatem" type="datetime-local"
+                     placeholder="yyyy-MM-dd HH:mm"
+                     [ngModel]="startDate" (change)="ngModelStartChange($event)"
+                     class="form-control ng-valid ng-dirty ng-touched">
             </div>
             <div class="col-md-2 col-12 mb-sm-1">
-              <input type="date" placeholder="To" formControlName="endDate"  class="form-control ng-untouched ng-pristine ng-valid">
+              <input id="endDatem"  type="datetime-local"
+                     placeholder="yyyy-MM-dd HH:mm"
+                     [ngModel]="endDate" (change)="ngModelEndChange($event)"
+                class="form-control ng-untouched ng-pristine ng-valid">
             </div>
             <div class="col-md-2 col-12 mb-sm-1">
-              <button class="btn-get waves-effect waves-light">Submit</button>
+              <button class="btn-get waves-effect waves-light" (click)="SubmitdataTable()">Submit</button>
             </div>
           </div>
-        </form>
 
       </div>
     </div>
