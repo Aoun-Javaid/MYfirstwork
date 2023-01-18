@@ -74,44 +74,7 @@
     margin-bottom: 25px;
     padding: .55rem 1.75rem;
   }
-  @media screen and (max-width: 320px) {
-    .pg-header {
-      width: 230px !important;
-  }
-    .recordList{
-      width: 225px;
-    }
-  }
-  @media screen and (max-width: 370px) {
-    .pg-header {
-      width: 280px;
-  }
-    .recordList{
-      width: 275px;
-    }
 
-  }
-  @media screen and (max-width: 767px) {
-    .image-upload-extion {
-      background-color: var(--event-title-bg);
-      border-radius: 10px;
-      width: 70vw;
-      padding: 15% 0;
-    }
-    .detail-data, .detail-name {
-      font-size: 12px ;
-    }
-    .bankfont{
-      font-size: 25px;
-    }
-    .bankButton{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-      padding: 10px;
-    }
-  }
   .submitAcount{
     background: var(--theme-color);
     border-radius: 8px;
@@ -156,27 +119,69 @@ a.pg-parent{
   margin: 0; /* Remove margins */
   text-align:left;
 }
-  @media screen and (max-width: 900px){
-    .accordion {
-      flex-direction: column;
-    }
-    .pg-header{
-      width: 331px;
-      height: 116px;
-    }
-    .recordList{
-      width: 325px;
-    }
-    .pg-header img {
-      width: 45vw;
-    }
-    .bankButton{
-      /* display: block; */
-    }
-    .pg-container{
-      padding: 0%;
-      width: fit-content;
-    }
 
+
+@media screen and (max-width: 319px) {
+  .pg-header ,.accordion-body,.recordList{
+    width: 230px;
+  }
+  .recordList{
+    width: 225px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .pg-header ,.accordion-body,.recordList{
+    width: 280px !important;
+  }
+  .recordList{
+    width: 275px;
   }
 
+}
+@media only screen and (max-width: 767px) {
+  .image-upload-extion {
+    background-color: var(--event-title-bg);
+    border-radius: 10px;
+    width: 70vw;
+    padding: 15% 0;
+  }
+  .detail-data, .detail-name {
+    font-size: 12px ;
+  }
+  .bankfont{
+    font-size: 25px;
+  }
+  .bankButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 900px){
+  .pg-header{
+    width: 331px;
+    height: 116px;
+  }
+  .recordList{
+    width: 325px;
+  }
+}
+@media screen and (max-width: 900px){
+  .accordion {
+    flex-direction: column;
+  }
+
+  .pg-header img {
+    width: 45vw;
+  }
+  .bankButton{
+    /* display: block; */
+  }
+  .pg-container{
+    padding: 0%;
+    width: fit-content;
+  }
+
+}

@@ -36,7 +36,7 @@ export class AddPaymentMethodComponent implements OnInit {
         this.wihtdrawBankList=res.data;
         this.bankDetails=res.data.bankDetails;
         this.upiDetails=res.data.upiDetails;
-        this.toastr.successToastr(res.meta.message);
+        // this.toastr.successToastr(res.meta.message);
       }
       else{
         this.toastr.errorToastr(res.meta.message);
@@ -54,6 +54,7 @@ export class AddPaymentMethodComponent implements OnInit {
   deleteWithdrawalBankDetails(id:any){
       this.appserive.deleteWithdrawalBankDetails(id).subscribe((res:any)=>{
           if(res.meta.status_code==200){
+            this.getWithdrawalBankDetails();
             this.toastr.successToastr(res.meta.message);
           }
           else{
@@ -68,6 +69,7 @@ export class AddPaymentMethodComponent implements OnInit {
         this.AddBankDetailsForm.controls.ifsc.value,this.AddBankDetailsForm.controls.paymentType.value,
       ).subscribe((res:any)=>{
         if(res.meta.status_code==200){
+          this.getWithdrawalBankDetails();
           this.toastr.successToastr(res.meta.message);
         }
         else{
