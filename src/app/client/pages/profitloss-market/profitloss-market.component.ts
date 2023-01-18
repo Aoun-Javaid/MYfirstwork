@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { AppService } from 'src/app/services/app.service';
@@ -21,7 +22,7 @@ export class ProfitlossMarketComponent implements OnInit {
   dtElement: DataTableDirective;
   dtTrigger: Subject<any> = new Subject();
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,private route: ActivatedRoute, private router: Router) {
 
   }
 
@@ -119,7 +120,7 @@ export class ProfitlossMarketComponent implements OnInit {
   startDate: string;
   endDate: string;
   ngOnInit(): void {
-debugger
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       // pageLength: 1,
@@ -127,10 +128,10 @@ debugger
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        debugger
+        
         this.appService.userEventsProfitloss(this.draw)
               .subscribe(resp => {
-                debugger
+                
                 this.profitlossStatement=resp.data.original.data;;
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
@@ -173,10 +174,29 @@ debugger
         //   data: ''
         // },
        
-      ]
+      ],
+      rowCallback: (row: Node, data: any[] | Object, index: number) => {
+        const self = this;
+        // Unbind first in order to avoid any duplicate handler
+        // (see https://github.com/l-lin/angular-datatables/issues/87)
+        // Note: In newer jQuery v3 versions, `unbind` and `bind` are
+        // deprecated in favor of `off` and `on`
+        $('td', row).off('click');
+        $('td', row).on('click', () => {
+          self.someClickHandler(data);
+        });
+        return row;
+      }
 
     };
 
+  }
+
+  someClickHandler(info: any): void {
+    console.log(info);
+    this.startDate;
+    this.endDate;
+    this.router.navigate([`/client/profitloss-market/{{info.eventId}}/{{"LIVE"}}"`]);
   }
 
   ngAfterViewInit(): void {
@@ -198,22 +218,22 @@ debugger
 
   }
 
-  SubmitdataTable() {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.clear();
-      // Destroy the table first
-      dtInstance.destroy();
-      // Call the dtTrigger to rerender again
-      this.dtTrigger.next(null);
-      debugger
-      this.appService.userSportsProfitloss(this.draw).subscribe((res => {
-        this.profitlossStatement = res.data.original.data;
-        this.dtOptions.data = this.profitlossStatement;
-        this.dtOptions.columns= this.draw.columns;
+  // SubmitdataTable() {
+  //   this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+  //     dtInstance.clear();
+  //     // Destroy the table first
+  //     dtInstance.destroy();
+  //     // Call the dtTrigger to rerender again
+  //     this.dtTrigger.next(null);
+  //     debugger
+  //     this.appService.userSportsProfitloss(this.draw).subscribe((res => {
+  //       this.profitlossStatement = res.data.original.data;
+  //       this.dtOptions.data = this.profitlossStatement;
+  //       this.dtOptions.columns= this.draw.columns;
         
       
-      }));
-    });
+  //     }));
+  //   });
+  // }
 
-  }
 }

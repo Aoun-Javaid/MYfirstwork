@@ -12,6 +12,7 @@ export class AddPaymentMethodComponent implements OnInit {
   wihtdrawBankList:any;
   openCollapsedAccount="";
   bankDetails:any =[];
+
   upiDetails:any ={};
   selectedUPINAME="";
   constructor(private appserive:AppService,public toastr: ToastrManager) { }
