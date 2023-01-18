@@ -28,10 +28,11 @@ export class ProfitlossEventComponent implements OnInit {
   constructor(private appService: AppService,private route: ActivatedRoute, private router: Router) {
 
     this.route.params.subscribe(params => {
-      this.sportsId = params['this.sportsId'];
-      this.startDate = params['this.startDate'];
-      this.endDate = params['this.endDate'];
-      this.gameType = params['id'];
+      console.log(params)
+      this.sportsId = params.id;
+      this.startDate = params.startDate;
+      this.endDate = params.endDate;
+      this.gameType = params.dataSource;
     });
 
     console.log(this.sportsId);
@@ -157,12 +158,12 @@ debugger
         {
         title: 'Commission',
         data: 'commission'
-      }, 
+      },
         // {
         //   title: 'Total P&L',
         //   data: ''
         // },
-       
+
       ],
       rowCallback: (row: Node, data: any[] | Object, index: number) => {
         const self = this;
@@ -185,7 +186,7 @@ debugger
     console.log(info)
     this.startDate;
     this.endDate;
-    this.router.navigate([`/client/profitloss-market/{{info.eventId}}/{{"LIVE"}}"`])
+    this.router.navigate([`/client/profitloss-market/${info.eventId}/${"LIVE"}"`])
     console.log("check y data",info.sportId,this.startDate, this.endDate)
   }
 
@@ -221,8 +222,8 @@ debugger
         this.profitlossStatement = res.data.original.data;
         this.dtOptions.data = this.profitlossStatement;
         this.dtOptions.columns= this.draw.columns;
-        
-      
+
+
       }));
     });
 

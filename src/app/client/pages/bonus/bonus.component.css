@@ -81,5 +81,8 @@ header .wallet-detail-group .wallet-balance-num {
   border-radius: 1.06667vw;
   border: .4vw solid #7e97a7;
   cursor: pointer;
-
+}
+.card-body{
+  display:flex;
+  justify-content: space-between;
 }

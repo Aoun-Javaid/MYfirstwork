@@ -128,10 +128,10 @@ export class ProfitlossMarketComponent implements OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        
+
         this.appService.userEventsProfitloss(this.draw)
               .subscribe(resp => {
-                
+
                 this.profitlossStatement=resp.data.original.data;;
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
@@ -173,7 +173,7 @@ export class ProfitlossMarketComponent implements OnInit {
         //   title: 'Total P&L',
         //   data: ''
         // },
-       
+
       ],
       rowCallback: (row: Node, data: any[] | Object, index: number) => {
         const self = this;
@@ -196,7 +196,7 @@ export class ProfitlossMarketComponent implements OnInit {
     console.log(info);
     this.startDate;
     this.endDate;
-    this.router.navigate([`/client/profitloss-market/{{info.eventId}}/{{"LIVE"}}"`]);
+    this.router.navigate([`/client/profitloss-market/${info.eventId}/${"LIVE"}"`]);
   }
 
   ngAfterViewInit(): void {
@@ -230,8 +230,8 @@ export class ProfitlossMarketComponent implements OnInit {
   //       this.profitlossStatement = res.data.original.data;
   //       this.dtOptions.data = this.profitlossStatement;
   //       this.dtOptions.columns= this.draw.columns;
-        
-      
+
+
   //     }));
   //   });
   // }

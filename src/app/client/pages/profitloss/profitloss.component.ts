@@ -177,7 +177,7 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     console.log(info)
     this.startDate;
     this.endDate;
-    this.router.navigate([`/client/profitloss-event/{{info.sportId}}/{{this.startDate}}/{{this.endDate}}/"LIVE"`])
+    this.router.navigate([`/client/profitloss-event/${info.sportId}/${this.startDate}/${this.endDate}/"LIVE"`])
     console.log("check y data",info.sportId,this.startDate, this.endDate)
   }
 
