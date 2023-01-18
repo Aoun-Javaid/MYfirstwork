@@ -58,6 +58,8 @@ export const CONFIG = {
   userEventsProfitloss:BASE_URL_V1 +  '/v1/exchange/users/profitloss/userEventsProfitloss',
   userMarketsProfitloss: BASE_URL_V1 + '/v1/exchange/users/profitloss/userMarketsProfitloss',
   getUserBetList:BASE_URL_V1 +  '/v1/exchange/users/betlist/getUserBetList',
+  casinoInternational:BASE_URL_API +  '/api/exchange/casino/casinoInternational',
+  
 
 
 

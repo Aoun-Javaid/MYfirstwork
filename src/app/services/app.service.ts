@@ -49,6 +49,9 @@ export class AppService {
   getCasinoInformation(): Observable<any> {
     return this.http.post(CONFIG.getCasinoInformation, {});
   }
+  casinoInternational(): Observable<any> {
+    return this.http.post(CONFIG.casinoInternational, {});
+  }
   getDaysWiseEvents(): Observable<any> {
     return this.http.post(CONFIG.getDaysWiseEvents, {});
   }

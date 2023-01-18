@@ -39,6 +39,7 @@ import {ProfitlossMarketComponent} from './pages/profitloss-market/profitloss-ma
 import {DProfitHistoryComponent} from './pages/d-profit-history/d-profit-history.component';
 import { BonusComponent } from './pages/bonus/bonus.component';
 import { HorseRacingComponent } from './pages/horse-racing/horse-racing.component';
+import { CasinoInternationalComponent } from './pages/casino-international/casino-international.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { HorseRacingComponent } from './pages/horse-racing/horse-racing.componen
     DProfitHistoryComponent,
     PasswordHistoryComponent,
     BonusComponent,
-    HorseRacingComponent
+    HorseRacingComponent,
+    CasinoInternationalComponent
 
   ],
   imports: [

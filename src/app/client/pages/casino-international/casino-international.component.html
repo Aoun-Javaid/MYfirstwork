@@ -1,0 +1,23 @@
+<div class="nav-tabs-casino container ">
+    <ul class="nav  nav-justified mb-2 tabs-sec">
+        <li class="nav-item" *ngFor="let item of listCasino;index as indexOfelement;">
+            <a class="nav-link active" [ngClass] = "{'active' : step == item}" (click) = "cliclTab(item)">
+                {{item}}
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="tab-content container p-0 ">
+    <div id="all" class="tab-pane active">
+        <div class="tab-img">
+            <div class=" d-flex flex-wrap">
+                <a href="#" class="casino-img-link" *ngFor="let item of casinoCards">
+                    <img class="img-fluid casino-img" [src]="item.image" [alt]="item.tab">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
