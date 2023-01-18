@@ -29,8 +29,6 @@ export class WithdrawComponent implements OnInit {
   calculateWithdrawalAmount(){
     this.appService.calculateWithdrawalAmount(this.WithdrawForm.value.amount).subscribe((res=>{
             this.CWAmount=res;
-
-
     })
   )}
   SubmitwithdrawRequest(){

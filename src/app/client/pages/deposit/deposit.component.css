@@ -80,15 +80,26 @@
 .bankfont{
   font-weight: 600;
 }
+.submitAcount{
+  background: var(--theme-color);
+  color: var(--event-title-bg);
+}
 @media screen and (max-width: 320px) {
   .pg-header {
     width: 230px !important;
-}
+  }
+  .recordList{
+    width: 225px;
+  }
 }
 @media screen and (max-width: 370px) {
   .pg-header {
-    width: 280px;
-}
+    width: 280px !important;
+  }
+  .recordList{
+    width: 275px;
+  }
+
 }
 @media screen and (max-width: 767px) {
   .image-upload-extion {
@@ -117,7 +128,7 @@
     flex-direction: column;
   }
   .pg-header{
-    width: 331px;
+    width: 346px;
     height: 85px;
   }
   .pg-header img {

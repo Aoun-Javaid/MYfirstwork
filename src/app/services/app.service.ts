@@ -116,6 +116,9 @@ export class AppService {
   getPasswordHistory(draw:any): Observable<any> {
     return this.http.post(CONFIG.getPasswordHistory, draw)
   }
+  getDepositDetails(amount:any): Observable<any> {
+    return this.http.post(CONFIG.getDepositDetails,{amount})
+  }
 
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
