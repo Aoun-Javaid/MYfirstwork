@@ -37,6 +37,7 @@ import {PasswordHistoryComponent} from './pages/password-history/password-histor
 import {ProfitlossEventComponent} from './pages/profitloss-event/profitloss-event.component';
 import {ProfitlossMarketComponent} from './pages/profitloss-market/profitloss-market.component';
 import {DProfitHistoryComponent} from './pages/d-profit-history/d-profit-history.component';
+import { BonusComponent } from './pages/bonus/bonus.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import {DProfitHistoryComponent} from './pages/d-profit-history/d-profit-history
     ProfitlossEventComponent,
     ProfitlossMarketComponent,
     DProfitHistoryComponent,
-    PasswordHistoryComponent
+    PasswordHistoryComponent,
+    BonusComponent
 
   ],
   imports: [

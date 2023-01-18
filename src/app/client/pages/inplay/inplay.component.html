@@ -42,7 +42,7 @@
       </button>
       <button type="button" class="btn update play2" *ngIf="!(step=='inplay')">
         <span>
-          
+
             <span class="textPlay2" *ngIf="step=='today'">Today
 
               <br />
@@ -61,7 +61,7 @@
     <div class="col-md-5 col-9 px-0 align-self-center">
       <div class="team-name">
         <p>
-          <span class="name"> {{odds.eventName}} </span>
+          <span class="name" routerLink="/client/market-details/{{odds.exEventId}}/{{odds.sportId}}"> {{odds.eventName}} </span>
           <span style="float:right;margin-right: 10px;">
             <img *ngIf="odds.isStreaming==true" src="assets/icons/TV%20(1).png" style="width: 17px; height: 15px; margin: 0px 5px;">
             <img *ngIf="odds.isFancy == true" src="assets/icons/ficon.webp"

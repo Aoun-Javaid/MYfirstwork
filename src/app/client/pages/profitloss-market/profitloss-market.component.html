@@ -8,10 +8,10 @@
       </div>
     </div>
   
-    <div id="filter">
+    <!-- <div id="filter">
       <div class="row justify-content-between option-row p-4">
         <div class="col-md-12">
-          <!-- <form [formGroup]="statementForm" (ngSubmit)="SubmitdataTable()"> -->
+          <form [formGroup]="statementForm" (ngSubmit)="SubmitdataTable()">
             <div class="row align-items-center justify-content-center">
               <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
                 <input type="date" placeholder="From"  formControlName="startDate" class="form-control ng-valid ng-dirty ng-touched">
@@ -23,14 +23,14 @@
                 <button class="btn-get waves-effect waves-light">Submit</button>
               </div>
             </div>
-          <!-- </form> -->
+          </form>
         
         </div>
       </div>
-    </div>
+    </div> -->
   
-    <div class="table-responsive">
-      <table datatable class="table table-dark table-striped table-bordered tableData">
+    <div class="table-responsive mt-2">
+      <table datatable [dtOptions]="dtOptions"  [dtTrigger]="dtTrigger"   class="table table-dark table-striped table-bordered tableData">
   
         <thead>
         <tr style="background-color: #424e5a !important;">
