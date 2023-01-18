@@ -19,39 +19,49 @@
         <div class="row justify-content-between option-row p-4">
             <div class="col-md-12">
                 <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-12 mb-sm-1">
-                        <input type="date" placeholder="From" class="form-control ng-valid ng-dirty ng-touched">
+                    <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
+                        <input id="startDatem" type="datetime-local" placeholder="yyyy-MM-dd HH:mm"
+                            [ngModel]="startDate" (change)="ngModelStartChange($event)"
+                            class="form-control ng-valid ng-dirty ng-touched">
                     </div>
                     <div class="col-md-2 col-12 mb-sm-1">
-                        <input type="date" placeholder="To" class="form-control ng-untouched ng-pristine ng-valid">
-                    </div>
-                    <div class="col-md-2 col-12 mb-sm-1">
-                        <button class="btn-get waves-effect waves-light">SUBMIT</button>
+                        <input id="endDatem" type="datetime-local" placeholder="yyyy-MM-dd HH:mm" [ngModel]="endDate"
+                            (change)="ngModelEndChange($event)" class="form-control ng-untouched ng-pristine ng-valid">
                     </div>
 
-<!--                    <div class="col-md-2 col-12 mb-sm-1">-->
-<!--                        <button class="btn-get waves-effect waves-light">CANCEL BET</button>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-2 col-9 mb-sm-1">-->
-<!--                        <div class="input-group">-->
-<!--                            <select class="form-control">-->
-<!--                                <option value="" disabled="" selected="" hidden=""> Select</option>-->
-<!--                                <option value="today">today</option>-->
-<!--                                <option value="yesterday">yesterday</option>-->
-<!--                                <option value="7_day">last 7 days</option>-->
-<!--                                <option value="30_day">last 30 days</option>-->
-<!--                            </select>-->
-<!--                            <div class="input-group-append p-0"><button class="btn-download"><i-->
-<!--                                        class="fa fa-cloud-download" style="font-size: 35px;"></i></button></div>&lt;!&ndash;&ndash;&gt;-->
-<!--                        </div>-->
-<!--                    </div>-->
+
+                    <!--                    <div class="col-md-2 col-12 mb-sm-1">-->
+                    <!--                        <button class="btn-get waves-effect waves-light">CANCEL BET</button>-->
+                    <!--                    </div>-->
+                    <div class="col-md-2 col-12 mb-sm-1 mt-1">
+                        <div class="input-group">
+                            <select #teams class="form-control" (change)="onSelectedSports(teams.value)">
+                                <option value="" disabled="" selected="" hidden=""> Select</option>
+                                <option value="{{sport.sportId}}"  *ngFor="let sport of catTabs">{{sport.sportName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-12 mb-sm-1 mt-1">
+                        <div class="input-group">
+                            <select class="form-control" #type (change)="onSelectedType(type.value)">
+                                <option value="" disabled="" selected="" hidden=""> Select</option>
+                                <option value="sattel">Sattel</option>
+                                <option value="unsattel">UnSattel</option>
+                                <option value="void">Void</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-12 mb-sm-1">
+                        <button class="btn-get waves-effect waves-light" (click)="SubmitdataTable()">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="table-responsive">
-        <table datatable class="table table-dark table-striped table-bordered tableData">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+            class="table table-dark table-striped table-bordered tableData">
             <thead>
                 <tr style="background-color: #424e5a !important;">
                     <th class="text-center">Sports Name</th>
@@ -61,24 +71,24 @@
                     <th class="text-center">Type</th>
                     <th class="text-center">Odds Req.</th>
                     <th class="text-center">Stake</th>
-                  <th class="text-center">Place Time</th>
-                  <th class="text-center">Matched Time</th>
+                    <th class="text-center">Place Time</th>
+                    <th class="text-center">Matched Time</th>
                 </tr>
 
             </thead>
             <tbody>
-                <tr class="back">
+                <!-- <tr class="back">
                     <td class="text-center">0ffb62</td>
                     <td class="text-center liner">Cricket -&gt; Dambulla Aura v Kandy Falcons
                         -&gt; Match Odds -&gt; Kandy Falcons</td>
-                    <td class="text-center">back</td><!---->
-                    <td class="text-center">1.46</td><!----><!---->
+                    <td class="text-center">back</td>
+                    <td class="text-center">1.46</td>
                     <td class="text-center">500</td>
                     <td class="text-centervliner">2022-12-13 15:55:13</td>
                     <td class="text-center">230</td>
                     <td class="text-center" >WIN </td>
                     <td class="text-center" >WIN </td>
-                </tr>
+                </tr> -->
             </tbody>
             <!-- <tbody>
                         <tr>

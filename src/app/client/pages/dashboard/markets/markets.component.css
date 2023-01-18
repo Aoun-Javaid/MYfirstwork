@@ -98,6 +98,19 @@ a {
   overflow-y: scroll;
 }
 
+
+/* 
+.market-events  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 71px;
+}
+
+.market-events ::-webkit-scrollbar-thumb {
+  border-radius: 41px;
+  background-color: rgba(255, 0, 0, 0.956);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
+
 .sport-list {
   padding: 0;
   margin-top: 5px;

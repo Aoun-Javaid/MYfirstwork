@@ -1,6 +1,6 @@
 export interface ReqDataModal {
 
-    
+
     startDate:string;
     endDate:string;
     dataSource:string;

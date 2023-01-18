@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   });
 
-  staticIpRes = 
+  staticIpRes =
     {
       as: '0',
       city: '0',
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       timezone: '0',
       zip: '0',
     }
-  
+
 
   // ip-config=[{"ip":"54.179.80.60","hostname":"AS16509 Amazon.com, Inc.","city":"Singapore","region":"Central Singapore","country":"Singapore","loc":1.28009,"postal":"048582","org":"AS16509 Amazon.com, Inc."}]
   submitLogin(userName?: any, passWord?: any) {
@@ -53,12 +53,12 @@ export class LoginComponent implements OnInit {
     },
         (error) => {                              //Error callback
           this.Postlogin(username,password,this.staticIpRes)
-         
-    
+
+
           //throw error;   //You can also throw the error to a global error handler
         });
 
-    
+
   }
   demoLogin() {
     this.submitLogin('exchange', "Abcd1234");
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
       }
       else {
         this.appService.setLoggedIn(false);
-        this.toastr.errorToastr(res.meta.status);
+        this.toastr.errorToastr(res.meta.message);
       }
     });
   }
