@@ -1,1 +1,29 @@
-<p>horse-racing works!</p>
+<div  class="horse-schedule">Horse Racing Schedule</div>
+<div class="category-navigation">
+  <div class="full-color">
+    <ul class="category-navigation-container">
+      <li class="category-navigation-item" *ngFor="let cat of catTabs">
+        <a class="category-navigation-item-link" >
+       <span class="category-navigation-item-icon">
+        <!-- <img class="catIcon" [src]="cat.iconUrl">  -->
+         <img class="catIcon" src="assets/flags/IN.png">
+       </span>
+          <span
+            class="category-navigation-item-label">IN</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<div class="content-container d-flex mt-2">
+  <div class="content-Team p-2">
+      MYSORE
+  </div>
+  <div class="content-rates d-flex flex-wrap align-items-center">
+      <a *ngFor="let cat of catTabs" class="content-rates-cell">
+        12:30
+      </a>
+  </div>
+</div>
+
