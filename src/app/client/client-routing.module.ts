@@ -24,6 +24,7 @@ import {PasswordHistoryComponent} from "./pages/password-history/password-histor
 import {BonusComponent} from "./pages/bonus/bonus.component";
 import {AuthGuardGuard} from "../guard/auth-guard.guard";
 import {HorseRacingComponent} from "./pages/horse-racing/horse-racing.component";
+import { CasinoInternationalComponent } from './pages/casino-international/casino-international.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,9 @@ const routes: Routes = [
       },
       {
         path:'horse-racing',component:HorseRacingComponent
+      },
+      {
+        path:'casinoInternational',component:CasinoInternationalComponent
       }
       // {
       //   path: 'result',component:ResultComponent
