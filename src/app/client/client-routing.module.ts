@@ -23,6 +23,7 @@ import { DProfitHistoryComponent } from './pages/d-profit-history/d-profit-histo
 import {PasswordHistoryComponent} from "./pages/password-history/password-history.component";
 import {BonusComponent} from "./pages/bonus/bonus.component";
 import {AuthGuardGuard} from "../guard/auth-guard.guard";
+import {HorseRacingComponent} from "./pages/horse-racing/horse-racing.component";
 
 const routes: Routes = [
   {
@@ -84,6 +85,9 @@ const routes: Routes = [
       },{
         path: 'bonus', component: BonusComponent
       },
+      {
+        path:'horse-racing',component:HorseRacingComponent
+      }
       // {
       //   path: 'result',component:ResultComponent
       // },
