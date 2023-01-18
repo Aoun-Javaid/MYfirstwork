@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { AppService } from 'src/app/services/app.service';
@@ -15,14 +16,25 @@ export class ProfitlossEventComponent implements OnInit {
 
   profitlossStatement :any=[];
 
-
+   sportsId:string;
+   startDate:string;
+   endDate:string;
+   gameType:string;
 
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtTrigger: Subject<any> = new Subject();
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,private route: ActivatedRoute, private router: Router) {
 
+    this.route.params.subscribe(params => {
+      this.sportsId = params['this.sportsId'];
+      this.startDate = params['this.startDate'];
+      this.endDate = params['this.endDate'];
+      this.gameType = params['id'];
+    });
+
+    console.log(this.sportsId);
   }
 
   draw = {
@@ -108,8 +120,6 @@ export class ProfitlossEventComponent implements OnInit {
 
   }
 
-  startDate: string;
-  endDate: string;
   ngOnInit(): void {
 debugger
     this.dtOptions = {
@@ -153,11 +163,32 @@ debugger
         //   data: ''
         // },
        
-      ]
+      ],
+      rowCallback: (row: Node, data: any[] | Object, index: number) => {
+        const self = this;
+        // Unbind first in order to avoid any duplicate handler
+        // (see https://github.com/l-lin/angular-datatables/issues/87)
+        // Note: In newer jQuery v3 versions, `unbind` and `bind` are
+        // deprecated in favor of `off` and `on`
+        $('td', row).off('click');
+        $('td', row).on('click', () => {
+          self.someClickHandler(data);
+        });
+        return row;
+      }
 
     };
 
   }
+
+  someClickHandler(info: any): void {
+    console.log(info)
+    this.startDate;
+    this.endDate;
+    this.router.navigate([`/client/profitloss-market/{{info.eventId}}/{{"LIVE"}}"`])
+    console.log("check y data",info.sportId,this.startDate, this.endDate)
+  }
+
 
   ngAfterViewInit(): void {
     this.dtTrigger.next(null);

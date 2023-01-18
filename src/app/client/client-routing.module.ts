@@ -73,15 +73,15 @@ const routes: Routes = [
         path: 'passwordHistory', component: PasswordHistoryComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'profitloss-event', component: ProfitlossEventComponent,canActivate:[AuthGuardGuard]
+        path: 'profitloss-event/:id/:startDate/:endDate/:dataSource', component: ProfitlossEventComponent
       },
 
       {
-        path: 'profitloss-market', component: ProfitlossMarketComponent,canActivate:[AuthGuardGuard]
+        path: 'profitloss-market/:eventId/:dataSource', component: ProfitlossMarketComponent
       },
 
       {
-        path: 'd-profit-history', component: DProfitHistoryComponent,canActivate:[AuthGuardGuard]
+        path: 'd-profit-history/:sportId/:marketId/:dataSource', component: DProfitHistoryComponent,canActivate:[AuthGuardGuard]
       },{
         path: 'bonus', component: BonusComponent
       },

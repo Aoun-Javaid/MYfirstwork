@@ -175,7 +175,10 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
   }
   someClickHandler(info: any): void {
     console.log(info)
-    this.router.navigate(['facebook.com'])
+    this.startDate;
+    this.endDate;
+    this.router.navigate([`/client/profitloss-event/{{info.sportId}}/{{this.startDate}}/{{this.endDate}}/"LIVE"`])
+    console.log("check y data",info.sportId,this.startDate, this.endDate)
   }
 
   ngAfterViewInit(): void {
