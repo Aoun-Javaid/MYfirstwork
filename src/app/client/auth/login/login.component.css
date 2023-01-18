@@ -11,7 +11,9 @@ h3 {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
-
+.forgot{
+  color: white !important;
+}
 a {
   color: #6658dd;
   text-decoration: none;
@@ -649,8 +651,13 @@ a, a:hover {
     height: 2px;
     border-radius: 0;
   }
-}
 
+}
+@media screen and (min-width: 280px) and (max-width: 375px) {
+  .submit-button-id{
+    width: auto !important;
+  }
+}
 .form-control {
   border: 2px solid #ffc800;
   border-right: none;
