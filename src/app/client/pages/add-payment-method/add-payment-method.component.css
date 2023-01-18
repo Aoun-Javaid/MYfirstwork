@@ -78,11 +78,18 @@
     .pg-header {
       width: 230px !important;
   }
+    .recordList{
+      width: 225px;
+    }
   }
   @media screen and (max-width: 370px) {
     .pg-header {
       width: 280px;
   }
+    .recordList{
+      width: 275px;
+    }
+
   }
   @media screen and (max-width: 767px) {
     .image-upload-extion {
@@ -119,7 +126,36 @@
   .recordList .btn{
   background-color:var(--theme-color);
 }
-
+.pg-childs.hide{
+  height: 0px;
+  display: none;
+  transition: all 1s ease-in-out;
+}
+.pg-childs.show{
+  height: auto;
+  padding: 5px;
+  background: black;
+  align-items: center;
+  transition: height 1s ease-in-out;
+}
+.pg-parent{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-weight: bold;
+}
+a.pg-parent{
+  color: var(--event-title-bg);
+  background: var(--deposit-card-bg-grad);
+  width: 100%;
+  text-decoration: none;
+}
+.pg-childs ul{
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  text-align:left;
+}
   @media screen and (max-width: 900px){
     .accordion {
       flex-direction: column;
@@ -127,6 +163,9 @@
     .pg-header{
       width: 331px;
       height: 116px;
+    }
+    .recordList{
+      width: 325px;
     }
     .pg-header img {
       width: 45vw;

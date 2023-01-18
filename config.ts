@@ -35,6 +35,7 @@ export const CONFIG = {
   getWithdrawalList:BASE_URL_V1+'/v1/exchange/users/getWithdrawalList',
   deleteWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/deleteWithdrawalBankDetails',
   getWithdrawalBankDetails:BASE_URL_V1+'/v1/exchange/users/getWithdrawalBankDetails',
+  addWithdrawalBank:BASE_URL_V1+'/v1/exchange/users/addWithdrawalBank',
 
 
   getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',

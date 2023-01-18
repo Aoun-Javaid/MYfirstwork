@@ -7,6 +7,9 @@ import { map } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +17,13 @@ export class AppService {
   private isLoggedIn = new Subject<boolean>();
   public loggedUserData;
   private balance = new Subject<any>();
-  constructor(private http: HttpClient, private router: Router, public toastr: ToastrManager) {
+  constructor(private http: HttpClient, private router: Router, public toastr: ToastrManager,) {
     this.loggedUserData = JSON.parse(localStorage.getItem('loggedUserData'));
   }
   public getLoggedIn(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
   }
+
 
   public setLoggedIn(message: any): void {
     this.isLoggedIn.next(message);
@@ -97,7 +101,18 @@ export class AppService {
   getWithdrawalBankDetails(): Observable<any> {
     return this.http.post(CONFIG.getWithdrawalBankDetails, {})
   }
-
+  addWithdrawalBank(accountHolderName:any,accountNumber:any,bankName:any,ifsc:any,paymentType:any): Observable<any> {
+    return this.http.post(CONFIG.addWithdrawalBank, { accountHolderName,accountNumber,bankName,ifsc,paymentType})
+  }
+  addWithdrawalUPI_GPAY(gpayName:any,gpayNumber:any,paymentType:any): Observable<any> {
+    return this.http.post(CONFIG.addWithdrawalBank, {gpayName,gpayNumber,paymentType })
+  }
+  addWithdrawalUPI_PAYTM(paytmName:any,paytmNumber:any,paymentType:any): Observable<any> {
+    return this.http.post(CONFIG.addWithdrawalBank, {paytmName,paytmNumber,paymentType })
+  }
+  addWithdrawalUPI_phonepay(phonepeName:any,phonepeNumber:any,paymentType:any): Observable<any> {
+    return this.http.post(CONFIG.addWithdrawalBank, {phonepeName,phonepeNumber,paymentType })
+  }
   getPasswordHistory(draw:any): Observable<any> {
     return this.http.post(CONFIG.getPasswordHistory, draw)
   }
