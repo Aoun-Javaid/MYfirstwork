@@ -46,11 +46,11 @@ export class BottomNavComponent implements OnInit {
 
   sidenavOpen() {
     this.isLoggedIn = localStorage.getItem('accessToken');
-    // if (!this.isLoggedIn) {
-    //   this.router.navigateByUrl('/client/login');
-    //   return;
-    // }
-    // else {
+    if (!this.isLoggedIn) {
+      this.router.navigateByUrl('/client/login');
+      return;
+    }
+    else {
 
     if (!this.isRightBarOpen)
       {
@@ -62,7 +62,7 @@ export class BottomNavComponent implements OnInit {
       document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
       this.isRightBarOpen = false;
       }
-   //}
+   }
   }
 
   getCustomerSupport() {
