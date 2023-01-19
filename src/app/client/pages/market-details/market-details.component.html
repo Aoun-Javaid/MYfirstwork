@@ -33,7 +33,8 @@
       <button class="btn-match-unmatch mymarket"> market</button>
     </div>
     <div class="align-self-center">
-      <button class="btn-match-unmatch mybet">my bet </button>
+      <button class="btn-match-unmatch mybet" data-bs-toggle="modal" data-bs-target="#BetModal"
+        (click)="getEventMatchedBetList()">my bet </button>
     </div>
   </div>
 
@@ -81,7 +82,7 @@
           </a>
 
           <a href="#" class="cashout1 btn">
-             <!-- <span class="cashout">
+            <!-- <span class="cashout">
              <i class="fa-solid fa-circle" style="color: white;"></i>
              </span> -->
             cashout
@@ -916,4 +917,61 @@
     </div>
   </div>
 
+  <!-- Bet Modal -->
+  <div class="modal fade" id="BetModal" tabindex="-1" aria-labelledby="BetModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bets Info</h5>
+          <button type="button" data-bs-dismiss="modal" aria-label="Close" class="close-btn"> <i
+              class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <div class="modal-body ">
+          <div class="info-modal-body">
+            <div class="slip-list">
+              <ul class="matched-head" id="backSlipHeader">
+                <li class="col-bet">Back (Bet For)</li>
+                <li class="col-odd">Odds</li>
+                <li class="col-stake">Stake</li>
+                <li class="col-profit">Profit</li>
+              </ul>
+
+              <!-- Back portion -->
+              <dl class="slip-back" id="txn_304146967" style="display: block;" *ngFor="let back of mybetsBack">
+                <dd class="refer" id="betInfo"><span id="betId">Ref:
+                    {{back._id}}</span><span id="placeDate">{{back.updatedAt | date:'short'}}</span>
+                </dd>
+                <dt><span class="slip-type">Back</span><span class="short-amount">{{back.selectionName}}</span><span
+                    id="marketName">{{back.marketType}}</span></dt>
+                <dd class="col-odd" id="price"> {{back.oddsPrice}}<!----></dd>
+                <dd class="col-stake" id="size" title="$10"> {{back.stake}}</dd>
+                <dd class="col-profit" id="profitLiability"><!----><span> {{back.betPl | number}}
+                  </span></dd>
+              </dl>
+            </div>
+            <div class="slip-list">
+             
+              <ul class="matched-head" id="backSlipHeader">
+                <li class="col-bet">Lay (Bet For)</li>
+                <li class="col-odd">Odds</li>
+                <li class="col-stake">Stake</li>
+                <li class="col-profit">Profit</li>
+              </ul>
+              <dl class="slip-back slipLayImp" id="txn_304146967" style="display: block;" *ngFor="let lay of mybetsLay">
+                <dd class="refer" id="betInfo"><span id="betId">Ref:
+                    {{lay._id}}</span><span id="placeDate">{{lay.updatedAt | date:'short'}}</span>
+                </dd>
+                <dt><span class="slip-type">Lay</span><span class="short-amount">{{lay.selectionName}}</span><span
+                    id="marketName">{{lay.marketType}}</span></dt>
+                <dd class="col-odd" id="price"> {{lay.oddsPrice}}</dd>
+                <dd class="col-stake" id="size" title="$10"> {{lay.stake}}</dd>
+                <dd class="col-profit" id="profitLiability"><!----><span> {{lay.betPl | number}}
+                  </span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

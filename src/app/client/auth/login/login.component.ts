@@ -66,8 +66,8 @@ export class LoginComponent implements OnInit {
     this.appService.userLogin(username, password, JSON.stringify(locRes)).subscribe((res: any) => {
       if (res.meta.status_code == 200) {
         localStorage.setItem('accessToken', res.data.accessToken);
-        this.appService.setLoggedIn(true)
-        this.router.navigate(['/client/']);
+        this.appService.setLoggedIn(true);
+        this.router.navigate(['/client/dashboard']);
         // this.toastr.successToastr('Successfully LoggedIn !!!');
         //location.reload();
       }

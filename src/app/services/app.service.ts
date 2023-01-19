@@ -26,6 +26,7 @@ export class AppService {
 
 
   public setLoggedIn(message: any): void {
+    console.log('sdasadasd');
     this.isLoggedIn.next(message);
   }
   public getbalance(): Observable<any> {
@@ -146,8 +147,12 @@ export class AppService {
   }
   
 
-  getEventMatchedBetList(EventMatchedBetListPayLoad: any,): Observable<any> {
-    return this.http.post(CONFIG.getEventMatchedBetList, EventMatchedBetListPayLoad)
+  getEventMatchedBetList(url,params){
+    console.log('getEventMatchedBetList')
+    return this.http.post<any>(url, params)
+      .pipe(map(data => {
+        return data;
+      }));
   }
   
 
