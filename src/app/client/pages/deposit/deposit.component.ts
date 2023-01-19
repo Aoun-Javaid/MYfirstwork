@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AppService} from "../../../services/app.service";
 import {ToastrManager} from "ng6-toastr-notifications";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -11,16 +11,18 @@ import {HttpClient} from "@angular/common/http";
 })
 export class DepositComponent implements OnInit {
   DepositForm: any;
-  imgUrl:any;
-  ImageBinary:any;
-  constructor(private appService:AppService,private toaster:ToastrManager,private fb: FormBuilder, private httpClient:HttpClient) {
+  imgUrl: any;
+  ImageBinary: any;
+
+  constructor(private appService: AppService, private toaster: ToastrManager, private fb: FormBuilder, private httpClient: HttpClient, private notification: ToastrManager) {
     this.DepositForm = fb.group({
-      amount: ['',[Validators.required]],
+      amount: ['', [Validators.required]],
     });
   }
+
   SERVER_URL = "http://130.172.1.139:4567/v1/exchange/users/uploadPaymentDetails";
   uploadForm: FormGroup;
-  BankDetails:any={
+  BankDetails: any = {
     "paymentType": "bank",
     "amount": "100-500000",
     "accountHolderName": "BARAIYA GITABEN DINESHBHAI",
@@ -42,22 +44,23 @@ export class DepositComponent implements OnInit {
     "upiNumber": "9173845759@sib",
     "origin": "unityexch",
   };
-  showBankPortion:boolean=true;
+  showBankPortion: boolean = true;
+
   ngOnInit(): void {
-    this.getDepositDetails();
+    // this.getDepositDetails();
     this.uploadForm = this.fb.group({
       profile: ['']
     });
   }
-  getDepositDetails(){
-    this.appService.getDepositDetails(this.DepositForm.value.amount).subscribe((res:any)=>{
-        if(res.meta.status_code=200){
-            // this.BankDetails=res.data;
-            this.showBankPortion=true;
-        }
-        else {
-          this.toaster.errorToastr(res.meta.message);
-        }
+
+  getDepositDetails() {
+    this.appService.getDepositDetails(this.DepositForm.value.amount).subscribe((res: any) => {
+      if (res.meta.status_code = 200) {
+        // this.BankDetails=res.data;
+        this.showBankPortion = true;
+      } else {
+        this.toaster.errorToastr(res.meta.message);
+      }
     });
   }
 
@@ -68,25 +71,27 @@ export class DepositComponent implements OnInit {
     data.fileName = this.ImageBinary.fileName;
 
     let formData = new FormData();
-    console.log("formdatamy", formData);
-    formData.append('paymentImage', data.data,data.fileName);
-    formData.append('amount', JSON.stringify(this.DepositForm.amount=100));
-    formData.append('operatorId',JSON.stringify(this.BankDetails.operatorId));
-    formData.append('operatorName',JSON.stringify(this.BankDetails.operatorName) );
+    formData.append('paymentImage', data.data, data.fileName);
+    formData.append('amount', JSON.stringify(this.DepositForm.amount = 100));
+    formData.append('operatorId', JSON.stringify(this.BankDetails.operatorId));
+    formData.append('operatorName', JSON.stringify(this.BankDetails.operatorName));
 
     this.httpClient.post<any>(this.SERVER_URL, formData).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
+      (res) => {
+        if (res.meta.status_code == 200) {
+          this.toaster.successToastr(res.meta.message)
+        }
+        this.toaster.errorToastr(res.meta.message)
+      },error => {
+        this.toaster.errorToastr(error.meta.message)
+      }
     );
   }
-
-
 
 
   onSelectFile(event: Event) {
     let target = event.target as HTMLInputElement;
     var reader = new FileReader();
-    console.log(target);
 
     if (target.files && target.files.length > 0) {
       if (target.files[0].size < 5242880) {
@@ -94,7 +99,7 @@ export class DepositComponent implements OnInit {
         reader.onload = (target) => { // called once readAsDataURL is completed
           this.imgUrl = target;
           //this.kyc.data = this.url.target.result;
-           this.ImageBinary=reader.result
+          this.ImageBinary = reader.result
         }
         // reader.onloadend = () =>{
         //   this.imgUrl = target;
@@ -109,9 +114,8 @@ export class DepositComponent implements OnInit {
   }
 
 
-
-
 }
+
 export class FileParameter {
   data: any;
   fileName: string | undefined;
