@@ -19,7 +19,7 @@ export class CasinoInternationalComponent implements OnInit {
   }
 
   getCasinoInfo(){
-    debugger
+    
     this.step="ALL";
     this.appService.casinoInternational().subscribe((res:any) =>{
     
@@ -30,7 +30,7 @@ export class CasinoInternationalComponent implements OnInit {
     console.log(this.casinoCards);
   }
   cliclTab(stepValue:any){
-    debugger
+    
     this.step = stepValue;
     if(this.step=="ALL"){
       this.casinoCards = this.casinoEventsBackup;
