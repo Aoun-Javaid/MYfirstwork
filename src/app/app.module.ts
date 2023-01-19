@@ -15,6 +15,7 @@ import { ShortNumberPipe } from './pipes/short-number.pipe';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import {AuthServiceService} from "./services/auth-service.service";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {AuthServiceService} from "./services/auth-service.service";
   providers: [
     AppService,
     AuthServiceService,
+    DatePipe,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     {

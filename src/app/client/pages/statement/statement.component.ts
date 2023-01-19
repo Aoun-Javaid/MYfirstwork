@@ -3,7 +3,9 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { DataTableDirective } from 'angular-datatables';
 import {Subject} from 'rxjs';
 import {AppService} from 'src/app/services/app.service';
-
+import { DatePipe } from '@angular/common';
+import {transform} from "lodash";
+import { PipeTransform } from '@angular/core';
 @Component({
   selector: 'app-statement',
   templateUrl: './statement.component.html',
@@ -20,7 +22,7 @@ export class StatementComponent implements OnInit {
     endDate: new FormControl('')
   });
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService, private pipeInstance:DatePipe) {
 
   }
 
@@ -123,21 +125,27 @@ export class StatementComponent implements OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        
+
         this.appService.userAccountStatement(this.draw)
               .subscribe(resp => {
-                
-                this.accountStatement=resp.data.original.data;;
+
+                this.accountStatement=resp.data.original.data;
+                this.accountStatement.filter(el=>{
+                  let date = new Date(el.createdAt);
+                  el.createdAt = date.toLocaleString();
+                  return el;
+                })
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
                       data: this.accountStatement,
                   });
               });
       },
-      data: this.accountStatement,
+      // data: this.accountStatement,
       columns: [{
         title: 'Date/Time',
-        data: 'createdAt'
+        data: 'createdAt',
+        ngPipeArgs: this.pipeInstance
       }, {
         title: 'Deposit',
         data: 'deposit'
@@ -241,15 +249,15 @@ export class StatementComponent implements OnInit {
       dtInstance.destroy();
       // Call the dtTrigger to rerender again
       this.dtTrigger.next(null);
-      
+
       this.draw.startDate = this.startDate;
       this.draw.endDate = this.endDate;
       this.appService.userAccountStatement(this.draw).subscribe((res => {
         this.accountStatement = res.data.original.data;
         this.dtOptions.data = this.accountStatement;
         this.dtOptions.columns= this.draw.columns;
-        
-      
+
+
       }));
     });
 

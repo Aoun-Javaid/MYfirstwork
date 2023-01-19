@@ -126,19 +126,18 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        
+
         this.appService.userSportsProfitloss(this.draw)
           .subscribe(resp => {
-            
+
             this.profitlossStatement = resp.data.original.data;
-            ;
             callback({
               recordsTotal: resp.data.original.recordsTotal,
               data: this.profitlossStatement,
             });
           });
       },
-      data: this.profitlossStatement,
+      // data: this.profitlossStatement,
       columns: [
         {
           title: 'Sport Name',
