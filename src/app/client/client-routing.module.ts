@@ -30,6 +30,7 @@ const routes: Routes = [
   {
     path: '', component: ClientComponent, children: [
       {path: '', component: DashboardComponent},
+      {path: 'dashboard', component: DashboardComponent},
       {path: 'login', component: LoginComponent},
       {
         path: 'signup', component: SignupComponent

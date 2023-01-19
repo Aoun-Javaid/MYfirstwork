@@ -30,6 +30,7 @@ export class MarketDetailsComponent implements OnInit {
 
 
   @ViewChild('modal') modal: ElementRef;
+  MybetsRecord:any;
   modalRef: BsModalRef;
   modalRefBet: BsModalRef;
   isCollapsed: boolean = false;
@@ -2238,7 +2239,31 @@ export class MarketDetailsComponent implements OnInit {
       return 'chips_1k';
     }
   }
+  mybetsLay:any=[];
+  mybetsBack:any=[];
+  getEventMatchedBetList(){
+    console.log('id',this._id,'sportid',this._sportid);
+    this.commonService.getEventMatchedBetList(CONFIG.getEventMatchedBetList, { eventId: this._id, sportId: this._sportid })
+    .pipe(first())
+    .subscribe(
+      (data:any )=> {
+        if (data.meta.status == true) {
+          this.MybetsRecord=data.data;
+          this.MybetsRecord.filter((res:any)=>{
+            if(res.type=='B'){
+                this.mybetsBack.push(res);
+            }
+            else if(res.type=='L'){
+              this.mybetsLay.push(res);
+            }
+          })
 
+        }
+      },
+      error => {
+        //this.toastr.errorToastr("Something went wrong please try again.");
+      });
+  }
 
   ngOnDestroy() {
     localStorage.removeItem('currentMarketId');

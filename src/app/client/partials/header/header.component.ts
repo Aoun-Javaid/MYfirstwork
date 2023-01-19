@@ -15,19 +15,21 @@ export class HeaderComponent implements OnInit {
 
   constructor(private elementRef: ElementRef,private appService:AppService) {
   }
+  counter=0;
   ngOnInit(): void {
     
     this.appService.getLoggedIn().subscribe((res:any)=>{
         this.isLogin=res;
+        if(res==true && this.counter==0){
+           this.getBalance();
+           this.counter++;
+        }
     });
     if(localStorage.getItem('accessToken')){
       this.appService.setLoggedIn(true);
     }
     else{
       this.appService.setLoggedIn(false);
-    }
-    if(this.isLogin){
-      this.getBalance();
     }
   }
   @HostListener('document:click', ['$event.target'])

@@ -581,3 +581,142 @@ input:checked + .slider:before {
   color: #228b22!important;
   font-weight: 700!important;
 }
+
+.slip-list {
+  font-size: 11px;
+  zoom: 1;
+  color: #2f353a;
+}
+.matched-head {
+  padding: 0 10px;
+  zoom: 1;
+  display: block;
+  margin: 0;
+  height: 25px;
+  background-color: #fff;
+  zoom: 1;
+}
+.matched-head  .col-bet, .slip-head  .col-bet{
+  width: 42%;
+  text-align: left;
+}
+.matched-head li, .slip-head li {
+  padding: 5px 0;
+  display: block;
+  float: left;
+}
+.matched-head  .col-odd, .slip-head  .col-odd{
+  width: 16%;
+}
+.matched-head  .col-stake, .slip-head  .col-stake{
+  width: 16%;
+  padding-left: 5px;
+}
+.matched-head   .col-profit, .slip-head  .col-profit {
+  width: 25%;
+}
+.matched-head   .col-profit {
+  text-align: right;
+}
+.slip-back  .keep-option, .slip-back  .refer {
+  background-color: #d4e8f8;
+  text-align: left;
+  margin: 0;
+}
+.slip-back {
+  background-color: #beddf4;
+  border-bottom: 1px solid #67afe5;
+  margin: 0;
+  zoom: 1;
+  height: 37px;
+}
+.slip-back .refer, .slip-lay .refer {
+  float: none;
+  line-height: 16px;
+  font-size: 10px;
+  display: none;
+  color: #3b5160;
+  padding: 0 5px;
+}
+.slip-back   .slip-type {
+  background-color: #7dbbe9;
+}
+.slip-back  dt, .slip-book  dt, .slip-lay   dt {
+  position: relative;
+  width: 42%;
+  font-weight: 700;
+  float: left;
+  padding-left: 5px;
+}
+.slip-back  dt  span, .slip-book  dt  span, .slip-lay   dt   span{
+  color: #222;
+  opacity: .5;
+  font-weight: 400;
+}
+.slip-back  dt  .slip-type, .slip-book  dt  .slip-type, .slip-lay  dt  .slip-type{
+  line-height: 22px;
+  border-radius: 3px;
+  color: #1e1e1e;
+  padding: 0 5px;
+  margin: 5px 5px 0 0;
+  opacity: 1;
+  float: left;
+}
+.slip-back  dt  span, .slip-book  dt  span, .slip-lay  dt  span{
+  color: #222;
+  opacity: .5;
+  font-weight: 400;
+}
+.slip-back  dt  .full-amount, .slip-back   dt  .short-amount, .slip-book  dt   .full-amount, .slip-book   dt   .short-amount, .slip-lay  dt  .full-amount, .slip-lay  dt  .short-amount {
+  opacity: 1;
+  font-weight: 700;
+}
+.slip-back   dt   span, .slip-book   dt   span, .slip-lay   dt   span {
+  color: #222;
+  opacity: .5;
+  font-weight: 400;
+}
+.slip-back   .col-odd, .slip-book   .col-odd, .slip-lay   .col-odd {
+  width: 16.12429%;
+}
+.slip-back   dd {
+  text-align: center;
+  float: left;
+}
+.slip-back   dd, .slip-book   dd, .slip-lay   dd {
+  position: relative;
+  color: #243a48;
+  padding: 5px 0;
+  /* line-height: 22px; */
+}
+.slip-back   .col-stake, .slip-book   .col-stake, .slip-lay   .col-stake {
+  width: 15.53672%;
+  padding-left: 5px;
+}
+.slip-back   dd {
+  text-align: start;
+  float: left;
+}
+.slip-back   .col-profit {
+  text-align: right;
+}
+.slip-back   .col-profit, .slip-book   .col-profit, .slip-lay   .col-profit {
+  width: 21.75141%;
+  padding: 5px;
+}
+.short-amount {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.slipLayImp {
+  background-color: #f3dce2 !important;
+  border-bottom: 1px solid #dfa3b3 !important;
+  zoom: 1;
+  margin: 0;
+  height: 37px;
+}
+.slipLayImp .slip-type {
+  background-color: #dfa3b3  !important;
+}
