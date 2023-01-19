@@ -10,6 +10,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class DepositComponent implements OnInit {
   DepositForm: any;
+  imgUrl:any;
   constructor(private appService:AppService,private toaster:ToastrManager,private fb: FormBuilder) {
     this.DepositForm = fb.group({
       amount: ['',[Validators.required]],
@@ -51,5 +52,21 @@ export class DepositComponent implements OnInit {
           this.toaster.errorToastr(res.meta.message);
         }
     });
+  }
+  onSelectFile(event: Event) {
+    let target = event.target as HTMLInputElement;
+    var reader = new FileReader();
+    console.log(target);
+    if (target.files && target.files.length > 0) {
+      if (target.files[0].size < 5242880) {
+        reader.readAsDataURL(target.files[0]); // read file as data url
+        reader.onload = (target) => { // called once readAsDataURL is completed
+          this.imgUrl = target;
+          //this.kyc.data = this.url.target.result;
+        }
+      } else {
+        target = null;
+      }
+    }
   }
 }

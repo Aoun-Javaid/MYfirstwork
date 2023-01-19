@@ -14,6 +14,9 @@
   flex-direction: row;
   align-items: center;
 }
+ .file-upload{
+   display: none;
+ }
 .pg-header img{
   width: 10vw;
 }
@@ -64,10 +67,18 @@
   border-radius: 10px;
   width: 50vw;
   padding: 8% 0;
+  cursor:pointer;
 }
 .image-upload-extion   p {
   margin: 10px 0;
   font-size: 10px;
+}
+.img-uploaded{
+  width: 70vw;
+  border-radius: 10px;
+}
+.img-RemovePadding{
+  padding: 0px !important;
 }
 .deposit-submit {
   background: var(--header-color);
