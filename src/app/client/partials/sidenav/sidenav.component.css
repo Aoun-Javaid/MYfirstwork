@@ -9,6 +9,9 @@
   padding-left: 12px;
   font-weight: 400;
   transition: 1s;
+  /* border: 2px solid FFFF28; */
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 8px #FFFF28
 }
 
 .waves-effect {

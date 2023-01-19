@@ -146,6 +146,11 @@ export class AppService {
   }
   
 
+  getEventMatchedBetList(EventMatchedBetListPayLoad: any,): Observable<any> {
+    return this.http.post(CONFIG.getEventMatchedBetList, EventMatchedBetListPayLoad)
+  }
+  
+
 
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {

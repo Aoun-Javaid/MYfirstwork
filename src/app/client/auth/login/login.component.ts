@@ -49,7 +49,6 @@ export class LoginComponent implements OnInit {
     let password = passWord ? passWord : this.UserForm.controls['password'].value;
     this.appService.getIpLocation().subscribe((locRes: any) => {
       this.Postlogin(username,password,locRes);
-
     },
         (error) => {                              //Error callback
           this.Postlogin(username,password,this.staticIpRes)
@@ -70,7 +69,7 @@ export class LoginComponent implements OnInit {
         this.appService.setLoggedIn(true)
         this.router.navigate(['/client/']);
         // this.toastr.successToastr('Successfully LoggedIn !!!');
-        // location.reload();
+        //location.reload();
       }
       else {
         this.appService.setLoggedIn(false);

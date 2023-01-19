@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private elementRef: ElementRef,private appService:AppService) {
   }
   ngOnInit(): void {
+    
     this.appService.getLoggedIn().subscribe((res:any)=>{
         this.isLogin=res;
     });
@@ -26,7 +27,6 @@ export class HeaderComponent implements OnInit {
       this.appService.setLoggedIn(false);
     }
     if(this.isLogin){
-      console.log('sadasdasdas')
       this.getBalance();
     }
   }
@@ -56,9 +56,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   getBalance(){
-    console.log('hdsahdhas');
     this.appService.getUserBalance().subscribe((res:any)=>{
-      console.log(res);
       this.userbalance=res.data;
       this.appService.setbalance(this.userbalance);
     })

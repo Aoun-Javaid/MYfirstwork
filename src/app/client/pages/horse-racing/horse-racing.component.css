@@ -12,12 +12,12 @@
 }
 
 
-.horse-schedule {
+/* .horse-schedule {
   background: #000;
   color: #fff;
   padding: 10px 8px;
-}
-
+} */
+/* 
 .category-navigation {
   overflow-x: auto;
   overflow-y: hidden;
@@ -26,11 +26,11 @@
   background: var(--sport-section-bg);
   background-image: none;
   height: 50px;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 .category-navigation::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
 }
 .full-color {
   background: var(--sport-section-bg) !important;
@@ -47,7 +47,6 @@
 
 .category-navigation .category-navigation-item {
   display: table-cell;
-  /*height: 59px;*/
   min-width: 70px;
   width: 10%;
   position: relative;
@@ -103,7 +102,7 @@ a {
   color: var(--text-color-white) !important;
   border-radius: 0 !important;
 }
-
+ */
 
 
 
@@ -208,12 +207,12 @@ a {
   cursor: pointer;
   color: #0b071f;
   background: #e2e2e2;
-  padding: 5px 15px;
+  padding: 5px 7px;
   border-radius: 2px;
   font-size: 12px;
   display: inline-table;
   font-weight: 700;
-  min-width: 64px;
+  /* min-width: 64px; */
   margin-left: 5px;
   margin-bottom: 5px;
 }

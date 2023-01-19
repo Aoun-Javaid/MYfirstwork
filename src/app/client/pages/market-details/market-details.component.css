@@ -209,7 +209,7 @@ p{
   .market-title {
     font-size: 3vw;
     line-height: 1;
-    width: 150px;
+    width: 126px;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
@@ -234,7 +234,7 @@ p{
     line-height: 1.5;
   }
   .bl-buttons .bl-btn {
-    width: 70px;
+    width: 68px;
     height: 40px;
     font-size: 15px;
     font-weight: 900;
@@ -288,7 +288,7 @@ p{
     font-size: 9px;
     color: var(--event-title-bg);
     font-weight: 600;
-    margin: 0 0 0 4vw;
+    margin: 0 0 0 1vw;
   }
 }
 @media only screen and (max-width: 320px){

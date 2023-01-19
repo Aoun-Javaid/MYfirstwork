@@ -23,7 +23,7 @@ export class HorseRacingComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSportsList()
-     this.getEventesList()
+      this.getEventesList()
   }
 
   getSportsList() {
@@ -33,10 +33,10 @@ export class HorseRacingComponent implements OnInit {
   }
 
   getEventesList() {
-    this.appService.getAllEventsList().subscribe(data => {
+    this.appService.getRacingEvents(this.racingEvent).subscribe(data => {
       this.events = data.data
       this.eventsArr = Object.entries(this.events)
-      this.categoryType(1549628216)
+      this.selectedSportId = this.racingEvent.tournamentId;
     })
   }
 

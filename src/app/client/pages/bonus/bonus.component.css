@@ -86,3 +86,56 @@ header .wallet-detail-group .wallet-balance-num {
   display:flex;
   justify-content: space-between;
 }
+
+.currency{
+  background-color: var(--theme-color1);
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  border-radius: 8px;
+
+}
+.gameCard{
+  align-items: center;   
+   flex-direction: row;
+  justify-content: space-between;
+}
+
+.gameCardButton{
+  border-radius: 5px;
+  background-color: var(--theme-color);
+}
+
+.mainHeading{
+  color: black;
+}
+
+.mainBalanceExplosure{
+  flex-direction: row;
+  justify-content: space-between; 
+  border-top: 1px solid black;
+   color: black;
+}
+.card{
+  border-radius: 12px;
+}
+.mainBalanceIcon{
+  justify-content: space-between; 
+
+}
+.dropdown-menu {
+  min-width: 6rem;
+  padding:  0rem 0;
+}
+.dropdown-menu .dropdown-item[_ngcontent-dbi-c70] {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  font-size: 12px;
+}

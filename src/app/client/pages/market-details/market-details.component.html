@@ -72,18 +72,23 @@
   <ng-container *ngFor="let betfair of betfairData;let i = index">
     <div class="market-section" *ngIf="currentMarketType == 'ALL' || currentMarketType == betfair.marketName">
       <div class="d-flex align-items-center justify-content-between text-uppercase text-dark market-title-row">
-        <div class="clip1 col-md-7 col-10">
+        <div class="clip1 col-md-7 col-11">
           <p class="market-title">
             <i class="fa-solid fa-chart-column me-2"></i>{{betfair.marketName}}
           </p>
           <a href="#" class="cashout1 btn">
-            <span class="cashout">
-              <i class="fa-solid fa-circle" style="color: white;"></i>
-            </span>
+            insurance
+          </a>
+
+          <a href="#" class="cashout1 btn">
+             <!-- <span class="cashout">
+             <i class="fa-solid fa-circle" style="color: white;"></i>
+             </span> -->
             cashout
           </a>
+
         </div>
-        <div class="col-md-5 col-2 px-lg-0 text-end pe-3 px-lg-0">
+        <div class="col-md-5 col-1 px-lg-0 text-end pe-3 px-lg-0">
           <i class="fa-solid fa-circle-info float-right rules12 me-3" data-bs-toggle="modal" data-bs-target="#infoModal"
             (click)="openGeneralRules()"></i>
         </div>
@@ -113,7 +118,8 @@
                 <span *ngIf="allMarketPl[betfair.exMarketId]"
                   [ngClass]="[allMarketPl[betfair.exMarketId][runner.selectionId] > 0  ? 'plus-book' : 'minus-book']"><i
                     class="fa fa-arrow-right"></i>
-                  {{ allMarketPl[betfair.exMarketId][runner.selectionId] ? ( allMarketPl[betfair.exMarketId][runner.selectionId] ) : '0.00'}}</span>
+                  {{ allMarketPl[betfair.exMarketId][runner.selectionId] ? (
+                  allMarketPl[betfair.exMarketId][runner.selectionId] ) : '0.00'}}</span>
                 <span *ngIf="!allMarketPl[betfair.exMarketId]"><i class="fa fa-arrow-right"></i>
                   0.00</span>
               </p>
@@ -123,7 +129,8 @@
               <div class="bl-buttons desktop-hide">
                 <button *ngIf="runner.price.back[0]" type="button"
                   class="bl-btn back waves-effect waves-light bet-sec {{runner.selectionId}}"
-                  (click)="openModalBet(betfair.oddsType,runner.price.back[0].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">{{(runner.price.back[0].price) | number}}
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[0].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">{{(runner.price.back[0].price)
+                  | number}}
                   <span>{{(runner.price.back[0].size)}}</span>
                 </button>
 
@@ -134,7 +141,8 @@
 
                 <button *ngIf="runner.price.lay[0]" type="button"
                   class="bl-btn lay waves-effect waves-light bet-sec {{runner.selectionId}}"
-                  (click)="openModalBet(betfair.oddsType,runner.price.lay[0].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">{{(runner.price.lay[0].price) | number}}
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[0].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',0)">{{(runner.price.lay[0].price)
+                  | number}}
                   <span>{{(runner.price.lay[0].size)}}</span>
                 </button>
 
@@ -147,7 +155,8 @@
               <!-- For Desktop -->
               <div class="bl-buttons mobile-hide">
                 <button *ngIf="runner.price.back[2]" class="bl-btn eon1 bet-sec {{runner.selectionId}}"
-                  (click)="openModalBet(betfair.oddsType,runner.price.back[2].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.back[2].price) | number}}
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[2].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.back[2].price)
+                  | number}}
                   <span>{{(runner.price.back[2].size)}}</span>
                 </button>
                 <button *ngIf="!runner.price.back[2]" class="bl-btn eon1 bet-sec">0.0 <span>0.0</span>
@@ -155,7 +164,8 @@
 
 
                 <button *ngIf="runner.price.back[1]" class="bl-btn eon2 bet-sec {{runner.selectionId}}"
-                  (click)="openModalBet(betfair.oddsType,runner.price.back[1].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.back[1].price) | number}}
+                  (click)="openModalBet(betfair.oddsType,runner.price.back[1].price,'slip-back',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.back[1].price)
+                  | number}}
                   <span>{{(runner.price.back[1].size)}}</span>
                 </button>
                 <button *ngIf="!runner.price.back[1]" class="bl-btn eon2 bet-sec">0.0 <span>0.0</span>
@@ -193,14 +203,16 @@
                 </button>
 
                 <button *ngIf="runner.price.lay[1]" class="bl-btn eon3 bet-sec {{runner.selectionId}}"
-                  (click)="openModalBet(betfair.oddsType,runner.price.lay[1].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.lay[1].price) | number}}
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[1].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',1)">{{(runner.price.lay[1].price)
+                  | number}}
                   <span>{{(runner.price.lay[1].size) }}</span>
                 </button>
                 <button *ngIf="!runner.price.lay[1]" class="bl-btn eon3 bet-sec ">0.0 <span>0.0</span>
                 </button>
 
                 <button *ngIf="runner.price.lay[2]" class="bl-btn eon4 bet-sec {{runner.selectionId}}"
-                  (click)="openModalBet(betfair.oddsType,runner.price.lay[2].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.lay[2].price) | number}}
+                  (click)="openModalBet(betfair.oddsType,runner.price.lay[2].price,'slip-lay',betfair.runnersData[runner.selectionId],betfair.exMarketId,runner.selectionId,'ODDS',2)">{{(runner.price.lay[2].price)
+                  | number}}
                   <span>{{(runner.price.lay[2].size) }}</span>
                 </button>
                 <button *ngIf="!runner.price.lay[2]" class="bl-btn eon4 bet-sec ">0.0 <span>0.0</span>
@@ -324,8 +336,9 @@
                   <span *ngIf="manualPL[manual.exMarketId]"
                     [ngClass]="[manualPL[manual.exMarketId][bookie.selectionId] > 0  ? 'plus-book' : 'minus-book']"><i
                       class="fa fa-arrow-right"></i>
-                    {{manualPL[manual.exMarketId][bookie.selectionId]  ? (manualPL[manual.exMarketId][bookie.selectionId] | number)  : '0.00'}}</span>
-                  <span  *ngIf="!manualPL[manual.exMarketId]"><i class="fa fa-arrow-right"></i>
+                    {{manualPL[manual.exMarketId][bookie.selectionId] ? (manualPL[manual.exMarketId][bookie.selectionId]
+                    | number) : '0.00'}}</span>
+                  <span *ngIf="!manualPL[manual.exMarketId]"><i class="fa fa-arrow-right"></i>
                     0.00</span>
                 </p>
               </div>
@@ -334,7 +347,8 @@
                 <div class="bl-buttons desktop-hide">
                   <button *ngIf="bookie.price.back[0].price != '0'" type="button"
                     class="bl-btn back waves-effect waves-light bet-sec {{bookie.selectionId}}"
-                    (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price | number}}
+                    (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price
+                    | number}}
                     <span>{{bookie.price.back[0].size}}</span>
                   </button>
 
@@ -548,13 +562,14 @@
         <div
           class="row align-items-center text-capitalize text-dark bg-theme market-data-row odd-row {{fancy.exMarketId}}">
           <div class="col-md-5 col-7 position-relative">
-            <p class="market-name" data-bs-toggle="modal" data-bs-target="#fancyBookModal" (click)="openModal(fancy.exMarketId)">
-              <i class="fa-solid fa-chart-column me-2"  ></i>{{fancy.marketName}}
+            <p class="market-name" data-bs-toggle="modal" data-bs-target="#fancyBookModal"
+              (click)="openModal(fancy.exMarketId)">
+              <i class="fa-solid fa-chart-column me-2"></i>{{fancy.marketName}}
 
               <span *ngIf="fancy_pl[fancy.exMarketId]"
                 [ngClass]="[fancy_pl[fancy.exMarketId] > 0  ? 'plus-book' : 'minus-book']"><i
                   class="fa fa-arrow-right"></i>
-                {{fancy_pl[fancy.exMarketId] ? (fancy_pl[fancy.exMarketId]  | number) : '0.00'}}</span>
+                {{fancy_pl[fancy.exMarketId] ? (fancy_pl[fancy.exMarketId] | number) : '0.00'}}</span>
               <span *ngIf="!fancy_pl[fancy.exMarketId]"><i class="fa fa-arrow-right"></i>
                 0.00</span>
             </p>
@@ -576,21 +591,25 @@
             <div class="bl-buttons desktop-hide">
               <button *ngIf="fancy.oddsData.runners[0].price.lay[0].price != '0'" type="button"
                 class="bl-btn lay waves-effect waves-light bet-sec'"
-                (click)="openModalFancyBet(fancy.oddsType,'slip-lay',fancy.oddsData.runners[0].price.lay[0].price,fancy.marketName,fancy.exMarketId,fancy.oddsData.runners[0].price.lay[0].size,'FANCY',0)">{{fancy.oddsData.runners[0].price.lay[0].price | number}}
+                (click)="openModalFancyBet(fancy.oddsType,'slip-lay',fancy.oddsData.runners[0].price.lay[0].price,fancy.marketName,fancy.exMarketId,fancy.oddsData.runners[0].price.lay[0].size,'FANCY',0)">{{fancy.oddsData.runners[0].price.lay[0].price
+                | number}}
                 <span>{{fancy.oddsData.runners[0].price.lay[0].size | number}}</span>
               </button>
               <button *ngIf="fancy.oddsData.runners[0].price.lay[0].price == '0'" type="button"
-                class="bl-btn lay waves-effect waves-light bet-sec'">{{fancy.oddsData.runners[0].price.lay[0].price | number}}
+                class="bl-btn lay waves-effect waves-light bet-sec'">{{fancy.oddsData.runners[0].price.lay[0].price |
+                number}}
                 <span>{{fancy.oddsData.runners[0].price.lay[0].size | number}}</span>
               </button>
 
               <button *ngIf="fancy.oddsData.runners[0].price.back[0].price != '0'" type="button"
                 class="bl-btn back waves-effect waves-light bet-sec"
-                (click)="openModalFancyBet(fancy.oddsType,'slip-back',fancy.oddsData.runners[0].price.back[0].price,fancy.marketName,fancy.exMarketId,fancy.oddsData.runners[0].price.back[0].size,'FANCY',0)">{{fancy.oddsData.runners[0].price.back[0].price | number}}
+                (click)="openModalFancyBet(fancy.oddsType,'slip-back',fancy.oddsData.runners[0].price.back[0].price,fancy.marketName,fancy.exMarketId,fancy.oddsData.runners[0].price.back[0].size,'FANCY',0)">{{fancy.oddsData.runners[0].price.back[0].price
+                | number}}
                 <span>{{fancy.oddsData.runners[0].price.back[0].size | number}}</span>
               </button>
               <button type="button" class="bl-btn back waves-effect waves-light bet-sec"
-                *ngIf="fancy.oddsData.runners[0].price.back[0].price == '0'">{{fancy.oddsData.runners[0].price.back[0].price | number}}
+                *ngIf="fancy.oddsData.runners[0].price.back[0].price == '0'">{{fancy.oddsData.runners[0].price.back[0].price
+                | number}}
                 <span>{{fancy.oddsData.runners[0].price.back[0].size | number}}</span>
               </button>
 
@@ -731,17 +750,20 @@
                   <span *ngIf="manualPL[manual.exMarketId]"
                     [ngClass]="[manualPL[manual.exMarketId][bookie.selectionId] > 0  ? 'plus-book' : 'minus-book']"><i
                       class="fa fa-arrow-right"></i>
-                    {{manualPL[manual.exMarketId][bookie.selectionId]  ? (manualPL[manual.exMarketId][bookie.selectionId] | number)  : '0.00'}}</span>
-                  <span  *ngIf="!manualPL[manual.exMarketId]"><i class="fa fa-arrow-right"></i>
+                    {{manualPL[manual.exMarketId][bookie.selectionId] ? (manualPL[manual.exMarketId][bookie.selectionId]
+                    | number) : '0.00'}}</span>
+                  <span *ngIf="!manualPL[manual.exMarketId]"><i class="fa fa-arrow-right"></i>
                     0.00</span>
                 </p>
               </div>
               <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center ">
                 <!-- For MOBILE -->
                 <div class="bl-buttons desktop-hide">
-                  <button *ngIf="bookie.price.back[0].price != '0'" type="button" style="width: 120px;background-color :#72e3a0"
+                  <button *ngIf="bookie.price.back[0].price != '0'" type="button"
+                    style="width: 120px;background-color :#72e3a0"
                     class="bl-btn back waves-effect waves-light bet-sec {{bookie.selectionId}}"
-                    (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price | number}}
+                    (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price
+                    | number}}
                     <span>{{bookie.price.back[0].size}}</span>
                   </button>
 

@@ -13,7 +13,7 @@
   <div class="full-color">
     <ul class="category-navigation-container">
       <li class="category-navigation-item" *ngFor="let cat of catTabs">
-        <a class="category-navigation-item-link" [ngClass]="selectedSportId ==cat.sportId?'active':''" (click)="categoryType(cat.tournamentId)" >
+        <a class="category-navigation-item-link" [ngClass]="selectedSportId ==cat.tournamentId?'active':''" (click)="categoryType(cat.tournamentId)" >
        <span class="category-navigation-item-icon">
          <img class="catIcon" [src]="['assets/flags/'+cat.tournamentId+'.png']">
        </span>
@@ -35,7 +35,6 @@
   </div>
   <div class="content-rates d-flex flex-wrap align-items-center">
       <a routerLink="/client/market-details/{{cat.event_id}}/7" *ngFor="let cat of evnt.events_data" class="content-rates-cell">
-     
         {{cat.market_time | date:"hh:mm a"}}
       </a>
   </div>
