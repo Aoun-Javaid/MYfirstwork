@@ -12,22 +12,22 @@
         <div class="row justify-content-between option-row p-4">
             <div class="col-md-12">
                 <div class="row align-items-center justify-content-center">
-                  <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
-                    <input id="startDatem" type="datetime-local"
-                           placeholder="yyyy-MM-dd HH:mm"
-                           [ngModel]="startDate" (change)="ngModelStartChange($event)"
-                           class="form-control ng-valid ng-dirty ng-touched">
+                    <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
+                      <input id="startDatem" type="date"  value="{{startDate}}"
+                             placeholder="yyyy-MM-dd HH:mm"
+                              (change)="ngModelStartChange($event)"
+                             class="form-control ng-valid ng-dirty ng-touched">
+                    </div>
+                    <div class="col-md-2 col-12 mb-sm-1">
+                      <input id="endDatem"  type="date"
+                             placeholder="yyyy-MM-dd"  value="{{endDate}}"
+                            (change)="ngModelEndChange($event)"
+                        class="form-control ng-untouched ng-pristine ng-valid">
+                    </div>
+                    <div class="col-md-2 col-12 mb-sm-1">
+                      <button class="btn-get waves-effect waves-light" (click)="SubmitdataTable()">Submit</button>
+                    </div>
                   </div>
-                  <div class="col-md-2 col-12 mb-sm-1">
-                    <input id="endDatem"  type="datetime-local"
-                           placeholder="yyyy-MM-dd HH:mm"
-                           [ngModel]="endDate" (change)="ngModelEndChange($event)"
-                      class="form-control ng-untouched ng-pristine ng-valid">
-                  </div>
-                  <div class="col-md-2 col-12 mb-sm-1">
-                    <button class="btn-get waves-effect waves-light" (click)="SubmitdataTable()">Submit</button>
-                  </div>
-                </div>
 
             </div>
         </div>

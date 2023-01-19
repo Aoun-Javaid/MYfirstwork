@@ -20,13 +20,16 @@
             <div class="col-md-12">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-2 col-12 mb-sm-1 my-md-0 my-1">
-                        <input id="startDatem" type="datetime-local" placeholder="yyyy-MM-dd HH:mm"
-                            [ngModel]="startDate" (change)="ngModelStartChange($event)"
-                            class="form-control ng-valid ng-dirty ng-touched">
+                        <input id="startDatem" type="date"  value="{{startDate}}"
+                     placeholder="yyyy-MM-dd HH:mm"
+                      (change)="ngModelStartChange($event)"
+                     class="form-control ng-valid ng-dirty ng-touched">
                     </div>
                     <div class="col-md-2 col-12 mb-sm-1">
-                        <input id="endDatem" type="datetime-local" placeholder="yyyy-MM-dd HH:mm" [ngModel]="endDate"
-                            (change)="ngModelEndChange($event)" class="form-control ng-untouched ng-pristine ng-valid">
+                        <input id="endDatem"  type="date"
+                     placeholder="yyyy-MM-dd"  value="{{endDate}}"
+                    (change)="ngModelEndChange($event)"
+                class="form-control ng-untouched ng-pristine ng-valid">
                     </div>
 
 
@@ -46,8 +49,8 @@
                         <div class="input-group">
                             <select class="form-control" #type (change)="onSelectedType(type.value)">
                                 <option value="" disabled="" selected="" hidden=""> Select</option>
-                                <option value="sattel">Sattel</option>
-                                <option value="unsattel">UnSattel</option>
+                                <option value="settle">Settle</option>
+                                <option value="unsettle">UnSettle</option>
                                 <option value="void">Void</option>
                             </select>
                         </div>
