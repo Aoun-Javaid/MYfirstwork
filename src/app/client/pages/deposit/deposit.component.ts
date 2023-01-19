@@ -63,11 +63,13 @@ export class DepositComponent implements OnInit {
 
   OnSubmitImg() {
     console.log("button");
-
+    let data = new FileParameter();
+    data.data = new Blob([this.ImageBinary.data], {type: this.ImageBinary.contentType});
+    data.fileName = this.ImageBinary.fileName;
 
     let formData = new FormData();
     console.log("formdatamy", formData);
-    formData.append('paymentImage', this.ImageBinary);
+    formData.append('paymentImage', data.data,data.fileName);
     formData.append('amount', JSON.stringify(this.DepositForm.amount=100));
     formData.append('operatorId',JSON.stringify(this.BankDetails.operatorId));
     formData.append('operatorName',JSON.stringify(this.BankDetails.operatorName) );
@@ -109,4 +111,8 @@ export class DepositComponent implements OnInit {
 
 
 
+}
+export class FileParameter {
+  data: any;
+  fileName: string | undefined;
 }
