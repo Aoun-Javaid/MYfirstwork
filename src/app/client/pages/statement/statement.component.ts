@@ -20,6 +20,8 @@ export class StatementComponent implements OnInit {
     endDate: new FormControl('')
   });
 
+  start:any="2013-01-08";
+
   constructor(private appService: AppService,) {
 
   }
@@ -110,8 +112,9 @@ export class StatementComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
 
   accountStatement: any = [];
-  startDate: string;
-  endDate: string;
+  startDate:any= new Date();
+  endDate: any= new Date();
+  
 
   ngOnInit(): void {
     this.updateDate();
@@ -187,57 +190,16 @@ export class StatementComponent implements OnInit {
   }
 
   updateDate() {
-
-    let sDate: any = new Date();
-    sDate = sDate.toString();
-    let date = sDate.substr(8, 2);
-    //this.startDate = new Date();
-    this.completeDate = new Date();
-    let hours: any = this.completeDate.getHours();
-    if (hours < 10) {
-      hours = '0' + hours;
-    }
-    let minutes: any = this.completeDate.getMinutes();
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
-    let hrstest = date.split("");
-    if (Number(hrstest[0]) != 0 && Number(date) < 10) {
-      date = '0' + date;
-    }
-
-
-    this.completeDate.setDate(this.completeDate.getDate() - 1);
-    this.localCompleteDate = this.completeDate.toISOString();
-    this.startDate = this.completeDate.toISOString()
-    this.startDate = this.startDate.substr(0, 10);
-    this.startDate = this.startDate + 'T' + hours + ':' + minutes;
-    // 2022-04-20T16:23
-
-    // this.startDate = this.localCompleteDate.substring(0, this.localCompleteDate.length - 1);
-    // this.startDate=new Date(this.completeDate.getTime() - (this.completeDate.getTimezoneOffset() * 60000)).toISOString().replace(/T/, ' ').replace(/\..+/, ''));
-    //   this.startDate = this.startDate.substr(0, 16);
-    //this.startDate.setDate(this.startDate.getDate() - 4);
-    let min = Number(minutes);
-    if (min < 9) {
-      minutes = '0' + (min + 1);
-    } else if (min == 59) {
-      minutes = '00';
-      hours = (Number(hours) + 1).toString();
-    } else {
-      minutes = (min + 1).toString();
-    }
-    var dates = new Date();
-    let month: any = dates.getMonth() + 1;
-
-    if (Number(month) < 10) {
-      month = '0' + month;
-    }
-
-    this.endDate = new Date().toISOString();
-    this.endDate = this.endDate.substr(0, 4);
-
-    this.endDate = this.endDate + '-' + month + '-' + date + 'T' + hours + ':' + minutes;
+    let sDate = new Date();
+    sDate.setDate(sDate.getDate()-1);
+    let date = sDate.toISOString();
+    console.log(date)
+    this.startDate=date.substr(0,10);
+    let eDate= new Date();
+    let enDate=eDate.toISOString();
+    this.endDate=enDate.substring(0,10);
+    console.log(this.startDate)
+    
   }
 
   SubmitdataTable() {
@@ -252,11 +214,11 @@ export class StatementComponent implements OnInit {
 
       this.draw.startDate = this.startDate;
       this.draw.endDate = this.endDate;
-      this.appService.userAccountStatement(this.draw).subscribe((res => {
-        this.accountStatement = res.data.original.data;
-        this.dtOptions.data = this.accountStatement;
-        this.dtOptions.columns = this.draw.columns;
-      }));
+      // this.appService.userAccountStatement(this.draw).subscribe((res => {
+      //   this.accountStatement = res?.data.original.data;
+      //   this.dtOptions.data = this.accountStatement;
+      //   this.dtOptions.columns = this.draw.columns;
+      // }));
     });
 
   }
