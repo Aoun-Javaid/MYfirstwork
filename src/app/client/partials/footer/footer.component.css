@@ -2,12 +2,12 @@
   border-top: 1px solid #707070;
   margin: 25px 0;
 }
-.payment-button {
-  background: var(--theme-color);
+.payment-span {
+  /* background: var(--theme-color); */
   border-radius: 8px;
-  font-size: 1vw;
+  font-size: 21px;
   font-weight: 700;
-  color: #000;
+  color: #ffc901;
   margin: 15px;
 }
 .footer-image-container img {
@@ -47,12 +47,12 @@
   .footer-image-container img:nth-child(4){
     border-right: 0px;
   }
-  .payment-button {
+  /* .payment-span {
 
     border-radius: 8px;
     font-size: 3.4vw;
 
-  }
+  } */
   .socialmedia-imgs-container a >img{
     width: 10vw;
     height: 8vw;
