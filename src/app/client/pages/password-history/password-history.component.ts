@@ -34,50 +34,10 @@ export class PasswordHistoryComponent implements OnInit {
         }
       },
       {
-        "data": "deposit",
-        "name": "",
-        "searchable": true,
-        "orderable": true,
-        "search": {
-          "value": "",
-          "regex": false
-        }
-      },
-      {
-        "data": "withdraw",
-        "name": "",
-        "searchable": true,
-        "orderable": true,
-        "search": {
-          "value": "",
-          "regex": false
-        }
-      },
-      {
-        "data": "balance",
-        "name": "",
-        "searchable": true,
-        "orderable": true,
-        "search": {
-          "value": "",
-          "regex": false
-        }
-      },
-      {
         "data": "remark",
         "name": "",
         "searchable": true,
         "orderable": true,
-        "search": {
-          "value": "",
-          "regex": false
-        }
-      },
-      {
-        "data": "",
-        "name": "",
-        "searchable": true,
-        "orderable": false,
         "search": {
           "value": "",
           "regex": false
@@ -117,8 +77,8 @@ export class PasswordHistoryComponent implements OnInit {
           .subscribe(resp => {
             this.accountStatement = resp.data.original.data;
             callback({
-              recordsTotal: this.accountStatement.length,
-              data: resp.data.original.data,
+              recordsTotal: this.accountStatement?.length,
+              data: resp.data?.original?.data,
             });
           });
       },
@@ -126,24 +86,10 @@ export class PasswordHistoryComponent implements OnInit {
       columns: [{
         title: 'Date/Time',
         data: 'createdAt'
-      }, {
-        title: 'Deposit',
-        data: 'deposit'
-      },
-        {
-          title: 'Withdraw',
-          data: 'withdraw'
-        },
-        {
-          title: 'Balance',
-          data: 'balance'
-        }, {
+      },{
           title: 'remark',
           data: 'remark'
-        }, {
-          title: 'From/To',
-          data: 'From/To'
-        }]
+        }, ]
 
     };
 

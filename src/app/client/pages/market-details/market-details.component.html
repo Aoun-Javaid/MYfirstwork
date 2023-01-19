@@ -713,7 +713,7 @@
                   <b>{{manual?.max}}</b> </span></p>
             </div>
             <div class="col-md-7 col-5 px-lg-0 text-center px-lg-0">
-              <p class="market-back mb-0"><span class="back2">back</span> <span class="lay2">lay</span></p>
+              <!-- <p class="market-back mb-0"><span class="back2">back</span> <span class="lay2">lay</span></p> -->
             </div>
 
           </div>
@@ -739,7 +739,7 @@
               <div class="col-md-7 col-5 px-lg-0 change d-flex justify-content-center ">
                 <!-- For MOBILE -->
                 <div class="bl-buttons desktop-hide">
-                  <button *ngIf="bookie.price.back[0].price != '0'" type="button"
+                  <button *ngIf="bookie.price.back[0].price != '0'" type="button" style="width: 120px;background-color :#72e3a0"
                     class="bl-btn back waves-effect waves-light bet-sec {{bookie.selectionId}}"
                     (click)="openModalFancyBet(manual.oddsType,'slip-back',bookie.price.back[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">{{bookie.price.back[0].price | number}}
                     <span>{{bookie.price.back[0].size}}</span>
@@ -749,7 +749,7 @@
                     class="bl-btn back waves-effect waves-light bet-sec">0.0 <span>0.0</span>
                   </button>
 
-                  <button *ngIf="bookie.price.lay[0].price != '0'" type="button"
+                  <!-- <button *ngIf="bookie.price.lay[0].price != '0'" type="button"
                     class="bl-btn lay waves-effect waves-light bet-sec {{bookie.selectionId}}"
                     (click)="openModalFancyBet(manual.oddsType,'slip-lay',bookie.price.lay[0].price,manual.runnersData[bookie.selectionId],manual.exMarketId,bookie.selectionId,'BOOKIE',0)">
                     {{bookie.price.lay[0].price | number}}
@@ -758,7 +758,7 @@
 
                   <button *ngIf="bookie.price.lay[0].price == '0'" type="button"
                     class="bl-btn lay waves-effect waves-light bet-sec">0.0 <span>0.0</span>
-                  </button>
+                  </button> -->
 
                 </div>
 

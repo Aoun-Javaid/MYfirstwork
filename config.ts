@@ -54,7 +54,7 @@ export const CONFIG = {
   userAccountStatement: BASE_URL_V1 + '/v1/exchange/users/banking/userAccountStatement',
   userSettledBetList: BASE_URL_V1 + '/v1/exchange/users/betlist/userSettledBetList',
   userSportsProfitloss: BASE_URL_V1 + '/v1/exchange/users/profitloss/userSportsProfitloss',
-  getPasswordHistory: '/v1/exchange/users/getPasswordChangeHistory',
+  getPasswordHistory:BASE_URL_V1 + '/v1/exchange/users/getPasswordChangeHistory',
   userEventsProfitloss:BASE_URL_V1 +  '/v1/exchange/users/profitloss/userEventsProfitloss',
   userMarketsProfitloss: BASE_URL_V1 + '/v1/exchange/users/profitloss/userMarketsProfitloss',
   getUserBetList:BASE_URL_V1 +  '/v1/exchange/users/betlist/getUserBetList',

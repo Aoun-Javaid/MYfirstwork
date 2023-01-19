@@ -81,10 +81,10 @@ export class BetHistoryComponent implements OnDestroy, OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        debugger
+        
         this.appService.userSettledBetList(this.draw)
           .subscribe(resp => {
-            debugger
+            
             this.settledBetList = resp.data.original.data;;
             callback({
               recordsTotal: resp.data.original.recordsTotal,
@@ -142,7 +142,7 @@ export class BetHistoryComponent implements OnDestroy, OnInit {
   localCompleteDate: string;
   ngModelStartChange($event: any) {
     this.startDate = $event.target.value;
-    //debugger
+    //
   }
   ngModelEndChange($event: any) {
     this.endDate = $event.target.value;
@@ -213,7 +213,7 @@ export class BetHistoryComponent implements OnDestroy, OnInit {
       dtInstance.destroy();
       // Call the dtTrigger to rerender again
       this.dtTrigger.next(null);
-      debugger
+      
       this.draw.startDate = this.startDate;
       this.draw.endDate = this.endDate;
       this.draw.sportId = this.sportsID;
@@ -230,7 +230,7 @@ export class BetHistoryComponent implements OnDestroy, OnInit {
 
   }
   onSelectedSports(value){
-    debugger
+    
     this.sportsID=value;
   }
   onSelectedType(value){

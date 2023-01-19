@@ -120,7 +120,7 @@ export class ProfitlossEventComponent implements OnInit {
   }
 
   ngOnInit(): void {
-debugger
+
     this.draw.sportId=this.sportsId;
     this.draw.startDate = this.startDate;
     this.draw.endDate=this.endDate;
@@ -132,10 +132,10 @@ debugger
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        debugger
+        
         this.appService.userEventsProfitloss(this.draw)
               .subscribe(resp => {
-                debugger
+                
                 this.profitlossStatement=resp.data.original.data;;
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
@@ -204,7 +204,7 @@ debugger
   localCompleteDate: string;
   ngModelStartChange($event: any) {
     this.startDate = $event.target.value;
-    //debugger
+    //
   }
   ngModelEndChange($event: any) {
     this.endDate = $event.target.value;
@@ -218,7 +218,7 @@ debugger
       dtInstance.destroy();
       // Call the dtTrigger to rerender again
       this.dtTrigger.next(null);
-      debugger
+      
       this.appService.userSportsProfitloss(this.draw).subscribe((res => {
         this.profitlossStatement = res.data.original.data;
         this.dtOptions.data = this.profitlossStatement;

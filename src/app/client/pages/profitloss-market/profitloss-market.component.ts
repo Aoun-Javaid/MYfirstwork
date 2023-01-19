@@ -124,13 +124,13 @@ export class ProfitlossMarketComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //  this.draw.eventId=this.eventId;
-    //  this.draw.dataSource=this.dataSource;
+     this.draw.eventId=this.eventId;
+     this.draw.dataSource=this.dataSource;
     this.dtOptions = {
       pagingType: 'full_numbers',
       ajax: (dataTablesParameters: any, callback) => {
 
-        this.appService.userEventsProfitloss(this.draw)
+        this.appService.userMarketsProfitloss(this.draw)
               .subscribe(resp => {
 
                 this.profitlossStatement=resp.data.original.data;;
@@ -195,7 +195,7 @@ export class ProfitlossMarketComponent implements OnInit {
 
   someClickHandler(info: any): void {
     console.log(info);
-    this.router.navigate([`/client/profitloss-market/${info.eventId}/LIVE`]);
+    this.router.navigate([`/client/d-profit-history/${info.sportId}/${info.marketId}/LIVE`]);
   }
 
   ngAfterViewInit(): void {

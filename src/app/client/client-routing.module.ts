@@ -74,11 +74,11 @@ const routes: Routes = [
         path: 'passwordHistory', component: PasswordHistoryComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'profitloss-event/:id/:startDate/:endDate/:dataSource', component: ProfitlossEventComponent
+        path: 'profitloss-event/:id/:startDate/:endDate/:dataSource', component: ProfitlossEventComponent,canActivate:[AuthGuardGuard]
       },
 
       {
-        path: 'profitloss-market/:eventId/:dataSource', component: ProfitlossMarketComponent
+        path: 'profitloss-market/:eventId/:dataSource', component: ProfitlossMarketComponent,canActivate:[AuthGuardGuard]
       },
 
       {

@@ -123,10 +123,10 @@ export class StatementComponent implements OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        debugger
+        
         this.appService.userAccountStatement(this.draw)
               .subscribe(resp => {
-                debugger
+                
                 this.accountStatement=resp.data.original.data;;
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
@@ -170,7 +170,7 @@ export class StatementComponent implements OnInit {
   localCompleteDate: string;
   ngModelStartChange($event: any) {
     this.startDate = $event.target.value;
-    //debugger
+    //
   }
   ngModelEndChange($event: any) {
     this.endDate = $event.target.value;
@@ -241,7 +241,7 @@ export class StatementComponent implements OnInit {
       dtInstance.destroy();
       // Call the dtTrigger to rerender again
       this.dtTrigger.next(null);
-      debugger
+      
       this.draw.startDate = this.startDate;
       this.draw.endDate = this.endDate;
       this.appService.userAccountStatement(this.draw).subscribe((res => {

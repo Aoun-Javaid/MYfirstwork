@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTableDirective } from 'angular-datatables';
+import { ToastrManager } from 'ng6-toastr-notifications';
 import { Subject } from 'rxjs';
 import { AppService } from 'src/app/services/app.service';
 
@@ -14,7 +15,7 @@ export class DProfitHistoryComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
 
 
-  profitlossStatement :any=[];
+  profitlossStatement: any = [];
 
 
 
@@ -25,10 +26,9 @@ export class DProfitHistoryComponent implements OnInit {
   marketId: any;
   sportsId: any;
 
-  constructor(private appService: AppService,private route: ActivatedRoute) {
+  constructor(private appService: AppService, private route: ActivatedRoute, public toastr: ToastrManager) {
     this.route.params.subscribe(params => {
-      console.log(params)
-      this.sportsId = params.sportsId;
+      this.sportsId = params.sportId;
       this.marketId = params.marketId;
       this.dataSource = params.dataSource;
     });
@@ -37,14 +37,14 @@ export class DProfitHistoryComponent implements OnInit {
   draw = {
     "dataSource": "LIVE",
     "marketId": "71671590214126",
-    "sportId":"66102"
+    "sportId": "66102"
   }
 
   ngOnInit(): void {
-debugger
-     this.draw.dataSource=this.dataSource;
-     this.draw.marketId=this.marketId;
-     this.draw.sportId=this.sportsId;
+    
+    this.draw.dataSource = this.dataSource;
+    this.draw.marketId = this.marketId;
+    this.draw.sportId = this.sportsId;
     this.dtOptions = {
       pagingType: 'full_numbers',
       // pageLength: 1,
@@ -52,16 +52,22 @@ debugger
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        debugger
+        
         this.appService.getUserBetList(this.draw)
-              .subscribe(resp => {
-                debugger
-                this.profitlossStatement=resp.data;
-                  callback({
-                      recordsTotal: resp.data.length,
-                      data: this.profitlossStatement,
-                  });
-              });
+          .subscribe(resp => {
+
+            this.profitlossStatement = resp.data;
+            callback({
+              recordsTotal: resp.data.length,
+              data: resp.data,
+            });
+
+            if (resp.meta.status_code == 422) {
+              this.toastr.errorToastr(resp.meta.message)
+            }
+
+
+          });
       },
       data: this.profitlossStatement,
       columns: [
@@ -105,7 +111,7 @@ debugger
         //   title: 'Total P&L',
         //   data: ''
         // },
-       
+
       ]
 
     };
@@ -131,13 +137,13 @@ debugger
   //     dtInstance.destroy();
   //     // Call the dtTrigger to rerender again
   //     this.dtTrigger.next(null);
-  //     debugger
+  //     
   //     this.appService.userSportsProfitloss(this.draw).subscribe((res => {
   //       this.profitlossStatement = res.data.original.data;
   //       this.dtOptions.data = this.profitlossStatement;
 
-        
-      
+
+
   //     }));
   //   });
 
