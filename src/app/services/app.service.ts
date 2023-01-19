@@ -16,6 +16,7 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 export class AppService {
   private isLoggedIn = new Subject<boolean>();
   public loggedUserData;
+  private loggedInuserData:any;
   private balance = new Subject<any>();
   constructor(private http: HttpClient, private router: Router, public toastr: ToastrManager,) {
     this.loggedUserData = JSON.parse(localStorage.getItem('loggedUserData'));
@@ -26,14 +27,16 @@ export class AppService {
 
 
   public setLoggedIn(message: any): void {
-    console.log('sdasadasd');
     this.isLoggedIn.next(message);
   }
   public getbalance(): Observable<any> {
     return this.isLoggedIn.asObservable();
   }
-
+  getUserData(){
+    return this.loggedInuserData;
+  }
   public setbalance(message: any): void {
+    this.loggedInuserData=message;
     this.isLoggedIn.next(message);
   }
   getSportsList(): Observable<any> {

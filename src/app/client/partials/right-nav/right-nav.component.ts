@@ -13,9 +13,7 @@ export class RightNavComponent implements OnInit {
 
   ngOnInit(
   ): void {
-    this.appservice.getbalance().subscribe((res:any) =>{
-        this.userbalance=res;
-    })
+    this.userbalance=this.appservice.getUserData();
   }
   logout(){
       localStorage.clear();
