@@ -143,12 +143,15 @@ export class AppService {
   tournamentEventsList(tournamentEventsPayLoad: any,): Observable<any> {
     return this.http.post(CONFIG.tournamentEventsList, tournamentEventsPayLoad)
   }
-  
+
 
   getRacingEvents(racingEventPayLoad: any,): Observable<any> {
     return this.http.post(CONFIG.getRacingEvents, racingEventPayLoad)
   }
-  
+
+  uploadPaymentDetails(racingEventPayLoad: any,): Observable<any> {
+    return this.http.post(CONFIG.uploadPaymentDetails, racingEventPayLoad)
+  }
 
   getEventMatchedBetList(url,params){
     console.log('getEventMatchedBetList')
@@ -157,7 +160,7 @@ export class AppService {
         return data;
       }));
   }
-  
+
 
 
   // getCasinoInfo(): Observable<any> {

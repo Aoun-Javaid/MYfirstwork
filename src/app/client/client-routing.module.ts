@@ -63,7 +63,7 @@ const routes: Routes = [
         path: 'withdraw', component: WithdrawComponent,canActivate:[AuthGuardGuard]
       },
       {
-        path: 'deposit', component: DepositComponent,canActivate:[AuthGuardGuard]
+        path: 'deposit', component: DepositComponent
       },
       {
         path: 'bet-history', component: BetHistoryComponent,canActivate:[AuthGuardGuard]
@@ -73,6 +73,7 @@ const routes: Routes = [
       },
        {
         path: 'passwordHistory', component: PasswordHistoryComponent,canActivate:[AuthGuardGuard]
+
       },
       {
         path: 'profitloss-event/:id/:startDate/:endDate/:dataSource', component: ProfitlossEventComponent,canActivate:[AuthGuardGuard]

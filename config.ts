@@ -38,7 +38,7 @@ export const CONFIG = {
   addWithdrawalBank:BASE_URL_V1+'/v1/exchange/users/addWithdrawalBank',
   uploadPaymentDetails:BASE_URL_V1+'/v1/exchange/users/uploadPaymentDetails',
   getDepositDetails:BASE_URL_V1+'/v1/exchange/users/getDepositDetails',
-  
+
   getEventMatchedBetList:BASE_URL_V1+'/v1/exchange/users/betlist/getEventMatchedBetList',
 
   getFancyPlURL: BASE_URL_V1 + '/v1/exchange/users/pl/getFancyPL',
@@ -61,9 +61,9 @@ export const CONFIG = {
   getUserBetList:BASE_URL_V1 +  '/v1/exchange/users/betlist/getUserBetList',
   casinoInternational:BASE_URL_API +  '/api/exchange/casino/casinoInternational',
   sportTournamentsList:BASE_URL_API + '/api/exchange/tournaments/sportTournamentsList',
-  tournamentEventsList:BASE_URL_API + '/api/exchange/events/tournamentEventsList'
+  tournamentEventsList:BASE_URL_API + '/api/exchange/events/tournamentEventsList',
 
-  
+
 
 
 

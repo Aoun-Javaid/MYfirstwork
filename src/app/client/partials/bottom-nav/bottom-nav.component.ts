@@ -13,7 +13,7 @@ export class BottomNavComponent implements OnInit {
   isLoggedIn;
   @Output() clickOutside = new EventEmitter<void>();
 
-  
+
   constructor(private elementRef: ElementRef, private router: Router,private appService: AppService) {
     this.isLoggedIn = localStorage.getItem('accessToken');
   }
@@ -46,23 +46,23 @@ export class BottomNavComponent implements OnInit {
 
   sidenavOpen() {
     this.isLoggedIn = localStorage.getItem('accessToken');
-    if (!this.isLoggedIn) {
-      this.router.navigateByUrl('/client/login');
-      return;
-    } 
-    else { 
+    // if (!this.isLoggedIn) {
+    //   this.router.navigateByUrl('/client/login');
+    //   return;
+    // }
+    // else {
 
-    if (!this.isRightBarOpen) 
+    if (!this.isRightBarOpen)
       {
       document.body.className += ' left-bar-enabled';
       this.isRightBarOpen = true;
-      } 
-      else 
+      }
+      else
       {
       document.body.className = document.body.className.replace(/left-bar-enabled/g, '').trim();
       this.isRightBarOpen = false;
       }
-  }
+   //}
   }
 
   getCustomerSupport() {
