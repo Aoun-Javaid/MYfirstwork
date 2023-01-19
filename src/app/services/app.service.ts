@@ -141,6 +141,11 @@ export class AppService {
   }
   
 
+  getRacingEvents(racingEventPayLoad: any,): Observable<any> {
+    return this.http.post(CONFIG.getRacingEvents, racingEventPayLoad)
+  }
+  
+
 
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
