@@ -132,6 +132,16 @@ export class AppService {
     return this.http.post(CONFIG.getUserBetList, UserBetProfitLossPayLoad)
   }
 
+  sportTournamentsList(sportTournamentsListPayLoad: any,): Observable<any> {
+    return this.http.post(CONFIG.sportTournamentsList, sportTournamentsListPayLoad)
+  }
+
+  tournamentEventsList(tournamentEventsPayLoad: any,): Observable<any> {
+    return this.http.post(CONFIG.tournamentEventsList, tournamentEventsPayLoad)
+  }
+  
+
+
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {
   //   // return this.http.post(`${environment.apiUrl}/exchange/market/matchodds/casinoInformation`, {})

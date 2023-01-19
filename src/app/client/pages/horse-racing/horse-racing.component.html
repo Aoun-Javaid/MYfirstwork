@@ -1,19 +1,47 @@
-<div  class="horse-schedule">Horse Racing Schedule</div>
-<div class="category-navigation">
+<!-- <div  class="horse-schedule">Horse Racing Schedule</div> -->
+<div class="container-fluid ">
+  <div class="row mt-3">
+    <div class="col-lg-12">
+      <div class="account-ui">
+                <span class="account-pro"> Horse Racing Schedule
+                </span>
+      </div>
+    </div>
+  </div>
+
+<div class="category-navigation mt-2">
   <div class="full-color">
     <ul class="category-navigation-container">
       <li class="category-navigation-item" *ngFor="let cat of catTabs">
         <a class="category-navigation-item-link" >
        <span class="category-navigation-item-icon">
         <!-- <img class="catIcon" [src]="cat.iconUrl">  -->
-         <img class="catIcon" src="assets/flags/IN.png">
+         <!-- <img class="catIcon" src="assets/flags/IN.png"> -->
+         <img class="catIcon" [src]="['assets/flags/'+cat.tournamentId+'.png']">
        </span>
           <span
-            class="category-navigation-item-label">IN</span>
+            class="category-navigation-item-label">{{cat.tournamentName}}</span>
         </a>
       </li>
     </ul>
   </div>
+
+  <!-- <div class="category-navigation">
+    <div class="full-color">
+      <ul class="category-navigation-container">
+      <li class="category-navigation-item" *ngFor="let cat of catTabs">
+          <a class="category-navigation-item-link" [ngClass]="selectedSportId ==cat.sportId?'active':''" (click)="categoryType(cat.sportId)">
+          <span class="category-navigation-item-icon">
+            <img class="catIcon" [src]="['assets/icons/'+cat.sportId+'.webp']">
+          </span>
+            <span
+              class="category-navigation-item-label">{{cat.sportName}}</span>
+          </a>
+        </li>
+      </ul>
+   </div>  -->
+
+
 
 </div>
 <div class="content-container d-flex mt-2">
