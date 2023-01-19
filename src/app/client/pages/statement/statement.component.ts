@@ -256,8 +256,6 @@ export class StatementComponent implements OnInit {
         this.accountStatement = res.data.original.data;
         this.dtOptions.data = this.accountStatement;
         this.dtOptions.columns = this.draw.columns;
-
-
       }));
     });
 

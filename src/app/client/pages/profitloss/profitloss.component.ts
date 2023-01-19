@@ -131,6 +131,7 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
           .subscribe(resp => {
 
             this.profitlossStatement = resp.data.original.data;
+
             callback({
               recordsTotal: resp.data.original.recordsTotal,
               data: this.profitlossStatement,
@@ -151,10 +152,7 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
           title: 'Commission',
           data: 'commission'
         },
-        // {
-        //   title: 'Total P&L',
-        //   data: ''
-        // },
+
 
       ],
       rowCallback: (row: Node, data: any[] | Object, index: number) => {
@@ -172,12 +170,13 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     };
 
   }
+
   someClickHandler(info: any): void {
     console.log(info)
     this.startDate;
     this.endDate;
     this.router.navigate([`/client/profitloss-event/${info.sportId}/${this.startDate}/${this.endDate}/LIVE`])
-    console.log("check y data",info.sportId,this.startDate, this.endDate)
+    console.log("check y data", info.sportId, this.startDate, this.endDate)
   }
 
   ngAfterViewInit(): void {

@@ -132,8 +132,10 @@ export class ProfitlossMarketComponent implements OnInit {
 
         this.appService.userMarketsProfitloss(this.draw)
               .subscribe(resp => {
-
-                this.profitlossStatement=resp.data.original.data;;
+                this.profitlossStatement=resp.data.original.data;
+                this.profitlossStatement.filter(el => {
+                    let date = new Date(el.createdAt);
+                    el.createdAt = date.toLocaleString();})
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
                       data: this.profitlossStatement,

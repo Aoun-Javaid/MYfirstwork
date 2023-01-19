@@ -132,18 +132,22 @@ export class ProfitlossEventComponent implements OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        
+
         this.appService.userEventsProfitloss(this.draw)
               .subscribe(resp => {
-                
-                this.profitlossStatement=resp.data.original.data;;
+
+                this.profitlossStatement=resp.data.original.data;
+                this.profitlossStatement.filter(el => {
+                  let total = el.pl + el.commission
+                  return el.total = total
+                })
+                console.log(this.profitlossStatement)
                   callback({
                       recordsTotal: resp.data.original.recordsTotal,
                       data: this.profitlossStatement,
                   });
               });
       },
-      data: this.profitlossStatement,
       columns: [
         {
           title: 'Sport Name',
@@ -161,10 +165,10 @@ export class ProfitlossEventComponent implements OnInit {
         title: 'Commission',
         data: 'commission'
       },
-        // {
-        //   title: 'Total P&L',
-        //   data: ''
-        // },
+        {
+          title: 'Total P&L',
+          data: 'total'
+        }
 
       ],
       rowCallback: (row: Node, data: any[] | Object, index: number) => {
@@ -218,7 +222,7 @@ export class ProfitlossEventComponent implements OnInit {
       dtInstance.destroy();
       // Call the dtTrigger to rerender again
       this.dtTrigger.next(null);
-      
+
       this.appService.userSportsProfitloss(this.draw).subscribe((res => {
         this.profitlossStatement = res.data.original.data;
         this.dtOptions.data = this.profitlossStatement;
