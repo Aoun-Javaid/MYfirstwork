@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { AppService } from 'src/app/services/app.service';
@@ -20,9 +21,17 @@ export class DProfitHistoryComponent implements OnInit {
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtTrigger: Subject<any> = new Subject();
+  dataSource: any;
+  marketId: any;
+  sportsId: any;
 
-  constructor(private appService: AppService) {
-
+  constructor(private appService: AppService,private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      console.log(params)
+      this.sportsId = params.sportsId;
+      this.marketId = params.marketId;
+      this.dataSource = params.dataSource;
+    });
   }
 
   draw = {
@@ -31,10 +40,11 @@ export class DProfitHistoryComponent implements OnInit {
     "sportId":"66102"
   }
 
-  startDate: string;
-  endDate: string;
   ngOnInit(): void {
 debugger
+     this.draw.dataSource=this.dataSource;
+     this.draw.marketId=this.marketId;
+     this.draw.sportId=this.sportsId;
     this.dtOptions = {
       pagingType: 'full_numbers',
       // pageLength: 1,
@@ -112,32 +122,25 @@ debugger
   }
   completeDate: Date;
   localCompleteDate: string;
-  ngModelStartChange($event: any) {
-    this.startDate = $event.target.value;
-    //debugger
-  }
-  ngModelEndChange($event: any) {
-    this.endDate = $event.target.value;
 
-  }
 
-  SubmitdataTable() {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.clear();
-      // Destroy the table first
-      dtInstance.destroy();
-      // Call the dtTrigger to rerender again
-      this.dtTrigger.next(null);
-      debugger
-      this.appService.userSportsProfitloss(this.draw).subscribe((res => {
-        this.profitlossStatement = res.data.original.data;
-        this.dtOptions.data = this.profitlossStatement;
+  // SubmitdataTable() {
+  //   this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+  //     dtInstance.clear();
+  //     // Destroy the table first
+  //     dtInstance.destroy();
+  //     // Call the dtTrigger to rerender again
+  //     this.dtTrigger.next(null);
+  //     debugger
+  //     this.appService.userSportsProfitloss(this.draw).subscribe((res => {
+  //       this.profitlossStatement = res.data.original.data;
+  //       this.dtOptions.data = this.profitlossStatement;
 
         
       
-      }));
-    });
+  //     }));
+  //   });
 
-  }
+  // }
 
 }

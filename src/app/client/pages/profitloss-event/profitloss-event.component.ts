@@ -28,14 +28,12 @@ export class ProfitlossEventComponent implements OnInit {
   constructor(private appService: AppService,private route: ActivatedRoute, private router: Router) {
 
     this.route.params.subscribe(params => {
-      console.log(params)
       this.sportsId = params.id;
       this.startDate = params.startDate;
       this.endDate = params.endDate;
       this.gameType = params.dataSource;
     });
 
-    console.log(this.sportsId);
   }
 
   draw = {
@@ -123,6 +121,10 @@ export class ProfitlossEventComponent implements OnInit {
 
   ngOnInit(): void {
 debugger
+    this.draw.sportId=this.sportsId;
+    this.draw.startDate = this.startDate;
+    this.draw.endDate=this.endDate;
+    this.draw.dataSource=this.gameType;
     this.dtOptions = {
       pagingType: 'full_numbers',
       // pageLength: 1,
@@ -186,8 +188,7 @@ debugger
     console.log(info)
     this.startDate;
     this.endDate;
-    this.router.navigate([`/client/profitloss-market/${info.eventId}/${"LIVE"}"`])
-    console.log("check y data",info.sportId,this.startDate, this.endDate)
+    this.router.navigate([`/client/profitloss-market/${info.eventId}/LIVE`])
   }
 
 

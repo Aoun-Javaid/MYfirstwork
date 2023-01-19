@@ -21,9 +21,15 @@ export class ProfitlossMarketComponent implements OnInit {
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtTrigger: Subject<any> = new Subject();
+  eventId: any;
+  dataSource: any;
 
   constructor(private appService: AppService,private route: ActivatedRoute, private router: Router) {
-
+    this.route.params.subscribe(params => {
+      console.log(params)
+      this.eventId = params.eventId;
+      this.dataSource = params.dataSource;
+    });
   }
 
   draw = {
@@ -113,20 +119,15 @@ export class ProfitlossMarketComponent implements OnInit {
       "value": "",
       "regex": false
     },
-    "eventId":"20217121919235"
+    "eventId":"102386588468"
 
   }
 
-  startDate: string;
-  endDate: string;
   ngOnInit(): void {
-
+    //  this.draw.eventId=this.eventId;
+    //  this.draw.dataSource=this.dataSource;
     this.dtOptions = {
       pagingType: 'full_numbers',
-      // pageLength: 1,
-      // tabIndex: 2,
-      // serverSide: true,
-      // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
 
         this.appService.userEventsProfitloss(this.draw)
@@ -194,9 +195,7 @@ export class ProfitlossMarketComponent implements OnInit {
 
   someClickHandler(info: any): void {
     console.log(info);
-    this.startDate;
-    this.endDate;
-    this.router.navigate([`/client/profitloss-market/${info.eventId}/${"LIVE"}"`]);
+    this.router.navigate([`/client/profitloss-market/${info.eventId}/LIVE`]);
   }
 
   ngAfterViewInit(): void {
@@ -209,14 +208,14 @@ export class ProfitlossMarketComponent implements OnInit {
   }
   completeDate: Date;
   localCompleteDate: string;
-  ngModelStartChange($event: any) {
-    this.startDate = $event.target.value;
-    //debugger
-  }
-  ngModelEndChange($event: any) {
-    this.endDate = $event.target.value;
+  // ngModelStartChange($event: any) {
+  //   this.startDate = $event.target.value;
+  //   //debugger
+  // }
+  // ngModelEndChange($event: any) {
+  //   this.endDate = $event.target.value;
 
-  }
+  // }
 
   // SubmitdataTable() {
   //   this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {

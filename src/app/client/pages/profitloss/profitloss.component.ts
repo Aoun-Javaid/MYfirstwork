@@ -126,10 +126,10 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
       // serverSide: true,
       // processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        debugger
+        
         this.appService.userSportsProfitloss(this.draw)
           .subscribe(resp => {
-            debugger
+            
             this.profitlossStatement = resp.data.original.data;
             ;
             callback({
@@ -177,7 +177,7 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
     console.log(info)
     this.startDate;
     this.endDate;
-    this.router.navigate([`/client/profitloss-event/${info.sportId}/${this.startDate}/${this.endDate}/"LIVE"`])
+    this.router.navigate([`/client/profitloss-event/${info.sportId}/${this.startDate}/${this.endDate}/LIVE`])
     console.log("check y data",info.sportId,this.startDate, this.endDate)
   }
 
@@ -195,7 +195,6 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
 
   ngModelStartChange($event: any) {
     this.startDate = $event.target.value;
-    //debugger
   }
 
   ngModelEndChange($event: any) {
@@ -266,7 +265,6 @@ export class ProfitlossComponent implements OnDestroy, OnInit {
       dtInstance.destroy();
       // Call the dtTrigger to rerender again
       this.dtTrigger.next(null);
-      debugger
       this.draw.startDate = this.startDate;
       this.draw.endDate = this.endDate;
       this.appService.userSportsProfitloss(this.draw).subscribe((res => {
