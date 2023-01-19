@@ -10,42 +10,23 @@ import { AppService } from 'src/app/services/app.service';
 export class HorseRacingComponent implements OnInit {
   selectedSportId:any;
  
-  // catTabs=[
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-  //   {catName:'djfdsjf',id:'dsadasdsadasd'},
-
-  // ]
 
   events: any[] = [];
   filteredEvents: any;
   eventsArr: any[] = [];
   markets: any
   catTabs: any[]=[];
-
+  racingEvent:any={tournamentId: "1549628216", sportId: "7"};
   constructor(private appService: AppService,public router:Router) {
   }
 
 
   ngOnInit(): void {
     this.getSportsList()
-    this.getEventesList()
+     this.getEventesList()
   }
 
   getSportsList() {
-    debugger
     this.appService.sportTournamentsList({sportId: "7"}).subscribe(data => {
       this.catTabs = data.data;
     })
@@ -55,24 +36,21 @@ export class HorseRacingComponent implements OnInit {
     this.appService.getAllEventsList().subscribe(data => {
       this.events = data.data
       this.eventsArr = Object.entries(this.events)
-      this.categoryType(4)
+      this.categoryType(1549628216)
     })
   }
 
-  categoryType(sportId: any) {
-    this.selectedSportId = sportId;
-    
-    if(this.selectedSportId==66102){
 
-      this.router.navigate(['/client/casinoInternational'])
-    }
 
-    if(this.selectedSportId==7){
-
-      this.router.navigate(['/client/horse-racing'])
-    }
-    this.filteredEvents = this.eventsArr.filter((x: any) => x[1][0]?.sportId == this.selectedSportId)
-    this.markets = this.filteredEvents[0][1]
+  categoryType(tournamentId: any) {
+    this.selectedSportId = tournamentId.toString();
+    this.racingEvent.tournamentId =tournamentId.toString();
+    this.appService.getRacingEvents(this.racingEvent).subscribe(data => {
+      this.events = data.data
+      this.eventsArr = Object.entries(this.events)
+    })
+    // this.filteredEvents = this.eventsArr.filter((x: any) => x[1][0]?.sportId == this.selectedSportId)
+    // this.markets = this.filteredEvents[0][1]
     // assigning filtered events
     // console.log(this.markets, "filtered data");
   }
