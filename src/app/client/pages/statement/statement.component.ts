@@ -1,11 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import { DataTableDirective } from 'angular-datatables';
+import {DataTableDirective} from 'angular-datatables';
 import {Subject} from 'rxjs';
 import {AppService} from 'src/app/services/app.service';
-import { DatePipe } from '@angular/common';
-import {transform} from "lodash";
-import { PipeTransform } from '@angular/core';
+
 @Component({
   selector: 'app-statement',
   templateUrl: './statement.component.html',
@@ -22,7 +20,7 @@ export class StatementComponent implements OnInit {
     endDate: new FormControl('')
   });
 
-  constructor(private appService: AppService, private pipeInstance:DatePipe) {
+  constructor(private appService: AppService,) {
 
   }
 
@@ -114,10 +112,11 @@ export class StatementComponent implements OnInit {
   accountStatement: any = [];
   startDate: string;
   endDate: string;
+
   ngOnInit(): void {
     this.updateDate();
-    this.draw.startDate=this.startDate;
-    this.draw.endDate=this.endDate;
+    this.draw.startDate = this.startDate;
+    this.draw.endDate = this.endDate;
     this.dtOptions = {
       pagingType: 'full_numbers',
       // pageLength: 1,
@@ -127,25 +126,24 @@ export class StatementComponent implements OnInit {
       ajax: (dataTablesParameters: any, callback) => {
 
         this.appService.userAccountStatement(this.draw)
-              .subscribe(resp => {
+          .subscribe(resp => {
 
-                this.accountStatement=resp.data.original.data;
-                this.accountStatement.filter(el=>{
-                  let date = new Date(el.createdAt);
-                  el.createdAt = date.toLocaleString();
-                  return el;
-                })
-                  callback({
-                      recordsTotal: resp.data.original.recordsTotal,
-                      data: this.accountStatement,
-                  });
-              });
+            this.accountStatement = resp.data.original.data;
+            this.accountStatement.filter(el => {
+              let date = new Date(el.createdAt);
+              el.createdAt = date.toLocaleString();
+              return el;
+            })
+            callback({
+              recordsTotal: resp.data.original.recordsTotal,
+              data: this.accountStatement,
+            });
+          });
       },
       // data: this.accountStatement,
       columns: [{
         title: 'Date/Time',
         data: 'createdAt',
-        ngPipeArgs: this.pipeInstance
       }, {
         title: 'Deposit',
         data: 'deposit'
@@ -174,16 +172,20 @@ export class StatementComponent implements OnInit {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();
   }
+
   completeDate: Date;
   localCompleteDate: string;
+
   ngModelStartChange($event: any) {
     this.startDate = $event.target.value;
     //
   }
+
   ngModelEndChange($event: any) {
     this.endDate = $event.target.value;
 
   }
+
   updateDate() {
 
     let sDate: any = new Date();
@@ -217,27 +219,25 @@ export class StatementComponent implements OnInit {
     //   this.startDate = this.startDate.substr(0, 16);
     //this.startDate.setDate(this.startDate.getDate() - 4);
     let min = Number(minutes);
-    if(min<9){
-      minutes= '0'+(min+1);
-    }
-    else if(min==59){
-      minutes='00';
-      hours=(Number(hours)+1).toString();
-    }
-    else{
-      minutes=(min+1).toString();
+    if (min < 9) {
+      minutes = '0' + (min + 1);
+    } else if (min == 59) {
+      minutes = '00';
+      hours = (Number(hours) + 1).toString();
+    } else {
+      minutes = (min + 1).toString();
     }
     var dates = new Date();
-    let month:any = dates.getMonth()+1;
+    let month: any = dates.getMonth() + 1;
 
-    if(Number(month)<10){
-      month='0'+month;
+    if (Number(month) < 10) {
+      month = '0' + month;
     }
 
     this.endDate = new Date().toISOString();
     this.endDate = this.endDate.substr(0, 4);
 
-    this.endDate = this.endDate+'-'+month+'-'+ date + 'T' + hours + ':' + minutes;
+    this.endDate = this.endDate + '-' + month + '-' + date + 'T' + hours + ':' + minutes;
   }
 
   SubmitdataTable() {
@@ -255,7 +255,7 @@ export class StatementComponent implements OnInit {
       this.appService.userAccountStatement(this.draw).subscribe((res => {
         this.accountStatement = res.data.original.data;
         this.dtOptions.data = this.accountStatement;
-        this.dtOptions.columns= this.draw.columns;
+        this.dtOptions.columns = this.draw.columns;
 
 
       }));
