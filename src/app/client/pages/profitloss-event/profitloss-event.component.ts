@@ -189,7 +189,6 @@ export class ProfitlossEventComponent implements OnInit {
   }
 
   someClickHandler(info: any): void {
-    console.log(info)
     this.startDate;
     this.endDate;
     this.router.navigate([`/client/profitloss-market/${info.eventId}/LIVE`])
