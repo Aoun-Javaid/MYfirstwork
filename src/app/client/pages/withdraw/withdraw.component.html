@@ -74,13 +74,13 @@
                     <div class="form-group">
                         <label>Withdrawal Amount <span class="asterisk_input"></span>
                         </label>
-                        <input class="form-control ng-untouched ng-pristine ng-valid" formControlName="amount" name="withdrawAmount" type="number" 
+                        <input class="form-control ng-untouched ng-pristine ng-valid"  pattern="[0-9]*" formControlName="amount" name="withdrawAmount" type="number" 
                         (keyup)="calculateWithdrawalAmount()">
                     </div>
                 </form>
                 </div>
                 <div class="col-md-12 mt-2 feedata">
-                    <div class="alert alert-danger m-0" *ngIf="(CWAmount?.meta?.status_code!==200) && CWAmount">
+                    <div class="alert alert-danger m-0" *ngIf="(CWAmount?.meta?.status_code==422) && CWAmount">
                         <div class="feedata" >
                             <strong class="light-grey-text">{{CWAmount?.meta?.message}}</strong>
                         </div>
@@ -89,11 +89,11 @@
                     <div  class="alert alert-success m-0" *ngIf="CWAmount?.meta?.status_code==200">
                         <div  class="feedata">
                             <strong 
-                                class="light-grey-text">Amount: {{CWAmount?.data?.amount}}</strong>
+                                class="light-grey-text">Amount: {{CWAmount?.data?.amount}}</strong><br>
                                 <strong 
-                                class="light-grey-text">Processing Time: {{CWAmount?.data?.time}}</strong>
+                                class="light-grey-text">Processing Time: {{CWAmount?.data?.time}}</strong><br>
                                 <strong
-                                class="light-grey-text">Fee: {{CWAmount?.data?.fee}}</strong>
+                                class="light-grey-text">Fee: {{CWAmount?.data?.fee}}</strong><br>
                                 <strong
                                 class="light-grey-text">Withdraw Amount: {{CWAmount?.data?.withdrawalAmount}}
                             </strong>

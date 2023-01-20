@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AppService} from "../../../services/app.service";
 import {ToastrManager} from "ng6-toastr-notifications";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -13,11 +13,17 @@ export class DepositComponent implements OnInit {
   DepositForm: any;
   imgUrl: any;
   ImageBinary: any;
-
+ 
+  @Input()
+  pattern: number | RegExp
+  customerSupport :any;
+  
   constructor(private appService: AppService, private toaster: ToastrManager, private fb: FormBuilder, private httpClient: HttpClient, private notification: ToastrManager) {
     this.DepositForm = fb.group({
       amount: ['', [Validators.required]],
     });
+debugger
+    this.customerSupport = localStorage.getItem('customerSupport').toString()
   }
 
   SERVER_URL = "http://130.172.1.139:4567/v1/exchange/users/uploadPaymentDetails";
@@ -45,7 +51,6 @@ export class DepositComponent implements OnInit {
     // "origin": "unityexch",
   };
   showBankPortion: boolean = false;
-
   ngOnInit(): void {
     // this.getDepositDetails();
     this.uploadForm = this.fb.group({
