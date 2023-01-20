@@ -69,6 +69,7 @@ export class BottomNavComponent implements OnInit {
     this.appService.getCustomerSupport().subscribe(data => {
       if (data.data)
         this.customerSuport = data.data;
+        localStorage.setItem('customerSupport', this.customerSuport[1]?.url);
     })
   }
 }

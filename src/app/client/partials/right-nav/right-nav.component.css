@@ -228,11 +228,11 @@ a, a:hover {
 
 .right-side-menu__username {
   margin: 0 15px;
-  padding: 24px 0 19px;
+  padding: 24px 011px 19px;
   font-weight: 700;
-  border-bottom: 1px solid var(--text-color-white);
+  border-bottom: 1px solid var(--theme-color);
   color: var(--text-color-white);
-  text-align: center;
+  /* text-align: center; */
   font-size: 20px;
 }
 

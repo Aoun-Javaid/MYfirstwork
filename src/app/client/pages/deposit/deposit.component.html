@@ -1,13 +1,14 @@
 <div *ngIf="!showBankPortion" class="m-3">
-  <form [formGroup]="DepositForm" (ngSubmit)="getDepositDetails()" >
+  <form [formGroup]="DepositForm" (ngSubmit)="getDepositDetails()">
     <div class="form-group">
       <label>Deposit Amount <span class="asterisk_input"></span>
       </label>
-      <input class="form-control ng-untouched ng-pristine ng-valid" formControlName="amount" name="withdrawAmount" type="number">
+      <input class="form-control ng-untouched ng-pristine ng-valid" formControlName="amount" name="withdrawAmount"
+        pattern="[0-9]*" type="number">
       <small class="">Minimum deposit Amount is 10</small>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn submitAcount mt-2"  [disabled]="DepositForm.invalid">Deposit</button>
+      <button type="submit" class="btn submitAcount mt-2" [disabled]="DepositForm.invalid">Deposit</button>
     </div>
 
   </form>
@@ -17,15 +18,15 @@
   <div class="accordion" id="accordionExample" *ngIf="showBankPortion">
     <div class="accordion-item" *ngIf="BankDetails.bankName">
       <h2 class="accordion-header" id="headingOne">
-        <button class="pg-header bankButton" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                aria-controls="collapseOne">
+        <button class="pg-header bankButton" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="false" aria-controls="collapseOne">
           <img style="width: 50px;" src="assets/banks/bank.png">
           <span class="bankfont">BANK</span>
         </button>
 
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
-           data-bs-parent="#accordionExample">
+        data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
             <label>Make your payment on the details below:</label>
@@ -36,46 +37,47 @@
               </div>
               <div class="d-flex align-items-center">
                 <div class="detail-name"> Acoount Holder Name</div>
-                <div class="detail-data"> :  {{BankDetails.accountHolderName}}</div>
+                <div class="detail-data"> : {{BankDetails.accountHolderName}}</div>
               </div>
 
 
               <div class="d-flex align-items-center">
                 <div class="detail-name"> Account Number</div>
-                <div class="detail-data"> :  {{BankDetails.accountNumber}}</div>
+                <div class="detail-data"> : {{BankDetails.accountNumber}}</div>
               </div>
 
 
               <div class="d-flex align-items-center">
                 <div class="detail-name"> IFSC Code</div>
-                <div class="detail-data"> :  {{BankDetails.ifsc}}</div>
+                <div class="detail-data"> : {{BankDetails.ifsc}}</div>
               </div>
 
 
             </div>
-<!--            <table style="margin: 0 auto;">-->
-<!--              <tr>-->
-<!--                <td class="detail-name"> Bank Name</td>-->
-<!--                <td class="detail-data"> : {{BankDetails.bankName}}</td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="detail-name"> Acoount Holder Name</td>-->
-<!--                <td class="detail-data"> :  {{BankDetails.accountHolderName}}</td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="detail-name"> Account Number</td>-->
-<!--                <td class="detail-data"> :  {{BankDetails.accountNumber}}</td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="detail-name"> IFSC Code</td>-->
-<!--                <td class="detail-data"> :  {{BankDetails.ifsc}}</td>-->
-<!--              </tr>-->
-<!--            </table>-->
+            <!--            <table style="margin: 0 auto;">-->
+            <!--              <tr>-->
+            <!--                <td class="detail-name"> Bank Name</td>-->
+            <!--                <td class="detail-data"> : {{BankDetails.bankName}}</td>-->
+            <!--              </tr>-->
+            <!--              <tr>-->
+            <!--                <td class="detail-name"> Acoount Holder Name</td>-->
+            <!--                <td class="detail-data"> :  {{BankDetails.accountHolderName}}</td>-->
+            <!--              </tr>-->
+            <!--              <tr>-->
+            <!--                <td class="detail-name"> Account Number</td>-->
+            <!--                <td class="detail-data"> :  {{BankDetails.accountNumber}}</td>-->
+            <!--              </tr>-->
+            <!--              <tr>-->
+            <!--                <td class="detail-name"> IFSC Code</td>-->
+            <!--                <td class="detail-data"> :  {{BankDetails.ifsc}}</td>-->
+            <!--              </tr>-->
+            <!--            </table>-->
             <div>
               <div class="d-flex justify-content-center my-3">
                 <div class="btn">
 
-                  <label for="formFile" class="form-label text-white image-upload-extion" [ngClass]="imgUrl?'img-RemovePadding':''">
+                  <label for="formFile" class="form-label text-white image-upload-extion"
+                    [ngClass]="imgUrl?'img-RemovePadding':''">
                     <img class="img-fluid img-uploaded" *ngIf="imgUrl" [src]="imgUrl?.target?.result">
                     <div *ngIf="!imgUrl">
                       <i class="fa-solid fa-circle-plus"></i>
@@ -84,10 +86,10 @@
 
                   </label>
                   <input class="form-control file-upload" type="file" id="formFile" accept=".png,.jpg,.jpeg"
-                         formControlName="fileDetails" (change)="onSelectFile($event)">
+                    formControlName="fileDetails" (change)="onSelectFile($event)">
                 </div>
               </div>
-              <button type="button" class="btn deposit-submit" (click)="OnSubmitImg()" >Submit</button>
+              <button type="button" class="btn deposit-submit" (click)="OnSubmitImg()">Submit</button>
             </div>
           </div>
         </div>
@@ -96,30 +98,31 @@
     <div class="accordion-item" *ngIf="BankDetails.paytmNumber">
       <h2 class="accordion-header" id="headingTwo">
         <button class="pg-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                aria-expanded="false" aria-controls="collapseTwo">
+          aria-expanded="false" aria-controls="collapseTwo">
           <img src="assets/banks/paytm.png">
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-           data-bs-parent="#accordionExample">
+        data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
             <label>Make your payment on the details below:</label>
-            <table style="margin: 0 auto;"  class="mt-2">
+            <table style="margin: 0 auto;" class="mt-2">
               <tr>
                 <td class="detail-name"> Paytm Name</td>
-                <td class="detail-data"> :  {{BankDetails.paytmName}}</td>
+                <td class="detail-data"> : {{BankDetails.paytmName}}</td>
               </tr>
               <tr>
                 <td class="detail-name"> Paytm Number</td>
-                <td class="detail-data"> :  {{BankDetails.paytmNumber}}</td>
+                <td class="detail-data"> : {{BankDetails.paytmNumber}}</td>
               </tr>
             </table>
             <div>
               <div class="d-flex justify-content-center my-3">
                 <div class="btn">
 
-                  <label for="formFile" class="form-label text-white image-upload-extion" [ngClass]="imgUrl?'img-RemovePadding':''">
+                  <label for="formFile" class="form-label text-white image-upload-extion"
+                    [ngClass]="imgUrl?'img-RemovePadding':''">
                     <img class="img-fluid img-uploaded" *ngIf="imgUrl" [src]="imgUrl?.target?.result">
                     <div *ngIf="!imgUrl">
                       <i class="fa-solid fa-circle-plus"></i>
@@ -128,7 +131,7 @@
 
                   </label>
                   <input class="form-control file-upload" type="file" id="formFile" accept=".png,.jpg,.jpeg"
-                         formControlName="fileDetails" (change)="onSelectFile($event)">
+                    formControlName="fileDetails" (change)="onSelectFile($event)">
                 </div>
               </div>
               <button type="button" class="btn deposit-submit">Submit</button>
@@ -140,30 +143,31 @@
     <div class="accordion-item" *ngIf="BankDetails.gpayNumber">
       <h2 class="accordion-header" id="headingFour">
         <button class="pg-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                aria-expanded="false" aria-controls="collapseFour">
+          aria-expanded="false" aria-controls="collapseFour">
           <img src="assets/banks/googlepay.png">
         </button>
       </h2>
       <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour   "
-           data-bs-parent="#accordionExample">
+        data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
             <label>Make your payment on the details below:</label>
-            <table style="margin: 0 auto;"  class="mt-2">
+            <table style="margin: 0 auto;" class="mt-2">
               <tr>
                 <td class="detail-name"> Paytm Name</td>
-                <td class="detail-data"> :  {{BankDetails.gpayName}}</td>
+                <td class="detail-data"> : {{BankDetails.gpayName}}</td>
               </tr>
               <tr>
                 <td class="detail-name"> Paytm Number</td>
-                <td class="detail-data"> :  {{BankDetails.gpayNumber}}</td>
+                <td class="detail-data"> : {{BankDetails.gpayNumber}}</td>
               </tr>
             </table>
             <div>
               <div class="d-flex justify-content-center my-3">
                 <div class="btn">
 
-                  <label for="formFile" class="form-label text-white image-upload-extion" [ngClass]="imgUrl?'img-RemovePadding':''">
+                  <label for="formFile" class="form-label text-white image-upload-extion"
+                    [ngClass]="imgUrl?'img-RemovePadding':''">
                     <img class="img-fluid img-uploaded" *ngIf="imgUrl" [src]="imgUrl?.target?.result">
                     <div *ngIf="!imgUrl">
                       <i class="fa-solid fa-circle-plus"></i>
@@ -172,7 +176,7 @@
 
                   </label>
                   <input class="form-control file-upload" type="file" id="formFile" accept=".png,.jpg,.jpeg"
-                         formControlName="fileDetails" (change)="onSelectFile($event)">
+                    formControlName="fileDetails" (change)="onSelectFile($event)">
                 </div>
               </div>
               <button type="button" class="btn deposit-submit">Submit</button>
@@ -184,30 +188,31 @@
     <div class="accordion-item" *ngIf="BankDetails.phonepeName">
       <h2 class="accordion-header" id="headingThree">
         <button class="pg-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                aria-expanded="false" aria-controls="collapseThree">
-          <img  class="phonePayImg" src="assets/banks/phonepay.png">
+          aria-expanded="false" aria-controls="collapseThree">
+          <img class="phonePayImg" src="assets/banks/phonepay.png">
         </button>
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-           data-bs-parent="#accordionExample">
+        data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
             <label>Make your payment on the details below:</label>
-            <table style="margin: 0 auto;"  class="mt-2">
+            <table style="margin: 0 auto;" class="mt-2">
               <tr>
                 <td class="detail-name"> Paytm Name</td>
-                <td class="detail-data"> :  {{BankDetails.phonepeName}}</td>
+                <td class="detail-data"> : {{BankDetails.phonepeName}}</td>
               </tr>
               <tr>
                 <td class="detail-name"> Paytm Number</td>
-                <td class="detail-data"> :  {{BankDetails.phonepeNumber}}</td>
+                <td class="detail-data"> : {{BankDetails.phonepeNumber}}</td>
               </tr>
             </table>
             <div>
               <div class="d-flex justify-content-center my-3">
                 <div class="btn">
 
-                  <label for="formFile" class="form-label text-white image-upload-extion" [ngClass]="imgUrl?'img-RemovePadding':''">
+                  <label for="formFile" class="form-label text-white image-upload-extion"
+                    [ngClass]="imgUrl?'img-RemovePadding':''">
                     <img class="img-fluid img-uploaded" *ngIf="imgUrl" [src]="imgUrl?.target?.result">
                     <div *ngIf="!imgUrl">
                       <i class="fa-solid fa-circle-plus"></i>
@@ -216,7 +221,7 @@
 
                   </label>
                   <input class="form-control file-upload" type="file" id="formFile" accept=".png,.jpg,.jpeg"
-                         formControlName="fileDetails" (change)="onSelectFile($event)">
+                    formControlName="fileDetails" (change)="onSelectFile($event)">
                 </div>
               </div>
               <button type="button" class="btn deposit-submit">Submit</button>
@@ -229,13 +234,15 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingThree">
         <button class="pg-header whatsapp" type="button" data-bs-toggle="collapse" data-bs-target="#collapsewhatsapp"
-                aria-expanded="false" aria-controls="collapsewhatsapp">
+          aria-expanded="false" aria-controls="collapsewhatsapp">
+          <a target="_blank" style="text-decoration: none;" [href]="[customerSupport+'&text=HI, need help inof about Khiladi']">
+            <img class="whatsappImg" src="assets/banks/whatsapp.png">
+            <span class="whatsapptext">Deposit With Whatsapp</span>
+          </a>
 
-          <img class="whatsappImg" src="assets/banks/whatsapp.png">
-          <span class="whatsapptext">Deposit With Whatsapp</span>
         </button>
       </h2>
-      <div id="collapsewhatsapp" class="accordion-collapse collapse" aria-labelledby="headingThree"
+      <!-- <div id="collapsewhatsapp" class="accordion-collapse collapse" aria-labelledby="headingThree"
            data-bs-parent="#accordionExample">
         <div class="accordion-body text-center">
           <div class="bank-detail">
@@ -264,7 +271,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
