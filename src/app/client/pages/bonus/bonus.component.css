@@ -95,13 +95,14 @@ header .wallet-detail-group .wallet-balance-num {
 
 }
 .gameCard{
-  align-items: center;   
+  align-items: center;
    flex-direction: row;
   justify-content: space-between;
 }
 
 .gameCardButton{
   border-radius: 5px;
+  color:black;
   background-color: var(--theme-color);
 }
 
@@ -111,7 +112,7 @@ header .wallet-detail-group .wallet-balance-num {
 
 .mainBalanceExplosure{
   flex-direction: row;
-  justify-content: space-between; 
+  justify-content: space-between;
   border-top: 1px solid black;
    color: black;
 }
@@ -119,7 +120,7 @@ header .wallet-detail-group .wallet-balance-num {
   border-radius: 12px;
 }
 .mainBalanceIcon{
-  justify-content: space-between; 
+  justify-content: space-between;
 
 }
 .dropdown-menu {

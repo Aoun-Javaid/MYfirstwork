@@ -27,7 +27,7 @@
 .text-dark {
   color: var(--text-dark) !important;
 }
-*{
+*,i{
   touch-action: manipulation
 }
 /*variables k name b dakh lijiye ga bhaya*/

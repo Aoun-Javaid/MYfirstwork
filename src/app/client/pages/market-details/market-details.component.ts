@@ -30,7 +30,7 @@ export class MarketDetailsComponent implements OnInit {
 
 
   @ViewChild('modal') modal: ElementRef;
-  MybetsRecord:any;
+  MybetsRecord:any=[];
   modalRef: BsModalRef;
   modalRefBet: BsModalRef;
   isCollapsed: boolean = false;
@@ -1293,7 +1293,7 @@ export class MarketDetailsComponent implements OnInit {
       }
       // else if (this._sportid == '66103') {
       //   this.getSportbookFirebase(this.binaryFirebase);
-      // } 
+      // }
       else {
         this.getSportbookFirebase(this.otherFirebase);
       }
@@ -2161,7 +2161,7 @@ export class MarketDetailsComponent implements OnInit {
 
             $('.quick_bet-wrap .btn-send').prop('disabled', false);
             this.hideBetSection();
-           
+
             this.headerComponent.getBalance();
 
             if (this.betType == 'FANCY') {
@@ -2179,7 +2179,7 @@ export class MarketDetailsComponent implements OnInit {
             if (this.betType == 'SPORTBOOK') {
               this.getSportbookMarketPL();
             }
-           
+
 
             this.spinner.hide();
 

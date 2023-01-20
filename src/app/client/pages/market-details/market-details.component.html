@@ -928,7 +928,10 @@
         </div>
         <div class="modal-body ">
           <div class="info-modal-body">
-            <div class="slip-list">
+            <div *ngIf="MybetsRecord.length==0" class="text-center my-2">
+              <small>Nothing to Show</small>
+            </div>
+            <div class="slip-list" *ngIf="mybetsBack.length>0">
               <ul class="matched-head" id="backSlipHeader">
                 <li class="col-bet">Back (Bet For)</li>
                 <li class="col-odd">Odds</li>
@@ -949,8 +952,8 @@
                   </span></dd>
               </dl>
             </div>
-            <div class="slip-list">
-             
+            <div class="slip-list" *ngIf="mybetsLay.length>0">
+
               <ul class="matched-head" id="backSlipHeader">
                 <li class="col-bet">Lay (Bet For)</li>
                 <li class="col-odd">Odds</li>
