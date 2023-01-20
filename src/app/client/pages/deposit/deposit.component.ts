@@ -22,7 +22,7 @@ export class DepositComponent implements OnInit {
     this.DepositForm = fb.group({
       amount: ['', [Validators.required]],
     });
-debugger
+
     this.customerSupport = localStorage.getItem('customerSupport').toString()
   }
 
@@ -103,6 +103,7 @@ debugger
         reader.readAsDataURL(target.files[0]); // read file as data url
         reader.onload = (target) => { // called once readAsDataURL is completed
           this.imgUrl = target;
+          
           //this.kyc.data = this.url.target.result;
           this.ImageBinary = reader.result
         }
