@@ -56,11 +56,14 @@
               <th >Trade</th>
             </thead>
             <tbody ><!---->
-              <tr >
-                <td >Cricket</td>
-                <td ><a  class="exposure-evn">BIG BASH CUP </a></td>
-                <td >Winner 2022/23</td>
-                <td ><span>101</span></td>
+              <div *ngIf="esposureList.length==0" class="my-2 text-center">
+                  <small>No Record Found</small>
+              </div>
+              <tr *ngFor="let item of esposureList">
+                <td >{{item.sportName}}</td>
+                <td ><a  class="exposure-evn">{{item.eventName}} </a></td>
+                <td >{{item.marketName}}</td>
+                <td ><span>{{item.betCounts}}</span></td>
               </tr>
             </tbody>
           </table>

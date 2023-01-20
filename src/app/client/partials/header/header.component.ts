@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import {ToastrManager} from "ng6-toastr-notifications";
 
 @Component({
   selector: 'app-header',
@@ -13,11 +14,12 @@ export class HeaderComponent implements OnInit {
   userbalance:any;
   @Output() clickOutside = new EventEmitter<void>();
 
-  constructor(private elementRef: ElementRef,private appService:AppService) {
+  constructor(private elementRef: ElementRef,private appService:AppService, private toaster: ToastrManager) {
   }
+  esposureList:any = [];
   counter=0;
   ngOnInit(): void {
-    
+
     this.appService.getLoggedIn().subscribe((res:any)=>{
         this.isLogin=res;
         if(res==true && this.counter==0){
@@ -61,6 +63,17 @@ export class HeaderComponent implements OnInit {
     this.appService.getUserBalance().subscribe((res:any)=>{
       this.userbalance=res.data;
       this.appService.setbalance(this.userbalance);
+    })
+  }
+  getExposure(){
+    this.appService.userEventsExposure().subscribe((res:any)=>{
+      if(res.meta.status_code=200){
+        this.esposureList=res.data;
+      }
+      else{
+        this.toaster.errorToastr(res.meta.message);
+      }
+
     })
   }
 

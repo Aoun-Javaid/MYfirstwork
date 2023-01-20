@@ -161,7 +161,9 @@ export class AppService {
       }));
   }
 
-
+  userEventsExposure(): Observable<any> {
+    return this.http.post(CONFIG.userEventsExposure, {})
+  }
 
   // getCasinoInfo(): Observable<any> {
   // getCasinoInformation(): Observable<any> {

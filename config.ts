@@ -38,6 +38,7 @@ export const CONFIG = {
   addWithdrawalBank:BASE_URL_V1+'/v1/exchange/users/addWithdrawalBank',
   uploadPaymentDetails:BASE_URL_V1+'/v1/exchange/users/uploadPaymentDetails',
   getDepositDetails:BASE_URL_V1+'/v1/exchange/users/getDepositDetails',
+  userEventsExposure:BASE_URL_V1+'/v1/exchange/users/exposure/userEventsExposure',
 
   getEventMatchedBetList:BASE_URL_V1+'/v1/exchange/users/betlist/getEventMatchedBetList',
 
