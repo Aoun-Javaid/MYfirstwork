@@ -27,7 +27,9 @@
 .text-dark {
   color: var(--text-dark) !important;
 }
-
+*{
+  touch-action: manipulation
+}
 /*variables k name b dakh lijiye ga bhaya*/
 body {
   overflow-x: hidden;

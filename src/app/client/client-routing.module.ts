@@ -86,7 +86,7 @@ const routes: Routes = [
       {
         path: 'd-profit-history/:sportId/:marketId/:dataSource', component: DProfitHistoryComponent,canActivate:[AuthGuardGuard]
       },{
-        path: 'bonus', component: BonusComponent,canActivate:[AuthGuardGuard]
+        path: 'bonus', component: BonusComponent
       },
       {
         path:'horse-racing',component:HorseRacingComponent
